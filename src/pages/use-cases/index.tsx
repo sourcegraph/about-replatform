@@ -4,7 +4,9 @@ import Link from 'next/link'
 import React from 'react'
 
 import { Layout, ContentSection, CustomerLogosSectionAnimated, TrySourcegraph } from '@components'
-import { stringToDashCase } from '@util'
+import { stringToKebabCase } from '@util'
+
+import styles from './useCases.module.scss'
 
 const features: string[] = [
     'Find and fix security vulnerabilities',
@@ -22,9 +24,9 @@ const UseCases: React.FunctionComponent = () => (
                 'See how the most productive dev teams use Sourcegraph to build software you rely on. From remediating vulnerabilities to streamlining code reuse, our customers use Sourcegraph to solve big code problems.',
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
-        heroAndHeaderClassName="use-cases-page__header-and-hero"
+        heroAndHeaderClassName={styles.headerAndHero}
         hero={
-            <div className="use-cases-page use-cases-page__hero container">
+            <div className="container">
                 <div className="row">
                     <div className="col-lg-7 mb-lg-6 mt-6">
                         <h1 className="display-2 font-weight-bold mb-0">Our customers move faster with Sourcegraph</h1>
@@ -35,7 +37,7 @@ const UseCases: React.FunctionComponent = () => (
                     </div>
 
                     <div className="col-lg-5 mt-lg-6 pt-4 mb-6">
-                        <h2 className="font-weight-normal use-cases-page__see-how">
+                        <h2 className={`${styles.seeHow} font-weight-normal`}>
                             See how customers use Sourcegraph to
                         </h2>
 
@@ -43,8 +45,8 @@ const UseCases: React.FunctionComponent = () => (
                             {features.map((feature: string) => (
                                 <a
                                     key={feature}
-                                    href={`#${stringToDashCase(feature)}`}
-                                    className="list-group-item list-group-item-action"
+                                    href={`#${stringToKebabCase(feature)}`}
+                                    className={`${styles.listGroupItem} list-group-item list-group-item-action d-flex justify-content-between align-items-center`}
                                 >
                                     {feature}
                                     <ArrowRightIcon className="icon-inline ml-1" />
@@ -56,7 +58,7 @@ const UseCases: React.FunctionComponent = () => (
             </div>
         }
     >
-        <div className="use-cases-page">
+        <div>
             <CustomerLogosSectionAnimated showButton={false} showSection={true} className="pt-5" />
 
             <hr className="mt-8 mb-6" />
@@ -76,7 +78,7 @@ const UseCases: React.FunctionComponent = () => (
                             <li>
                                 Automate fixing, merging, and deploying changes with{' '}
                                 <Link href="/batch-changes/">
-                                    <a>Batch Changes</a>
+                                    Batch Changes
                                 </Link>
                             </li>
                             <li>Alert for known vulnerabilities and risky code changes with code monitoring</li>
@@ -97,8 +99,8 @@ const UseCases: React.FunctionComponent = () => (
                             </p>
                             <footer className="blockquote-footer">David Haynes, Security Engineer at Cloudflare</footer>
                             <div className="d-flex justify-content-center my-4">
-                                <Link href="/case-studies/cloudflare-accelerates-debugging-and-improves-security">
-                                    <a className="btn">
+                                <Link href="/case-studies/cloudflare-accelerates-debugging-and-improves-security" passHref={true}>
+                                    <a href="#none" className="btn">
                                         <img
                                             src="/external-logos/cloudflare-color-logo.svg"
                                             width="110px"
@@ -125,8 +127,8 @@ const UseCases: React.FunctionComponent = () => (
                             <footer className="blockquote-footer">Owen Kim, Senior Software Engineer, Convoy</footer>
 
                             <div className="d-flex justify-content-center my-4">
-                                <Link href="/case-studies/convoy-improved-on-boarding">
-                                    <a className="btn">
+                                <Link href="/case-studies/convoy-improved-on-boarding" passHref={true}>
+                                    <a href="#none" className="btn">
                                         <img src="/external-logos/convoy-logo.svg" width="110px" alt="Convoy" />
                                     </a>
                                 </Link>
@@ -208,8 +210,8 @@ const UseCases: React.FunctionComponent = () => (
                             </p>
                             <footer className="blockquote-footer">Simon Law, Staff Software Engineer, Quantcast</footer>
                             <div className="d-flex justify-content-center my-4">
-                                <Link href="/case-studies/quantcast-large-scale-refactoring">
-                                    <a className="btn">
+                                <Link href="/case-studies/quantcast-large-scale-refactoring" passHref={true}>
+                                    <a href="#none" className="btn">
                                         <img src="/external-logos/quantcast-logo.svg" width="110px" alt="Quantcast" />
                                     </a>
                                 </Link>
@@ -233,8 +235,8 @@ const UseCases: React.FunctionComponent = () => (
                             </p>
                             <footer className="blockquote-footer">Joseph Majesky, Software Engineer, FactSet</footer>
                             <div className="d-flex justify-content-center my-4">
-                                <Link href="/case-studies/factset-migrates-from-perforce-to-github">
-                                    <a className="btn">
+                                <Link href="/case-studies/factset-migrates-from-perforce-to-github" passHref={true}>
+                                    <a href="#none" className="btn">
                                         <img src="/external-logos/factset-logo.svg" width="110px" alt="FactSet" />
                                     </a>
                                 </Link>
@@ -317,8 +319,8 @@ const UseCases: React.FunctionComponent = () => (
                             </p>
                             <footer className="blockquote-footer">Justin Phillips, Software Engineer, Lyft</footer>
                             <div className="d-flex justify-content-center my-4">
-                                <Link href="/case-studies/lyft-monolith-to-microservices">
-                                    <a className="btn">
+                                <Link href="/case-studies/lyft-monolith-to-microservices" passHref={true}>
+                                    <a href="#none" className="btn">
                                         <img src="/external-logos/lyft-logo.svg" width="110px" alt="Lyft" />
                                     </a>
                                 </Link>
