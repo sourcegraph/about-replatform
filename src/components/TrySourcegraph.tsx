@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { ContentSection } from '@components'
 
@@ -8,7 +8,7 @@ interface Props {
     className?: string
 }
 
-export const TrySourcegraph: React.FunctionComponent<Props> = ({
+export const TrySourcegraph: FunctionComponent<Props> = ({
     demoFormURL = 'https://info.sourcegraph.com/demo-request',
     className = '',
 }) => (
@@ -21,23 +21,19 @@ export const TrySourcegraph: React.FunctionComponent<Props> = ({
                     local and secure).
                 </p>
             </div>
-            
             <div className="col-md-6 pt-3 align-self-center text-center">
                 {demoFormURL !== '' && (
-                    <Link href={demoFormURL}>
-                        <a className="btn btn-outline-secondary mx-2 mb-3" title="Request a demo">
+                    <Link href={demoFormURL} passHref={true}>
+                        <a href="#none" className="btn btn-outline-secondary mx-2 mb-3" title="Schedule a demo">
                             Schedule a demo
                         </a>
                     </Link>
                 )}
-
-                <a
-                    href="/#get-started"
-                    className="btn btn-primary mx-2 mb-3"
-                    title="Try Sourcegraph now"
-                >
-                    Try Sourcegraph now
-                </a>
+                <Link href="/get-started" passHref={true}>
+                    <a href="#none" className="btn btn-primary mx-2 mb-3" title="Try Sourcegraph now">
+                        Try Sourcegraph now
+                    </a>
+                </Link>
             </div>
         </div>
     </ContentSection>

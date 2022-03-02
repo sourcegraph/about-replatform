@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 interface Props {
     src: string
@@ -7,9 +7,9 @@ interface Props {
     caption?: string
 }
 
-export const InContentImage: React.FunctionComponent<Props> = ({ src, caption, alt, className }) => (
-    <p>
+export const InContentImage: FunctionComponent<Props> = ({ src, caption, alt, className }) => (
+    <figure>
         <img src={src} className={className} alt={alt} />
-        {caption && <footer className="blockquote-footer">{caption}</footer>}
-    </p>
+        {caption && <figcaption className="blockquote-footer">{caption}</figcaption>}
+    </figure>
 )

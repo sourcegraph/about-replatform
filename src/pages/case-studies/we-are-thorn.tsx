@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => (
+export const CaseStudy: FunctionComponent = () => (
     <Layout
         meta={{
             title: 'Thorn deprecates legacy code safely',
@@ -17,7 +17,7 @@ export const CaseStudy: React.FunctionComponent = () => (
             title="Thorn deprecates legacy code safely"
             logo="/case-studies/thorn-logo.png"
             quote={{
-                quote: "Ensuring that changes to legacy systems didn't affect production stability was taking too long.",
+                text: "Ensuring that changes to legacy systems didn't affect production stability was taking too long.",
                 author: 'Thorn Software Engineer Jacob Gillespie',
                 image: '/case-studies/jacob-gillespie-thorn-square.jpg',
             }}

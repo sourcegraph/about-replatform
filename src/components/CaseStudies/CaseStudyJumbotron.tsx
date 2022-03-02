@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { COLORS } from '../Jumbotron'
 
 interface Props {
     customer: string
-    logo: string
+    logo?: string
     className?: string
     color?: keyof typeof COLORS
     children?: React.ReactNode
 }
 
-export const CaseStudyJumbotron: React.FunctionComponent<Props> = ({
+export const CaseStudyJumbotron: FunctionComponent<Props> = ({
     customer,
     logo,
     className = '',

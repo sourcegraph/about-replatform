@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => {
+export const CaseStudy: FunctionComponent = () => {
     const jaredHodge = 'Jared Hodge, Senior Manager, Developer Experience'
 
     return (
@@ -20,7 +20,7 @@ export const CaseStudy: React.FunctionComponent = () => {
                 title="Indeed keeps code up to date and accelerates development velocity"
                 logo="/external-logos/indeed-logo.svg"
                 quote={{
-                    quote: 'The ability to automate downstream changes that Sourcegraph Batch Changes provides is a key capability for reducing the hidden burden of updates pushed across teams and enabling us to increase our engineering velocity.',
+                    text: 'The ability to automate downstream changes that Sourcegraph Batch Changes provides is a key capability for reducing the hidden burden of updates pushed across teams and enabling us to increase our engineering velocity.',
                     author: jaredHodge,
                     image: '/case-studies/jared-hodge-indeed.jpg',
                 }}

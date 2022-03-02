@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => {
+export const CaseStudy: FunctionComponent = () => {
     const justinPhilips = 'Justin Phillips, Software Engineer, Lyft'
 
     return (
@@ -20,7 +20,7 @@ export const CaseStudy: React.FunctionComponent = () => {
                 title="Lyft ensures production stability during monolith to microservices transition"
                 logo="/external-logos/lyft-logo.svg"
                 quote={{
-                    quote: 'Sourcegraph code search helped ensure production stability throughout the monolith to microservices decomposition by verifying applications were no longer pointing at the monolith version of a service.',
+                    text: 'Sourcegraph code search helped ensure production stability throughout the monolith to microservices decomposition by verifying applications were no longer pointing at the monolith version of a service.',
                     author: justinPhilips,
                     image: '/case-studies/justin-phillips-lyft.jpg',
                 }}

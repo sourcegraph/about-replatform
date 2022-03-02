@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => {
+export const CaseStudy: FunctionComponent = () => {
     const terinStock = 'Terin Stock, Systems Engineer'
 
     return (
@@ -19,7 +19,7 @@ export const CaseStudy: React.FunctionComponent = () => {
                 title="Cloudflare accelerates debugging and improves security"
                 logo="/external-logos/cloudflare-white-logo.png"
                 quote={{
-                    quote: 'Sourcegraph is the only code search tool that natively integrates with our code and understands how our code works.',
+                    text: 'Sourcegraph is the only code search tool that natively integrates with our code and understands how our code works.',
                     author: terinStock,
                     image: '/case-studies/terin-stock-cloudflare.jpg',
                 }}

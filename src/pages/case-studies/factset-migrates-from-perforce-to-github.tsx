@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => {
+export const CaseStudy: FunctionComponent = () => {
     const derrickFaunce = 'Derrick Faunce, Associate Director of Developer Services'
 
     return (
@@ -20,7 +20,7 @@ export const CaseStudy: React.FunctionComponent = () => {
                 title="FactSet migrates from Perforce to GitHub"
                 logo="/external-logos/factset-logo.svg"
                 quote={{
-                    quote: 'With Sourcegraph, we were able to make a smooth transition from Perforce to GitHub.',
+                    text: 'With Sourcegraph, we were able to make a smooth transition from Perforce to GitHub.',
                     author: derrickFaunce,
                     image: '/case-studies/derrick-faunce.png',
                 }}

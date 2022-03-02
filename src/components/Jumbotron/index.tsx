@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+
+import styles from './jumbotron.module.scss'
 
 export const COLORS = {
     white: '',
@@ -16,7 +18,7 @@ interface Props {
     children: React.ReactNode
 }
 
-export const Jumbotron: React.FunctionComponent<Props> = ({
+export const Jumbotron: FunctionComponent<Props> = ({
     className = '',
     color = 'white',
     logomark = true,
@@ -29,9 +31,7 @@ export const Jumbotron: React.FunctionComponent<Props> = ({
         <div className="container text-center pt-4 pb-5">
             {logomark && (
                 <img
-                    className="jumbotron__logo mb-1"
-                    // tslint:disable-next-line: jsx-ban-props
-                    style={{ width: '2rem', height: '2rem' }}
+                    className={`jumbotron__logo mb-1 ${styles.logo}`}
                     src="/sourcegraph/sourcegraph-mark.svg"
                     aria-hidden="true"
                     alt="Sourcegraph mark"

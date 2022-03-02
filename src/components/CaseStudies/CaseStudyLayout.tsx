@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
-import { stringToDashCase } from '@util'
-
-import { ContentSection, RequestDemoForm, MediaQuote } from '..'
+import { ContentSection, RequestDemoForm, MediaQuote } from '@components'
+import { stringToKebabCase } from '@util'
 
 import { CaseStudyJumbotron } from './CaseStudyJumbotron'
 
 interface Quote {
-    quote: string
+    text: string
     author: string
     image?: string
 }
@@ -25,7 +24,7 @@ interface Props {
     children?: React.ReactNode
 }
 
-export const CaseStudyLayout: React.FunctionComponent<Props> = ({
+export const CaseStudyLayout: FunctionComponent<Props> = ({
     customer,
     title,
     logo,
@@ -38,7 +37,7 @@ export const CaseStudyLayout: React.FunctionComponent<Props> = ({
     children,
 }) => (
     <>
-        <div className={`${stringToDashCase(customer)}-${className} ${className}`}>
+        <div className={`${stringToKebabCase(customer)}-${className} ${className}`}>
             <CaseStudyJumbotron className="mb-5" customer={customer} logo={logo}>
                 {heroImage && (
                     <div className="case-studies__quote row pt-3">
@@ -50,14 +49,14 @@ export const CaseStudyLayout: React.FunctionComponent<Props> = ({
                         <div className="col-lg-9 ">
                             {quote && (
                                 <div className="text-left">
-                                    <p className="text-light" dangerouslySetInnerHTML={{ __html: quote.quote }} />
-                                    <p className="blockquote-footer text-light mt-1">{quote.author}</p>
+                                    <p className="text-light">{quote.text}</p>
+                                    <footer className="blockquote-footer text-light mt-1">{quote.author}</footer>
                                 </div>
                             )}
                         </div>
                     </div>
                 )}
-                {quote && !heroImage && <MediaQuote quote={quote.quote} author={quote.author} image={quote.image} />}
+                {quote && !heroImage && <MediaQuote quote={quote.text} author={quote.author} image={quote.image} />}
                 {pdf && (
                     <a href={pdf} className="btn btn-primary mt-3" rel="nofollow noreferrer noopener" target="_blank">
                         <i className="fa fa-file-pdf pr-2" />

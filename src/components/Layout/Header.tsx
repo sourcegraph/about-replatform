@@ -1,6 +1,6 @@
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -23,7 +23,7 @@ const onRightClickLogo = (event: React.MouseEvent): void => {
     }
 }
 
-const Header = (props: Props): JSX.Element => {
+const Header: FunctionComponent<Props> = props => {
     const [isOpen, setIsOpen] = useState(false)
     const [productMenuOpen, setProductMenuOpen] = useState(false)
     const [resourcesMenuOpen, setResourcesMenuOpen] = useState(false)
@@ -138,10 +138,10 @@ const Header = (props: Props): JSX.Element => {
                                         }`}
                                     >
                                         <li className="nav-link" role="presentation">
-                                            <a href="/code-search">Code Search</a>
+                                            <Link href="/code-search">Code Search</Link>
                                         </li>
                                         <li className="nav-link" role="presentation">
-                                            <a href="/batch-changes">Batch Changes</a>
+                                            <Link href="/batch-changes">Batch Changes</Link>
                                         </li>
                                         <li className="nav-link" role="presentation">
                                             <a href="https://docs.sourcegraph.com/code_intelligence">
@@ -171,10 +171,14 @@ const Header = (props: Props): JSX.Element => {
                                         }`}
                                     >
                                         <li className="nav-link" role="presentation">
-                                            <a href="/blog">Blog</a>
+                                            <Link href="/blog">Blog</Link>
                                         </li>
                                         <li className="nav-link" role="presentation">
-                                            <a href="https://learn.sourcegraph.com/" target="_blank">
+                                            <a
+                                                href="https://learn.sourcegraph.com/"
+                                                target="_blank"
+                                                rel="noopener nofollow noreferrer"
+                                            >
                                                 Learn
                                             </a>
                                         </li>
@@ -184,7 +188,7 @@ const Header = (props: Props): JSX.Element => {
                                             </a>
                                         </li>
                                         <li className="nav-link" role="presentation">
-                                            <a href="/podcast">Podcast</a>
+                                            <Link href="/podcast">Podcast</Link>
                                         </li>
                                     </ul>
                                 </li>
@@ -209,29 +213,21 @@ const Header = (props: Props): JSX.Element => {
                                         }`}
                                     >
                                         <li className="nav-link" role="presentation">
-                                            <Link href="/case-studies">
-                                                <a>Case studies</a>
-                                            </Link>
+                                            <Link href="/case-studies">Case studies</Link>
                                         </li>
                                         <li className="nav-link" role="presentation">
-                                            <Link href="/use-cases">
-                                                <a>Use cases</a>
-                                            </Link>
+                                            <Link href="/use-cases">Use cases</Link>
                                         </li>
                                         <li className="nav-link" role="presentation">
-                                            <Link href="/contact/product-specialist">
-                                                <a>Become one</a>
-                                            </Link>
+                                            <Link href="/contact/product-specialist">Become one</Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <Link
-                                        href="/pricing"
-                                        className="nav-link"
-                                        activeClassName="header__nav-link-active"
-                                    >
-                                        <a>Pricing</a>
+                                    <Link href="/pricing" passHref={true}>
+                                        <a href="#none" className="nav-link">
+                                            Pricing
+                                        </a>
                                     </Link>
                                 </li>
                                 <li className="nav-item" role="presentation">
@@ -262,9 +258,11 @@ const Header = (props: Props): JSX.Element => {
                                 </li>
                                 {!props.hideGetStartedButton && (
                                     <li className="header__nav-item nav-item" role="presentation">
-                                        <a className="nav-link" href="/get-started">
-                                            Get started
-                                        </a>
+                                        <Link href="/get-started" passHref={true}>
+                                            <a href="#none" className="nav-link">
+                                                Get started
+                                            </a>
+                                        </Link>
                                     </li>
                                 )}
                             </ul>

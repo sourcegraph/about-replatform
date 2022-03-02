@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection, InContentImage, InContentBlockquote } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => (
+export const CaseStudy: FunctionComponent = () => (
     <Layout
         meta={{
             title: 'Sourcegraph empowers CERN to tackle code reuse and code changes in mission-critical applications',
@@ -18,7 +18,7 @@ export const CaseStudy: React.FunctionComponent = () => (
             heroImage="/external-logos/cern-supplier-logo.svg"
             heroLink="https://procurement.web.cern.ch"
             quote={{
-                quote: "Sourcegraph is extremely valuable for what we do. It enables us to easily clean up deprecated APIs and estimate the risks and costs of our APIs' evolution.",
+                text: 'Sourcegraph is extremely valuable for what we do. It enables us to easily clean up deprecated APIs and estimate the risks and costs of our APIs evolution.',
                 author: 'Vito Baggiolini, Senior Software Engineer, CERN',
             }}
         >

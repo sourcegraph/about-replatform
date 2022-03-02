@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { Layout, CaseStudyLayout, ContentSection } from '@components'
 
-export const CaseStudy: React.FunctionComponent = () => (
+export const CaseStudy: FunctionComponent = () => (
     <Layout
         meta={{
             title: 'SoFi manages hundreds of microservices',
@@ -17,7 +17,7 @@ export const CaseStudy: React.FunctionComponent = () => (
             title="SoFi manages hundreds of microservices"
             logo="/external-logos/sofi-logo-white.png"
             quote={{
-                quote: 'Sourcegraph is an ingrained part of my daily process at SoFi. With Sourcegraph, our engineers can understand all of the repercussions of committing a change to a service that is exposed to other services.',
+                text: 'Sourcegraph is an ingrained part of my daily process at SoFi. With Sourcegraph, our engineers can understand all of the repercussions of committing a change to a service that is exposed to other services.',
                 author: 'Ursula Robertson, Engineering Manager, SoFi',
                 image: '/case-studies/ursula-robertson-sofi.jpg',
             }}

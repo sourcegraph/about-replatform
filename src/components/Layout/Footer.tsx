@@ -21,19 +21,13 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                             <h3 className="footer__nav-header">About Sourcegraph</h3>
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link href="/case-studies">
-                                        <a>Case studies</a>
-                                    </Link>
+                                    <Link href="/case-studies">Case studies</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/use-cases">
-                                        <a>Use cases</a>
-                                    </Link>
+                                    <Link href="/use-cases">Use cases</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/pricing">
-                                        <a>Pricing</a>
-                                    </Link>
+                                    <Link href="/pricing">Pricing</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a
@@ -51,9 +45,7 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                             <h3 className="footer__nav-header">Resources</h3>
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link href="/blog">
-                                        <a>Blog</a>
-                                    </Link>
+                                    <Link href="/blog">Blog</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">
@@ -67,19 +59,13 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                                     <a href="https://learn.sourcegraph.com">Learn</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/podcast">
-                                        <a>Podcast</a>
-                                    </Link>
+                                    <Link href="/podcast">Podcast</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/dev-tools-quiz">
-                                        <a>Dev tools quiz</a>
-                                    </Link>
+                                    <Link href="/dev-tools-quiz">Dev tools quiz</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/community">
-                                        <a>Community</a>
-                                    </Link>
+                                    <Link href="/community">Community</Link>
                                 </li>
                             </ul>
                         </div>
@@ -88,27 +74,19 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                             <h3 className="footer__nav-header">Company</h3>
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link href="/about">
-                                        <a>About</a>
-                                    </Link>
+                                    <Link href="/about">About</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/jobs">
-                                        <a>Careers - We're Hiring!</a>
-                                    </Link>
+                                    <Link href="/jobs">Careers - We're Hiring!</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/contact">
-                                        <a>Contact</a>
-                                    </Link>
+                                    <Link href="/contact">Contact</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a href="https://handbook.sourcegraph.com">Handbook</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/news">
-                                        <a>News</a>
-                                    </Link>
+                                    <Link href="/news">News</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a href="https://handbook.sourcegraph.com/company/strategy">Sourcegraph strategy</a>
@@ -117,8 +95,8 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                         </div>
 
                         <div className="col-12 col-lg-3 mb-5 order-md-1">
-                            <Link href="/">
-                                <a className="row footer__logo ml-1">
+                            <Link href="/" passHref={true}>
+                                <a href="#none" className="row footer__logo ml-1 ">
                                     <span role="img" aria-label="Sourcegraph - Universal code search">
                                         {' '}
                                     </span>
@@ -196,18 +174,24 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                 <ul className="nav">
                     <li className="nav-item text-muted mr-3">&copy; 2021 Sourcegraph</li>
                     <li className="nav-item">
-                        <Link href="/terms">
-                            <a className="nav-link">Terms</a>
+                        <Link href="/terms" passHref={true}>
+                            <a href="#none" className="nav-link">
+                                Terms
+                            </a>
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link href="/security">
-                            <a className="nav-link">Security</a>
+                        <Link href="/security" passHref={true}>
+                            <a href="#none" className="nav-link">
+                                Security
+                            </a>
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link href="/privacy">
-                            <a className="nav-link">Privacy</a>
+                        <Link href="/privacy" passHref={true}>
+                            <a href="#none" className="nav-link">
+                                Privacy
+                            </a>
                         </Link>
                     </li>
                 </ul>

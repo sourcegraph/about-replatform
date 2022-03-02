@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 interface Props {
     image?: string
@@ -6,7 +6,7 @@ interface Props {
     author: string
 }
 
-export const MediaQuote: React.FunctionComponent<Props> = ({ image, quote, author }) => (
+export const MediaQuote: FunctionComponent<Props> = ({ image, quote, author }) => (
     <div className="container pt-3">
         <div className="case-studies__quote row justify-content-center">
             {image && (
@@ -16,7 +16,7 @@ export const MediaQuote: React.FunctionComponent<Props> = ({ image, quote, autho
             )}
             <div className="col-12 col-lg-9">
                 <blockquote className="blockquote">
-                    <p className="text-light" dangerouslySetInnerHTML={{ __html: quote }} />
+                    <p className="text-light">{quote}</p>
                     <footer className="blockquote-footer text-light mt-1">{author}</footer>
                 </blockquote>
             </div>
