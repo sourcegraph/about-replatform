@@ -3,7 +3,7 @@ import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 import React from 'react'
 
-import { Layout, ContentSection, CustomerLogosSectionAnimated, TrySourcegraph } from '@components'
+import { Layout, ContentSection, TrySourcegraph } from '@components'
 import { stringToKebabCase } from '@util'
 
 import styles from './useCases.module.scss'
@@ -59,12 +59,10 @@ const UseCases: React.FunctionComponent = () => (
         }
     >
         <div>
-            <CustomerLogosSectionAnimated showButton={false} showSection={true} className="pt-5" />
+            {/* Todo: Add new Customer Logos Section when homepage updates are finalized */}
 
-            <hr className="mt-8 mb-6" />
-
-            <ContentSection id="find-and-fix-security-vulnerabilities" className="py-4">
-                <div className="row justify-content-center pt-md-4">
+            <ContentSection id="find-and-fix-security-vulnerabilities" className="pt-8">
+                <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <h2 className="display-3 font-weight-bold mb-3">Find and fix security vulnerabilities</h2>
                         <h5>Find, fix, and track vulnerable code quickly across your entire codebase.</h5>
@@ -261,7 +259,7 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>
                                 Safely and efficiently maintain code that is being reused and easily make changes
-                                everywhere with <Link href="/batch-changes/"><a>Batch Changes</a></Link>
+                                everywhere with <Link href="/batch-changes/">Batch Changes</Link>
                             </li>
                             <li>Add a code monitor to alert you of commits using an out-of-date library</li>
                         </ul>

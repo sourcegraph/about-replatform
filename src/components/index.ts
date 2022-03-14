@@ -3,7 +3,6 @@ export { Layout } from './Layout'
 export { ContentSection } from './ContentSection'
 export { Jumbotron } from './Jumbotron'
 export { RequestDemoForm } from './RequestDemoForm'
-export { CustomerLogosSectionAnimated } from './CustomerLogosSectionAnimated'
 export { TrySourcegraph } from './TrySourcegraph'
 
 // Actions
