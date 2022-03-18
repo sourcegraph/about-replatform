@@ -96,6 +96,18 @@ function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormRea
     })
 }
 
+const loadHubSpotScript = (): void => {
+    const script = document.createElement('script')
+    script.src = '//js.hsforms.net/forms/v2.js'
+    document.head.append(script)
+}
+
+const loadChiliPiperScript = (): void => {
+    const script = document.createElement('script')
+    script.src = '//js.chilipiper.com/marketing.js'
+    document.head.append(script)
+}
+
 export const useHubSpot = (
     initialPortalId: string,
     initialFormId: string,
@@ -108,6 +120,7 @@ export const useHubSpot = (
     const [chiliPiper, setChiliPiper] = useState<boolean>(initialChiliPiper)
 
     useEffect(() => {
+        loadHubSpotScript()
         createHubSpotForm({
             portalId,
             formId,
@@ -116,6 +129,7 @@ export const useHubSpot = (
 
         if (chiliPiper) {
             // Chili Piper script
+            loadChiliPiperScript()
             const cpTenantDomain = 'sourcegraph'
             const cpRouterName = 'contact-sales'
             window.addEventListener('message', event => {
