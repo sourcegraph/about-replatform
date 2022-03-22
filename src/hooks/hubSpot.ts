@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 declare global {
     interface Window {
@@ -46,6 +46,7 @@ interface IChiliPiper {
 }
 
 interface HubSpotProps {
+    region?: string
     portalId: string
     formId: string
     target: string
@@ -54,6 +55,7 @@ interface HubSpotProps {
 }
 
 interface HubSpotForm {
+    region?: string
     [index: number]: HTMLFormElement
     portalId: string
     formId: string
@@ -62,15 +64,45 @@ interface HubSpotForm {
     onFormReady?: ($form: HTMLFormElement) => void
 }
 
-function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormReady }: HubSpotForm): void {
+const loadHubSpotScript = (): HTMLScriptElement | Element => {
+    const hubSpotScript = '//js.hsforms.net/forms/v2.js'
+    const script = document.querySelector(`script[src="${hubSpotScript}"]`)
+        
+    if (!script) {
+        const scriptElement = document.createElement('script')
+        scriptElement.src = hubSpotScript
+        document.head.append(scriptElement)
+        return scriptElement
+    }
+
+    return script
+}
+
+const loadChiliPiperScript = (callback: () => void): void => {
+    const chiliPiperScript = '//js.chilipiper.com/marketing.js'
+    const script = document.querySelector(`script[src="${chiliPiperScript}"]`)
+    
+    if (!script) {
+        const scriptElement = document.createElement('script')
+        scriptElement.src = chiliPiperScript
+        document.head.append(scriptElement)
+        return callback()
+    }
+
+    return callback()
+}
+
+function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, onFormReady }: HubSpotForm): void {
     const getAllCookies: { [index: string]: string } = document.cookie
         .split(';')
         .reduce((key, string) => Object.assign(key, { [string.split('=')[0].trim()]: string.split('=')[1] }), {})
     const anonymousId = getAllCookies.sourcegraphAnonymousUid
     const firstSourceURL = getAllCookies.sourcegraphSourceUrl
-    const script = document.querySelector('script[src="//js.hsforms.net/forms/v2.js"')
+
+    const script = loadHubSpotScript()
     script?.addEventListener('load', () => {
         ;(window as Window).hbspt?.forms.create({
+            region,
             portalId,
             formId,
             target: `#${targetId}`,
@@ -108,56 +140,40 @@ function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormRea
     })
 }
 
-const loadHubSpotScript = (): void => {
-    const script = document.createElement('script')
-    script.src = '//js.hsforms.net/forms/v2.js'
-    document.head.append(script)
-}
-
-const loadChiliPiperScript = (): void => {
-    const script = document.createElement('script')
-    script.src = '//js.chilipiper.com/marketing.js'
-    document.head.append(script)
-}
-
 export const useHubSpot = (
-    initialPortalId: string,
-    initialFormId: string,
-    initialTargetId: string,
-    initialChiliPiper: boolean
+    region: string,
+    portalId: string,
+    formId: string,
+    targetId: string,
+    chiliPiper: boolean
 ): void => {
-    const [portalId, setPortalId] = useState<string>(initialPortalId)
-    const [formId, setFormId] = useState<string>(initialFormId)
-    const [targetId, setTargetId] = useState<string>(initialTargetId)
-    const [chiliPiper, setChiliPiper] = useState<boolean>(initialChiliPiper)
-
     useEffect(() => {
-        loadHubSpotScript()
         createHubSpotForm({
+            region,
             portalId,
             formId,
             targetId,
         })
 
         if (chiliPiper) {
-            // Chili Piper script
-            loadChiliPiperScript()
-            const cpTenantDomain = 'sourcegraph'
-            const cpRouterName = 'contact-sales'
-            window.addEventListener('message', event => {
-                const data = event.data as MessageEventData
-                if (data.type === 'hsFormCallback' && data.eventName === 'onFormSubmit') {
-                    const lead = data.data.reduce(
-                        (object, item) => Object.assign(object, { [item.name]: item.value }),
-                        {}
-                    )
-                    const chilipiper = window.ChiliPiper
-                    chilipiper?.submit(cpTenantDomain, cpRouterName, {
-                        map: true,
-                        lead,
-                    })
-                }
+            loadChiliPiperScript(() => {
+                const cpTenantDomain = 'sourcegraph'
+                const cpRouterName = 'contact-sales'
+                window.addEventListener('message', event => {
+                    const data = event.data as MessageEventData
+                    if (data.type === 'hsFormCallback' && data.eventName === 'onFormSubmit') {
+                        const lead = data.data.reduce(
+                            (object, item) => Object.assign(object, { [item.name]: item.value }),
+                            {}
+                        )
+                        const chilipiper = window.ChiliPiper
+                        chilipiper?.submit(cpTenantDomain, cpRouterName, {
+                            map: true,
+                            lead,
+                        })
+                    }
+                })
             })
         }
-    }, [chiliPiper, portalId, formId, targetId])
+    }, [chiliPiper, portalId, formId, targetId, region])
 }
