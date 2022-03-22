@@ -6,8 +6,8 @@ import { Layout, FormLegal } from '@components'
 import { useHubSpot } from '@hooks'
 
 const AccelerateDevOnboarding: FunctionComponent = () => {
-    useHubSpot('na1', '2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-0', true)
-    useHubSpot('na1', '2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-1', true)
+    useHubSpot('2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-0', true)
+    useHubSpot('2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-1', true)
 
     return (
         <Layout
