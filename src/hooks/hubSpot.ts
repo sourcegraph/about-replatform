@@ -46,7 +46,7 @@ interface IChiliPiper {
 }
 
 interface HubSpotProps {
-    region?: string
+    region: string
     portalId: string
     formId: string
     target: string
@@ -55,7 +55,6 @@ interface HubSpotProps {
 }
 
 interface HubSpotForm {
-    region?: string
     [index: number]: HTMLFormElement
     portalId: string
     formId: string
@@ -88,11 +87,9 @@ const loadChiliPiperScript = (callback: () => void): void => {
         document.head.append(scriptElement)
         return callback()
     }
-
-    return callback()
 }
 
-function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, onFormReady }: HubSpotForm): void {
+function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormReady }: HubSpotForm): void {
     const getAllCookies: { [index: string]: string } = document.cookie
         .split(';')
         .reduce((key, string) => Object.assign(key, { [string.split('=')[0].trim()]: string.split('=')[1] }), {})
@@ -102,7 +99,7 @@ function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, o
     const script = loadHubSpotScript()
     script?.addEventListener('load', () => {
         ;(window as Window).hbspt?.forms.create({
-            region,
+            region: 'na1',
             portalId,
             formId,
             target: `#${targetId}`,
@@ -141,7 +138,6 @@ function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, o
 }
 
 export const useHubSpot = (
-    region: string,
     portalId: string,
     formId: string,
     targetId: string,
@@ -149,7 +145,6 @@ export const useHubSpot = (
 ): void => {
     useEffect(() => {
         createHubSpotForm({
-            region,
             portalId,
             formId,
             targetId,
@@ -175,5 +170,5 @@ export const useHubSpot = (
                 })
             })
         }
-    }, [chiliPiper, portalId, formId, targetId, region])
+    }, [chiliPiper, portalId, formId, targetId])
 }
