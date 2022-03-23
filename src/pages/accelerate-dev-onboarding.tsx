@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/prevent-abbreviations */
 import Link from 'next/link'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { Layout, FormLegal } from '@components'
 import { useHubSpot } from '@hooks'
