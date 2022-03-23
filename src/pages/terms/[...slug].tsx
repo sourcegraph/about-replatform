@@ -4,6 +4,7 @@ import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import { Layout, EmbeddedHubSpot } from '@components'
+import { Page } from '@interfaces/posts'
 import { getMarkdownPages, loadMarkdownFile, serializeMdxSource } from '@lib'
 
 export type Components = import('mdx/types').MDXComponents
@@ -13,31 +14,13 @@ export interface PageProps {
     content?: MDXRemoteSerializeResult
 }
 
-interface FrontMatter {
-    title?: string
-    layout?: string
-    slug?: string
-    description?: string
-    author?: string
-    authorUrl?: string
-    publishDate?: Date
-    heroImage?: string
-    socialImage?: string
-    tags?: string[]
-}
-
-export interface Page {
-    content: string
-    frontMatter: FrontMatter
-}
-
 const CONTENT_PARENT_DIRECTORY = './content/terms'
 
 const components = { EmbeddedHubSpot }
 
 const TermPage: NextPage<PageProps> = ({ page, content }) => (
     <Layout>
-        <section className="content-page__title">{page && <h1>{page.frontMatter.title}</h1>}</section>
+        <section className="content-page__title">{page && <h1>{page.frontmatter.title}</h1>}</section>
         <section className="content-page__body">
             {content && <MDXRemote {...content} components={components as Components} />}
         </section>
