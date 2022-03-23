@@ -46,7 +46,7 @@ interface IChiliPiper {
 }
 
 interface HubSpotProps {
-    region: string
+    region?: string
     portalId: string
     formId: string
     target: string
