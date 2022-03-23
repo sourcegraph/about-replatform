@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react'
 
 import { PostComponentProps } from '@interfaces/posts'
 import { formatDate } from '@util'
- 
+
 /**
  * A blog post.
  */
@@ -21,25 +21,22 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
     tag: Tag = 'div',
     renderTitleAsLink = false,
 }) => {
-    const body = full && content ? (
-        <div className="blog-post__html">
-            <MDXRemote {...content} />
-        </div>
-    ) : (
-        <>
-        {post.frontmatter.description && (
-            <p className="blog-post__excerpt">
-                {truncate(post.frontmatter.description, { length: 300 })}
-            </p>
-        )}
-            <Link href={url} passHref={true}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="blog-post__read-more">
-                    Read more
-                </a>
-            </Link>
-        </>
-    )
+    const body =
+        full && content ? (
+            <div className="blog-post__html">
+                <MDXRemote {...content} />
+            </div>
+        ) : (
+            <>
+                {post.frontmatter.description && (
+                    <p className="blog-post__excerpt">{truncate(post.frontmatter.description, { length: 300 })}</p>
+                )}
+                <Link href={url} passHref={true}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a className="blog-post__read-more">Read more</a>
+                </Link>
+            </>
+        )
 
     return (
         <Tag className={`blog-post ${className}`}>
@@ -48,9 +45,7 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
                     {renderTitleAsLink === true ? (
                         <Link href={url} passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className={`d-block ${titleLinkClassName}`}>
-                                {post.frontmatter.title}
-                            </a>
+                            <a className={`d-block ${titleLinkClassName}`}>{post.frontmatter.title}</a>
                         </Link>
                     ) : (
                         post.frontmatter.title

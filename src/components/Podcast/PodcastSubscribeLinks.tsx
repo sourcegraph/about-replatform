@@ -16,7 +16,12 @@ export const PodcastSubscribeLinks: FunctionComponent<Props> = ({ className = ''
         >
             Apple
         </a>
-        <a target="_blank" rel="noreferrer" href="https://open.spotify.com/show/1YlDYvCxNB7jAndbZPt5a6" className={linkClassName}>
+        <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://open.spotify.com/show/1YlDYvCxNB7jAndbZPt5a6"
+            className={linkClassName}
+        >
             Spotify
         </a>
         <a

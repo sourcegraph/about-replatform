@@ -76,4 +76,3 @@ export const BLOG_TYPE_TO_INFO: Record<BlogType, BlogTypeInfo> = {
         },
     },
 }
-

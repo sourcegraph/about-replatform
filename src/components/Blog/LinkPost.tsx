@@ -20,16 +20,13 @@ export const LinkPost: FunctionComponent<Props> = ({
     titleLinkClassName = '',
     tag: Tag = 'div',
 }) => {
-
     const titleClassName = 'font-size-base font-family-base link-post__html d-inline'
     const title = post.frontmatter.canonical ? (
         <h2 className={titleClassName}>
             <Link href={post.frontmatter.canonical}>{post.frontmatter.title}</Link>
         </h2>
     ) : (
-        <h2 className={titleClassName}>
-           {post.frontmatter.title}
-        </h2>
+        <h2 className={titleClassName}>{post.frontmatter.title}</h2>
     )
 
     return (
@@ -38,16 +35,14 @@ export const LinkPost: FunctionComponent<Props> = ({
                 {title}
                 {content && (
                     <div className="link-post__html d-inline">
-                    <MDXRemote {...content} />
-                </div>
+                        <MDXRemote {...content} />
+                    </div>
                 )}
             </div>
             <div className="card-footer bg-unset border-top-0 pt-0">
                 <Link href={url} passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a className={`text-muted ${titleLinkClassName}`}>
-                        {post.frontmatter.publishDate}
-                    </a>
+                    <a className={`text-muted ${titleLinkClassName}`}>{post.frontmatter.publishDate}</a>
                 </Link>
             </div>
         </Tag>

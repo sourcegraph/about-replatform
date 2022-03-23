@@ -40,9 +40,7 @@ export const ReleasePost: React.FunctionComponent<Props> = ({
                         <span className="release-post__item-category mb-2 mb-md-0">
                             <span className="release-post__item-category-badge">{category}</span>
                         </span>
-                        <span className="release-post__item-description">
-                            {description}
-                        </span>
+                        <span className="release-post__item-description">{description}</span>
                     </a>
                 ))}
             </div>
@@ -61,7 +59,8 @@ export const ReleasePost: React.FunctionComponent<Props> = ({
                 </li>
             </ul>
             <div className="card-body release-post__body">
-                * Please <Link href="/contact/product-specialist/">contact Sourcegraph</Link> with any licensing questions.
+                * Please <Link href="/contact/product-specialist/">contact Sourcegraph</Link> with any licensing
+                questions.
             </div>
         </>
     ) : (
@@ -73,9 +72,7 @@ export const ReleasePost: React.FunctionComponent<Props> = ({
             </p>
             <Link href={url} passHref={true}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="blog-post__read-more">
-                    Read more
-                </a>
+                <a className="blog-post__read-more">Read more</a>
             </Link>
         </>
     )
@@ -87,9 +84,7 @@ export const ReleasePost: React.FunctionComponent<Props> = ({
                     {renderTitleAsLink === true ? (
                         <Link href={url} passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className={`d-block ${titleLinkClassName}`}>
-                            {post.frontmatter.title}
-                            </a>
+                            <a className={`d-block ${titleLinkClassName}`}>{post.frontmatter.title}</a>
                         </Link>
                     ) : (
                         post.frontmatter.title

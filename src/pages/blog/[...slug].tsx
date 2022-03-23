@@ -7,7 +7,7 @@ import { Layout, BlogHeader } from '@components'
 import { Post, POST_TYPE_TO_COMPONENT, postType, urlToPost } from '@interfaces/posts'
 import { getMarkdownPages, loadMarkdownFile, serializeMdxSource } from '@lib'
 
-import { BLOG_TYPE_TO_INFO,  } from '../../components/Blog/postTypes'
+import { BLOG_TYPE_TO_INFO } from '../../components/Blog/postTypes'
 
 export interface PageProps {
     post: Post
@@ -76,11 +76,11 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false }
     if (!params || !params.slug) {
         throw new Error('Missing slug')
     }
-    const post = await loadMarkdownFile(
+    const post = (await loadMarkdownFile(
         path.resolve(CONTENT_PARENT_DIRECTORY, `${(params.slug as string[]).join('/')}.md`)
-    ) as Post
+    )) as Post
     const content = await serializeMdxSource(post.content)
-    
+
     return {
         props: {
             post,
