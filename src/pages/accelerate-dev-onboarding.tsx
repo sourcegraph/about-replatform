@@ -6,8 +6,12 @@ import { Layout, FormLegal } from '@components'
 import { useHubSpot } from '@hooks'
 
 const AccelerateDevOnboarding: FunctionComponent = () => {
-    useHubSpot('2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-0', true)
-    useHubSpot('2762526', '98187d3b-d8a9-43e2-bb95-d93dd029c688', 'form-1', true)
+    useHubSpot({
+        portalId: '2762526',
+        formId: '98187d3b-d8a9-43e2-bb95-d93dd029c688',
+        targetId: ['form-0', 'form-1'],
+        chiliPiper: true
+    })
 
     return (
         <Layout

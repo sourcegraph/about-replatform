@@ -5,8 +5,12 @@ import { Layout, FormLegal } from '@components'
 import { useHubSpot } from '@hooks'
 
 const FixingVulnerabilities: FunctionComponent = () => {
-    useHubSpot('2762526', '721ac3eb-d213-45b1-858a-2df8743ad143', 'form-0', true)
-    useHubSpot('2762526', '721ac3eb-d213-45b1-858a-2df8743ad143', 'form-1', true)
+    useHubSpot({
+        portalId: '2762526',
+        formId: '721ac3eb-d213-45b1-858a-2df8743ad143',
+        targetId: ['form-0', 'form-1'],
+        chiliPiper: true
+    })
 
     return (
         <Layout

@@ -52,15 +52,18 @@ interface HubSpotProps {
     target: string
     onFormSubmit?: (object: { data: { name: string; value: string }[] }) => void
     onFormReady?: ($form: HubSpotForm) => void
+    onFormSubmitted?: () => void,
 }
 
 interface HubSpotForm {
+    region?: string
     [index: number]: HTMLFormElement
     portalId: string
     formId: string
     targetId: string
     onFormSubmit?: (object: { data: { name: string; value: string }[] }) => void
     onFormReady?: ($form: HTMLFormElement) => void
+    onFormSubmitted?: () => void,
 }
 
 const loadHubSpotScript = (): HTMLScriptElement | Element => {
@@ -89,7 +92,7 @@ const loadChiliPiperScript = (callback: () => void): void => {
     }
 }
 
-function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormReady }: HubSpotForm): void {
+function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, onFormSubmitted, onFormReady }: HubSpotForm): void {
     const getAllCookies: { [index: string]: string } = document.cookie
         .split(';')
         .reduce((key, string) => Object.assign(key, { [string.split('=')[0].trim()]: string.split('=')[1] }), {})
@@ -99,11 +102,12 @@ function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormRea
     const script = loadHubSpotScript()
     script?.addEventListener('load', () => {
         ;(window as Window).hbspt?.forms.create({
-            region: 'na1',
+            region: region || 'na1',
             portalId,
             formId,
             target: `#${targetId}`,
             onFormSubmit,
+            onFormSubmitted,
             onFormReady: (form: HubSpotForm) => {
                 if (form) {
                     // We want to populate hidden fields in the form with values stored in cookies when the form loads.
@@ -137,18 +141,43 @@ function createHubSpotForm({ portalId, formId, targetId, onFormSubmit, onFormRea
     })
 }
 
-export const useHubSpot = (
-    portalId: string,
-    formId: string,
-    targetId: string,
+interface HookProps {
+    region?: string
+    portalId: string
+    formId: string
+    targetId: string | string[]
     chiliPiper: boolean
-): void => {
+    onFormSubmitted?: () => void
+}
+
+export const useHubSpot = ({
+    region,
+    portalId,
+    formId,
+    targetId,
+    chiliPiper,
+    onFormSubmitted,
+}: HookProps): void => {
     useEffect(() => {
-        createHubSpotForm({
-            portalId,
-            formId,
-            targetId,
-        })
+        if (Array.isArray(targetId)) {
+            for (const id of targetId) {
+                createHubSpotForm({
+                    region,
+                    portalId,
+                    formId,
+                    targetId: id,
+                    onFormSubmitted
+                })
+            }
+        } else {
+            createHubSpotForm({
+                region,
+                portalId,
+                formId,
+                targetId,
+                onFormSubmitted
+            })
+        }
 
         if (chiliPiper) {
             loadChiliPiperScript(() => {
@@ -170,5 +199,5 @@ export const useHubSpot = (
                 })
             })
         }
-    }, [chiliPiper, portalId, formId, targetId])
+    }, [region, portalId, formId, targetId, chiliPiper, onFormSubmitted])
 }
