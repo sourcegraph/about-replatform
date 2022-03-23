@@ -9,7 +9,7 @@ const FixingVulnerabilities: FunctionComponent = () => {
         portalId: '2762526',
         formId: '721ac3eb-d213-45b1-858a-2df8743ad143',
         targetId: ['form-0', 'form-1'],
-        chiliPiper: true
+        chiliPiper: true,
     })
 
     return (
@@ -75,7 +75,9 @@ const FixingVulnerabilities: FunctionComponent = () => {
                     />
 
                     <Link href="/case-studies/cloudflare-accelerates-debugging-and-improves-security">
-                        <a href="#none" className="d-block mt-5 font-weight-bold">Read the full case study</a>
+                        <a href="#none" className="d-block mt-5 font-weight-bold">
+                            Read the full case study
+                        </a>
                     </Link>
                 </div>
             </div>

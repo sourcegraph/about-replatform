@@ -5,7 +5,15 @@ declare global {
         ChiliPiper?: IChiliPiper
         hbspt?: {
             forms: {
-                create: ({ portalId, formId, target, onFormSubmit, onFormReady }: HubSpotProps) => HubSpotForm
+                create: ({
+                    region,
+                    portalId,
+                    formId,
+                    target,
+                    onFormSubmit,
+                    onFormSubmitted,
+                    onFormReady,
+                }: HubSpotProps) => HubSpotForm
             }
         }
     }
@@ -52,7 +60,7 @@ interface HubSpotProps {
     target: string
     onFormSubmit?: (object: { data: { name: string; value: string }[] }) => void
     onFormReady?: ($form: HubSpotForm) => void
-    onFormSubmitted?: () => void,
+    onFormSubmitted?: () => void
 }
 
 interface HubSpotForm {
@@ -63,13 +71,13 @@ interface HubSpotForm {
     targetId: string
     onFormSubmit?: (object: { data: { name: string; value: string }[] }) => void
     onFormReady?: ($form: HTMLFormElement) => void
-    onFormSubmitted?: () => void,
+    onFormSubmitted?: () => void
 }
 
 const loadHubSpotScript = (): HTMLScriptElement | Element => {
     const hubSpotScript = '//js.hsforms.net/forms/v2.js'
     const script = document.querySelector(`script[src="${hubSpotScript}"]`)
-        
+
     if (!script) {
         const scriptElement = document.createElement('script')
         scriptElement.src = hubSpotScript
@@ -83,7 +91,7 @@ const loadHubSpotScript = (): HTMLScriptElement | Element => {
 const loadChiliPiperScript = (callback: () => void): void => {
     const chiliPiperScript = '//js.chilipiper.com/marketing.js'
     const script = document.querySelector(`script[src="${chiliPiperScript}"]`)
-    
+
     if (!script) {
         const scriptElement = document.createElement('script')
         scriptElement.src = chiliPiperScript
@@ -92,7 +100,15 @@ const loadChiliPiperScript = (callback: () => void): void => {
     }
 }
 
-function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, onFormSubmitted, onFormReady }: HubSpotForm): void {
+function createHubSpotForm({
+    region,
+    portalId,
+    formId,
+    targetId,
+    onFormSubmit,
+    onFormSubmitted,
+    onFormReady,
+}: HubSpotForm): void {
     const getAllCookies: { [index: string]: string } = document.cookie
         .split(';')
         .reduce((key, string) => Object.assign(key, { [string.split('=')[0].trim()]: string.split('=')[1] }), {})
@@ -110,12 +126,12 @@ function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, o
             onFormSubmitted,
             onFormReady: (form: HubSpotForm) => {
                 if (form) {
-                    // We want to populate hidden fields in the form with values stored in cookies when the form loads.
+                    // Populate hidden form fields with values stored in cookies
                     const anonymousIdInput = form[0].querySelector(
                         'input[name="anonymous_user_id"]'
                     ) as HTMLInputElement
                     if (anonymousIdInput && anonymousIdInput.value === '') {
-                        // Populate the hidden anonymous_user_id form field with the value from the sourcegraphAnonymousUid cookie.
+                        // Populate hidden anonymous_user_id form field with value from sourcegraphAnonymousUid
                         anonymousIdInput.value = anonymousId || ''
                     }
 
@@ -129,7 +145,7 @@ function createHubSpotForm({ region, portalId, formId, targetId, onFormSubmit, o
                         emailInput &&
                         emailInput.value === ''
                     ) {
-                        // Populate the hidden first_source_url form field with the value from the sourcegraphSourceUrl cookie.
+                        // Populate hidden first_source_url form field with value from sourcegraphSourceUrl
                         firstSourceURLInput.value = firstSourceURL || ''
                     }
                 }
@@ -150,14 +166,7 @@ interface HookProps {
     onFormSubmitted?: () => void
 }
 
-export const useHubSpot = ({
-    region,
-    portalId,
-    formId,
-    targetId,
-    chiliPiper,
-    onFormSubmitted,
-}: HookProps): void => {
+export const useHubSpot = ({ region, portalId, formId, targetId, chiliPiper, onFormSubmitted }: HookProps): void => {
     useEffect(() => {
         if (Array.isArray(targetId)) {
             for (const id of targetId) {
@@ -166,7 +175,7 @@ export const useHubSpot = ({
                     portalId,
                     formId,
                     targetId: id,
-                    onFormSubmitted
+                    onFormSubmitted,
                 })
             }
         } else {
@@ -175,7 +184,7 @@ export const useHubSpot = ({
                 portalId,
                 formId,
                 targetId,
-                onFormSubmitted
+                onFormSubmitted,
             })
         }
 

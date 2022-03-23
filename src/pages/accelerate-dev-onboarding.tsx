@@ -10,7 +10,7 @@ const AccelerateDevOnboarding: FunctionComponent = () => {
         portalId: '2762526',
         formId: '98187d3b-d8a9-43e2-bb95-d93dd029c688',
         targetId: ['form-0', 'form-1'],
-        chiliPiper: true
+        chiliPiper: true,
     })
 
     return (
@@ -75,7 +75,9 @@ const AccelerateDevOnboarding: FunctionComponent = () => {
                     <img src="/external-logos/convoy-logo.svg" alt="Convoy logo" width={130} className="mt-4" />
 
                     <Link href="/case-studies/convoy-improved-on-boarding" passHref={true}>
-                        <a href="#none" className="d-block mt-5 font-weight-bold">Read the full case study</a>
+                        <a href="#none" className="d-block mt-5 font-weight-bold">
+                            Read the full case study
+                        </a>
                     </Link>
                 </div>
             </div>
