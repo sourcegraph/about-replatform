@@ -63,21 +63,21 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
 export default BlogPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = await getMarkdownPages(path.join(process.cwd(), CONTENT_PARENT_DIRECTORY))
-    const slugs = paths.map(path => path.slugPath.split('/'))
+    const files = await getMarkdownPages(path.join(process.cwd(), CONTENT_PARENT_DIRECTORY))
 
     return {
-        paths: slugs.map(slug => ({ params: { slug } })),
+        paths: files.map(path => ({ params: { slug: path.slugPath.split('/') } })),
         fallback: false,
     }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
-    if (!params || !params.slug) {
-        throw new Error('Missing slug')
+    if (!params || !params.path) {
+        throw new Error('Missing filePath')
     }
+    const filePath = params.path
     const post = (await loadMarkdownFile(
-        path.resolve(CONTENT_PARENT_DIRECTORY, `${(params.slug as string[]).join('/')}.md`)
+        path.resolve(CONTENT_PARENT_DIRECTORY, filePath)
     )) as Post
     const content = await serializeMdxSource(post.content)
 
