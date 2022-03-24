@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
+
+import Link from 'next/link'
 
 import { ContentSection } from '@components'
 

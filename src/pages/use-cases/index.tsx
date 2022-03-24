@@ -1,7 +1,8 @@
+import React from 'react'
+
 import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
-import React from 'react'
 
 import { Layout, ContentSection, TrySourcegraph } from '@components'
 import { stringToKebabCase } from '@util'

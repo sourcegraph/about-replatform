@@ -1,5 +1,6 @@
-import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import React, { FunctionComponent } from 'react'
+
+import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 
 interface Props {
     className?: string
