@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon'
 import Link from 'next/link'

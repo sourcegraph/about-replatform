@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import Link from 'next/link'

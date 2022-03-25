@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, ReactFragment } from 'react'
+import { FunctionComponent, ReactNode, ReactFragment } from 'react'
 
 import Head from 'next/head'
 import { useRouter } from 'next/router'
