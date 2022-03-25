@@ -106,13 +106,13 @@ const loadMarkdownFile = async (filename: string): Promise<Post | Error> => {
 const loadSlug = async (file: string): Promise<string> => {
     const fileRegex = /\d+\/|\.(md|markdown|mdx)$/gi
     const replaceFields = async (file: string): Promise<string> => {
-        const loadedFile = await loadMarkdownFile(path.join(process.cwd(), CONTENT_FOLDER, file)) as Post
+        const loadedFile = (await loadMarkdownFile(path.join(process.cwd(), CONTENT_FOLDER, file))) as Post
         const slug = loadedFile.frontmatter.slug as string
         const newSlug = file.replace(fileRegex, '').split('/').splice(1)
-        if (slug && newSlug[newSlug.length-1] !== slug) {
-            newSlug[newSlug.length-1] = slug
+        if (slug && newSlug[newSlug.length - 1] !== slug) {
+            newSlug[newSlug.length - 1] = slug
         }
-        
+
         return newSlug.join('/')
     }
     return replaceFields(file)
@@ -122,10 +122,13 @@ const mapFileDataCache = async (baseDirectory: string): Promise<FileCacheObject>
     const getFiles = await globby('**/*.md', { cwd: baseDirectory })
     const records = {
         records: Object.fromEntries(
-            await Promise.all(getFiles.map(async (file: string) => 
-                [await loadSlug(file), { slugPath: await loadSlug(file), filePath: file }])
+            await Promise.all(
+                getFiles.map(async (file: string) => [
+                    await loadSlug(file),
+                    { slugPath: await loadSlug(file), filePath: file },
+                ])
             )
-        ) as FileCacheRecord
+        ) as FileCacheRecord,
     }
 
     return records
@@ -138,17 +141,22 @@ const mapSlugDataCache = async (baseDirectory: string): Promise<SlugCacheObject>
         const slugs = {
             contentDirectory: directory,
             recordSlugs: Object.fromEntries(
-                await Promise.all(directoryFiles.map(async (file: string) => 
-                    [await loadSlug(path.join(directory, file)), { slugPath: await loadSlug(path.join(directory, file)) } ])
+                await Promise.all(
+                    directoryFiles.map(async (file: string) => [
+                        await loadSlug(path.join(directory, file)),
+                        { slugPath: await loadSlug(path.join(directory, file)) },
+                    ])
                 )
             ) as SlugRecord,
         }
         return slugs
     }
-    const allRecords = await Promise.all(directories
-        .map(async directory => returnDirectorySlugs(directory)))
-        .then((response: SlugObject[]) => response).catch(error => console.error(error)) as SlugObject[]
-    const records: SlugCacheObject = { records: Object.fromEntries(allRecords.map(record => [record.contentDirectory, record])) as SlugDirectory }
+    const allRecords = (await Promise.all(directories.map(async directory => returnDirectorySlugs(directory)))
+        .then((response: SlugObject[]) => response)
+        .catch(error => console.error(error))) as SlugObject[]
+    const records: SlugCacheObject = {
+        records: Object.fromEntries(allRecords.map(record => [record.contentDirectory, record])) as SlugDirectory,
+    }
     return records
 }
 
@@ -160,7 +168,7 @@ const hasFile = async (filePath: string): Promise<boolean> => {
         console.warn('No file in place')
         return false
     }
-} 
+}
 
 const createFileDataCache = async (): Promise<void> => {
     const data = await mapFileDataCache(path.join(process.cwd(), CONTENT_FOLDER))

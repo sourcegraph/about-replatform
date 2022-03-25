@@ -51,7 +51,7 @@ const hasFile = async (filePath: string): Promise<boolean> => {
         console.warn('No file')
         return false
     }
-} 
+}
 
 const filterFiles = (files: string[], fileRegex: RegExp): string[] =>
     files.filter(file => file.match(fileRegex) && !file.startsWith('index')).map(file => file.replace(fileRegex, ''))
@@ -67,7 +67,9 @@ export const getAllSlugs = async (): Promise<SlugCacheObject> => {
     if (!file) {
         console.error('No file')
     }
-    const slugData = await fs.readFile(path.join(process.cwd(), SLUG_CACHE_PATH), 'utf8').catch(error => console.error(error)) as string
+    const slugData = (await fs
+        .readFile(path.join(process.cwd(), SLUG_CACHE_PATH), 'utf8')
+        .catch(error => console.error(error))) as string
     const slugs = JSON.parse(slugData) as SlugCacheObject
     return slugs
 }
@@ -77,6 +79,8 @@ export const getMarkdownFiles = async (): Promise<FileCacheObject> => {
     if (!file) {
         console.error('No file')
     }
-    const fileData = await fs.readFile(path.join(process.cwd(), FILE_CACHE_PATH), 'utf8').catch(error => console.error(error)) as string
+    const fileData = (await fs
+        .readFile(path.join(process.cwd(), FILE_CACHE_PATH), 'utf8')
+        .catch(error => console.error(error))) as string
     return JSON.parse(fileData) as FileCacheObject
 }
