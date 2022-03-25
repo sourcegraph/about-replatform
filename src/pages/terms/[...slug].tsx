@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false }
         throw new Error('Missing slug')
     }
     const files = await getMarkdownFiles()
-    const fileSlug = `terms/${(params.slug as string[]).join('/')}`
+    const fileSlug = `${(params.slug as string[]).join('/')}`
     const filePath = files.records[fileSlug].filePath
 
     const page = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Page

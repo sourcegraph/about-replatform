@@ -2,13 +2,61 @@ import fs from 'fs/promises'
 import path from 'path'
 
 import globby from 'globby'
+import matter from 'gray-matter'
 
-export interface FileCacheObject {
+interface Post {
+    frontmatter: FrontMatter
+    content: string
+    excerpt?: string
+    fileAbsolutePath?: string
+    fields?: {
+        slug: string
+        permalink: string
+        blogType: BlogType
+    }
+}
+
+enum BlogType {
+    GopherCon = 'go',
+    DotGo = 'go',
+    GraphQLSummit = 'graphql',
+    StrangeLoop = 'strange-loop',
+    GitHubUniverse = 'github-universe',
+    PressRelease = 'press',
+    Podcast = 'podcast',
+    Blog = 'blog',
+}
+
+export interface FrontMatter {
+    slug?: string
+    title?: string
+    description?: string
+    /** Controls the page's `<title>` for SEO and the browser tab label. Defaults to {@link title}. */
+    externalTitle?: string
+    /** Controls the page's `<meta name="description">` for SEO. Defaults to {@link description}. */
+    externalDescription?: string
+    canonical?: string
+    publishDate?: string
+    heroImage?: string
+    author?: string
+    authorUrl?: string
+    tags?: string[]
+    changelogItems?: {
+        url: string
+        category: string
+        description: string
+    }[]
+    socialImage?: string
+    layout?: string
+    style?: string
+}
+
+interface FileCacheObject {
     records: FileCacheRecord
 }
 
 interface SlugObject {
-    contentDirectory: SlugDirectory
+    contentDirectory: string
     recordSlugs: SlugRecord
 }
 
@@ -41,32 +89,59 @@ const CONTENT_FOLDER = 'content'
 const FILE_CACHE_PATH = '../../public/data/fileCache.json'
 const SLUG_CACHE_PATH = '../../public/data/slugCache.json'
 
-export const mapFileDataCache = async (baseDirectory: string): Promise<FileCacheObject> => {
-    const fileRegex = /\.(md|markdown|mdx)$/gi
-    const dateDirectoryRegex = /\d+\//gi
-    const replaceFields = (file: string): string => file.replace(fileRegex, '').replace(dateDirectoryRegex, '')
+const loadMarkdownFile = async (filename: string): Promise<Post | Error> => {
+    const page = await fs
+        .readFile(filename, 'utf8')
+        .then(page => {
+            const { data, content } = matter(page)
+            return { frontmatter: data, content }
+        })
+        .catch(error => {
+            throw new Error(error)
+        })
+
+    return page
+}
+
+const loadSlug = async (file: string): Promise<string> => {
+    const fileRegex = /\d+\/|\.(md|markdown|mdx)$/gi
+    const replaceFields = async (file: string): Promise<string> => {
+        const loadedFile = await loadMarkdownFile(path.join(process.cwd(), CONTENT_FOLDER, file)) as Post
+        const slug = loadedFile.frontmatter.slug as string
+        const newSlug = file.replace(fileRegex, '').split('/').splice(1)
+        if (slug && newSlug[newSlug.length-1] !== slug) {
+            newSlug[newSlug.length-1] = slug
+        }
+        
+        return newSlug.join('/')
+    }
+    return replaceFields(file)
+}
+
+const mapFileDataCache = async (baseDirectory: string): Promise<FileCacheObject> => {
     const getFiles = await globby('**/*.md', { cwd: baseDirectory })
     const records = {
         records: Object.fromEntries(
-            getFiles.map(file => [replaceFields(file), 
-                { slugPath: replaceFields(file), filePath: file }
-            ])
-        )
+            await Promise.all(getFiles.map(async (file: string) => 
+                [await loadSlug(file), { slugPath: await loadSlug(file), filePath: file }])
+            )
+        ) as FileCacheRecord
     }
 
     return records
 }
 
-export const mapSlugDataCache = async (baseDirectory: string): Promise<any> => {
-    const fileRegex = /\.(md|markdown|mdx)$/gi
-    const dateDirectoryRegex = /\d+\//gi
-    const replaceFields = (file: string): string => file.replace(fileRegex, '').replace(dateDirectoryRegex, '')
+const mapSlugDataCache = async (baseDirectory: string): Promise<SlugCacheObject> => {
     const directories = await fs.readdir(baseDirectory)
-    const returnDirectorySlugs = async (directory: string): Promise<any> => {
+    const returnDirectorySlugs = async (directory: string): Promise<SlugObject> => {
         const directoryFiles = await globby('**/*.md', { cwd: path.join(baseDirectory, directory) })
         const slugs = {
             contentDirectory: directory,
-            recordSlugs: Object.fromEntries(directoryFiles.map(file => [replaceFields(file), { slugPath: replaceFields(file) } ])),
+            recordSlugs: Object.fromEntries(
+                await Promise.all(directoryFiles.map(async (file: string) => 
+                    [await loadSlug(path.join(directory, file)), { slugPath: await loadSlug(path.join(directory, file)) } ])
+                )
+            ) as SlugRecord,
         }
         return slugs
     }
@@ -100,7 +175,7 @@ const createFileDataCache = async (): Promise<void> => {
 }
 
 const createSlugDataCache = async (): Promise<void> => {
-    const data = await mapSlugDataCache(path.join(process.cwd(), CONTENT_FOLDER)) as SlugCacheObject
+    const data = await mapSlugDataCache(path.join(process.cwd(), CONTENT_FOLDER))
     const file = await hasFile(SLUG_CACHE_PATH)
     if (!file) {
         await fs.writeFile(path.join(__dirname, SLUG_CACHE_PATH), JSON.stringify({}), 'utf8')

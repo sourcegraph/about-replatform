@@ -5,7 +5,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import { Layout, BlogHeader } from '@components'
 import { Post, POST_TYPE_TO_COMPONENT, postType, urlToPost } from '@interfaces/posts'
-import { getMarkdownPages, loadMarkdownFile, serializeMdxSource } from '@lib'
+import { getAllSlugs, getMarkdownFiles, loadMarkdownFile, serializeMdxSource } from '@lib'
 
 import { BLOG_TYPE_TO_INFO } from '../../components/Blog/postTypes'
 
@@ -14,7 +14,7 @@ export interface PageProps {
     content: MDXRemoteSerializeResult
 }
 
-const CONTENT_PARENT_DIRECTORY = './content/blogposts'
+const CONTENT_PARENT_DIRECTORY = './content/'
 
 const BlogPage: NextPage<PageProps> = ({ post, content }) => {
     const title = post.frontmatter.title
@@ -63,22 +63,25 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
 export default BlogPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const files = await getMarkdownPages(path.join(process.cwd(), CONTENT_PARENT_DIRECTORY))
+    const allSlugs = await getAllSlugs()
+    const slugs = Object.keys(allSlugs.records.blogposts.recordSlugs)
+    const paths = slugs.map(slug => ({ params: { slug: slug.split('/') } }))
 
     return {
-        paths: files.map(path => ({ params: { slug: path.slugPath.split('/') } })),
+        paths,
         fallback: false,
     }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
-    if (!params || !params.path) {
-        throw new Error('Missing filePath')
+    if (!params || !params.slug) {
+        throw new Error('Missing slug')
     }
-    const filePath = params.path
-    const post = (await loadMarkdownFile(
-        path.resolve(CONTENT_PARENT_DIRECTORY, filePath)
-    )) as Post
+    const files = await getMarkdownFiles()
+    const fileSlug = `${(params.slug as string[]).join('/')}`
+    const filePath = files.records[fileSlug].filePath
+
+    const post = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
     const content = await serializeMdxSource(post.content)
 
     return {
