@@ -6,7 +6,7 @@ interface Record {
     filePath: string
 }
 
-export interface FileCacheObject {
+interface FileCacheObject {
     records: FileCacheRecord
 }
 
