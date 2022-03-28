@@ -3,10 +3,12 @@ import { FunctionComponent } from 'react'
 import { ContentPage, ContentSection, Layout } from '@components'
 
 const CookiePolicy: FunctionComponent = () => (
-    <Layout meta={{
-        title: 'Sourcegraph cookie policy',
-        description: 'About.sourcegraph.com uses cookies.',
-    }}>
+    <Layout
+        meta={{
+            title: 'Sourcegraph cookie policy',
+            description: 'About.sourcegraph.com uses cookies.',
+        }}
+    >
         <ContentPage title="Sourcegraph cookie policy" description="How we use cookies.">
             <ContentSection className="pb-5">
                 <div className="content-page__body text-dark">
