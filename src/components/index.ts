@@ -8,6 +8,7 @@ export { TrySourcegraph } from './TrySourcegraph'
 export { Install } from './Install'
 export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton } from './BackButton'
+export { FormLegal } from './FormLegal'
 
 // Actions
 export {

@@ -1,12 +1,13 @@
-import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import { FunctionComponent } from 'react'
+
+import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 
 import { Layout, Install, BackButton } from '@components'
 import { useQueryString } from '@hooks'
 
-import styles from './getStarted.module.scss'
-
 import { BestForTitle, MostPopularBadge } from '.'
+
+import styles from './getStarted.module.scss'
 
 export const SelfHostedPage: FunctionComponent = () => {
     const routerHook = useQueryString()
