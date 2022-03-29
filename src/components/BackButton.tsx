@@ -1,6 +1,7 @@
+import { FunctionComponent } from 'react'
+
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'
 import Link from 'next/link'
-import React, { FunctionComponent } from 'react'
 
 interface BackButtonProps {
     href: string
