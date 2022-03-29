@@ -1,5 +1,6 @@
-import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
+
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import { BlogPost } from '../components/Blog/BlogPost'
 import { LinkPost } from '../components/Blog/LinkPost'

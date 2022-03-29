@@ -1,6 +1,7 @@
+import { FunctionComponent } from 'react'
+
 import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
-import { FunctionComponent } from 'react'
 
 import { PostComponentProps } from '@interfaces/posts'
 

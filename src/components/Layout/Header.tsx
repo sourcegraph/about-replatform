@@ -1,6 +1,7 @@
+import { FunctionComponent, useState } from 'react'
+
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon'
 import Link from 'next/link'
-import React, { FunctionComponent, useState } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -31,7 +32,7 @@ const Header: FunctionComponent<Props> = props => {
 
     return (
         <nav className={`header navbar py-3 ${props.className || 'navbar-light'}`}>
-            <div className="container-lg">
+            <div className="container-xl">
                 <Navbar.Brand className="header__logo" href="/" onContextMenu={onRightClickLogo}>
                     <span role="img" aria-label="Sourcegraph - Universal code search">
                         {' '}

@@ -1,14 +1,14 @@
+import { FunctionComponent } from 'react'
+
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
-import { FunctionComponent, useEffect, useState } from 'react'
 
-import { Layout } from '@components'
+import { Layout, BackButton } from '@components'
 import { useQueryString } from '@hooks'
 
-import styles from './getStarted.module.scss'
-import { BackButton } from './self-hosted'
-
 import { BestForTitle } from '.'
+
+import styles from './getStarted.module.scss'
 
 export const CloudPage: FunctionComponent = () => {
     const routerHook = useQueryString()
@@ -35,7 +35,10 @@ export const CloudPage: FunctionComponent = () => {
                 <div className="row container-xl mx-auto py-5">
                     <div className="col-lg-6">
                         <div>
-                            <BackButton />
+                            <BackButton
+                                href={`/get-started${routerHook.queryString ? `?${routerHook.queryString}` : ''}`}
+                                text="Deployment Options"
+                            />
 
                             <h1 className="display-2 font-weight-bolder mb-4">Sourcegraph Cloud</h1>
 
