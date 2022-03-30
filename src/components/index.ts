@@ -10,6 +10,9 @@ export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton } from './BackButton'
 export { FormLegal } from './FormLegal'
 
+// Tracking
+export { buttonStyle, buttonLocation } from './tracking'
+
 // Actions
 export {
     ContactPresalesSupportAction,
@@ -20,6 +23,16 @@ export {
     SubmitEmailForm,
     ViewDeveloperDocumentationAction,
 } from './Actions'
+
+// Pricing
+
+export {
+    PricingPlanProperty,
+    PricingPlanFeature,
+    PricingPlan,
+} from './Pricing'
+
+export type { Features } from './Pricing'
 
 // Page Specific
 export {
