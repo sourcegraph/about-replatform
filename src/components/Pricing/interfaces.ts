@@ -1,7 +1,7 @@
 /**
  * The features to display for pricing plans.
  */
- export interface Features {
+export interface Features {
     codeSearch: boolean
     codeIntelligence: boolean
     batchChanges: boolean

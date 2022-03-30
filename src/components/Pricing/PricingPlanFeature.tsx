@@ -1,4 +1,3 @@
-
 import { FunctionComponent } from 'react'
 
 import CheckIcon from 'mdi-react/CheckIcon'
@@ -20,7 +19,7 @@ export const PricingPlanFeature: FunctionComponent<Props> = ({
     value,
     tag: Tag = 'li',
     className = '',
-}) => 
+}) =>
     value ? (
         <Tag
             className={`pricing-plan-feature ${className} d-flex justify-content-between ${
@@ -36,10 +35,15 @@ export const PricingPlanFeature: FunctionComponent<Props> = ({
                 {label}
             </div>
             {description && (
-                <OverlayTrigger placement="auto" flip={true} transition={false} overlay={<Tooltip id="tooltip">{description}</Tooltip>}>
+                <OverlayTrigger
+                    placement="auto"
+                    flip={true}
+                    transition={false}
+                    overlay={<Tooltip id="tooltip">{description}</Tooltip>}
+                >
                     {({ ref, ...triggerHandler }) => (
-                        <span  {...triggerHandler} ref={ref} className="ml-2 pricing-plan-feature__help">
-                                <QuestionMarkCircleOutlineIcon />
+                        <span {...triggerHandler} ref={ref} className="ml-2 pricing-plan-feature__help">
+                            <QuestionMarkCircleOutlineIcon />
                         </span>
                     )}
                 </OverlayTrigger>

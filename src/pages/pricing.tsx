@@ -2,15 +2,15 @@ import { FunctionComponent } from 'react'
 
 import Link from 'next/link'
 
-import { 
-    ContentSection, 
-    Layout, 
+import {
+    ContentSection,
+    Layout,
     PricingPlan,
     PricingPlanFeature,
     PricingPlanProperty,
     buttonStyle,
     buttonLocation,
-    Features
+    Features,
 } from '@components'
 
 /** The Starter feature set. */
@@ -68,11 +68,14 @@ const ENTERPRISE_FEATURES: Features = {
 }
 
 const PricingPage: FunctionComponent = () => (
-    <Layout meta={{
-        title: 'Sourcegraph - Pricing',
-        description: 'Sourcegraph is always free for public and open source code. Start using it for private code with a paid plan.',
-        image: 'https://about.sourcegraph.com/sourcegraph-og.png',
-    }}>
+    <Layout
+        meta={{
+            title: 'Sourcegraph - Pricing',
+            description:
+                'Sourcegraph is always free for public and open source code. Start using it for private code with a paid plan.',
+            image: 'https://about.sourcegraph.com/sourcegraph-og.png',
+        }}
+    >
         <div className="text-dark">
             <div className="pricing-page mt-2">
                 <ContentSection className="hero-section text-center py-5">
@@ -197,7 +200,7 @@ const PricingPage: FunctionComponent = () => (
                                     </div>
                                     <div className="col-md-6 mx-auto mb-4 pl-6">
                                         <a
-                                            className='pricing-plan__button btn btn-outline-primary w-100 mx-auto my-0'
+                                            className="pricing-plan__button btn btn-outline-primary w-100 mx-auto my-0"
                                             href="https://info.sourcegraph.com/team-pricing"
                                         >
                                             Contact us
