@@ -2,7 +2,7 @@
 
 $maxBreakpoint: map.get($grid-breakpoints, "xl");
 
-@for $i from 150 through $maxBreakpoint {
+@for $i from 100 through $maxBreakpoint {
     $spacing: $i+50;
     
     @if $spacing % 50 == 0 {
@@ -17,7 +17,7 @@ $maxBreakpoint: map.get($grid-breakpoints, "xl");
             max-width: #{$i}px;
         }
 
-        // Mobile-first utility classes for heights and min-heights
+        // Mobile-first utility classes for heights, min-heights, and max-widths
         @each $key, $value in $grid-breakpoints {
             @media (min-width: $value) {
                 .h-#{$key}-auto {
@@ -28,6 +28,9 @@ $maxBreakpoint: map.get($grid-breakpoints, "xl");
                 }
                 .min-h-#{$key}-#{$i} {
                     min-height: #{$i}px;
+                }
+                .max-w-#{$key}-#{$i} {
+                    max-width: #{$i}px;
                 }
             }
         }
