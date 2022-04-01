@@ -83,6 +83,10 @@ const UseCases: React.FunctionComponent = () => (
                         >
                             Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                         </a>
+                        <Link href="/use-cases/vulnerabilities" passHref={true}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                        </Link>
                     </div>
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote case-studies__quote case-studies__quote--in-content mt-7">
@@ -159,6 +163,10 @@ const UseCases: React.FunctionComponent = () => (
                         >
                             Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                         </a>
+                        <Link href="/use-cases/onboarding" passHref={true}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                        </Link>
                     </div>
                 </div>
             </ContentSection>
