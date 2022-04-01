@@ -9,6 +9,7 @@ export { Install } from './Install'
 export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton } from './BackButton'
 export { FormLegal } from './FormLegal'
+export { BlogListItem } from './BlogListItem'
 
 // Actions
 export {
