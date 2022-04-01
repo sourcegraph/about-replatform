@@ -10,6 +10,11 @@ export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton } from './BackButton'
 export { FormLegal } from './FormLegal'
 export { BlogListItem } from './BlogListItem'
+export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWithLogoBottom } from './Blockquote'
+export { Video } from './Video'
+
+// Tracking
+export { buttonStyle, buttonLocation } from './tracking'
 
 // Actions
 export {
