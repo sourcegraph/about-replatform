@@ -198,7 +198,6 @@ export const PricingPlan: FunctionComponent<Props> = ({
                     </div>
                 ))}
             </ol>
-            {/* <div className="card-body">{button}</div> */}
         </div>
     )
 }

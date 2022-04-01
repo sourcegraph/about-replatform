@@ -11,7 +11,7 @@ export { BackButton } from './BackButton'
 export { FormLegal } from './FormLegal'
 
 // Tracking
-export { buttonStyle, buttonLocation } from './tracking'
+export { buttonStyle, buttonLocation } from './data/tracking'
 
 // Actions
 export {

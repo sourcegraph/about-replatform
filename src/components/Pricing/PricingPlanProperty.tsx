@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactFragment } from 'react'
 
 interface Props {
-    description?: React.ReactFragment
+    description?: ReactFragment
 
     className?: string
 }
