@@ -33,7 +33,7 @@ const News: FunctionComponent = () => (
             <section className="container">
                 {articles.map(article => (
                     <div className="row" key={article.year}>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 mt-5 mt-lg-0">
                             <h1 className="d-block d-md-none text-center">
                                 <time dateTime={article.year.toString()}>{article.year}</time>
                             </h1>
@@ -44,15 +44,15 @@ const News: FunctionComponent = () => (
 
                         <div className="col-lg-10">
                             {article.articles.map(a => (
-                                <article className="row mb-4 border-bottom min-h-150 d-flex" key={a.newsLink}>
-                                    <div className="col-sm-4 col-lg-2 text-center d-flex align-items-center">
+                                <article className="row border-bottom d-flex py-3" key={a.newsLink}>
+                                    <div className="col-sm-4 col-lg-2 text-center d-flex align-items-center mb-2 mb-md-0">
                                         <a href={a.newsLink} target="_blank" rel="nofollow noopener noreferrer">
                                             <img className="max-w-100 max-w-sm-150 w-100" src={a.newsImage} alt={a.newsTitle} />
                                         </a>
                                     </div>
 
                                     <div className="col-sm-10 col-lg-10 align-self-center">
-                                        <h6 className="d-inline">{a.newsSource}</h6>{' '}
+                                        <h6 className="d-inline-block mb-2">{a.newsSource}</h6>{' '}
                                         <time dateTime={new Date(a.newsDate).toISOString().split('T')[0]} className="ml-2 text-muted">{a.newsDate}</time>
                                         <cite className="text-normal">
                                             <a className="d-block" href={a.newsLink} target="_blank" rel="nofollow noopener noreferrer">
