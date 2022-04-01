@@ -13,9 +13,6 @@ export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWith
 export { Video } from './Video'
 
 // Tracking
-export { buttonStyle, buttonLocation } from './tracking'
-
-// Tracking
 export { buttonStyle, buttonLocation } from './data/tracking'
 
 // Actions
