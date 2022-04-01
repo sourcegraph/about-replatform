@@ -9,7 +9,7 @@ export { Install } from './Install'
 export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton } from './BackButton'
 export { FormLegal } from './FormLegal'
-export { Blockquote, BlockquoteWithBorder } from './Blockquote'
+export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWithLogoBottom } from './Blockquote'
 export { Video } from './Video'
 
 // Tracking

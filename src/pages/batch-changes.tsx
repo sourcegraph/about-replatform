@@ -13,6 +13,7 @@ import {
     buttonStyle,
     buttonLocation,
 } from '@components'
+
 const batchChangesDemoFormURL = '/contact/request-batch-changes-demo'
 
 export const BatchChangesPage: FunctionComponent = () => (
@@ -23,6 +24,7 @@ export const BatchChangesPage: FunctionComponent = () => (
                 'Automate large-scale changes with Sourcegraph Batch Changes. Keep your code up to date and pay down tech debt across all repositories and code hosts.',
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
+        className="batch-changes-page"
         heroAndHeaderClassName="batch-changes-page__hero-and-header"
         hero={
             <div className="container pb-4">
@@ -149,7 +151,7 @@ export const BatchChangesPage: FunctionComponent = () => (
         <ContentSection className="py-4 py-md-7">
             <h1 className="mb-5 text-center">How developers are using Batch Changes </h1>
             <Tabs defaultActiveKey="configuration" id="use-cases" className="justify-content-center">
-                <Tab eventKey="configuration" title="Configuration">
+                <Tab eventKey="configuration" title="Configuration" className="bg-transparent ">
                     <div className="row mt-5 justify-content-center">
                         <div className="col-lg-8">
                             <p>
