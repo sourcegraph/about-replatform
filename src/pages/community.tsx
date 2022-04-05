@@ -145,8 +145,8 @@ export const Community: FunctionComponent = () => (
 
         <ContentSection className="py-4">
             <h2 className="display-3 font-weight-bold mb-5 text-center">What's next?</h2>
-            <Tabs defaultActiveKey="configuration" id="use-cases" className="justify-content-center">
-                <Tab eventKey="configuration" title="Events">
+            <Tabs defaultActiveKey="sgEvents" id="use-cases" className="justify-content-center">
+                <Tab eventKey="sgEvents" title="Events">
                     <div className="row mt-5 justify-content-center">
                         <div className="col-lg-8">
                             <p>
@@ -173,7 +173,7 @@ export const Community: FunctionComponent = () => (
                         </div>
                     </div>
                 </Tab>
-                <Tab eventKey="refactoring" title="Dev Tool Time">
+                <Tab eventKey="devToolTime" title="Dev Tool Time">
                     <div className="row mt-5 justify-content-center">
                         <div className="col-lg-8">
                             <p>
@@ -193,7 +193,7 @@ export const Community: FunctionComponent = () => (
                         </div>
                     </div>
                 </Tab>
-                <Tab eventKey="security" title="Podcast">
+                <Tab eventKey="podcast" title="Podcast">
                     <div className="row mt-5 justify-content-center">
                         <div className="col-lg-8">
                             <p>
