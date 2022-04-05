@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react'
 
-import Link from 'next/link'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
@@ -29,18 +28,16 @@ export const Community: FunctionComponent = () => (
                             encourage everyone to learn from each other and share everything they know. Because when we
                             collaborate, we grow faster, better, and stronger.
                         </p>
-                        <Link href="https://srcgr.ph/wp-join-community-space" passHref={true}>
-                            <a
-                                className="btn btn-primary"
-                                data-button-style={buttonStyle.primary}
-                                data-button-location={buttonLocation.hero}
-                                data-button-type="cta"
-                                href="#none"
-                                title="Join our Slack"
-                            >
-                                Join our Slack
-                            </a>
-                        </Link>
+                        <a
+                            className="btn btn-primary"
+                            data-button-style={buttonStyle.primary}
+                            data-button-location={buttonLocation.hero}
+                            data-button-type="cta"
+                            href="https://srcgr.ph/wp-join-community-space"
+                            title="Join our Slack"
+                        >
+                            Join our Slack
+                        </a>
                     </div>
                     <div className="col-lg-6">
                         <figure>
@@ -60,25 +57,23 @@ export const Community: FunctionComponent = () => (
             <div className="row justify-content-center">
                 <p className="col-md-8">
                     We can’t give you a 25-hour day, but here is a{' '}
-                    <Link href="http://srcgr.ph/cheatsheet">speed sheet</Link> with the most useful Sourcegraph
+                    <a href="http://srcgr.ph/cheatsheet">speed sheet</a> with the most useful Sourcegraph
                     shortcuts. Need even more speed? Fasten your seat belt and dive into our curated{' '}
-                    <Link href="https://learn.sourcegraph.com/tags/sourcegraph">tutorials</Link> &#38; other{' '}
-                    <Link href="https://docs.sourcegraph.com/">tip documents</Link>.
+                    <a href="https://learn.sourcegraph.com/tags/sourcegraph">tutorials</a> &#38; other{' '}
+                    <a href="https://docs.sourcegraph.com/">tip documents</a>.
                 </p>
             </div>
             <div className="row">
                 <div className="col-12 mt-4">
-                    <Link href="http://srcgr.ph/cheatsheet" passHref={true}>
-                        <a href="#none">
-                            <figure>
-                                <img
-                                    className="cheatsheet_img"
-                                    src="/community/cheatsheet_top.png"
-                                    alt="Sourcegraph Cheatsheet"
-                                />
-                            </figure>
-                        </a>
-                    </Link>
+                    <a href="http://srcgr.ph/cheatsheet">
+                        <figure>
+                            <img
+                                className="cheatsheet_img"
+                                src="/community/cheatsheet_top.png"
+                                alt="Sourcegraph Cheatsheet"
+                            />
+                        </figure>
+                    </a>
                 </div>
             </div>
         </ContentSection>
@@ -101,18 +96,13 @@ export const Community: FunctionComponent = () => (
                         <p>
                             We can't wait to meet you! And send you really cool custom swag ;)
                             <br />
-                            <Link
-                                href="https://handbook.sourcegraph.com/marketing/becoming_a_sourcegraph_champion"
-                                passHref={true}
-                            >
-                                <a className="btn btn-primary mt-3" href="#none">
-                                    Become a Sourcegraph Champion
-                                </a>
-                            </Link>
+                            <a className="btn btn-primary mt-3" href="https://handbook.sourcegraph.com/marketing/becoming_a_sourcegraph_champion">
+                                Become a Sourcegraph Champion
+                            </a>
                         </p>
                         <p>
                             Or if you know someone that should be a Sourcegraph Champion, please{' '}
-                            <Link href="https://forms.gle/QP6BBCpN1TwQfHzo6">nominate them</Link>.
+                            <a href="https://forms.gle/QP6BBCpN1TwQfHzo6">nominate them</a>.
                         </p>
                     </div>
                     <div className="col-lg-6">
@@ -136,11 +126,9 @@ export const Community: FunctionComponent = () => (
                         <li>Reach out to the community, discover new ideas &#38; seek or give mentorship</li>
                         <li>Share the road less traveled so that everyone can learn</li>
                     </ul>
-                    <Link href="https://srcgr.ph/wp-join-community-space" passHref={true}>
-                        <a className="btn btn-primary" href="#none" title="Join us on Slack">
+                        <a className="btn btn-primary" href="https://srcgr.ph/wp-join-community-space" title="Join us on Slack">
                             Join us on Slack
                         </a>
-                    </Link>
                 </div>
                 <div className="col-lg-5">
                     <img
@@ -164,23 +152,19 @@ export const Community: FunctionComponent = () => (
                             </p>
                             <ul>
                                 <li>
-                                    <Link href="https://events.linuxfoundation.org/open-source-summit-north-america/register/">
-                                        Open Source Summit
-                                    </Link>{' '}
-                                    - 9/27 - 9/30
+                                    <a href="https://events.linuxfoundation.org/open-source-summit-north-america/register/">Open Source Summit</a> - 9/27 - 9/30
                                 </li>
                                 <li>
-                                    <Link href="https://reactadvanced.com/">React Advanced London</Link> - 10/22
+                                    <a href="https://reactadvanced.com/">React Advanced London</a> - 10/22
                                 </li>
                                 <li>
-                                    <Link href="https://africa.jsworldconference.com/">JSWorld Africa</Link> - 10/30
+                                    <a href="https://africa.jsworldconference.com/">JSWorld Africa</a> - 10/30
                                 </li>
                                 <li>
-                                    <Link href="https://festival.oscafrica.org/">Open Source Festival</Link> - 11/11 -
-                                    11/13
+                                    <a href="https://festival.oscafrica.org/">Open Source Festival</a> - 11/11 - 11/13
                                 </li>
                                 <li>
-                                    <Link href="https://www.gophercon.com/">GopherCon</Link> - 12/5 - 12/8
+                                    <a href="https://www.gophercon.com/">GopherCon</a> - 12/5 - 12/8
                                 </li>
                             </ul>
                         </div>
@@ -191,11 +175,10 @@ export const Community: FunctionComponent = () => (
                         <div className="col-lg-8">
                             <p>
                                 Cool hardware. Most-wanted guests. And hot topics. Check our{' '}
-                                <Link href="https://srcgr.ph/dev-tool-time-playlist">YouTube channel</Link> and
+                                <a href="https://srcgr.ph/dev-tool-time-playlist">YouTube channel</a> and
                                 subscribe to keep up with new episodes.
                             </p>
-                            <Link href="https://srcgr.ph/dev-tool-time-playlist" passHref={true}>
-                                <a href="#none">
+                                <a href="https://srcgr.ph/dev-tool-time-playlist">
                                     <img
                                         className="w-100 h-auto mt-4"
                                         width="850"
@@ -204,7 +187,6 @@ export const Community: FunctionComponent = () => (
                                         alt="Dev Tool Time"
                                     />
                                 </a>
-                            </Link>
                         </div>
                     </div>
                 </Tab>
@@ -215,8 +197,7 @@ export const Community: FunctionComponent = () => (
                                 Tune into our developer convos wherever you listen to your favorite podcasts. Every
                                 episode is an inspiration.
                             </p>
-                            <Link href="https://about.sourcegraph.com/podcast" passHref={true}>
-                                <a href="#none">
+                                <a href="https://about.sourcegraph.com/podcast">
                                     <img
                                         className="w-100 h-auto mt-4"
                                         width="750"
@@ -225,7 +206,6 @@ export const Community: FunctionComponent = () => (
                                         alt="Podcasts"
                                     />
                                 </a>
-                            </Link>
                         </div>
                     </div>
                 </Tab>
@@ -238,34 +218,30 @@ export const Community: FunctionComponent = () => (
                     <h2 className="display-3 font-weight-bold mb-3">We’d love to hear from you!</h2>
                     <br />
                     Connect with us on the Sourcegraph Community Slack group, direct message us on Twitter, LinkedIn, or
-                    email us at <Link href="mailto:community@sourcegraph.com">community@sourcegraph.com</Link>.
+                    email us at <a href="mailto:community@sourcegraph.com">community@sourcegraph.com</a>.
                 </div>
                 <div className="col-lg-5 mt-3">
-                    <Link href="https://srcgr.ph/wp-join-community-space" passHref={true}>
-                        <a
-                            className="btn btn-secondary"
-                            data-button-style={buttonStyle.primary}
-                            data-button-location={buttonLocation.trySourcegraph}
-                            data-button-type="cta"
-                            href="#none"
-                            title="Join us on Slack"
-                        >
-                            Join us on Slack
-                        </a>
-                    </Link>
+                    <a
+                        className="btn btn-secondary"
+                        data-button-style={buttonStyle.primary}
+                        data-button-location={buttonLocation.trySourcegraph}
+                        data-button-type="cta"
+                        href="https://srcgr.ph/wp-join-community-space"
+                        title="Join us on Slack"
+                    >
+                        Join us on Slack
+                    </a>
                     <br />
-                    <Link href="mailto:community@sourcegraph.com" passHref={true}>
-                        <a
-                            className="btn btn-primary mt-3"
-                            data-button-style={buttonStyle.primary}
-                            data-button-location={buttonLocation.trySourcegraph}
-                            data-button-type="cta"
-                            href="#none"
-                            title="Send us an email"
-                        >
-                            Send us an email
-                        </a>
-                    </Link>
+                    <a
+                        className="btn btn-primary mt-3"
+                        data-button-style={buttonStyle.primary}
+                        data-button-location={buttonLocation.trySourcegraph}
+                        data-button-type="cta"
+                        href="mailto:community@sourcegraph.com"
+                        title="Send us an email"
+                    >
+                        Send us an email
+                    </a>
                 </div>
             </div>
         </ContentSection>
