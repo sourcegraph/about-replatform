@@ -12,6 +12,7 @@ export { FormLegal } from './FormLegal'
 export { BlogListItem } from './BlogListItem'
 export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWithLogoBottom } from './Blockquote'
 export { Video } from './Video'
+export { CustomerLogosSectionAnimated } from './CustomerLogosSectionAnimated'
 
 // Tracking
 export { buttonStyle, buttonLocation } from './data/tracking'
