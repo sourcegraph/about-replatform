@@ -1,4 +1,3 @@
-// prettier-ignore
 import { useRef, useState, useEffect, FunctionComponent, useCallback } from 'react'
 
 import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
