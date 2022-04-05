@@ -121,10 +121,10 @@ export const Community: FunctionComponent = () => (
                 <div className="col-lg-6">
                     <h2 className="display-3 font-weight-bold mt-5 mb-3">DM us on Slack. We're here.</h2>
                     What you seek is seeking you — come, chat and collaborate with inspiring engineers like you.
-                    <ul className="list-spaced">
-                        <li>Ask questions - any questions: what is the best sit-stand desk?</li>
-                        <li>Reach out to the community, discover new ideas &#38; seek or give mentorship</li>
-                        <li>Share the road less traveled so that everyone can learn</li>
+                    <ul>
+                        <li className="mt-2">Ask questions - any questions: what is the best sit-stand desk?</li>
+                        <li className="mt-2">Reach out to the community, discover new ideas &#38; seek or give mentorship</li>
+                        <li className="mt-2">Share the road less traveled so that everyone can learn</li>
                     </ul>
                         <a className="btn btn-primary" href="https://srcgr.ph/wp-join-community-space" title="Join us on Slack">
                             Join us on Slack
