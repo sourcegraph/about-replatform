@@ -1,3 +1,4 @@
+// prettier-ignore
 import { useRef, useState, useEffect, FunctionComponent, useCallback } from 'react'
 
 import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
@@ -184,7 +185,12 @@ interface Props {
     noCta?: boolean
 }
 
-export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButton, className, showSection, noCta }) => {
+export const CustomerLogosSectionAnimated: FunctionComponent<Props> = ({
+    showButton,
+    className,
+    showSection,
+    noCta,
+}) => {
     const [buttonClass, setButtonClass] = useState('')
     const [windowWidth, setWindowWidth] = useState(0)
     const [imagesWidth, setImagesWidth] = useState(0)
@@ -222,29 +228,31 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
             logoContainerTwo.style.transform = `translateX(${-totalWidth}px)`
             logoContainerThree.style.transform = `translateX(${-totalWidth}px)`
         }
-      
     }, [totalWidth])
 
-    const transitionEnd = useCallback((event: Event) => {
-        const target = event.target as HTMLDivElement
-        if (target.id !== 'logo-container-reference') {
-            return
-        }
-        const logoContainerOne = firstLogoContainerReference.current as HTMLDivElement
-        const logoContainerTwo = secondLogoContainerReferenceClone.current as HTMLDivElement
-        const logoContainerThree = thirdLogoContainerReferenceClone.current as HTMLDivElement
-        if (logoContainerOne && logoContainerTwo && logoContainerThree) {
-            logoContainerOne.style.transition = 'none'
-            logoContainerTwo.style.transition = 'none'
-            logoContainerThree.style.transition = 'none'
-            logoContainerOne.style.transform = 'translateX(0px)'
-            logoContainerTwo.style.transform = 'translateX(0px)'
-            logoContainerThree.style.transform = 'translateX(0px)'
-        }
-        setTimeout(() => {
-            transitionStart()
-        }, 0)
-    }, [transitionStart])
+    const transitionEnd = useCallback(
+        (event: Event) => {
+            const target = event.target as HTMLDivElement
+            if (target.id !== 'logo-container-reference') {
+                return
+            }
+            const logoContainerOne = firstLogoContainerReference.current as HTMLDivElement
+            const logoContainerTwo = secondLogoContainerReferenceClone.current as HTMLDivElement
+            const logoContainerThree = thirdLogoContainerReferenceClone.current as HTMLDivElement
+            if (logoContainerOne && logoContainerTwo && logoContainerThree) {
+                logoContainerOne.style.transition = 'none'
+                logoContainerTwo.style.transition = 'none'
+                logoContainerThree.style.transition = 'none'
+                logoContainerOne.style.transform = 'translateX(0px)'
+                logoContainerTwo.style.transform = 'translateX(0px)'
+                logoContainerThree.style.transform = 'translateX(0px)'
+            }
+            setTimeout(() => {
+                transitionStart()
+            }, 0)
+        },
+        [transitionStart]
+    )
 
     const startAnimation = useCallback(() => {
         const logoElement = document.querySelector('logo-container-reference')
@@ -260,11 +268,11 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
             const transformOne = window.getComputedStyle(logoContainerOne).transform
             const transformTwo = window.getComputedStyle(logoContainerTwo).transform
             const transformThree = window.getComputedStyle(logoContainerThree).transform
-    
+
             logoContainerOne.style.transform = transformOne
             logoContainerTwo.style.transform = transformTwo
             logoContainerThree.style.transform = transformThree
-    
+
             logoContainerOne.style.transition = 'none'
             logoContainerTwo.style.transition = 'none'
             logoContainerThree.style.transition = 'none'
@@ -277,7 +285,7 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
         const logoContainerThree = thirdLogoContainerReferenceClone.current as HTMLDivElement
         const transformOne = window.getComputedStyle(logoContainerOne).transform
         const matchedTransformOne = transformOne.match(/matrix.*\((.+)\)/)
-        
+
         if (logoContainerOne && logoContainerTwo && logoContainerThree && matchedTransformOne) {
             const matrixValueXOne = matchedTransformOne[1].split(', ')[4]
             const xPosition = parseInt(matrixValueXOne, 10)
@@ -296,31 +304,37 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
         }
     }, [totalWidth])
 
-    const buttonFollowsMouse = useCallback((event: MouseEvent) => {
-        if (innerContainerReference.current) {
-            const containerRec = innerContainerReference.current.getBoundingClientRect()
-            const width = innerContainerReference.current?.offsetWidth
-            const height = innerContainerReference.current?.offsetHeight
-            const scrollLeft = innerContainerReference.current?.scrollLeft
-            if (event && containerRec &&
-                event.clientX - containerRec?.left > 150 &&
-                event.clientY - containerRec?.top > 60 &&
-                width && height &&
-                containerRec.left + width - event.clientX > 150 &&
-                containerRec.top + height - event.clientY > 60
-            ) {
-                setButtonClass('')
-                set({ scale: 1 })
-            } else {
-                setButtonClass('sourcegraph-cta-button-edge')
-                set({ scale: 0.1 })
+    const buttonFollowsMouse = useCallback(
+        (event: MouseEvent) => {
+            if (innerContainerReference.current) {
+                const containerRec = innerContainerReference.current.getBoundingClientRect()
+                const width = innerContainerReference.current?.offsetWidth
+                const height = innerContainerReference.current?.offsetHeight
+                const scrollLeft = innerContainerReference.current?.scrollLeft
+                if (
+                    event &&
+                    containerRec &&
+                    event.clientX - containerRec?.left > 150 &&
+                    event.clientY - containerRec?.top > 60 &&
+                    width &&
+                    height &&
+                    containerRec.left + width - event.clientX > 150 &&
+                    containerRec.top + height - event.clientY > 60
+                ) {
+                    setButtonClass('')
+                    set({ scale: 1 })
+                } else {
+                    setButtonClass('sourcegraph-cta-button-edge')
+                    set({ scale: 0.1 })
+                }
+                set({
+                    x: event.clientX - (containerRec.left + scrollLeft),
+                    y: event.clientY - containerRec.top,
+                })
             }
-            set({
-                x: event.clientX - (containerRec.left + scrollLeft),
-                y: event.clientY - containerRec.top,
-            })
-        }
-    }, [set])
+        },
+        [set]
+    )
 
     const handleMouseEnter = useCallback(() => {
         if (readyToScroll) {
@@ -332,11 +346,14 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
         }
     }, [continueAnimationFromCurrentPosition, setScrollAnimation, scrollAnimation, readyToScroll])
 
-    const handleMouseMove = useCallback((event: MouseEvent) => {
-        if (showButton && readyToScroll) {
-            buttonFollowsMouse(event)
-        }
-    }, [buttonFollowsMouse, showButton, readyToScroll])
+    const handleMouseMove = useCallback(
+        (event: MouseEvent) => {
+            if (showButton && readyToScroll) {
+                buttonFollowsMouse(event)
+            }
+        },
+        [buttonFollowsMouse, showButton, readyToScroll]
+    )
 
     const handleMouseLeaveInnerArea = useCallback(() => {
         if (readyToScroll) {
@@ -356,35 +373,38 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
     }, [])
 
     useEffect(() => {
-        const promises = ITEMS.map(async image => new Promise(resolve => {
-                const imageReference = new Image()
-                imageReference.addEventListener(('load'), () => {
-                    if (imageReference.height && imageReference.width) {
-                        let calculatedWidth = (imageReference.width / imageReference.height) * 50
-                        if (calculatedWidth > 135) {
-                            calculatedWidth = 135
+        const promises = ITEMS.map(
+            async image =>
+                new Promise(resolve => {
+                    const imageReference = new Image()
+                    imageReference.addEventListener('load', () => {
+                        if (imageReference.height && imageReference.width) {
+                            let calculatedWidth = (imageReference.width / imageReference.height) * 50
+                            if (calculatedWidth > 135) {
+                                calculatedWidth = 135
+                            }
+                            setImagesWidth(previousState => (previousState += calculatedWidth + 70)) // Total width of all images
+                        } else {
+                            setImagesWidth(previousState => (previousState += 135 + 70))
                         }
-                        setImagesWidth(previousState => (previousState += calculatedWidth + 70)) // Total width of all images
-                    } else {
-                        setImagesWidth(previousState => (previousState += 135 + 70))
-                    }
-                    resolve([image])
+                        resolve([image])
+                    })
+                    imageReference.src = image.url
                 })
-                imageReference.src = image.url   
-        }))
+        )
         Promise.all(promises)
             .then(() => {
                 const logoElement = document.querySelector('#logo-container-reference')
-                    if (logoElement) {
-                        logoElement.classList.remove('hidden')
-                        const secondLogoContainerClone = logoElement.cloneNode(true)
-                        const thirdLogoContainerClone = logoElement.cloneNode(true)
-                        logoElement?.parentNode?.insertBefore(secondLogoContainerClone, logoElement.nextSibling)
-                        logoElement?.parentNode?.insertBefore(thirdLogoContainerClone, logoElement.nextSibling)
-                        secondLogoContainerReferenceClone.current = secondLogoContainerClone
-                        thirdLogoContainerReferenceClone.current = thirdLogoContainerClone
-                        setReadyToScroll(true)
-                    }
+                if (logoElement) {
+                    logoElement.classList.remove('hidden')
+                    const secondLogoContainerClone = logoElement.cloneNode(true)
+                    const thirdLogoContainerClone = logoElement.cloneNode(true)
+                    logoElement?.parentNode?.insertBefore(secondLogoContainerClone, logoElement.nextSibling)
+                    logoElement?.parentNode?.insertBefore(thirdLogoContainerClone, logoElement.nextSibling)
+                    secondLogoContainerReferenceClone.current = secondLogoContainerClone
+                    thirdLogoContainerReferenceClone.current = thirdLogoContainerClone
+                    setReadyToScroll(true)
+                }
             })
             .catch(error => {
                 console.error(error)
@@ -417,13 +437,7 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
                 innerContainerReference.current?.addEventListener('mouseleave', handleMouseLeaveInnerArea)
             }
         }
-    }, [
-        scrollAnimation,
-        handleMouseEnter,
-        handleMouseLeaveInnerArea,
-        handleMouseMove,
-        windowWidth,
-    ])
+    }, [scrollAnimation, handleMouseEnter, handleMouseLeaveInnerArea, handleMouseMove, windowWidth])
 
     useEffect(() => {
         setTotalWidth(imagesWidth / 3 + 30 + extraSpace)
@@ -441,13 +455,13 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
                     <div className="col-lg-6 text-center mt-2">
                         <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a     
+                            <a
                                 className="btn btn-outline-primary"
                                 data-button-style={buttonStyle.arrowBoxOutlined}
                                 data-button-location={buttonLocation.bodyDemo}
                                 data-button-type="cta"
                             >
-                            Schedule a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                                Schedule a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
                     </div>
@@ -468,44 +482,45 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
                         </animated.div>
                     </Link>
                 )}
-                {/* eslint-disable-next-line react/forbid-dom-props */}
-                    <div style={{ width: totalWidth }}
-                        id="logo-container-reference"
-                        ref={firstLogoContainerReference}
-                        className="text-center mt-4 d-flex flex-wrap justify-content-between align-items-center line-height-normal customer-container-inner hidden"
-                    >
-                        {ITEMS.map(logo => (
-                            <div key={logo.name}>
-                                <div className={`${logo.name.replace(' ', '-').toLowerCase()} customer-logos-section__item`}>
-                                    {logo.link ? (
-                                        <a href={logo.link.url} target={logo.link.target} rel={logo.link.rel}>
-                                            <img
-                                                className={
-                                                    'customer-logos-section__item-logo d-block mx-auto ' +
-                                                    (showButton && windowWidth > minDeviceWidth
-                                                        ? 'customer-logos-section__item-logo-animation'
-                                                        : 'link-hover')
-                                                }
-                                                src={logo.url}
-                                                alt={logo.name}
-                                            />
-                                        </a>
-                                    ) : (
+                <div
+                    style={{ width: totalWidth }} // eslint-disable-line react/forbid-dom-props
+                    id="logo-container-reference"
+                    ref={firstLogoContainerReference}
+                    className="text-center mt-4 d-flex flex-wrap justify-content-between align-items-center line-height-normal customer-container-inner hidden"
+                >
+                    {ITEMS.map(logo => (
+                        <div key={logo.name}>
+                            <div
+                                className={`${logo.name.replace(' ', '-').toLowerCase()} customer-logos-section__item`}
+                            >
+                                {logo.link ? (
+                                    <a href={logo.link.url} target={logo.link.target} rel={logo.link.rel}>
                                         <img
                                             className={
                                                 'customer-logos-section__item-logo d-block mx-auto ' +
                                                 (showButton && windowWidth > minDeviceWidth
                                                     ? 'customer-logos-section__item-logo-animation'
-                                                    : '')
+                                                    : 'link-hover')
                                             }
                                             src={logo.url}
                                             alt={logo.name}
                                         />
-                                    )}
-                                </div>
+                                    </a>
+                                ) : (
+                                    <img
+                                        className={
+                                            'customer-logos-section__item-logo d-block mx-auto ' +
+                                            (showButton && windowWidth > minDeviceWidth
+                                                ? 'customer-logos-section__item-logo-animation'
+                                                : '')
+                                        }
+                                        src={logo.url}
+                                        alt={logo.name}
+                                    />
+                                )}
                             </div>
-                        ))}
-                    
+                        </div>
+                    ))}
                 </div>
             </div>
             {windowWidth < minDeviceWidth && showButton && !noCta && (

@@ -1,4 +1,3 @@
-
 import React, { FunctionComponent, ReactFragment, ReactNode } from 'react'
 
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'

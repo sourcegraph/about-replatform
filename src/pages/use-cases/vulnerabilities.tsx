@@ -85,9 +85,9 @@ const items = [
                 text={
                     <p>
                         Get the full picture of an incident. Track how long the vulnerable code has been in your
-                        codebase and how quickly you're removing it. With <Link href="/code-insights">Code Insights</Link>
-                        , you can measure the progress of applying longer-term fixes for vulnerabilities and incidents
-                        across all your code.
+                        codebase and how quickly you're removing it. With{' '}
+                        <Link href="/code-insights">Code Insights</Link>, you can measure the progress of applying
+                        longer-term fixes for vulnerabilities and incidents across all your code.
                     </p>
                 }
             />
@@ -121,8 +121,8 @@ const quoteCarouselItems = [
         logoAlt: 'Nutanix',
     },
     {
-        header: 'Cloudflare proves to auditors that its code isn\'t vulnerable',
-        quote: '[Sourcegraph] is the best way to prove we\'re not vulnerable to a particular CVE, if and when we get asked by an auditor.',
+        header: "Cloudflare proves to auditors that its code isn't vulnerable",
+        quote: "[Sourcegraph] is the best way to prove we're not vulnerable to a particular CVE, if and when we get asked by an auditor.",
         author: 'David Haynes, Security Engineer at Cloudflare',
         logoImage: '/external-logos/cloudflare-color-logo.svg',
         linkText: 'Read the case study',
@@ -191,19 +191,16 @@ const UseCasePage: FunctionComponent = () => (
                                 days.
                             </div>
                             <div className="d-flex flex-column flex-lg-row pt-1">
-                                <Link
-                                    href="/demo"
-                                    passHref={true}
-                                >
+                                <Link href="/demo" passHref={true}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100" title="Request a Demo.">
-                                    Request a demo
+                                    <a
+                                        className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100"
+                                        title="Request a Demo."
+                                    >
+                                        Request a demo
                                     </a>
                                 </Link>
-                                <Link
-                                    href="/get-started"
-                                    passHref={true}
-                                >
+                                <Link href="/get-started" passHref={true}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                     <a className="btn btn-outline-primary w-md-100" title="Try Sourcegraph.">
                                         Try Sourcegraph now
@@ -295,9 +292,7 @@ const UseCasePage: FunctionComponent = () => (
                             <h6>Learn how to use Sourcegraph to identify and resolve every instance of Log4j.</h6>
                             <Link href="/blog/log4j-log4shell-0-day" passHref={true}>
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                <a className="font-weight-bold" >
-                                    Read the blog post.
-                                </a>
+                                <a className="font-weight-bold">Read the blog post.</a>
                             </Link>
                         </div>
                     </div>
@@ -334,14 +329,13 @@ const UseCasePage: FunctionComponent = () => (
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-primary" title="Request a Demo.">
                                 Request a demo
-                            </a>   
+                            </a>
                         </Link>
                         <Link href="/use-cases" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="d-flex justify-content-center mt-4">
                                 <p className="font-weight-bold">Explore other use cases</p>
                             </a>
-                            
                         </Link>
                     </div>
                 </div>
@@ -364,9 +358,7 @@ const UseCasePage: FunctionComponent = () => (
             <div className="d-flex justify-content-center">
                 <Link href="/get-started" passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a className="btn btn-primary">
-                        Ready to get started?
-                    </a>
+                    <a className="btn btn-primary">Ready to get started?</a>
                 </Link>
             </div>
         </ContentSection>

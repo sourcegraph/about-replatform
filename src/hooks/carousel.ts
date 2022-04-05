@@ -35,28 +35,34 @@ export const useCarousel = (
     const [autoAdvance, setAutoAdance] = useState<boolean>(initialAutoAdvance ?? false)
     const [isRunning, setIsRunning] = useState<boolean>(autoAdvance)
     const [isAdvancing, setIsAdvancing] = useState<boolean>(true)
-    const intervalId = useRef<undefined | number | NodeJS.Timer | NodeJS.Timeout >()
+    const intervalId = useRef<undefined | number | NodeJS.Timer | NodeJS.Timeout>()
 
-    const updateCurrentItem = useCallback((index: number) => {
-        setCarouselItems(() => ({
-            ...carouselItems,
-            currentItemIndex: index,
-            currentItem: carouselItems.items[index],
-        }))
-    }, [carouselItems])
+    const updateCurrentItem = useCallback(
+        (index: number) => {
+            setCarouselItems(() => ({
+                ...carouselItems,
+                currentItemIndex: index,
+                currentItem: carouselItems.items[index],
+            }))
+        },
+        [carouselItems]
+    )
 
-    const setCurrentIndex = useCallback((action?: string) => {
-        let index = carouselItems.currentItemIndex ?? 0
-        if (action === 'decrement') {
-            setIsAdvancing(false)
-            index = index === 0 ? carouselItems.items.length - 1 : (index -= 1)
-        } else {
-            setIsAdvancing(true)
-            index = index >= carouselItems.items.length - 1 ? 0 : (index += 1)
-        }
+    const setCurrentIndex = useCallback(
+        (action?: string) => {
+            let index = carouselItems.currentItemIndex ?? 0
+            if (action === 'decrement') {
+                setIsAdvancing(false)
+                index = index === 0 ? carouselItems.items.length - 1 : (index -= 1)
+            } else {
+                setIsAdvancing(true)
+                index = index >= carouselItems.items.length - 1 ? 0 : (index += 1)
+            }
 
-        updateCurrentItem(index)
-    }, [carouselItems.currentItemIndex, carouselItems.items.length, updateCurrentItem])
+            updateCurrentItem(index)
+        },
+        [carouselItems.currentItemIndex, carouselItems.items.length, updateCurrentItem]
+    )
 
     const stopCarousel = (): void => {
         setIsRunning(false)
@@ -69,16 +75,15 @@ export const useCarousel = (
         } else if (itemOrDirection && typeof itemOrDirection === 'string') {
             setCurrentIndex(itemOrDirection)
         } else {
-            setCurrentIndex() 
+            setCurrentIndex()
         }
     }
 
     const startCarouselInterval = useCallback(() => {
-        intervalId.current = setInterval(setCurrentIndex, 5000)    
+        intervalId.current = setInterval(setCurrentIndex, 5000)
     }, [setCurrentIndex])
 
     useEffect(() => {
-        
         if (isRunning) {
             startCarouselInterval()
         }

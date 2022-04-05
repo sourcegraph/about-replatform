@@ -29,10 +29,7 @@ export {
 } from './Actions'
 
 // Carousels
-export {
-    CustomCarousel,
-    QuoteCarousel,
-} from './Carousels'
+export { CustomCarousel, QuoteCarousel } from './Carousels'
 
 // Pricing
 export { PricingPlanProperty, PricingPlanFeature, PricingPlan } from './Pricing'
