@@ -3,9 +3,12 @@ import { FunctionComponent } from 'react'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
-import { Layout, ContentSection } from '@components'
-
-import { buttonStyle, buttonLocation } from '../tracking'
+import {
+        buttonStyle,
+        buttonLocation,
+        ContentSection,
+        Layout
+    } from '@components'
 
 export const Community: FunctionComponent = () => (
     <Layout
