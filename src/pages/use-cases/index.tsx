@@ -2,7 +2,7 @@ import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 
-import { Layout, ContentSection, TrySourcegraph } from '@components'
+import { Layout, ContentSection, TrySourcegraph, CustomerLogosSectionAnimated } from '@components'
 import { stringToKebabCase } from '@util'
 
 import styles from './useCases.module.scss'
@@ -23,7 +23,7 @@ const UseCases: React.FunctionComponent = () => (
                 'See how the most productive dev teams use Sourcegraph to build software you rely on. From remediating vulnerabilities to streamlining code reuse, our customers use Sourcegraph to solve big code problems.',
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
-        heroAndHeaderClassName={styles.headerAndHero}
+        heroAndHeaderClassName={styles['landing-header']}
         hero={
             <div className="container">
                 <div className="row">
@@ -55,8 +55,8 @@ const UseCases: React.FunctionComponent = () => (
             </div>
         }
     >
-        <div>
-            {/* Todo: Add new Customer Logos Section when homepage updates are finalized */}
+        <div className="use-cases-page">
+            <CustomerLogosSectionAnimated showButton={false} showSection={true} className="pt-5" />
 
             <ContentSection id="find-and-fix-security-vulnerabilities" className="pt-8">
                 <div className="row justify-content-center">

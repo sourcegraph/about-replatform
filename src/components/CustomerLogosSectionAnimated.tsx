@@ -276,9 +276,10 @@ export const CustomerLogosSectionAnimated:FunctionComponent<Props> = ({ showButt
         const logoContainerTwo = secondLogoContainerReferenceClone.current as HTMLDivElement
         const logoContainerThree = thirdLogoContainerReferenceClone.current as HTMLDivElement
         const transformOne = window.getComputedStyle(logoContainerOne).transform
+        const matchedTransformOne = transformOne.match(/matrix.*\((.+)\)/)
         
-        if (logoContainerOne && logoContainerTwo && logoContainerThree && transformOne) {
-            const matrixValueXOne = transformOne.match(/matrix.*\((.+)\)/)[1].split(', ')[4]
+        if (logoContainerOne && logoContainerTwo && logoContainerThree && matchedTransformOne) {
+            const matrixValueXOne = matchedTransformOne[1].split(', ')[4]
             const xPosition = parseInt(matrixValueXOne, 10)
             const newPosition = -totalWidth - xPosition
 

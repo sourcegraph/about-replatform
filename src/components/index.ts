@@ -28,8 +28,13 @@ export {
     ViewDeveloperDocumentationAction,
 } from './Actions'
 
-// Pricing
+// Carousels
+export {
+    CustomCarousel,
+    QuoteCarousel,
+} from './Carousels'
 
+// Pricing
 export { PricingPlanProperty, PricingPlanFeature, PricingPlan } from './Pricing'
 
 export type { Features } from './Pricing'
