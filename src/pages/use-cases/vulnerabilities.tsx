@@ -355,7 +355,7 @@ const UseCasePage: FunctionComponent = () => (
         </ContentSection>
 
         <ContentSection>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center mb-lg-6">
                 <Link href="/get-started" passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="btn btn-primary">Ready to get started?</a>
