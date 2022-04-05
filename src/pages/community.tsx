@@ -46,7 +46,7 @@ export const Community: FunctionComponent = () => (
                     <div className="col-lg-6">
                         <figure>
                             <img
-                                className="hero_img"
+                                className="w-100 mt-7"
                                 src="/community/hero_illustration.svg"
                                 alt="Sourcegraph Community"
                             />
@@ -72,7 +72,7 @@ export const Community: FunctionComponent = () => (
                     <a href="http://srcgr.ph/cheatsheet">
                         <figure>
                             <img
-                                className="cheatsheet_img"
+                                className="max-w-800 w-100"
                                 src="/community/cheatsheet_top.png"
                                 alt="Sourcegraph Cheatsheet"
                             />
@@ -111,7 +111,7 @@ export const Community: FunctionComponent = () => (
                     </div>
                     <div className="col-lg-6">
                         <img
-                            className="sg_champion_img mt-6"
+                            className="w-100 mt-6"
                             src="/community/SG_Robots_Trophy.png"
                             alt="Become a Sourcegraph Champion!"
                         />
@@ -136,7 +136,7 @@ export const Community: FunctionComponent = () => (
                 </div>
                 <div className="col-lg-5">
                     <img
-                        className="sg_champion_img mt-6"
+                        className="w-100 mt-6"
                         src="/community/SG_DM_us_on_slack.png"
                         alt="DM us on Slack!"
                     />
