@@ -4,13 +4,54 @@ import { FunctionComponent } from 'react'
 
 import CheckIcon from 'mdi-react/CheckIcon'
 import Link from 'next/link'
-// import { Helmet } from 'react-helmet'
 
-import { ContentSection, Layout, TrySourcegraph } from '@components'
+import { 
+    ContentSection, 
+    Layout, 
+    SupportPlan,
+    SupportPlanFeature,
+    SupportFeatures,
+    TrySourcegraph } from '@components'
 
-const liClassName = 'list-group-item bg-transparent border-0'
+const liClassName = 'list-group-item border-0'
 const checkClassName = 'icon-inline support-plan-feature__icon-true'
 const nocheckClassName = 'icon-inline support-plan-feature__icon-false'
+
+const FREE_FEATURES: SupportFeatures = {
+    communitySupport: true,
+    emailSupport: false,
+    workingHoursSupport: false,
+    responseTime48: false,
+    responseTime24: false,
+    uptime: false,
+    implementationSupport: false,
+    sharedSlackChannel: false,
+    customerEngineer: false,
+}
+
+const TEAM_FEATURES: SupportFeatures = {
+    communitySupport: true,
+    emailSupport: true,
+    workingHoursSupport: true,
+    responseTime48: true,
+    responseTime24: false,
+    uptime: false,
+    implementationSupport: false,
+    sharedSlackChannel: false,
+    customerEngineer: false,
+}
+
+const ENTERPRISE_FEATURES: SupportFeatures = {
+    communitySupport: true,
+    emailSupport: true,
+    workingHoursSupport: true,
+    responseTime48: false,
+    responseTime24: true,
+    uptime: true,
+    implementationSupport: true,
+    sharedSlackChannel: true,
+    customerEngineer: true,
+}
 
 const Support: FunctionComponent = () => (
     <Layout 
@@ -32,7 +73,19 @@ const Support: FunctionComponent = () => (
             <div className="container-fluid pricing-page__plans">
                 <div className="row pt-4">
                     <div className="col-md-4 mx-auto mb-4">
-                        <div className="support-plan card">
+                        <SupportPlan
+                                className="pricing-page__plan"
+                                name="Free"
+                                planProperties={
+                                    <>
+                                    </>
+                                }
+                                features={FREE_FEATURES}
+                                buttonLabel="Deploy"
+                                buttonClassName="btn-outline-primary"
+                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
+                            />
+                        {/* <div className="support-plan card">
                             <div className="card-body">
                                 <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Free</h2>
                                 <a
@@ -44,7 +97,8 @@ const Support: FunctionComponent = () => (
                             </div>
                             <ol className="list-group support-plan-feature list-group-flush py-3">
                                 <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> Community support on our{' '}
+                                    <CheckIcon className={checkClassName} />
+                                    Community support on our{' '}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
                                         public issue tracker
                                     </a>
@@ -80,10 +134,22 @@ const Support: FunctionComponent = () => (
                                     &nbsp;
                                 </li>
                             </ol>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-md-4 mx-auto mb-4">
-                        <div className="card">
+                        <SupportPlan
+                                className="pricing-page__plan"
+                                name="Team"
+                                planProperties={
+                                    <>
+                                    </>
+                                }
+                                features={TEAM_FEATURES}
+                                buttonLabel="Buy Now"
+                                buttonClassName="support-plan__button btn btn-success w-100 justify-content-center text-center d-inline-flex"
+                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
+                            />
+                        {/* <div className="card">
                             <div className="card-body">
                                 <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Team</h2>
                                 <Link
@@ -98,7 +164,7 @@ const Support: FunctionComponent = () => (
                                 </Link>
                             </div>
                             <ol className="list-group support-plan-feature list-group-flush py-3">
-                                <li className="list-group-item bg-transparent border-0">
+                                <li className={liClassName}>
                                     <CheckIcon className={checkClassName} /> 
                                     Community support on our{' '}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
@@ -135,10 +201,22 @@ const Support: FunctionComponent = () => (
                                     &nbsp;
                                 </li>
                             </ol>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-md-4 mx-auto mb-4">
-                        <div className="card">
+                        <SupportPlan
+                                className="pricing-page__plan"
+                                name="Enterprise"
+                                planProperties={
+                                    <>
+                                    </>
+                                }
+                                features={ENTERPRISE_FEATURES}
+                                buttonLabel="Contact us"
+                                buttonClassName="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
+                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
+                            />
+                        {/* <div className="card">
                             <div className="card-body">
                                 <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Enterprise</h2>
                                 <a
@@ -149,7 +227,7 @@ const Support: FunctionComponent = () => (
                                 </a>
                             </div>
                             <ol className="list-group support-plan-feature list-group-flush py-3">
-                                <li className="list-group-item bg-transparent border-0">
+                                <li className={liClassName}>
                                     <CheckIcon className={checkClassName} /> 
                                     Community support on our{' '}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
@@ -193,7 +271,7 @@ const Support: FunctionComponent = () => (
                                     )
                                 </li>
                             </ol>
-                        </div>
+                        </div> */}
                     </div>
                     <p>
                         * We will use commercially reasonable efforts to adhere to the SLAs and uptime defined
