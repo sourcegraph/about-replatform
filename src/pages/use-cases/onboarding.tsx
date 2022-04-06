@@ -135,7 +135,7 @@ const UseCasePage: FunctionComponent = () => (
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
         className="use-cases-page"
-        heroAndHeaderClassName={`${styles['each-page-header']} navbar-light`}
+        heroAndHeaderClassName={`${styles.pageHeader} navbar-light`}
         hero={
             <>
                 <div className="bg" />

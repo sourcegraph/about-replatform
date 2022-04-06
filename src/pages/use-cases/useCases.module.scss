@@ -1,11 +1,11 @@
 @import '@styles/colors';
 @import '@styles/gradients';
 
-.landing-header {
+.landingHeader {
     background: url('/customers-page-bg.svg') no-repeat;
     background-size: cover;
 }
-.each-page-header {
+.pageHeader {
     min-height: 587px;
     position: relative;
     background-image: url('/code-insights/code-insights-page-bg.svg'),
