@@ -44,6 +44,7 @@ export {
     MediaQuote,
 } from './CaseStudies'
 
+// Blog
 export {
     BlogHeader,
     BlogHeadLinks,
@@ -54,4 +55,5 @@ export {
     PostsListPage,
     PressReleasePost,
     ReleasePost,
+    BLOG_TYPE_TO_INFO,
 } from './Blog'
