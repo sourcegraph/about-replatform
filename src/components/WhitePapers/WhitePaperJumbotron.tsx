@@ -8,11 +8,16 @@ export const WhitePaperJumbotron: FunctionComponent<{
     <div
         className={`jumbotron rounded-0 ${className}`}
         // eslint-disable-next-line react/forbid-dom-props
-        style={bgImage ? {
-            backgroundImage: `url(${bgImage})`, backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover'
-        } : undefined}
+        style={
+            bgImage
+                ? {
+                      backgroundImage: `url(${bgImage})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      backgroundSize: 'cover',
+                  }
+                : undefined
+        }
     >
         <div className="container text-center py-5">
             <span className="white-papers__label d-block mt-1">white paper</span>

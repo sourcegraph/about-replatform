@@ -28,7 +28,7 @@ export const WhitePaperPage: FunctionComponent<Props> = ({
 }) => (
     <div className={className}>
         <WhitePaperJumbotron className="text-light mb-5" bgImage={bgImage}>
-            <h1 className={`${titleClassName}`}>{title}</h1>
+            <h1 className={titleClassName}>{title}</h1>
             {pdf && (
                 <a href={pdf} className="btn btn-primary mt-4" rel="noreferrer nofollow" target="_blank">
                     <i className="fa fa-file-pdf pr-2" />
