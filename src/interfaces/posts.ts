@@ -2,11 +2,13 @@ import { FunctionComponent } from 'react'
 
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-import { BlogPost } from '../components/Blog/BlogPost'
-import { LinkPost } from '../components/Blog/LinkPost'
-import { PodcastPost } from '../components/Blog/PodcastPost'
-import { PressReleasePost } from '../components/Blog/PressReleasePost'
-import { ReleasePost } from '../components/Blog/ReleasePost'
+import {
+    BlogPost,
+    LinkPost,
+    PodcastPost,
+    PressReleasePost,
+    ReleasePost,
+} from '@components'
 
 export enum PostType {
     BlogPost,
