@@ -7,7 +7,7 @@ import {
     Layout,
     ContentSection,
     WhitePaperInContentBlockquote,
-    WhitePaperInContentImage,
+    InContentImage,
     WhitePaperPage,
     WhitePaperRequestDemoForm,
 } from '@components'
@@ -123,7 +123,8 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         reviewing. This allows you to build a comprehensive understanding of how the code works and
                         ensure your questions are specific to what the author has changed.
                     </p>
-                    <WhitePaperInContentImage
+                    <InContentImage
+                        className="white-papers__img"
                         src="/white-papers/remotework_codereview.png"
                         alt="Sourcegraph's go to definition and find references hover tooltip on a code review"
                     />
@@ -147,7 +148,8 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         see if others have made similar changes in the past—allowing you to follow the paper trail of
                         your code's history.
                     </p>
-                    <WhitePaperInContentImage
+                    <InContentImage
+                        className="white-papers__img"
                         src="/white-papers/remotework_commithistory.png"
                         alt="A commit history search with highlighted code authors in Sourcegraph"
                     />
@@ -193,7 +195,8 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         to quickly search across your entire organization's code. Both allow you to instantly get a link
                         to that code that you can share with a coworker.
                     </p>
-                    <WhitePaperInContentImage
+                    <InContentImage
+                        className="white-papers__img"
                         src="/white-papers/remotework_codelinksharing.png"
                         alt="With Sourcegraph, you can share a direct link to the code you want to discuss"
                     />

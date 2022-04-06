@@ -1,5 +1,4 @@
 export * from './WhitePaperInContentBlockquote'
-export * from './WhitePaperInContentImage'
 export * from './WhitePaperJumbotron'
 export * from './WhitePaperPage'
 export * from './WhitePaperRequestDemoForm'

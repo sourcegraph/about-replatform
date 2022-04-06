@@ -60,7 +60,6 @@ export {
 // White Papers
 export {
     WhitePaperInContentBlockquote,
-    WhitePaperInContentImage,
     WhitePaperPage,
     WhitePaperRequestDemoForm,
 } from './WhitePapers'
