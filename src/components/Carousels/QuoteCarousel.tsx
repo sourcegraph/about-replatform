@@ -58,9 +58,7 @@ export const QuoteCarousel: FunctionComponent<QuoteCarouselProps> = ({ items, au
             <div className="d-lg-flex d-none align-items-center">
                 <ArrowRightIcon className="ml-4" onClick={() => carouselHook.moveCarousel()} />
             </div>
-            <div
-                className={`d-lg-none d-flex justify-content-center mt-4 w-100 position-absolute ${styles.positionNav}`}
-            >
+            <div className={`d-lg-none d-flex justify-content-center w-100 position-absolute ${styles.positionNav}`}>
                 <div>
                     <ArrowLeftIcon className="mr-4" onClick={() => carouselHook.moveCarousel('decrement')} />
                 </div>
