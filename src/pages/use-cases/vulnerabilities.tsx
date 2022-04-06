@@ -301,9 +301,11 @@ const UseCasePage: FunctionComponent = () => (
         </div>
 
         <ContentSection>
-            <div className="row mt-lg-0 mt-5 justify-content-center">
+            <div className="row mt-lg-0 mt-5 justify-content-center mb-lg-0 mb-md-0 mb-4">
                 <div className="d-flex flex-column mt-lg-6 mt-4 w-100 mx-3">
-                    <h1 className="font-weight-bold text-lg-center text-left mb-lg-6 mb-md-6">How Sourcegraph helps</h1>
+                    <h1 className="font-weight-bold text-lg-center text-left mb-lg-6 mb-md-6 mb-5">
+                        How Sourcegraph helps
+                    </h1>
                 </div>
                 <div className="pb-lg-5 pb-md-6 pb-5">
                     <CustomCarousel items={items} autoAdvance={true} smallPanel={true} />
@@ -311,7 +313,7 @@ const UseCasePage: FunctionComponent = () => (
             </div>
         </ContentSection>
 
-        <div className="bg-gradient-onahau-fog py-8">
+        <div className="bg-gradient-onahau-fog py-5">
             <ContentSection>
                 <QuoteCarousel items={quoteCarouselItems} autoAdvance={true} />
             </ContentSection>
