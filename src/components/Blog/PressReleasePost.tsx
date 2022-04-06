@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 
-import truncate from 'lodash/truncate'
+import { truncate } from 'lodash'
 import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 

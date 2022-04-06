@@ -12,6 +12,6 @@ echo "Creating a placeholder static slugCache file"
 
 echo "{}" > public/data/slugCache.json
 
-echo "Starting dev server"
+echo "Building local cache"
 
-yarn build:cache && next dev || exit 1
+yarn build:cache || exit 1

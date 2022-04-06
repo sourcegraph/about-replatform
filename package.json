@@ -3,7 +3,8 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "./scripts/runDev.sh",
+    "predev": "./scripts/preDev.sh",
+    "dev": "next dev",
     "build:cache": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node src/scripts/cache.ts",
     "build": "next build && next export",
     "start": "next start",
