@@ -62,6 +62,9 @@ export default BlogPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const allSlugs = await getAllSlugs()
+    if (!allSlugs) {
+        return { paths: [{ params: { slug: ['404'] } }], fallback: false }
+    }
     const slugs = Object.keys(allSlugs.records.blogposts.recordSlugs)
     const paths = slugs.map(slug => ({ params: { slug: slug.split('/') } }))
 
@@ -76,9 +79,11 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false }
         throw new Error('Missing slug')
     }
     const files = await getMarkdownFiles()
+    if (!files) {
+        return { notFound: true }
+    }
     const fileSlug = `${(params.slug as string[]).join('/')}`
     const filePath = files.records[fileSlug].filePath
-
     const post = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
     const content = await serializeMdxSource(post.content)
 

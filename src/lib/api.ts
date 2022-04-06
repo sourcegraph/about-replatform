@@ -52,17 +52,20 @@ export const getPages = async (baseDirectory: string): Promise<string[]> => {
     return filterFiles(getFiles, fileRegex)
 }
 
-export const getAllSlugs = async (): Promise<SlugCacheObject> => {
+export const getAllSlugs = async (): Promise<SlugCacheObject | undefined> => {
     const slugData = (await fs
         .readFile(path.join(process.cwd(), SLUG_CACHE_PATH), 'utf8')
         .catch(error => console.error(error))) as string
-    const slugs = JSON.parse(slugData) as SlugCacheObject
-    return slugs
+    if (slugData) {
+        return JSON.parse(slugData) as SlugCacheObject
+    }
 }
 
-export const getMarkdownFiles = async (): Promise<FileCacheObject> => {
+export const getMarkdownFiles = async (): Promise<FileCacheObject | undefined> => {
     const fileData = (await fs
         .readFile(path.join(process.cwd(), FILE_CACHE_PATH), 'utf8')
         .catch(error => console.error(error))) as string
-    return JSON.parse(fileData) as FileCacheObject
+    if (fileData) {
+        return JSON.parse(fileData) as FileCacheObject
+    }
 }

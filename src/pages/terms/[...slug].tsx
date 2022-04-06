@@ -31,6 +31,9 @@ export default TermPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const allSlugs = await getAllSlugs()
+    if (!allSlugs) {
+        return { paths: [{ params: { slug: ['404'] } }], fallback: false }
+    }
     const slugs = Object.keys(allSlugs.records.terms.recordSlugs)
     const paths = slugs.map(slug => ({ params: { slug: slug.split('/') } }))
 
@@ -45,6 +48,9 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false }
         throw new Error('Missing slug')
     }
     const files = await getMarkdownFiles()
+    if (!files) {
+        return { notFound: true }
+    }
     const fileSlug = `${(params.slug as string[]).join('/')}`
     const filePath = files.records[fileSlug].filePath
 
