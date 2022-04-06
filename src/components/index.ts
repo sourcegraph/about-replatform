@@ -29,12 +29,10 @@ export {
 } from './Actions'
 
 // Pricing
-
 export { PricingPlanProperty, PricingPlanFeature, PricingPlan } from './Pricing'
-
 export type { Features } from './Pricing'
 
-// Page Specific
+// Case Studies
 export {
     CaseStudyJumbotron,
     CaseStudyLayout,
@@ -43,3 +41,11 @@ export {
     InContentImage,
     MediaQuote,
 } from './CaseStudies'
+
+// White Papers
+export {
+    WhitePaperInContentBlockquote,
+    WhitePaperInContentImage,
+    WhitePaperPage,
+    WhitePaperRequestDemoForm,
+} from './WhitePapers'
