@@ -6,7 +6,7 @@ import ClipboardTextOutlineIcon from 'mdi-react/ClipboardTextOutlineIcon'
 import FlagOutlineIcon from 'mdi-react/FlagOutlineIcon'
 import Link from 'next/link'
 
-import { Layout, NewCaseStudyLayout, ContentSection, Blockquote } from '@components'
+import { Layout, NewCaseStudyLayout, ContentSection, BlockquoteWithBorder } from '@components'
 
 export const CaseStudy: FunctionComponent = () => (
     <Layout
@@ -29,7 +29,7 @@ export const CaseStudy: FunctionComponent = () => (
                 href: 'https://nutanix.com'
             }}
         >
-
+            {/* TODO: Make re-usable */}
             <section className="d-flex flex-column flex-md-row">
                 <div className="bg-light-gray-2 p-lg-6 p-md-5 px-1 py-5 col-sm-12 col-md-6">
                     <section className="mw-xl-550 ml-xl-auto">
@@ -192,12 +192,12 @@ export const CaseStudy: FunctionComponent = () => (
                 </p>
             </ContentSection>
 
+            {/* TODO: Fix styling border */}
             <ContentSection color="white" className="py-6 mw-700 text-gray">
-                <Blockquote
-                    border={true}
+                <BlockquoteWithBorder
                     quote="It's nice when you can just run a report and say, 'Here it is,' or 'Here it isn't.' It's much
                     better than having to say, 'Well, boss, I think we got it all.'"
-                    by="Jon Kohler, Technical Director of Solution Engineering at Nutanix"
+                    author="Jon Kohler, Technical Director of Solution Engineering at Nutanix"
                 />
             </ContentSection>
 
@@ -240,6 +240,7 @@ export const CaseStudy: FunctionComponent = () => (
                 </section>
             </ContentSection>
 
+            {/* TODO: Make re-usable */}
             <div className="bg-gradient-blue-mist py-lg-7 p-5">
                 <section className="container-xl">
                     <h2 className="text-center pb-5 display-3 font-weight-bold">Results</h2>
@@ -298,6 +299,7 @@ export const CaseStudy: FunctionComponent = () => (
                 </section>
             </ContentSection>
 
+            {/* TODO: Bring in AuthorBio */}
             {/* <AuthorBio
                 customer="Nutanix"
                 image="/case-studies/jon-kohler.png"
@@ -305,38 +307,6 @@ export const CaseStudy: FunctionComponent = () => (
                 title="Technical Director of Solution Engineering at Nutanix"
                 about="Nutanix has 20,000 customers, an annual revenue of nearly $1.394 billion, and over 6,000 employees. Organizations around the world rely on Nutanix software as a single platform to manage any app at any scale for their hybrid multicloud environments."
             /> */}
-
-            <div className="bg-light-gray2">
-                <ContentSection>
-                    <div className="row d-flex flex-column mx-4 mx-lg-0 py-7 align-items-lg-center align-items-left">
-                        <div className="mb-5 d-flex flex-column">
-                            <h1 className="text-center font-weight-bold">Get started with Sourcegraph</h1>
-                            <p className="text-center">
-                                Understand, fix, and automate changes across your entire codebase.
-                            </p>
-                        </div>
-                        <div className="d-flex flex-column">
-                            <Link href="/demo" className="btn btn-primary">
-                                Request a demo
-                            </Link>
-                            <Link href="/get-started" className="d-flex justify-content-center mt-4">
-                                <p className="font-weight-bold">Try Sourcegraph now</p>
-                            </Link>
-                        </div>
-                    </div>
-                </ContentSection>
-            </div>
-
-            {/* <ContentSection color="white" className="py-lg-7 py-5 col-xl-5">
-                <h1 className="pl-5 pb-5 display-3 font-weight-bold">Explore other case studies</h1>
-                <div className="d-flex flex-wrap">
-                    {CASESTUDIES.slice(1, 5).map((study, i) => (
-                        <div key={i} className="col-lg-6 mb-3">
-                            <CaseStudyCard study={study} />
-                        </div>
-                    ))}
-                </div>
-            </ContentSection> */}
         </NewCaseStudyLayout>
     </Layout>
 )
