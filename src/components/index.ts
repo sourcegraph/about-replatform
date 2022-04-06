@@ -45,5 +45,6 @@ export {
     InContentImage,
     MediaQuote,
     NewCaseStudyLayout,
+    ResultsCloserLook,
     UseChallengeSolutionResults,
 } from './CaseStudies'

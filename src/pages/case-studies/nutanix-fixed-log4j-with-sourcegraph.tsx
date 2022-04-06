@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 
 import Link from 'next/link'
 
-import { AuthorBio, Layout, NewCaseStudyLayout, ContentSection, Blockquote, UseChallengeSolutionResults } from '@components'
+import { AuthorBio, Layout, NewCaseStudyLayout, ContentSection, Blockquote, ResultsCloserLook, UseChallengeSolutionResults } from '@components'
 
 export const CaseStudy: FunctionComponent = () => (
     <Layout
@@ -27,7 +27,7 @@ export const CaseStudy: FunctionComponent = () => (
         >
             <UseChallengeSolutionResults
                 useCases={[
-                    { text: 'Find and fix security vulnerabilities quickly across the codebase.', link: '/use-cases/vulnerabilities' }
+                    { text: 'Find and fix security vulnerabilities quickly across the codebase.', href: '/use-cases/vulnerabilities' }
                 ]}
                 challenges={[
                     'Inability to efficiently find all the instances of Log4j in their large codebase.',
@@ -173,35 +173,13 @@ export const CaseStudy: FunctionComponent = () => (
                 </section>
             </ContentSection>
 
-            {/* TODO: Make re-usable */}
-            <div className="bg-gradient-blue-mist py-lg-7 p-5">
-                <section className="container-xl">
-                    <h2 className="text-center pb-5 display-3 font-weight-bold">Results</h2>
-                    <div className="mb-5 row">
-                        <div className="col-sm-12 col-md-4 text-center">
-                            <h3 className="pb-3 font-weight-bold text-blue7">{'<'} 5 min</h3>
-                            <p className="max-w-md-400 max-w-lg-250 max-w-xl-250 mx-auto">
-                                Nutanix was able to see where JMSAppender existed, fix it, and send out a release in
-                                less than 5 minutes.
-                            </p>
-                        </div>
-                        <div className="col-sm-12 col-md-4 text-center">
-                            <h3 className="pb-3 font-weight-bold text-blue7">4 days</h3>
-                            <p className="max-w-md-400 max-w-lg-250 max-w-xl-250 mx-auto">
-                                Nutanix was able to deliver patches to its customers that fully remediated the Log4j
-                                vulnerability.
-                            </p>
-                        </div>
-                        <div className="col-sm-12 col-md-4 text-center">
-                            <h3 className="pb-3 font-weight-bold text-blue7">100% confidence</h3>
-                            <p className="max-w-md-400 max-w-lg-250 max-w-xl-250 mx-auto">
-                                Nutanix was able to confidently identify every instance of Log4j across its sprawling
-                                codebase.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            <ResultsCloserLook
+                results={[
+                    { subtitle: '< 5 min', description: 'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.' },
+                    { subtitle: '4 days', description: 'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability.' },
+                    { subtitle: '100% confidence', description: 'Nutanix was able to confidently identify every instance of Log4j across its sprawling codebase.' },
+                ]}
+            />
 
             <ContentSection color="white" className="py-6 max-w-700 col-xl-5">
                 <section>

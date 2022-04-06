@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 interface TextLink {
     text: string
-    link: string
+    href?: string
 }
 
 interface Props {
@@ -34,13 +34,13 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Use case</h5>
                         <ul className="pl-4">
-                            {useCases.map(case => (
-                                <li>
-                                    {case?.link ? (
-                                        <Link href={case.link}>
-                                            {case.text}
+                            {useCases.map((useCase, index) => (
+                                <li key={index}>
+                                    {useCase?.href ? (
+                                        <Link href={(useCase as TextLink).href}>
+                                            {(useCase as TextLink).text}
                                         </Link>
-                                        ) : {case.text}
+                                        ) : <span>{useCase}</span>
                                     }
                                 </li>
                             ))}
@@ -54,12 +54,16 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Challenge</h5>
                         <ul className="pl-4">
-                            <li>
-                                Inability to efficiently find all the instances of Log4j in their large
-                                codebase.
-                            </li>
-                            <li>Lack of code-level clarity that vulnerabilities were completely resolved.</li>
-                            <li>Uncertainty about the scope and impact of the Log4j vulnerability.</li>
+                            {challenges.map((challenge, index) => (
+                                <li key={index}>
+                                    {challenge?.href ? (
+                                        <Link href={(challenge as TextLink).href}>
+                                            {(challenge as TextLink).text}
+                                        </Link>
+                                        ) : <span>{challenge}</span>
+                                    }
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -70,14 +74,16 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Solution</h5>
                         <ul className="pl-4">
-                            <li>
-                                Able to quickly and efficiently find every instance of the Log4j vulnerability.
-                            </li>
-                            <li>Full confidence that all Log4j-vulnerable code was identified and resolved.</li>
-                            <li>
-                                Able to quickly validate that no known vulnerabilities exist in the codebase
-                                prior to each release.
-                            </li>
+                            {solutions.map((solution, index) => (
+                                <li key={index}>
+                                    {solution?.href ? (
+                                        <Link href={(solution as TextLink).href}>
+                                            {(solution as TextLink).text}
+                                        </Link>
+                                        ) : <span>{solution}</span>
+                                    }
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -92,18 +98,16 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Results</h5>
                         <ul className="pl-4">
-                            <li>
-                                Nutanix was able to see where JMSAppender existed, fix it, and send out a
-                                release in less than 5 minutes.
-                            </li>
-                            <li>
-                                Nutanix was able to deliver patches to its customers that fully remediated the
-                                Log4j vulnerability in under 4 days.
-                            </li>
-                            <li>
-                                Nutanix was able to identify every instance of Log4j across its sprawling
-                                codebase with 100% confidence.
-                            </li>
+                            {results.map((result, index) => (
+                                <li key={index}>
+                                    {result?.href ? (
+                                        <Link href={(result as TextLink).href}>
+                                            {(result as TextLink).text}
+                                        </Link>
+                                        ) : <span>{result}</span>
+                                    }
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
