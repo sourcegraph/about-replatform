@@ -13,6 +13,7 @@ export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWith
 export { Video } from './Video'
 export { IntegrationsSection } from './IntegrationsSection'
 export { SelfHostedSection } from './SelfHostedSection'
+export { YouTube } from './YouTube'
 
 // Tracking
 export { buttonStyle, buttonLocation } from './data/tracking'
@@ -41,6 +42,20 @@ export {
     InContentImage,
     MediaQuote,
 } from './CaseStudies'
+
+// Blog
+export {
+    BlogHeader,
+    BlogHeadLinks,
+    BlogPost,
+    LinkPost,
+    PodcastPost,
+    PostsList,
+    PostsListPage,
+    PressReleasePost,
+    ReleasePost,
+    BLOG_TYPE_TO_INFO,
+} from './Blog'
 
 // White Papers
 export {

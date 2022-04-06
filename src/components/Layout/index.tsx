@@ -14,6 +14,7 @@ interface LayoutProps {
         externalDescription?: string
         image?: string
         icon?: string
+        canonical?: string
     }
     children: ReactNode
     minimal?: boolean
@@ -64,6 +65,8 @@ export const Layout: FunctionComponent<LayoutProps> = props => {
 
                 <link rel="icon" type="image/png" href={meta.icon} />
                 <link rel="icon" type="image/png" href={meta.image} />
+
+                {meta.canonical ? <link rel="canonical" href={meta.canonical} /> : ''}
             </Head>
 
             <div className={props.heroAndHeaderClassName}>
@@ -83,7 +86,7 @@ export const Layout: FunctionComponent<LayoutProps> = props => {
 
             {!props.hideFooter && (
                 <Footer
-                    className={`pt-4 ${props.className || ''} ${isCaseStudyPage ? 'bg-black' : ''}`}
+                    className={`${props.className || ''} ${isCaseStudyPage ? 'bg-black' : ''}`}
                     minimal={props.minimal}
                 />
             )}
