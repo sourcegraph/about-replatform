@@ -13,6 +13,8 @@ export { BlogListItem } from './BlogListItem'
 export { Blockquote, BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWithLogoBottom } from './Blockquote'
 export { Video } from './Video'
 export { CustomerLogosSectionAnimated } from './CustomerLogosSectionAnimated'
+export { IntegrationsSection } from './IntegrationsSection'
+export { SelfHostedSection } from './SelfHostedSection'
 
 // Tracking
 export { buttonStyle, buttonLocation } from './data/tracking'
