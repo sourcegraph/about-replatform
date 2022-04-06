@@ -10,7 +10,7 @@ interface CaseStudies {
 }
 
 // TODO: This data will eventually live in our CMS
-const CASESTUDIES: CaseStudies[] = [
+export const CASESTUDIES: CaseStudies[] = [
     {
         name: 'Nutanix',
         logo: '/external-logos/nutanix-logo.svg',
