@@ -26,12 +26,8 @@ export const WhitePaperPage: FunctionComponent<Props> = ({
     children,
     bgImage,
 }) => (
-    <div
-        className={className}
-        // eslint-disable-next-line react/forbid-dom-props
-        style={bgImage ? { backgroundImage: `url(${bgImage})`, backgroundRepeat: 'no-repeat' } : undefined}
-    >
-        <WhitePaperJumbotron className="text-light mb-5">
+    <div className={className}>
+        <WhitePaperJumbotron className="text-light mb-5" bgImage={bgImage}>
             <h1 className={`${titleClassName}`}>{title}</h1>
             {pdf && (
                 <a href={pdf} className="btn btn-primary mt-4" rel="noreferrer nofollow" target="_blank">

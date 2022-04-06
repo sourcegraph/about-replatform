@@ -194,7 +194,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         to that code that you can share with a coworker.
                     </p>
                     <WhitePaperInContentImage
-                        src="/static/white-papers/remotework_codelinksharing.png"
+                        src="/white-papers/remotework_codelinksharing.png"
                         alt="With Sourcegraph, you can share a direct link to the code you want to discuss"
                     />
                     <h3 className="pt-5 pb-1">Sourcegraph supports remote work environments in many ways. It:</h3>
