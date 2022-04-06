@@ -44,7 +44,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
         <>
             <div className={`${stringToKebabCase(customer)}-${className} ${className}`}>
                 <CaseStudyJumbotron className="bg-gradient-onahau-fog text-black height-md-450 height-auto p-2" customer={customer} color="white">
-                    <h1 className="pt-5 pb-6 display-2 font-weight-bold mw-600 mx-auto">
+                    <h1 className="pt-5 pb-6 display-2 font-weight-bold max-w-600 mx-auto">
                         {title}
                     </h1>
                     {pdf && (
@@ -56,7 +56,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
                 </CaseStudyJumbotron>
 
                 {quote && (
-                    <ContentSection color="white" className="py-6 text-center mw-600">
+                    <ContentSection color="white" className="py-6 text-center max-w-600">
                         <BlockquoteWithLogoTop
                             quote={quote.text}
                             author={quote.author}
@@ -72,7 +72,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
 
             <RequestDemoTrySourcegraph />
 
-            <ContentSection color="white" className="py-lg-7 py-5 col-xl-5">
+            <ContentSection color="white" className="py-lg-7 py-5 col-xl-6">
                 <h1 className="pl-5 pb-5 display-3 font-weight-bold">Explore other case studies</h1>
                 <div className="d-flex flex-wrap">
                     {uniqueCaseStudyList.map(study => (
