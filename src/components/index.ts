@@ -37,6 +37,7 @@ export type { Features } from './Pricing'
 
 // Page Specific
 export {
+    AuthorBio,
     CaseStudyJumbotron,
     CaseStudyLayout,
     CaseStudyCard,

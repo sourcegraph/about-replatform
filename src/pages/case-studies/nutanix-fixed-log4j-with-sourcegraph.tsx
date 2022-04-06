@@ -6,7 +6,7 @@ import ClipboardTextOutlineIcon from 'mdi-react/ClipboardTextOutlineIcon'
 import FlagOutlineIcon from 'mdi-react/FlagOutlineIcon'
 import Link from 'next/link'
 
-import { Layout, NewCaseStudyLayout, ContentSection, BlockquoteWithBorder } from '@components'
+import { AuthorBio, Layout, NewCaseStudyLayout, ContentSection, BlockquoteWithBorder } from '@components'
 
 export const CaseStudy: FunctionComponent = () => (
     <Layout
@@ -299,14 +299,13 @@ export const CaseStudy: FunctionComponent = () => (
                 </section>
             </ContentSection>
 
-            {/* TODO: Bring in AuthorBio */}
-            {/* <AuthorBio
+            <AuthorBio
                 customer="Nutanix"
                 image="/case-studies/jon-kohler.png"
                 author="Jon Kohler"
                 title="Technical Director of Solution Engineering at Nutanix"
                 about="Nutanix has 20,000 customers, an annual revenue of nearly $1.394 billion, and over 6,000 employees. Organizations around the world rely on Nutanix software as a single platform to manage any app at any scale for their hybrid multicloud environments."
-            /> */}
+            />
         </NewCaseStudyLayout>
     </Layout>
 )
