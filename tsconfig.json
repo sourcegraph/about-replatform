@@ -18,7 +18,7 @@
     "baseUrl": "src",
     "paths": {
       "@hooks": ["hooks"],
-      "@interfaces": ["interfaces/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@lib": ["lib"],
       "@util": ["util"],
       "@components": ["components"],
