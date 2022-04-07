@@ -1,61 +1,37 @@
-
-import * as React from 'react'
 import { FunctionComponent } from 'react'
 
 import CheckIcon from 'mdi-react/CheckIcon'
 import Link from 'next/link'
 
-import { 
-    ContentSection, 
-    Layout, 
-    SupportPlan,
-    SupportPlanFeature,
-    SupportFeatures,
-    TrySourcegraph } from '@components'
+import { ContentSection, Layout, TrySourcegraph } from '@components'
 
-const liClassName = 'list-group-item border-0'
-const checkClassName = 'icon-inline support-plan-feature__icon-true'
-const nocheckClassName = 'icon-inline support-plan-feature__icon-false'
+const listItem = 'list-group-item bg-transparent border-0'
 
-const FREE_FEATURES: SupportFeatures = {
-    communitySupport: true,
-    emailSupport: false,
-    workingHoursSupport: false,
-    responseTime48: false,
-    responseTime24: false,
-    uptime: false,
-    implementationSupport: false,
-    sharedSlackChannel: false,
-    customerEngineer: false,
+const CLASS_NAMES = {
+    featureOffered: `${listItem}`,
+    featureNotOffered: `${listItem} pricing-plan-feature__value-false`,
+    featureChecked: 'icon-inline text-success',
+    featureNotChecked: 'icon-inline invisible',
 }
 
-const TEAM_FEATURES: SupportFeatures = {
-    communitySupport: true,
-    emailSupport: true,
-    workingHoursSupport: true,
-    responseTime48: true,
-    responseTime24: false,
-    uptime: false,
-    implementationSupport: false,
-    sharedSlackChannel: false,
-    customerEngineer: false,
-}
-
-const ENTERPRISE_FEATURES: SupportFeatures = {
-    communitySupport: true,
-    emailSupport: true,
-    workingHoursSupport: true,
-    responseTime48: false,
-    responseTime24: true,
-    uptime: true,
-    implementationSupport: true,
-    sharedSlackChannel: true,
-    customerEngineer: true,
+const SUPPORT_FEATURES = {
+    communitySupport: 'Community support on our ',
+    publicIssueTracker: 'public issue tracker',
+    emailSupport: 'Email support',
+    workingHoursSupport: 'Support during working hours (all North American timezones)',
+    responseTime48: '48 hour response time* to critical issues',
+    responseTime24: '24 hour response time* to critical issues',
+    uptime: '99.5% uptime (managed instances only)',
+    implementationSupport: 'Initial implementation support on architecture, deployment, configuration, and rollout',
+    sharedSlackChannel: 'Shared Slack channel for feedback and communication (available)',
+    sharedSlackChannelContact: 'Shared Slack channel for feedback and communication (available)',
+    customerEngineer: 'Dedicated customer engineer assigned to you (available)',
+    customerEngineerContact: 'Dedicated customer engineer assigned to you (available, ',
 }
 
 const Support: FunctionComponent = () => (
     <Layout 
-        className="pricing-page text-dark"
+        className="support-page text-dark"
         meta={{
             title: 'Sourcegraph - Support',
             description:
@@ -67,27 +43,15 @@ const Support: FunctionComponent = () => (
             <ContentSection className="hero-section text-center py-5">
                 <h1 className="display-2 font-weight-bold">Sourcegraph Support</h1>
                 <p>
-                    See <Link href="/pricing">Pricing</Link> to learn more about these tiers.
+                    See <Link href="./pricing">Pricing</Link> to learn more about these tiers.
                 </p>
             </ContentSection>
-            <div className="container-fluid pricing-page__plans">
+            <div className="container-fluid support-page__plans">
                 <div className="row pt-4">
-                    <div className="col-md-4 mx-auto mb-4">
-                        <SupportPlan
-                                className="pricing-page__plan"
-                                name="Free"
-                                planProperties={
-                                    <>
-                                    </>
-                                }
-                                features={FREE_FEATURES}
-                                buttonLabel="Deploy"
-                                buttonClassName="btn-outline-primary"
-                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
-                            />
-                        {/* <div className="support-plan card">
+                    <div className="d-flex col-md-4 mx-auto mb-4">
+                        <div className="card h-100">
                             <div className="card-body">
-                                <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Free</h2>
+                                <h1 className="card-title mt-3 mb-3 text-center">Free</h1>
                                 <a
                                     className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
                                     href="https://sourcegraph.com/subscriptions/new"
@@ -95,65 +59,53 @@ const Support: FunctionComponent = () => (
                                     Deploy
                                 </a>
                             </div>
-                            <ol className="list-group support-plan-feature list-group-flush py-3">
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    Community support on our{' '}
+                            <ol className="mt-4 list-group list-group-flush py-2 h-100">
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.communitySupport}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
-                                        public issue tracker
+                                        {SUPPORT_FEATURES.publicIssueTracker}
                                     </a>
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Email support
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.emailSupport}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Support during working hours (all North American timezones)
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.workingHoursSupport}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    48 hour response time* to critical issues
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.responseTime48}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    99.5% uptime (managed instances only)
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.uptime}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Initial implementation support on architecture, deployment, configuration, and
-                                    rollout
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.implementationSupport}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Shared Slack channel for feedback and communication (available)
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.sharedSlackChannel}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Dedicated customer engineer assigned to you (available) <br />
-                                    &nbsp;
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.customerEngineer} 
+                                    {/* <br />
+                                    &nbsp; */}
                                 </li>
                             </ol>
-                        </div> */}
+                        </div>
                     </div>
-                    <div className="col-md-4 mx-auto mb-4">
-                        <SupportPlan
-                                className="pricing-page__plan"
-                                name="Team"
-                                planProperties={
-                                    <>
-                                    </>
-                                }
-                                features={TEAM_FEATURES}
-                                buttonLabel="Buy Now"
-                                buttonClassName="support-plan__button btn btn-success w-100 justify-content-center text-center d-inline-flex"
-                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
-                            />
-                        {/* <div className="card">
+                    <div className="d-flex col-md-4 mx-auto mb-4">
+                        <div className="card">
                             <div className="card-body">
-                                <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Team</h2>
+                                <h1 className="card-title mt-3 mb-3 text-center">Team</h1>
                                 <Link
-                                    href="/contact/request-info/?form_submission_source=support-enterprise"
+                                    href="./contact/request-info/?form_submission_source=support-enterprise"
                                     passHref={true}
                                 >
                                     <a
@@ -163,62 +115,51 @@ const Support: FunctionComponent = () => (
                                     </a>
                                 </Link>
                             </div>
-                            <ol className="list-group support-plan-feature list-group-flush py-3">
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    Community support on our{' '}
+                            <ol className="mt-4 list-group list-group-flush py-2 h-100">
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.communitySupport}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
-                                        public issue tracker
+                                        {SUPPORT_FEATURES.publicIssueTracker}
                                     </a>
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    Email support
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.emailSupport}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    Support during working hours (all North American timezones)
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.workingHoursSupport}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    48 hour response time* to critical issues
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.responseTime48}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    99.5% uptime (managed instances only)
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.uptime}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Initial implementation support on architecture, deployment, configuration, and rollout
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.implementationSupport}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Shared Slack channel for feedback and communication (available)
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.sharedSlackChannel}
                                 </li>
-                                <li className={`${liClassName} pricing-plan-feature__value-false`}>
-                                    <CheckIcon className={nocheckClassName} />
-                                    Dedicated customer engineer assigned to you (available) <br />
-                                    &nbsp;
+                                <li className={CLASS_NAMES.featureNotOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureNotChecked} />
+                                    {SUPPORT_FEATURES.customerEngineer} 
+                                    {/* <br />
+                                    &nbsp; */}
                                 </li>
                             </ol>
-                        </div> */}
+                        </div>
                     </div>
-                    <div className="col-md-4 mx-auto mb-4">
-                        <SupportPlan
-                                className="pricing-page__plan"
-                                name="Enterprise"
-                                planProperties={
-                                    <>
-                                    </>
-                                }
-                                features={ENTERPRISE_FEATURES}
-                                buttonLabel="Contact us"
-                                buttonClassName="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
-                                buttonHref="https://docs.sourcegraph.com#quickstart-guide"
-                            />
-                        {/* <div className="card">
+                    <div className="d-flex col-md-4 mx-auto mb-4">
+                        <div className="card">
                             <div className="card-body">
-                                <h2 className="card-title mt-3 mb-1 text-center support-plan__title">Enterprise</h2>
+                                <h1 className="card-title mt-3 mb-3 text-center">Enterprise</h1>
                                 <a
                                     className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
                                     href="https://docs.sourcegraph.com#quickstart-guide"
@@ -226,59 +167,60 @@ const Support: FunctionComponent = () => (
                                     Contact us
                                 </a>
                             </div>
-                            <ol className="list-group support-plan-feature list-group-flush py-3">
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    Community support on our{' '}
+                            <ol className="mt-4 list-group list-group-flush py-2 h-100">
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.communitySupport}
                                     <a href="https://github.com/sourcegraph/sourcegraph/issues">
-                                        public issue tracker
+                                        {SUPPORT_FEATURES.publicIssueTracker}
                                     </a>
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    Email support
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    {SUPPORT_FEATURES.emailSupport}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    Support during working hours (all North American timezones)
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    {SUPPORT_FEATURES.workingHoursSupport}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    24 hour response time* to critical issues
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.responseTime24}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    99.5% uptime (managed instances only)
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    {SUPPORT_FEATURES.uptime}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
-                                    Initial implementation support on architecture, deployment, configuration, and rollout
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    {SUPPORT_FEATURES.implementationSupport}
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} />
-                                    Shared Slack channel for feedback and communication (available,{' '}
-                                    <Link href="/contact/request-info/?form_submission_source=pricing-enterprise">
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
+                                    {SUPPORT_FEATURES.sharedSlackChannelContact}{' '}
+                                    <Link href="./contact/request-info/?form_submission_source=pricing-enterprise">
                                         contact us
                                     </Link>
                                     )
                                 </li>
-                                <li className={liClassName}>
-                                    <CheckIcon className={checkClassName} /> 
+                                <li className={CLASS_NAMES.featureOffered}>
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
                                     Dedicated customer engineer assigned to you (available,{' '}
-                                    <Link href="/contact/request-info/?form_submission_source=pricing-enterprise">
+                                    <Link href="./contact/request-info/?form_submission_source=pricing-enterprise">
                                         contact us
                                     </Link>
                                     )
                                 </li>
                             </ol>
-                        </div> */}
+                        </div>
                     </div>
-                    <p>
+                    
+                </div>
+                <p className="mx-4">
                         * We will use commercially reasonable efforts to adhere to the SLAs and uptime defined
                         above. SLAs apply to tickets submitted via email to{' '}
                         <a href="mailto:support@sourcegraph.com">support@sourcegraph.com</a>.
                     </p>
-                </div>
                 <hr className="my-4" />
             </div>
         </div>
