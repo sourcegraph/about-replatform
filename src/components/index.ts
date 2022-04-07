@@ -58,8 +58,4 @@ export {
 } from './Blog'
 
 // White Papers
-export {
-    WhitePaperInContentBlockquote,
-    WhitePaperPage,
-    WhitePaperRequestDemoForm,
-} from './WhitePapers'
+export { WhitePaperPage, WhitePaperRequestDemoForm } from './WhitePapers'

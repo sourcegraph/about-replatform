@@ -103,10 +103,10 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                     </ul>
                     <h2 className="pt-5 pb-1">Benefits of using Sourcegraph when working remotely</h2>
                     <p>
-                        There is no Sourcegraph office beyond an official mailbox &mdash; all of our developers, managers, and
-                        executives are remote. We understand what makes remote work successful. We believe what we have
-                        built with Sourcegraph will be invaluable to you. Your remote development experience, whether
-                        you're a work-from-home expert or newbie, will grow stronger than ever.
+                        There is no Sourcegraph office beyond an official mailbox &mdash; all of our developers,
+                        managers, and executives are remote. We understand what makes remote work successful. We believe
+                        what we have built with Sourcegraph will be invaluable to you. Your remote development
+                        experience, whether you're a work-from-home expert or newbie, will grow stronger than ever.
                     </p>
                     <p>Below are some ways Sourcegraph improves working together effectively on a remote team.</p>
                     <h3 className="pt-5 pb-1">Reduce communication needed when reviewing changes</h3>
