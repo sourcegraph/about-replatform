@@ -35,7 +35,7 @@ We talked to [Matt Holt](https://twitter.com/mholt6), creator of the [Caddy web 
 
 Health checks should be as easy to create and maintain as unit tests. We wanted an interface that lets you easily say, “Here are a bunch of URLs I want to test. Here’s the expected behavior for each.” It seemed to us that the best interface for declaring these was not a GUI that forced you to point and click, but a config file. Here’s an example **checkup.json**:
 
-<pre name="4277" id="4277" class="graf graf--pre graf-after--p">{
+<pre name="4277" id="4277" className="graf graf--pre graf-after--p">{`
      "checkers": [{
          "type": "http",
          "endpoint_name": "Website",
@@ -48,13 +48,13 @@ Health checks should be as easy to create and maintain as unit tests. We wanted 
          "secret_access_key": "&lt;yours&gt;",
          "bucket": "&lt;yours&gt;"
      }
-}</pre>
+`}</pre>
 
 You simply specify a list of endpoints in JSON and provide Checkup access to an S3 bucket. (Checkup can automatically provision this for you if you’re not familiar with the AWS control panel.)
 
 Then all you need to do to check the health of your endpoints is run
 
-<pre name="264c" id="264c" class="graf graf--pre graf-after--p">**$ checkup**
+<pre name="264c" id="264c" className="graf graf--pre graf-after--p">{`**$ checkup**
 == Website - https://sourcegraph.com
   Threshold: 0
         Max: 136.296933ms
@@ -62,15 +62,15 @@ Then all you need to do to check the health of your endpoints is run
      Median: 51.626374ms
        Mean: 65.212206ms
         All: [{54.489828ms } {45.93124ms } {51.626374ms } {136.296933ms } {37.716659ms }]
- Assessment: healthy</pre>
+ Assessment: healthy`}</pre>
 
 You can have Checkup upload this data to your S3 bucket with
 
-<pre name="941a" id="941a" class="graf graf--pre graf-after--p">$ checkup --store</pre>
+<pre name="941a" id="941a" className="graf graf--pre graf-after--p">$ checkup --store</pre>
 
 or have it run every 10 minutes with
 
-<pre name="758e" id="758e" class="graf graf--pre graf-after--p">$ checkup every 10m
+<pre name="758e" id="758e" className="graf graf--pre graf-after--p">$ checkup every 10m
 ^C</pre>
 
 And with Checkup and Caddy, you get a nice, simple status page like the one above that works out of the box and pulls data live from your S3 bucket.
