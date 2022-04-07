@@ -24,7 +24,7 @@ const SUPPORT_FEATURES = {
     uptime: '99.5% uptime (managed instances only)',
     implementationSupport: 'Initial implementation support on architecture, deployment, configuration, and rollout',
     sharedSlackChannel: 'Shared Slack channel for feedback and communication (available)',
-    sharedSlackChannelContact: 'Shared Slack channel for feedback and communication (available)',
+    sharedSlackChannelContact: 'Shared Slack channel for feedback and communication (available, ',
     customerEngineer: 'Dedicated customer engineer assigned to you (available)',
     customerEngineerContact: 'Dedicated customer engineer assigned to you (available, ',
 }
@@ -93,9 +93,7 @@ const Support: FunctionComponent = () => (
                                 </li>
                                 <li className={CLASS_NAMES.featureNotOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureNotChecked} />
-                                    {SUPPORT_FEATURES.customerEngineer} 
-                                    {/* <br />
-                                    &nbsp; */}
+                                    {SUPPORT_FEATURES.customerEngineer}
                                 </li>
                             </ol>
                         </div>
@@ -149,9 +147,7 @@ const Support: FunctionComponent = () => (
                                 </li>
                                 <li className={CLASS_NAMES.featureNotOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureNotChecked} />
-                                    {SUPPORT_FEATURES.customerEngineer} 
-                                    {/* <br />
-                                    &nbsp; */}
+                                    {SUPPORT_FEATURES.customerEngineer}
                                 </li>
                             </ol>
                         </div>
