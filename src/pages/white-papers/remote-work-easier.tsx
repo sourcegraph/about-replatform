@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {
     Layout,
     ContentSection,
-    WhitePaperInContentBlockquote,
+    BlockquoteWithBorder,
     InContentImage,
     WhitePaperPage,
     WhitePaperRequestDemoForm,
@@ -103,7 +103,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                     </ul>
                     <h2 className="pt-5 pb-1">Benefits of using Sourcegraph when working remotely</h2>
                     <p>
-                        There is no Sourcegraph office beyond an official mailbox – all of our developers, managers, and
+                        There is no Sourcegraph office beyond an official mailbox &mdash; all of our developers, managers, and
                         executives are remote. We understand what makes remote work successful. We believe what we have
                         built with Sourcegraph will be invaluable to you. Your remote development experience, whether
                         you're a work-from-home expert or newbie, will grow stronger than ever.
@@ -124,11 +124,11 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         ensure your questions are specific to what the author has changed.
                     </p>
                     <InContentImage
-                        className="white-papers__img"
+                        className="w-100 shadow0"
                         src="/white-papers/remotework_codereview.png"
                         alt="Sourcegraph's go to definition and find references hover tooltip on a code review"
                     />
-                    <WhitePaperInContentBlockquote
+                    <BlockquoteWithBorder
                         quote="Having Sourcegraph is an improvement for several reasons. It's an easy way to share pointers to code and searches on code. When working remotely, I can't easily have someone look over my shoulder as I would in person. Screen sharing is possible (but with much higher-friction), and the results are harder to reproduce offline. Links to Sourcegraph are much more useful when trying to add in context for a Slack thread that blew up when I wasn't paying attention.
 
                         Sourcegraph is also a better way to explore unfamiliar code. It costs more to get someone's attention when asking a question (because of timezones, async channels), so when I do need to ask someone for help, I want to respect their time by doing due diligence first. Sourcegraph helps me explore the code more effectively on my own than I could with only local clones and GitHub search."
@@ -149,11 +149,11 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         your code's history.
                     </p>
                     <InContentImage
-                        className="white-papers__img"
+                        className="w-100 shadow0"
                         src="/white-papers/remotework_commithistory.png"
                         alt="A commit history search with highlighted code authors in Sourcegraph"
                     />
-                    <WhitePaperInContentBlockquote
+                    <BlockquoteWithBorder
                         quote="As a Product Manager, I care about everything--features, bug fixes, improvements--that go into the product. I use a saved search in Sourcegraph to be notified by email every time there is an update to our CHANGELOG. This lets me keep track of what and when features get in and makes sure I know who to talk to about that change if I have any questions. It also removes unnecessary communication cycles between the engineering team and me because rather than needing to interrupt each team member, or require them to reach out to me to find out what is going on, I am proactively informed."
                         author="Christina Forney, Product Manager at Sourcegraph"
                     />
@@ -164,7 +164,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         functions), you are more likely to improve the documentation of that code to make understanding
                         it easier at a glance.
                     </p>
-                    <WhitePaperInContentBlockquote
+                    <BlockquoteWithBorder
                         quote="As we've grown, I've needed to hand off a lot of code ownership and processes to other people. This meant writing a lot of docs (in code and in Markdown files). Having code search makes me more likely and happier to write docs because I believe that people will be more likely to actually discover and read them."
                         author="Quinn Slack, CEO of Sourcegraph"
                     />
@@ -181,7 +181,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         you're looking at? Walk over to her desk? Navigate through the GitHub user interface to find the
                         right file?
                     </p>
-                    <WhitePaperInContentBlockquote
+                    <BlockquoteWithBorder
                         quote="It's nice to be able to share links to code with Sourcegraph. It's important for remote work because your conversation partner often cannot look at your screen."
                         author="Uwe Hoffmann, Software Engineer at Sourcegraph"
                     />
@@ -196,7 +196,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         to that code that you can share with a coworker.
                     </p>
                     <InContentImage
-                        className="white-papers__img"
+                        className="w-100 shadow0"
                         src="/white-papers/remotework_codelinksharing.png"
                         alt="With Sourcegraph, you can share a direct link to the code you want to discuss"
                     />
@@ -211,7 +211,7 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                         <li>Showcases code dependencies to ensure informed communication</li>
                         <li>Enables link sharing to code, facilitating remote and asynchronous conversations</li>
                     </ul>
-                    <WhitePaperInContentBlockquote
+                    <BlockquoteWithBorder
                         quote="Any tool that empowers you to find the answer to your own question is good for remote work, and Sourcegraph is such a tool. The alternative is waiting for someone else to tell you the answer, which means you are blocked in the meantime, or you have to task-switch, which is costly."
                         author="Nick Snyder, VP Engineering at Sourcegraph"
                     />

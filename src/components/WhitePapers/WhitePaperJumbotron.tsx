@@ -1,12 +1,14 @@
 import { FunctionComponent, ReactNode } from 'react'
 
-export const WhitePaperJumbotron: FunctionComponent<{
+interface Props {
     className?: string
     children?: ReactNode
     bgImage?: string
-}> = ({ className = '', children, bgImage }) => (
+}
+
+export const WhitePaperJumbotron: FunctionComponent<Props> = ({ className = '', children, bgImage }) => (
     <div
-        className={`jumbotron rounded-0 ${className}`}
+        className={`jumbotron rounded-0 min-h-250 d-flex align-items-center ${className}`}
         // eslint-disable-next-line react/forbid-dom-props
         style={
             bgImage
@@ -20,7 +22,7 @@ export const WhitePaperJumbotron: FunctionComponent<{
         }
     >
         <div className="container text-center py-5">
-            <span className="white-papers__label d-block mt-1">white paper</span>
+            <span className="d-block mt-1 text-uppercase font-weight-bold">white paper</span>
             {children}
         </div>
     </div>
