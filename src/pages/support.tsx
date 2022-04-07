@@ -54,7 +54,7 @@ const Support: FunctionComponent = () => (
                                 <h1 className="card-title mt-3 mb-3 text-center">Free</h1>
                                 <a
                                     className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
-                                    href="https://sourcegraph.com/subscriptions/new"
+                                    href="https://docs.sourcegraph.com#quickstart-guide"
                                 >
                                     Deploy
                                 </a>
@@ -103,7 +103,7 @@ const Support: FunctionComponent = () => (
                             <div className="card-body">
                                 <h1 className="card-title mt-3 mb-3 text-center">Team</h1>
                                 <Link
-                                    href="./contact/request-info/?form_submission_source=support-enterprise"
+                                    href="https://sourcegraph.com/subscriptions/new"
                                     passHref={true}
                                 >
                                     <a
@@ -158,7 +158,7 @@ const Support: FunctionComponent = () => (
                                 <h1 className="card-title mt-3 mb-3 text-center">Enterprise</h1>
                                 <a
                                     className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
-                                    href="https://docs.sourcegraph.com#quickstart-guide"
+                                    href="./contact/request-info/?form_submission_source=support-enterprise"
                                 >
                                     Contact us
                                 </a>
@@ -194,7 +194,7 @@ const Support: FunctionComponent = () => (
                                 <li className={CLASS_NAMES.featureOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.sharedSlackChannelContact}{' '}
-                                    <Link href="./contact/request-info/?form_submission_source=pricing-enterprise">
+                                    <Link href="./contact/request-info/?form_submission_source=support-enterprise">
                                         contact us
                                     </Link>
                                     )
@@ -202,7 +202,7 @@ const Support: FunctionComponent = () => (
                                 <li className={CLASS_NAMES.featureOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureChecked} /> 
                                     Dedicated customer engineer assigned to you (available,{' '}
-                                    <Link href="./contact/request-info/?form_submission_source=pricing-enterprise">
+                                    <Link href="./contact/request-info/?form_submission_source=support-enterprise">
                                         contact us
                                     </Link>
                                     )
