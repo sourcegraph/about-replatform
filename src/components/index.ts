@@ -57,8 +57,3 @@ export {
     ReleasePost,
     BLOG_TYPE_TO_INFO,
 } from './Blog'
-
-// Support
-export { SupportPlanFeature, SupportPlan } from './Support'
-
-export type { SupportFeatures } from './Support'
