@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react'
 
+import { kebabCase } from 'lodash'
+
 import { CaseStudyJumbotron, ContentSection, RequestDemoTrySourcegraph, BlockquoteWithLogoTop } from '@components'
-import { stringToKebabCase } from '@util'
 
 import { CaseStudyCard, CASESTUDIES } from './CaseStudyCard'
 
@@ -42,7 +43,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
 
     return (
         <>
-            <div className={`${stringToKebabCase(customer)}-${className} ${className}`}>
+            <div className={`${kebabCase(customer)}-${className} ${className}`}>
                 <CaseStudyJumbotron className="bg-gradient-onahau-fog text-black height-md-450 height-auto p-2" customer={customer} color="white">
                     <h1 className="pt-5 pb-6 display-2 font-weight-bold max-w-600 mx-auto">
                         {title}

@@ -8,7 +8,8 @@ export const AuthorBio: React.FunctionComponent<{
     <div className="d-flex flex-md-row flex-column align-items-center align-items-md-start container-xl py-6 py-md-8">
         {image && (
             <div className="col-md-3 col-xl-2 text-center text-md-right">
-                <img className="rounded-circle p-1" style={{ border: '3px solid #00A1C7' }} src={image} alt={author} />
+                {/* TODO: On Tailwind migration, style attribute can trade out for className="border border-3 border-sky-400" */}
+                <img className="p-1 rounded-circle" style={{ border: '3px solid #00A1C7' }} src={image} alt={author} />
             </div>
         )}
         <div className="col-md-4 col-xl-3 text-center text-md-left">
