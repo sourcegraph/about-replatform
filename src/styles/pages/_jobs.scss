@@ -97,8 +97,13 @@
                 bottom: 0;
             }
 
-            li {
+            .active {
+                opacity: 1;
+            }
+
+            button {
                 background-color: $sg-space-black;
+                opacity: .5;
                 width: 10px;
                 height: 10px;
                 border-radius: 5px;
