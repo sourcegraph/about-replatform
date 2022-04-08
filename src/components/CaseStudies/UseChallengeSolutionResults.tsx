@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 interface TextLink {
     text: string
-    href?: string
+    href: string
 }
 
 interface Props {
@@ -18,12 +18,7 @@ interface Props {
     results: string[] | TextLink[]
 }
 
-export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
-    useCases,
-    challenges,
-    solutions,
-    results,
-}) => (
+export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases, challenges, solutions, results }) => (
     <section className="d-flex flex-column flex-md-row">
         <div className="bg-light-gray-2 p-lg-6 p-md-5 px-1 py-5 col-sm-12 col-md-6">
             <section className="max-w-xl-550 ml-xl-auto">
@@ -34,14 +29,13 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Use case</h5>
                         <ul className="pl-4">
-                            {useCases.map((useCase, index) => (
-                                <li key={index}>
-                                    {useCase?.href ? (
-                                        <Link href={(useCase as TextLink).href}>
-                                            {(useCase as TextLink).text}
-                                        </Link>
-                                        ) : <span>{useCase}</span>
-                                    }
+                            {useCases.map(useCase => (
+                                <li key={typeof useCase === 'string' ? useCase : useCase.text}>
+                                    {typeof useCase === 'string' ? (
+                                        <span>{useCase}</span>
+                                    ) : (
+                                        <Link href={useCase.href}>{useCase.text}</Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -54,14 +48,13 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Challenge</h5>
                         <ul className="pl-4">
-                            {challenges.map((challenge, index) => (
-                                <li key={index}>
-                                    {challenge?.href ? (
-                                        <Link href={(challenge as TextLink).href}>
-                                            {(challenge as TextLink).text}
-                                        </Link>
-                                        ) : <span>{challenge}</span>
-                                    }
+                            {challenges.map(challenge => (
+                                <li key={typeof challenge === 'string' ? challenge : challenge.text}>
+                                    {typeof challenge === 'string' ? (
+                                        <span>{challenge}</span>
+                                    ) : (
+                                        <Link href={challenge.href}>{challenge.text}</Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -74,14 +67,13 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Solution</h5>
                         <ul className="pl-4">
-                            {solutions.map((solution, index) => (
-                                <li key={index}>
-                                    {solution?.href ? (
-                                        <Link href={(solution as TextLink).href}>
-                                            {(solution as TextLink).text}
-                                        </Link>
-                                        ) : <span>{solution}</span>
-                                    }
+                            {solutions.map(solution => (
+                                <li key={typeof solution === 'string' ? solution : solution.text}>
+                                    {typeof solution === 'string' ? (
+                                        <span>{solution}</span>
+                                    ) : (
+                                        <Link href={solution.href}>{solution.text}</Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -98,14 +90,13 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({
                     <div className="pl-3 col-11 col-lg-9">
                         <h5 className="font-weight-bold">Results</h5>
                         <ul className="pl-4">
-                            {results.map((result, index) => (
-                                <li key={index}>
-                                    {result?.href ? (
-                                        <Link href={(result as TextLink).href}>
-                                            {(result as TextLink).text}
-                                        </Link>
-                                        ) : <span>{result}</span>
-                                    }
+                            {results.map(result => (
+                                <li key={typeof result === 'string' ? result : result.text}>
+                                    {typeof result === 'string' ? (
+                                        <span>{result}</span>
+                                    ) : (
+                                        <Link href={result.href}>{result.text}</Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>

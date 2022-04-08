@@ -2,7 +2,15 @@ import { FunctionComponent } from 'react'
 
 import Link from 'next/link'
 
-import { AuthorBio, Layout, NewCaseStudyLayout, ContentSection, Blockquote, ResultsCloserLook, UseChallengeSolutionResults } from '@components'
+import {
+    AuthorBio,
+    Layout,
+    NewCaseStudyLayout,
+    ContentSection,
+    Blockquote,
+    ThreeUpText,
+    UseChallengeSolutionResults,
+} from '@components'
 
 export const CaseStudy: FunctionComponent = () => (
     <Layout
@@ -18,31 +26,34 @@ export const CaseStudy: FunctionComponent = () => (
             title="Nutanix fixed Log4j quickly and confidently with Sourcegraph"
             quote={{
                 text: 'Sourcegraph was the right product at the right time.',
-                author: 'Jon Kohler, Technical Director of Solution Engineering at Nutanix'
+                author: 'Jon Kohler, Technical Director of Solution Engineering at Nutanix',
             }}
             logo={{
                 img: '/external-logos/nutanix-logo.svg',
-                href: 'https://nutanix.com'
+                href: 'https://nutanix.com',
             }}
         >
             <UseChallengeSolutionResults
                 useCases={[
-                    { text: 'Find and fix security vulnerabilities quickly across the codebase.', href: '/use-cases/vulnerabilities' }
+                    {
+                        text: 'Find and fix security vulnerabilities quickly across the codebase.',
+                        href: '/use-cases/vulnerabilities',
+                    },
                 ]}
                 challenges={[
                     'Inability to efficiently find all the instances of Log4j in their large codebase.',
                     'Lack of code-level clarity that vulnerabilities were completely resolved.',
-                    'Uncertainty about the scope and impact of the Log4j vulnerability.'
+                    'Uncertainty about the scope and impact of the Log4j vulnerability.',
                 ]}
                 solutions={[
                     'Able to quickly and efficiently find every instance of the Log4j vulnerability.',
                     'Full confidence that all Log4j-vulnerable code was identified and resolved.',
-                    'Able to quickly validate that no known vulnerabilities exist in the codebase prior to each release.'
+                    'Able to quickly validate that no known vulnerabilities exist in the codebase prior to each release.',
                 ]}
                 results={[
                     'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.',
                     'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability in under 4 days.',
-                    'Nutanix was able to identify every instance of Log4j across its sprawling codebase with 100% confidence.'
+                    'Nutanix was able to identify every instance of Log4j across its sprawling codebase with 100% confidence.',
                 ]}
             />
 
@@ -173,11 +184,24 @@ export const CaseStudy: FunctionComponent = () => (
                 </section>
             </ContentSection>
 
-            <ResultsCloserLook
+            <ThreeUpText
+                title="Results"
                 results={[
-                    { subtitle: '< 5 min', description: 'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.' },
-                    { subtitle: '4 days', description: 'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability.' },
-                    { subtitle: '100% confidence', description: 'Nutanix was able to confidently identify every instance of Log4j across its sprawling codebase.' },
+                    {
+                        subtitle: '< 5 min',
+                        description:
+                            'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.',
+                    },
+                    {
+                        subtitle: '4 days',
+                        description:
+                            'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability.',
+                    },
+                    {
+                        subtitle: '100% confidence',
+                        description:
+                            'Nutanix was able to confidently identify every instance of Log4j across its sprawling codebase.',
+                    },
                 ]}
             />
 

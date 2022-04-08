@@ -119,7 +119,9 @@ export const CaseStudyCard: FunctionComponent<Props> = props => (
                         </a>
                     ) : (
                         <Link href={props.url} passHref={true}>
-                            <a href="#none" className="card-link">Learn more.</a>
+                            <a href="#none" className="card-link">
+                                Learn more.
+                            </a>
                         </Link>
                     )}
                 </span>

@@ -49,7 +49,7 @@ export {
     InContentImage,
     MediaQuote,
     NewCaseStudyLayout,
-    ResultsCloserLook,
+    ThreeUpText,
     UseChallengeSolutionResults,
 } from './CaseStudies'
 

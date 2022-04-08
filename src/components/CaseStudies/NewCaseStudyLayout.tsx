@@ -39,17 +39,24 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
     children,
 }) => {
     // CaseStudy preview list NOT including current CaseStudy page
-    const uniqueCaseStudyList = CASESTUDIES.filter(study => study.name !== customer).slice(0, 4);
+    const uniqueCaseStudyList = CASESTUDIES.filter(study => study.name !== customer).slice(0, 4)
 
     return (
         <>
             <div className={`${kebabCase(customer)}-${className} ${className}`}>
-                <CaseStudyJumbotron className="bg-gradient-onahau-fog text-black height-md-450 height-auto p-2" customer={customer} color="white">
-                    <h1 className="pt-5 pb-6 display-2 font-weight-bold max-w-600 mx-auto">
-                        {title}
-                    </h1>
+                <CaseStudyJumbotron
+                    className="bg-gradient-onahau-fog text-black height-md-450 height-auto p-2"
+                    customer={customer}
+                    color="white"
+                >
+                    <h1 className="pt-5 pb-6 display-2 font-weight-bold max-w-600 mx-auto">{title}</h1>
                     {pdf && (
-                        <a href={pdf} className="btn btn-primary mt-3" rel="nofollow noreferrer noopener" target="_blank">
+                        <a
+                            href={pdf}
+                            className="btn btn-primary mt-3"
+                            rel="nofollow noreferrer noopener"
+                            target="_blank"
+                        >
                             <i className="fa fa-file-pdf pr-2" />
                             Download PDF
                         </a>
@@ -78,12 +85,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
                 <div className="d-flex flex-wrap">
                     {uniqueCaseStudyList.map(study => (
                         <div key={study.name} className="col-lg-6 mb-3">
-                            <CaseStudyCard
-                                name={study.name}
-                                logo={study.logo}
-                                title={study.title}
-                                url={study.url} 
-                            />
+                            <CaseStudyCard name={study.name} logo={study.logo} title={study.title} url={study.url} />
                         </div>
                     ))}
                 </div>
