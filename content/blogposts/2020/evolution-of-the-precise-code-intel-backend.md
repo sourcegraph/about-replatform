@@ -12,7 +12,7 @@ published: true
 
 Jumping to the definition of a symbol under your cursor and finding all its references are two of the basic mental mechanics of software engineering. Fast code navigation accelerates the rate at which you can build a mental model of the code, and when it's available, you're likely to use it hundreds, if not thousands, of times per day.
 
-<div style="margin: 2em;">
+<div style={{margin: '2em'}}>
 <img src="https://sourcegraphstatic.com/predcise-j2d-find-refs.gif" alt="Precise jump to definition and find refs" />
 </div>
 

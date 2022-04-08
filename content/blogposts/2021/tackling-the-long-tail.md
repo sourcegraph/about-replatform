@@ -48,7 +48,7 @@ Most repositories are tiny and fit within a single shard. The following histogra
 on one of our production instances.
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-histogram.png" alt="Distribution of shard sizes" class="no-shadow">
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-histogram.png" alt="Distribution of shard sizes" className="no-shadow">
 </figure>
 
 75% of the shards in our sample are smaller than 2.1 MiB. Each shard contains, among other data, the trigrams we created
@@ -60,7 +60,7 @@ The two charts below show the number of trigrams in a shard vs. the shard's size
 less than 500k trigrams. Plot B shows a subset of the data in A (red box).
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-trigrams.png" alt="Number of trigrams vs. shard size" class="no-shadow">
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-trigrams.png" alt="Number of trigrams vs. shard size" className="no-shadow">
   <figcaption>Number of trigrams vs. shard size.</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ repository size. An obvious first choice is to merge those shards that are small
 The following diagram shows how the number of trigrams in a shard changes depending on how many repositories we merge into a compound shard.
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-compression.png" alt="Number of trigrams vs. size of compound shard" class="no-shadow">
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/tackling-long-tail/tackling-long-tail-compression.png" alt="Number of trigrams vs. size of compound shard" className="no-shadow">
 </figure>
 
 The distance between the two curves is a measure of the compression we can achieve.

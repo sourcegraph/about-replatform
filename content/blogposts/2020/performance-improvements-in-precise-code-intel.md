@@ -61,13 +61,13 @@ These efforts yielded a 2x speedup in query latency, a 2x speedup in processing 
 
 The CPU profiling revealed a substantial amount of time was being spent in the API server. This service receives the LSIF upload from the API user and passes it to the bundle manager server which writes it to disk. A separate background worker service later converts the on-disk LSIF data into a SQLite bundle. On a user query, the API server receives the requests, queries the bundle manager server, which in turn uses the SQLite bundle to respond to the API server, which then forwards that response to the user.
 
-<p class="text-center">
+<p className="text-center">
   <img src="https://sourcegraphstatic.com/precise-code-intel-arch-before-rewrite.svg" title="architecture diagram (before)" alt="architecture diagram (before)" />
 </p>
 
 The "middleman" nature of the API server when serving user requests was an artifact of the initial architecture of the indexed precise code navigation system. After porting this system to Go in 3.16, it became apparent that the API server was a *very* thin wrapper around the bundle manager API, so in 3.17, we decided to remove it altogether.
 
-<p class="text-center">
+<p className="text-center">
   <img src="https://sourcegraphstatic.com/precise-code-intel-arch-after-rewrite.svg" title="architecture diagram (after)" alt="architecture diagram (after)" />
 </p>
 
@@ -112,7 +112,7 @@ In the implementation, we used channels as bounded queues to break up the parsin
 * After the batch receives the expected number of values from the channel, it [sends a signal](https://github.com/sourcegraph/sourcegraph/blob/0eda838ebbe02021dd1739e3f92bc2fcd9577672/cmd/precise-code-intel-worker/internal/correlation/lsif/lines/reader.go#L95-L97) to the unmarshallers to free them to resume work. This signalling procedure ensures that no unmarshaller looks for work past the current batching window (which would be pointless and wasteful).
 * Each completed batch is then [passed](https://github.com/sourcegraph/sourcegraph/blob/0eda838ebbe02021dd1739e3f92bc2fcd9577672/cmd/precise-code-intel-worker/internal/correlation/lsif/lines/reader.go#L104) to the correlator for processing.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/1e83fa635ade825e39b41031b5bd5809cecc2a69#diff-d8ead48c93da52682080c1e083e3157fR1"><pre>1e83fa6</pre></a>, reduced conversion time by 31%.
 </div>
 
@@ -141,7 +141,7 @@ To increase write throughput, we moved the parallelism into the writer layer. Af
 
 ![concurrency diagram (after)](https://sourcegraphstatic.com/lsif-writer-concurrency-after.png)
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/7c99cd982e1c3a8e77f2a065f7ae6640a08ba5bb#diff-86711fd26a316ad73cedd5eb066b4c21R1"><pre>7c99cd9</pre></a>, reduced conversion time by 10.43%.
 </div>
 
@@ -171,7 +171,7 @@ The table below shows the number of definition and reference rows in each bundle
 
 Due to the reduced size of data, we are also able to insert more definition and references per SQL update query, further decreasing the overall time it takes to write a bundle. (SQLite imposes a hard insertion limit, [SQLITE\_MAX\_VARIABLE\_NUMBER](https://www.sqlite.org/limits.html).)
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/69bf52c2e3ef2655eb94ba6ed091f439c6c236b4#diff-87794b8e6825323e89453e637c6c6116R117"><pre>69bf52c</pre></a>, reduced bundle sizes by 50%.
 </div>
 
@@ -181,7 +181,7 @@ We replaced the gzipped JSON-encoded bundle payloads with gzipped [gob-encoded](
 
 Most importantly, this allowed us to remove some tech debt caused by data structures that had evolved to become more complex over time. In particular, we used custom [replacers](https://sourcegraph.com/github.com/sourcegraph/sourcegraph@a5232c14d15f1e18f6d20ae6d15e5c1fe68bb244/-/blob/lsif/src/encoding.ts#L99) to enable the serialization of TypeScript maps and sets, which we had to [replicate](https://sourcegraph.com/github.com/sourcegraph/sourcegraph@f1644db9bbb75683fcc14e64ead9746338b38669/-/blob/internal/codeintel/bundles/serializer/default_serializer.go#L355-367) in the Go rewrite in order to continue reading previously generated bundle files.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/d17750ffd9aecafdc68fdeb9a6dbc7e62e876c5c#diff-baa2de1a12d5be3e15c550035933d4e5R1"><pre>d17750f</pre></a>, reduced bundle sizes by 10%.
 </div>
 
@@ -205,7 +205,7 @@ rangePairs := make([]interface{}, 0, len(d.Ranges))
 
 In our case, rewriting empty slice allocations to have non-zero capacities did not make a huge impact on overall performance, but it was easy to do and yielded better readability by making the purpose of new empty slices clearer.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/8a905acbbfeadd09d45174742bc94df7b5d42057#diff-8b8dfca408b173d88fdef9e4637735abR19"><pre>8a905ac</pre></a>, reduced conversion time by 9.35%.
 </div>
 
@@ -254,7 +254,7 @@ func (*jsonSerializer) MarshalDocumentData(d types.DocumentData) ([]byte, error)
 
 In Go, map values are allocated on the heap, while non-pointer struct instances are allocated on the stack. The switch from heap allocation to stack allocation for this data yielded substantial improvements in performance.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/8a905acbbfeadd09d45174742bc94df7b5d42057#diff-8b8dfca408b173d88fdef9e4637735abR25"><pre>8a905ac</pre></a>, reduced conversion time by 9.35%.
 </div>
 
@@ -302,7 +302,7 @@ for i := range locations {
 
 At runtime, this eliminates the need to copy the 216 bytes of each slice element into an intermediate `location` variable before copying it again into the activation record of the `resolveLocation` function call.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/d1f8cafdf952d8eeabadfd38f4ebae0050c06a11"><pre>d1f8caf</pre></a>, reduced conversion time by 26.18%.
 </div>
 
@@ -312,7 +312,7 @@ The Go standard library's JSON parser is reliable and has an easy-to-use API. Ho
 
 We looked at several other options for JSON parsing in Go ([easyjson](https://github.com/mailru/easyjson), [fastjson](https://github.com/valyala/fastjson), [ffjson](https://github.com/pquerna/ffjson)) before finally settling on json-iterator/go, a high-performance drop-in replacement for the standard library's `encoding/json` package. The low switching cost and the efficiency of decoding small structures (which are common in LSIF vertex and edge definitions) were the key considerations that motivated our choice.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/6b12b267574d1870664389e8840255af04a30b6d#diff-ab549083ae1ef9af86ec1fcc8dd1a8c8R15"><pre>6b12b26</pre></a>, reduced conversion time by 19.02%.
 </div>
 
@@ -326,7 +326,7 @@ This disk-write turned out to be unnecessary, as we could simply pass the HTTP r
 
 This yielded a performance boost that became more significant the larger the codebase and corresponding LSIF data.
 
-<div class="alert alert-success">
+<div className="alert alert-success">
   This update, implemented in <a href="https://github.com/sourcegraph/sourcegraph/commit/2eae464dcd21a4573cdafef167eabee99af773f1#diff-2978e84d13764ae85636a117d5e3e9d4R188"><pre>2eae464</pre></a>, reduced conversion time by 20.13%.
 </div>
 
@@ -334,19 +334,19 @@ This yielded a performance boost that became more significant the larger the cod
 
 The following chart shows the decrease in query latency while running our [integration test suite](https://github.com/sourcegraph/sourcegraph/tree/5f51043ad2130a1acdcfca8b969f907cd03a220d/internal/cmd/precise-code-intel-test) compared to the previous two Sourcegraph releases. The test suite is querying cross-repo definitions and references over three commits from [etcd-io/etcd](https://github.com/etcd-io/etcd), [pingcap/tidb](https://github.com/pingcap/tidb), and [distributedio/titan](https://github.com/distributedio/titan), and two commits from [uber-go/zap](https://github.com/uber-go/zap).
 
-<div class="text-center benchmark-results">
+<div className="text-center benchmark-results">
   <img src="https://sourcegraphstatic.com/lsif-query-latency-317.png" width="70%" alt="Precise code intel query latency chart">
 </div>
 
 This next chart shows the time required to upload and process the indexes.
 
-<div class="text-center benchmark-results">
+<div className="text-center benchmark-results">
   <img src="https://sourcegraphstatic.com/lsif-processing-latency-317.png" width="50%" alt="Precise code intel index processing latency chart">
 </div>
 
 These last charts show the size of the converted bundle on disk after conversion.
 
-<div class="text-center benchmark-results">
+<div className="text-center benchmark-results">
   <img src="https://sourcegraphstatic.com/tidb-bundle-size.png" width="48%" alt="tidb bundle process code intel bundle (processed index) size on disk chart">
   <img src="https://sourcegraphstatic.com/etcd-bundle-size.png" width="48%" alt="etcd bundle process code intel bundle (processed index) size on disk chart">
   <br />

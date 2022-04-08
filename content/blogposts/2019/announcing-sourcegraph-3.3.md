@@ -274,7 +274,7 @@ Thank you to the many people who contributed to Sourcegraph since the last relea
 
 ## Deploy or upgrade
 
-[Local](https://docs.sourcegraph.com/#quickstart-guide) | [AWS](https://github.com/sourcegraph/deploy-sourcegraph-aws) `{/*<!--| [DigitalOcean](https://marketplace.digitalocean.com/apps/sourcegraph?action=deploy&refcode=48dfb3ccb51c)-->*/}` | [Kubernetes cluster](https://github.com/sourcegraph/deploy-sourcegraph)
+[Local](https://docs.sourcegraph.com/#quickstart-guide) | [AWS](https://github.com/sourcegraph/deploy-sourcegraph-aws) | [Kubernetes cluster](https://github.com/sourcegraph/deploy-sourcegraph)
 
 Upgrading from 2.x or 3.0? [See the migration guide](https://docs.sourcegraph.com/admin/migration/3_0)
 

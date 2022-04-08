@@ -28,7 +28,7 @@ Unlike other code search engines, Sourcegraph actually analyzes and understands 
 
 **If you haven’t used** [**Sourcegraph**](https://sourcegraph.com)**,** check out [the homepage](https://sourcegraph.com/) and then come back here. Since the rest of this post is about how we built Sourcegraph, it’s important for you to know what it is.
 
-<iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/-DpKaoPz8l8" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/-DpKaoPz8l8"frameBorder="0"allowFullScreen></iframe>
 
 ### Building Sourcegraph with Go
 
@@ -78,7 +78,7 @@ We don’t use a web framework because we found we didn't need one in Go. Go’s
 
 **Handler functions:** We define our handlers with an error return value, and we use a simple wrapper function to make them implement [http.Handler](https://sourcegraph.com/github.com/golang/go/-/def/GoPackage/net/http/-/Handler). This means we can centralize error handling instead of having to format error messages and pass them to the [http.Error](https://sourcegraph.com/github.com/golang/go/-/def/GoPackage/net/http/-/Error) func for each possible error. Our handler functions look like:
 
-<pre name="9f8a" id="9f8a" class="graf graf--pre graf-after--p">func serveXYZ(w http.ResponseWriter, r *http.Request) error { ... }</pre>
+<pre name="9f8a" id="9f8a" className="graf graf--pre graf-after--p">func serveXYZ(w http.ResponseWriter, r *http.Request) error { ... }</pre>
 
 **Global variables:** For virtually all request “context”, such as DB connections, config, etc., we use global variables. We chose this simple solution instead of relying on a framework to inject context for the request.
 
@@ -86,11 +86,11 @@ We don’t use a web framework because we found we didn't need one in Go. Go’s
 
 **Rendering HTML:** We use html/template and a simpler helper function to render the template:
 
-<pre name="def3" id="def3" class="graf graf--pre graf-after--p">func executeTemplate(req *http.Request, resp http.ResponseWriter, tmplName string, status int, header http.Header, tmplData interface{}) error { ... }</pre>
+<pre name="def3" id="def3" className="graf graf--pre graf-after--p">func executeTemplate(req *http.Request, resp http.ResponseWriter, tmplName string, status int, header http.Header, tmplData interface{}) error { ... }</pre>
 
 **Returning JSON:** We just use a simpler helper function:
 
-<pre name="1a0b" id="1a0b" class="graf graf--pre graf-after--p">// writeJSON writes a JSON Content-Type header and a JSON-encoded object to the
+<pre name="1a0b" id="1a0b" className="graf graf--pre graf-after--p">// writeJSON writes a JSON Content-Type header and a JSON-encoded object to the
 // http.ResponseWriter.
 func writeJSON(w http.ResponseWriter, v interface{}) error {
 	data, err := json.MarshalIndent(v, "", "  ")
@@ -98,7 +98,7 @@ func writeJSON(w http.ResponseWriter, v interface{}) error {
 		return &httpError{http.StatusInternalServerError, err}
 	}</pre>
 
-<pre name="606d" id="606d" class="graf graf--pre graf-after--pre">	w.Header().Set("content-type", "application/json; charset=utf-8")
+<pre name="606d" id="606d" className="graf graf--pre graf-after--pre">	w.Header().Set("content-type", "application/json; charset=utf-8")
 	_, err = w.Write(data)
 	return err
 }</pre>
@@ -112,7 +112,7 @@ We have one “service” interface for each noun in our system: repositories, u
 
 Here’s a simplified version of our repositories interface.
 
-<pre name="3900" id="3900" class="graf graf--pre graf-after--p">type RepositoriesService interface {
+<pre name="3900" id="3900" className="graf graf--pre graf-after--p">type RepositoriesService interface {
     Get(name string) (*Repo, error)
     List() ([]*Repo, error)
     Search(opt *SearchOptions) ([]*Repo, error)
@@ -127,9 +127,9 @@ Unifying the sets of interfaces took away a tiny bit of performance and user-fri
 
 Here’s a (simplified) example of one of those data store methods, to make it concrete. This method implements the RepositoriesService.Get method described above.
 
-<pre name="c17d" id="c17d" class="graf graf--pre graf-after--p">type repoStore struct{ db *db }</pre>
+<pre name="c17d" id="c17d" className="graf graf--pre graf-after--p">type repoStore struct{ db *db }</pre>
 
-<pre name="1782" id="1782" class="graf graf--pre graf-after--pre">func (s *repoStore) Get(name string) (*Repo, error) {
+<pre name="1782" id="1782" className="graf graf--pre graf-after--pre">func (s *repoStore) Get(name string) (*Repo, error) {
     var repo *Repo
     return repo, s.db.Select(&repo, "SELECT * FROM repo WHERE name=$1", name)
 }</pre>
@@ -138,16 +138,16 @@ Here’s a (simplified) example of one of those data store methods, to make it c
 
 And here’s a (simplified) example of a method implementation in our HTTP API client library. Again, this is the same RepositoriesService.Get method.
 
-<pre name="5206" id="5206" class="graf graf--pre graf-after--p">type repoClient struct{ baseURL string }</pre>
+<pre name="5206" id="5206" className="graf graf--pre graf-after--p">type repoClient struct{ baseURL string }</pre>
 
-<pre name="2441" id="2441" class="graf graf--pre graf-after--pre">func (s *repoClient) Get(name string) (*Repo, error) {
+<pre name="2441" id="2441" className="graf graf--pre graf-after--pre">func (s *repoClient) Get(name string) (*Repo, error) {
     resp, err := http.Get(fmt.Sprintf("%s/api/repos/%s", s.baseURL, name))
     if err != nil {
   return nil, err
     }
     defer resp.Body.Close()</pre>
 
-<pre name="f332" id="f332" class="graf graf--pre graf-after--pre">    var repo Repo
+<pre name="f332" id="f332" className="graf graf--pre graf-after--pre">    var repo Repo
     return &repo, json.NewDecoder(resp.Body).Decode(&repo)
 }</pre>
 
@@ -161,9 +161,9 @@ Now our handlers have very clearly delineated responsibilities. The frontend han
 
 For example, here’s what a (simplified) frontend handler looks like. It reads the HTTP request parameters, calls the API client (to do the real work), and renders the HTTP (HTML) response.
 
-<pre name="03ac" id="03ac" class="graf graf--pre graf-after--p">var repoAPIClient RepositoriesService = &repoClient{"http://localhost:7777"}</pre>
+<pre name="03ac" id="03ac" className="graf graf--pre graf-after--p">var repoAPIClient RepositoriesService = &repoClient{"http://localhost:7777"}</pre>
 
-<pre name="9e72" id="9e72" class="graf graf--pre graf-after--pre">func handleRepoPage(w http.ResponseWriter, r *http.Request) {
+<pre name="9e72" id="9e72" className="graf graf--pre graf-after--pre">func handleRepoPage(w http.ResponseWriter, r *http.Request) {
     name := mux.Vars(r)["Name"]
     repo, _ := repoAPIClient.Get(name)
     fmt.Fprintf(w, "<h1>%s</h1><p>Clone URL: %s</p>", repo.Name, repo.CloneURL)
@@ -171,9 +171,9 @@ For example, here’s what a (simplified) frontend handler looks like. It reads 
 
 And here’s what a (simplified) API handler looks like. Again, it reads the HTTP request parameters, calls the data store (to do the real work), and renders the HTTP (JSON) response with a cache header.
 
-<pre name="16a7" id="16a7" class="graf graf--pre graf-after--p">var repoStore RepositoriesService = &repoStore{dbh}</pre>
+<pre name="16a7" id="16a7" className="graf graf--pre graf-after--p">var repoStore RepositoriesService = &repoStore{dbh}</pre>
 
-<pre name="20f8" id="20f8" class="graf graf--pre graf-after--pre">func serveRepository(w http.ResponseWriter, r *http.Request) error {
+<pre name="20f8" id="20f8" className="graf graf--pre graf-after--pre">func serveRepository(w http.ResponseWriter, r *http.Request) error {
     repo := mux.Vars(r)["Repo"]
     rp, err := repoStore.Get(repo)
     if err != nil {
@@ -196,12 +196,12 @@ Remember back to our API client implementation? We used Sprintf to construct the
 
 To solve this, we use a router package (such as [gorilla/mux](https://sourcegraph.com/github.com/gorilla/mux)) that lets us define routes and mount handlers separately. Our server mounts handlers by looking up named routes we’ve defined, but our API client will just use the route definitions to generate URLs.
 
-<pre name="cd10" id="cd10" class="graf graf--pre graf-after--p">const (
+<pre name="cd10" id="cd10" className="graf graf--pre graf-after--p">const (
     RepoGetRoute    = "repo"
     RepoListRoute   = "repo.list"
 )</pre>
 
-<pre name="e8a7" id="e8a7" class="graf graf--pre graf-after--pre">func NewAPIRouter() *mux.Router {
+<pre name="e8a7" id="e8a7" className="graf graf--pre graf-after--pre">func NewAPIRouter() *mux.Router {
     // Define the routes but don't attach handlers.
     m := mux.NewRouter()
     m.Path("/api/repos/{Name:.*}").Name(RepoGetRoute)
@@ -209,7 +209,7 @@ To solve this, we use a router package (such as [gorilla/mux](https://sourcegrap
     return m
 }</pre>
 
-<pre name="4cc8" id="4cc8" class="graf graf--pre graf-after--pre">// init is called at server startup.
+<pre name="4cc8" id="4cc8" className="graf graf--pre graf-after--pre">// init is called at server startup.
 func init() {
     m := NewAPIRouter()
     // Attach handlers to the routes.
@@ -221,9 +221,9 @@ func init() {
 
 Then to generate URLs in our HTTP API client using the router, we use the existing route definition:
 
-<pre name="a843" id="a843" class="graf graf--pre graf-after--p">var apiRouter = NewAPIRouter()</pre>
+<pre name="a843" id="a843" className="graf graf--pre graf-after--p">var apiRouter = NewAPIRouter()</pre>
 
-<pre name="b1d1" id="b1d1" class="graf graf--pre graf-after--pre">func (s *repoClient) List() ([]*Repo, error) {
+<pre name="b1d1" id="b1d1" className="graf graf--pre graf-after--pre">func (s *repoClient) List() ([]*Repo, error) {
     url, _ := apiRouter.Get(RepoListRoute).URL()
     resp, err := http.Get(s.baseURL + url.String())
     if err != nil {
@@ -231,7 +231,7 @@ Then to generate URLs in our HTTP API client using the router, we use the existi
     }
     defer resp.Body.Close()</pre>
 
-<pre name="9422" id="9422" class="graf graf--pre graf-after--pre">    var repos []*Repo
+<pre name="9422" id="9422" className="graf graf--pre graf-after--pre">    var repos []*Repo
     return repos, json.NewDecoder(resp.Body).Decode(&repos)
 }</pre>
 
@@ -257,7 +257,7 @@ Having a single definition of each parameter set is much simpler _and_ it lets u
 
 Here’s an example parameter struct that is shared by all implementations (frontend and backend):
 
-<pre name="75dd" id="75dd" class="graf graf--pre graf-after--p">// this is the options struct for the method: Search(opt *SearchOptions) ([]*Repo, error)
+<pre name="75dd" id="75dd" className="graf graf--pre graf-after--p">// this is the options struct for the method: Search(opt *SearchOptions) ([]*Repo, error)
 type SearchOptions struct {
     Owner    string
     Language string
@@ -265,20 +265,20 @@ type SearchOptions struct {
 
 To decode the parameter struct from a querystring like ?Owner=alice&Language=go, in the API HTTP handler:
 
-<pre name="7fb7" id="7fb7" class="graf graf--pre graf-after--p">import ["github.com/gorilla/schema"](https://sourcegraph.com/github.com/gorilla/schema)</pre>
+<pre name="7fb7" id="7fb7" className="graf graf--pre graf-after--p">import ["github.com/gorilla/schema"](https://sourcegraph.com/github.com/gorilla/schema)</pre>
 
-<pre name="1cd5" id="1cd5" class="graf graf--pre graf-after--pre">var d = schema.NewDecoder()</pre>
+<pre name="1cd5" id="1cd5" className="graf graf--pre graf-after--pre">var d = schema.NewDecoder()</pre>
 
-<pre name="1b4b" id="1b4b" class="graf graf--pre graf-after--pre">func handleRepoSearch(w http.ResponseWriter, r *http.Request) {
+<pre name="1b4b" id="1b4b" className="graf graf--pre graf-after--pre">func handleRepoSearch(w http.ResponseWriter, r *http.Request) {
     var opt SearchOptions
     d.[Decode](https://sourcegraph.com/github.com/gorilla/schema/.GoPackage/github.com/gorilla/schema/.def/Decoder/Decode)(&opt, r.URL.Query()) // decode querystring with github.com/gorilla/schema
     // now opt is populated with values from the querystring</pre>
 
 And to encode a parameter struct like SearchOptions{“alice”, “go”} back into ?Owner=alice&Language=go, in the HTTP API client:
 
-<pre name="6039" id="6039" class="graf graf--pre graf-after--p">import ["github.com/google/go-querystring/query"](https://sourcegraph.com/github.com/google/go-querystring)</pre>
+<pre name="6039" id="6039" className="graf graf--pre graf-after--p">import ["github.com/google/go-querystring/query"](https://sourcegraph.com/github.com/google/go-querystring)</pre>
 
-<pre name="a366" id="a366" class="graf graf--pre graf-after--pre">func (s *repoClient) Search(opt *SearchOptions) ([]*Repo, error) {
+<pre name="a366" id="a366" className="graf graf--pre graf-after--pre">func (s *repoClient) Search(opt *SearchOptions) ([]*Repo, error) {
     url, _ := apiRouter.Get(RepoSearchRoute).URL()
     q, _ := query.[Values](https://sourcegraph.com/github.com/google/go-querystring/.GoPackage/github.com/google/go-querystring/query/.def/Values)(opt)
     resp, err := http.Get(s.baseURL + url.String() + "?" + q.Encode())

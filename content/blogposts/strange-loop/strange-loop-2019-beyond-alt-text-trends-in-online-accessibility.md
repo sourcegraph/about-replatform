@@ -13,11 +13,11 @@ heroImage: https://about.sourcegraph.com/blog/strange-loop-thumbnail-square-v2.j
 published: true
 ---
 
-<div class="container p-0 liveblog-presenters">
-  <div class="row m-0">
-      <p class=" mr-12 m-0">
-        <span class="liveblog-presenters__name">Ian Forrest</span>
-        <a href="https://twitter.com/ianforr" target="_blank" title="Twitter"><i class="fa fa-twitter pr-2"></i></a>
+<div className="container p-0 liveblog-presenters">
+  <div className="row m-0">
+      <p className=" mr-12 m-0">
+        <span className="liveblog-presenters__name">Ian Forrest</span>
+        <a href="https://twitter.com/ianforr" target="_blank" title="Twitter"><i className="fa fa-twitter pr-2"></i></a>
       </p>
   </div>
 </div>
@@ -93,7 +93,7 @@ The 11 stands for the 11 characters inbetween "a" and "y" (a***********y)
 
 ### Technical Specifications
 
-  **Accessible Rich Internet Applications (ARIA)** is a tool at your disposal to meet WCAG standards (aria-hidden and aria-labeledby as examples), however, this should not be your first tool of choice. Using HTML elements to their semantic specifications is what you should be doing first. As an example, don't use "<div class="button"...>" as divs are not focusable by default. A much better method would be to use a button and then apply a style.
+  **Accessible Rich Internet Applications (ARIA)** is a tool at your disposal to meet WCAG standards (aria-hidden and aria-labeledby as examples), however, this should not be your first tool of choice. Using HTML elements to their semantic specifications is what you should be doing first. As an example, don't use "<div className="button"...>" as divs are not focusable by default. A much better method would be to use a button and then apply a style.
 
 ### So why do we care about accessibility, a history lesson
 

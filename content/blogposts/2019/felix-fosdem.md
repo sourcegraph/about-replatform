@@ -10,11 +10,11 @@ heroImage: https://user-images.githubusercontent.com/133014/55199644-f67f3280-51
 published: true
 ---
 
-<p className="container">
+<div className="container">
   <div style={{paddingTop: '56.25%', position: 'relative'}}>
     <iframe src="https://player.vimeo.com/video/327174558?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position: 'absolute', top: '0', left: '0', width: '100%', height: '100%'}} frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>    
   </div>
-</p>
+</div>
 
 <a href="https://vimeo.com/327174558" target="_blank" style={{textAlign: 'center'}}>
   View on Vimeo

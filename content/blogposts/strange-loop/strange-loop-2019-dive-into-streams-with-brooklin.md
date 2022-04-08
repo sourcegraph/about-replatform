@@ -12,10 +12,10 @@ heroImage: https://about.sourcegraph.com/blog/strange-loop-thumbnail-square-v2.j
 published: false
 ---
 
-<div class="container p-0 liveblog-presenters">
-  <div class="row m-0">
-      <p class=" mr-12 m-0">
-        <span class="liveblog-presenters__name">Celia Kung</span>
+<div className="container p-0 liveblog-presenters">
+  <div className="row m-0">
+      <p className=" mr-12 m-0">
+        <span className="liveblog-presenters__name">Celia Kung</span>
         
       </p>
   </div>

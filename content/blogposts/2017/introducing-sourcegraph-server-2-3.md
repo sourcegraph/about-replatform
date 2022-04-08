@@ -55,13 +55,13 @@ By popular request, we've added a light color theme in addition to our current d
 You can now create and join organizations (also known as “orgs”). Organizations are named groups of users with an associated JSON settings file. These settings take effect for all users who are members of the organization. What kinds of settings, you might ask? This release includes custom search scopes and saved queries, and more features that rely on configuration will be rolling out soon.
 
 Server admins can [create organizations that new users automatically join](https://docs.sourcegraph.com/admin/organizations), and any user can create organizations and invite new members from the settings page.
-<div style={{paddingBottom: '78.8%', height: '0', position: 'relative'}}>
+<div style={{paddingBottom:'78.8%', height: 0, position: 'relative'}}>
   <img alt="SS2.3 orgs" src="//images.contentful.com/le3mxztn6yoo/3xHwIft9qUqwqcYiYGamAu/c4dbe46cf2d8698472ce3e63aef0a7c2/Screen_Shot_2017-12-05_at_12.17.13_PM.png" />
 </div>
 
 ## Custom search scopes
 Every project and team has a different set of repositories they commonly work with and search over. We've added [custom search scopes](https://docs.sourcegraph.com/code_search/explanations/features/#scope) to enable users and organizations to search over predefined subsets of files and repositories. Instead of typing the set of files and repositories you search over, you can now simply define a search scope and select it from the dropdown next to the search box whenever you need.
-<div style={{paddingBottom: '72.8%', height: '0', position: 'relative'}}>
+<div style={{paddingBottom:'72.8%', height: 0, position: 'relative'}}>
   <img src="//images.contentful.com/le3mxztn6yoo/6mdWr31pBY2YwgQwmmE446/1c099368b51400f18a9cefdecb8d79dc/SS2017_settings_and_search_scopes.gif" alt="SS2.3 settings and search scopes" className="ba pa1 b--light-7 br2" />
 </div>
 

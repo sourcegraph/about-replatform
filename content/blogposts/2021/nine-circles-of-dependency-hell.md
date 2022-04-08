@@ -108,7 +108,7 @@ Finally, consider using interfaces, contracts, or dependency injection to provid
 Library A depends on libraries B and C, and both B and C depend on D—but B requires D version 1.1, and C requires D version 1.2.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/nine-circles-dependencies/diamond-dependency-problem.png" alt="The diamond dependency problem" class="no-shadow"/>
+  <img src="https://sourcegraphstatic.com/blog/nine-circles-dependencies/diamond-dependency-problem.png" alt="The diamond dependency problem" className="no-shadow"/>
   <figcaption>The diamond dependency problem</figcaption>
 </figure>
 

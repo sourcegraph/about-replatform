@@ -35,7 +35,11 @@ Missing from Adam’s current setup is the custom-built and programmed split key
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/adam-gordon-bell/custom-keyboard-struggle.mp4" data-cookieconsent="ignore"></video>
     </div>
+<<<<<<< Updated upstream
     <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Adam’s custom keyboard and struggle</figcaption>
+=======
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Adam’s custom keyboard and struggle</figcaption>
+>>>>>>> Stashed changes
 </figure>
 
 ## Writing as a developer
@@ -48,7 +52,11 @@ Adam’s main writing environment isn’t Google Docs, or even a speciality Mark
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/adam-gordon-bell/corporate-speak.mp4" data-cookieconsent="ignore"></video>
     </div>
+<<<<<<< Updated upstream
     <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>See Vale in action detecting “corporate speak”</figcaption>
+=======
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>See Vale in action detecting “corporate speak”</figcaption>
+>>>>>>> Stashed changes
 </figure>
 
 Working with these tools locally makes it easier for a single writer to avoid formatting and grammatical errors, but integrating them into a build pipeline, as Adam demonstrates, is the real mark of a durable workflow.
@@ -61,7 +69,11 @@ He uses [Earthly](https://earthly.dev/), which he describes as a Makefile and Do
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/adam-gordon-bell/Earthly.mp4" data-cookieconsent="ignore"></video>
     </div>
+<<<<<<< Updated upstream
     <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Listen to Adam talk about two approaches to build pipelines</figcaption>
+=======
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Listen to Adam talk about two approaches to build pipelines</figcaption>
+>>>>>>> Stashed changes
 </figure>
 
 Used together, this set of tools lets anyone programmatically implement a style guide that anyone contributing writing to a shared blog or set of docs can follow, and provides the guarantees you want in professional writing.

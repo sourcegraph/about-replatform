@@ -74,7 +74,7 @@ We could implement our own `Accept()` method which reads the bytes we need befor
 
 What’s the alternative? We can’t block on `Accept()`, but there's a function that’s specifically for reading from the network, and it runs in its own goroutine: `net.Conn.Read()`. So I implemented my own “wrapper” over the standard `net.Conn` type:
 
-<pre name="c54c" id="c54c" class="graf graf--pre graf-after--p">type clientHelloConn struct {
+<pre name="c54c" id="c54c" className="graf graf--pre graf-after--p">type clientHelloConn struct {
     net.Conn
     listener  *tlsHelloListener
     readHello bool
@@ -85,7 +85,7 @@ We have it keep a reference to the listener so it can store the parsed data in t
 
 Back to the `tlsHelloListener` for a moment. Right now, it acts like the plain TCP listener embedded inside it. We need to make it act like a TLS listener:
 
-<pre name="3b4d" id="3b4d" class="graf graf--pre graf-after--p">func (l *tlsHelloListener) Accept() (net.Conn, error) {
+<pre name="3b4d" id="3b4d" className="graf graf--pre graf-after--p">func (l *tlsHelloListener) Accept() (net.Conn, error) {
     conn, err := l.Listener.Accept()
     if err != nil {
         return nil, err
@@ -106,13 +106,13 @@ This is tricky. Not only are we dealing with highly volatile network environment
 
 The first iteration of our `Read()` is a simple pass-thru that doesn't do anything custom:
 
-<pre name="c886" id="c886" class="graf graf--pre graf-after--p">func (c *clientHelloConn) Read(b []byte) (n int, err error) {
+<pre name="c886" id="c886" className="graf graf--pre graf-after--p">func (c *clientHelloConn) Read(b []byte) (n int, err error) {
     return c.Conn.Read(b)
 }</pre>
 
 Booorrrring. So what do we know? We know that we need to read the ClientHello if it hasn’t already been read. But if it has, our job is done, and it can carry on as if we weren't there:
 
-<pre name="2067" id="2067" class="graf graf--pre graf-after--p">func (c *clientHelloConn) Read(b []byte) (n int, err error) {
+<pre name="2067" id="2067" className="graf graf--pre graf-after--p">func (c *clientHelloConn) Read(b []byte) (n int, err error) {
     if c.readHello {
         return c.Conn.Read(b)
     }
@@ -121,7 +121,7 @@ Booorrrring. So what do we know? We know that we need to read the ClientHello if
 
 We can replace our TODO with some code to read the header:
 
-<pre name="249b" id="249b" class="graf graf--pre graf-after--p">hdr := make([]byte, 5)
+<pre name="249b" id="249b" className="graf graf--pre graf-after--p">hdr := make([]byte, 5)
 n, err = io.ReadFull(c.Conn, hdr)
 if err != nil {
     return
@@ -133,7 +133,7 @@ Easy, right? **Danger, danger!** We are reading bytes from an untrusted client f
 
 So scratch that `ReadFull()`code above. We’re going to let the standard library do all the reading from the wire and we’ll mooch on what it gets for us. It will take care of timeouts and most edge cases, drastically reducing the error surface. What the standard lib reads in, we will have copied to our little buffer:
 
-<pre name="13be" id="13be" class="graf graf--pre graf-after--p">tee := io.TeeReader(c.Conn, c.buf)
+<pre name="13be" id="13be" className="graf graf--pre graf-after--p">tee := io.TeeReader(c.Conn, c.buf)
 n, err = tee.Read(b) // standard lib does the dangerous stuff!
 if err != nil {
     return
@@ -150,7 +150,7 @@ I [borrowed](https://sourcegraph.com/github.com/mholt/caddy@0a0d2cc1cf12d58c5e38
 
 After we’ve parsed the ClientHello and stored the results in the map, we can clear the buffer and indicate that we’re done:
 
-<pre name="e6f9" id="e6f9" class="graf graf--pre graf-after--p">c.buf = nil
+<pre name="e6f9" id="e6f9" className="graf graf--pre graf-after--p">c.buf = nil
 c.readHello = true
 return</pre>
 
@@ -158,20 +158,20 @@ return</pre>
 
 To bring this full circle, the last piece of the puzzle was to create [an HTTP handler](https://sourcegraph.com/github.com/mholt/caddy@0a0d2cc1cf12d58c5e38680689c78f18044288e6/-/blob/caddyhttp/httpserver/mitm.go#L19:1-20:1) that could read from that map. The most conventional way of doing this is writing an HTTP middleware with a reference to our `tlsHelloListener`:
 
-<pre name="ff9b" id="ff9b" class="graf graf--pre graf-after--p">type tlsHandler struct {
+<pre name="ff9b" id="ff9b" className="graf graf--pre graf-after--p">type tlsHandler struct {
     next     http.Handler
     listener *tlsHelloListener
 }</pre>
 
 Its <a href="https://sourcegraph.com/github.com/mholt/caddy@f49e0c9b560ea7efc25c0b15d422b59f42a6edb1/-/blob/caddyhttp/httpserver/mitm.go#L36:1-37:1">**ServeHTTP()**</a> method looks something like this:
 
-<pre name="2ea2" id="2ea2" class="graf graf--pre graf-after--p">func (h *tlsHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+<pre name="2ea2" id="2ea2" className="graf graf--pre graf-after--p">func (h *tlsHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     if h.listener == nil {
         h.next.ServeHTTP(w, r)
         return
     }</pre>
 
-<pre name="6c1e" id="6c1e" class="graf graf--pre graf-after--pre">    h.listener.helloInfosMu.RLock()
+<pre name="6c1e" id="6c1e" className="graf graf--pre graf-after--pre">    h.listener.helloInfosMu.RLock()
     info := h.listener.helloInfos[r.RemoteAddr]
     h.listener.helloInfosMu.RUnlock()
 

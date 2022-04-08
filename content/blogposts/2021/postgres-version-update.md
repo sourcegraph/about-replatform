@@ -132,7 +132,7 @@ We are unable to utilize a statement-level trigger approach in Postgres 9.6 as s
 
 So how bad would this approach be?
 
-<div class="no-shadow">
+<div className="no-shadow">
   <img src="https://sourcegraphstatic.com/blog/postgres-version-update/postgres-version-update-latency.png" alt="performance comparison">
 </div>
 

@@ -42,7 +42,11 @@ Liz’s dev workflow follows a structure that might be familiar for many devs. S
 This automation goes hand in hand with Liz’s attention to [observability](https://www.honeycomb.io/what-is-observability/), which emphasizes the capacity to introspect a system and understand its internal state. Automated builds and infrastructure configuration, using tools such as [Chef](https://www.chef.io/) and [Terraform](https://www.terraform.io/), increase the transparency of the systems with which Liz regularly works. As part of her work for [Honeycomb](https://www.honeycomb.io/), Liz uses Honeycomb, and shifting into its interface to understand workflows, processes, and debug errors or failures is a key part of her workflow.
 
 <figure>
+<<<<<<< Updated upstream
     <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Watch Liz use Honeycomb as part of her dev workflow.</figcaption>
+=======
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Watch Liz use Honeycomb as part of her dev workflow.</figcaption>
+>>>>>>> Stashed changes
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/dev-tool-time-fong-jones-observability.mp4" data-cookieconsent="ignore"></video>
     </div>
@@ -57,7 +61,11 @@ One of Liz’s desktop machines has an ARM64 processor, and she notes that it ru
 The use of ARM64 is compelling, not just for the performance and cost. It’s also part of a future of computing that attends to the sustainability of our environment given the ever expanding role of computing in society. This concern for sustainability isn’t just business, but a commitment that shapes Liz’s own choices in hardware.
 
 <figure>
+<<<<<<< Updated upstream
     <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Hear Liz discuss the benefits and limitations of ARM64 in the current development ecosystem.</figcaption>
+=======
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Hear Liz discuss the benefits and limitations of ARM64 in the current development ecosystem.</figcaption>
+>>>>>>> Stashed changes
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/dev-tool-time-fong-jones-arm64.mp4" data-cookieconsent="ignore"></video>
     </div>

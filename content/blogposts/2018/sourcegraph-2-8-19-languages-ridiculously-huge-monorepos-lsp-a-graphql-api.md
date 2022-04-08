@@ -117,7 +117,7 @@ TODO
 
 Try the new code view and hover on an [example open source file](https://sourcegraph.com/github.com/golang/oauth2/-/blob/clientcredentials/clientcredentials.go#L58).
 
-<img src="//images.ctfassets.net/le3mxztn6yoo/48HJWiBrpe0Kkq2y6wumqo/93f5a4061318ebcca9eec6f31af33c34/Screenshot_from_2018-05-21_17-01-43.png" style="max-width:400px;border:solid 1px #ccc"/>
+<img src="//images.ctfassets.net/le3mxztn6yoo/48HJWiBrpe0Kkq2y6wumqo/93f5a4061318ebcca9eec6f31af33c34/Screenshot_from_2018-05-21_17-01-43.png" style={{maxWidth: '400px', border: 'solid 1px #ccc'}}/>
 
 -->
 

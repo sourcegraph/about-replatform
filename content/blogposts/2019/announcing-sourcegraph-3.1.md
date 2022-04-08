@@ -18,8 +18,8 @@ What is Sourcegraph? Sourcegraph is an open source, self-hosted, cross-repositor
 ## Find answers in code more easily with the new query builder
 
 <div className="container">
-  <div style={{padding:'56.25% 0 0 0',position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/318509611?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
+  <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+    <iframe src="https://player.vimeo.com/video/318509611?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
   </div>
 </div>
 
@@ -30,8 +30,8 @@ Give it a try and let us know what you think via [GitHub](https://github.com/sou
 ## Improved go-to-definition and hover tooltips for all languages
 
 <div className="container">
-  <div style={{padding:'56.25% 0 0 0',position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/318518281?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
+  <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+    <iframe src="https://player.vimeo.com/video/318518281?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
   </div>
 </div>
 
@@ -46,8 +46,8 @@ We're actively improving code intelligence in all languages, so please [send us 
 ## Site admin improvements
 
 <div className="container">
-  <div style={{padding:'56.25% 0 0 0',position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/318533427?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
+  <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+    <iframe src="https://player.vimeo.com/video/318533427?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
   </div>
 </div>
 
@@ -70,8 +70,8 @@ The documentation pages for [site configuration](https://docs.sourcegraph.com/ad
 ## New Sourcegraph extension APIs
 
 <div className="container">
-  <div style={{padding:'56.25% 0 0 0',position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/318541630?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
+  <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+    <iframe src="https://player.vimeo.com/video/318541630?color=0CB6F4&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=1&loop=1" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
   </div>
 </div>
 

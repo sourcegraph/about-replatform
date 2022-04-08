@@ -24,7 +24,7 @@ In [Part 1](/blog/optimizing-a-code-intel-commit-graph/#Performance-improvements
 The following Git commit graph illustrates this difference. Searching from commit `g`, we could find index data on commits `a` and `m`, both only two steps away. However, if we had a limit of 10, we would see only the commits directly adjacent to `g` and would hit our limit before expanding outwards.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph6.png" alt="High-merge commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph6.png" alt="High-merge commit graph" className="no-shadow">
   <figcaption>A Git commit graph with a large number of paths from <code>a</code> to <code>g</code> and <code>g</code> to <code>m</code>.</figcaption>
 </figure>
 
@@ -33,7 +33,7 @@ Another issue is high commit velocity. Suppose that we have a hard limit of view
 The following Git commit graph illustrates this, where commit `b` could simply be stranded on both sides by ancestor and descendant commits with code intelligence data just out of reach.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph7.png" alt="Flat commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph7.png" alt="Flat commit graph" className="no-shadow">
   <figcaption>A Git commit graph with large distances between code intelligence indexes.</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ The `lsif_dirty_repositories` table tracks which repositories need their commit 
 For this example, we'll use the following commit graph, where commits `80c800`, `c85b4b`, and `3daedb` define uploads #1, #2, and #3, respectively.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph3.png" alt="Sample commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph3.png" alt="Sample commit graph" className="no-shadow">
   <figcaption>A Git commit graph with code intelligence indexes attached to commits <code>80c800</code>, <code>c85b4b</code>, and <code>3daedb</code>.</figcaption>
 </figure>
 
@@ -108,7 +108,7 @@ This means that there is no single nearest upload per commit: there is a nearest
 - Commit `69a5ed` defines upload #5 rooted at the directory `/bonk`
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph4.png" alt="Sample commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph4.png" alt="Sample commit graph" className="no-shadow">
   <figcaption>A Git commit graph with code intelligence indexes rooted at different subdirectories.</figcaption>
 </figure>
 
@@ -336,7 +336,7 @@ var visibleUploads map[string /* commit */]map[string /* indexer+root */]Upload 
 We stop pre-calculating the set of visible uploads for **every** commit at once. We make the observation that for a large class of commits, the set of visible uploads are simply redundant information.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph5.png" alt="Sample commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph5.png" alt="Sample commit graph" className="no-shadow">
   <figcaption>A Git commit graph with code intelligence attached to commits <code>68acd3</code> and <code>67e0bf</code>.</figcaption>
 </figure>
 
@@ -395,7 +395,7 @@ We introduced a new table, `lsif_nearest_uploads_links`, which stores a link fro
 We'll use the following commit graph again for our example. Here, commit `68acd3` defines upload #1, and `67e0bf` defines upload #2 (both with distinct indexing root directories).
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph5.png" alt="Sample commit graph" class="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph5.png" alt="Sample commit graph" className="no-shadow">
   <figcaption>A Git commit graph with code intelligence attached to commits <code>68acd3</code> and <code>67e0bf</code>.</figcaption>
 </figure>
 

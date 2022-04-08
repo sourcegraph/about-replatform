@@ -35,7 +35,7 @@ Over the next few years, he refined his hardware for comfort, work, and more eff
 Two significant monitor changes led to Amir's most recent iteration. He purchased one, then another, 49" curved, ultrawide monitor, which provided the screen real estate for the right number of correctly sized windows. Then, he replaced one of these with the Apple 32" Pro Display XDR monitor, solving his need to verify color levels and quality as he built games for different platforms and displays.
 
 <div style={{position:'relative'}}>
-    <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">Iteration 16 of my dev setup: <a href="https://t.co/xwtMJE32hc">pic.twitter.com/xwtMJE32hc</a></p>&mdash; Amir Rajan (@amirrajan) <a href="https://twitter.com/amirrajan/status/1441174275386449921?ref_src=twsrc%5Etfw">September 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote className="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">Iteration 16 of my dev setup: <a href="https://t.co/xwtMJE32hc">pic.twitter.com/xwtMJE32hc</a></p>&mdash; Amir Rajan (@amirrajan) <a href="https://twitter.com/amirrajan/status/1441174275386449921?ref_src=twsrc%5Etfw">September 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 Amir keeps an updated gist with links to his setups since 2018. Check them all out here: [Evolution of Amir's battle stage](https://gist.github.com/amirrajan/926cb51ee49a661abdfa6656662c07ca)!
@@ -50,7 +50,7 @@ DragonRuby Game Toolkit emerged from a desire for a game engine with a fast feed
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/amir-rajan/Why_Ruby.mp4" data-cookieconsent="ignore"></video>
     </div>
-    <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Hear Amir explain why he started writing games in Ruby</figcaption>
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Hear Amir explain why he started writing games in Ruby</figcaption>
 </figure>
 
 ## The ergonomic long-game
@@ -63,7 +63,7 @@ In designing and adapting for comfort, health, and efficiency, Amir isn't focuse
     <div className="container my-4 video-embed embed-responsive embed-responsive-16by9">
         <video controls src="https://sourcegraphstatic.com/blog/dev-tool-time/amir-rajan/Setup_ROI.mp4" data-cookieconsent="ignore"></video>
     </div>
-    <figcaption style={{textAlign: 'center', fontStyle: 'italic'}}>Listen to Amir talk about the long-game of ergonomics</figcaption>
+    <figcaption style={{textAlign:'center', fontStyle: 'italic'}}>Listen to Amir talk about the long-game of ergonomics</figcaption>
 </figure>
 
 ## Show notes
