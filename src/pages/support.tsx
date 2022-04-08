@@ -5,11 +5,9 @@ import Link from 'next/link'
 
 import { ContentSection, Layout, TrySourcegraph } from '@components'
 
-const listItem = 'list-group-item bg-transparent border-0'
-
 const CLASS_NAMES = {
-    featureOffered: `${listItem}`,
-    featureNotOffered: `${listItem} pricing-plan-feature__value-false`,
+    featureOffered: 'list-group-item bg-transparent border-0',
+    featureNotOffered: 'list-group-item bg-transparent border-0 text-muted',
     featureChecked: 'icon-inline text-success',
     featureNotChecked: 'icon-inline invisible',
 }
@@ -31,7 +29,7 @@ const SUPPORT_FEATURES = {
 
 const Support: FunctionComponent = () => (
     <Layout 
-        className="support-page text-dark"
+        className="text-dark"
         meta={{
             title: 'Sourcegraph - Support',
             description:
@@ -43,17 +41,17 @@ const Support: FunctionComponent = () => (
             <ContentSection className="hero-section text-center py-5">
                 <h1 className="display-2 font-weight-bold">Sourcegraph Support</h1>
                 <p>
-                    See <Link href="./pricing">Pricing</Link> to learn more about these tiers.
+                    See <Link href="/pricing">Pricing</Link> to learn more about these tiers.
                 </p>
             </ContentSection>
-            <div className="container-fluid support-page__plans">
+            <div className="container-fluid my-0 mx-auto max-w-1000">
                 <div className="row pt-4">
                     <div className="d-flex col-md-4 mx-auto mb-4">
                         <div className="card h-100">
                             <div className="card-body">
                                 <h1 className="card-title mt-3 mb-3 text-center">Free</h1>
                                 <a
-                                    className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
+                                    className="font-size-base min-w-150 btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
                                     href="https://docs.sourcegraph.com#quickstart-guide"
                                 >
                                     Deploy
@@ -102,16 +100,11 @@ const Support: FunctionComponent = () => (
                         <div className="card">
                             <div className="card-body">
                                 <h1 className="card-title mt-3 mb-3 text-center">Team</h1>
-                                <Link
-                                    href="https://sourcegraph.com/subscriptions/new"
-                                    passHref={true}
-                                >
-                                    <a
-                                        className="support-plan__button btn btn-success w-100 justify-content-center text-center d-inline-flex"
-                                        href="#none">
-                                        Buy now
-                                    </a>
-                                </Link>
+                                <a
+                                    className="font-size-base min-w-150 btn btn-success w-100 justify-content-center text-center d-inline-flex"
+                                    href="https://sourcegraph.com/subscriptions/new">
+                                    Buy now
+                                </a>
                             </div>
                             <ol className="mt-4 list-group list-group-flush py-2 h-100">
                                 <li className={CLASS_NAMES.featureOffered}>
@@ -156,12 +149,15 @@ const Support: FunctionComponent = () => (
                         <div className="card">
                             <div className="card-body">
                                 <h1 className="card-title mt-3 mb-3 text-center">Enterprise</h1>
-                                <a
-                                    className="support-plan__button btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex"
-                                    href="./contact/request-info/?form_submission_source=support-enterprise"
+                                <Link 
+                                    href="/contact/request-info/?form_submission_source=support-enterprise" 
+                                    passHref={true}
                                 >
-                                    Contact us
-                                </a>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <a className="font-size-base min-w-150 btn btn-outline-primary w-100 justify-content-center text-center d-inline-flex">
+                                        Contact us
+                                    </a>
+                                </Link>
                             </div>
                             <ol className="mt-4 list-group list-group-flush py-2 h-100">
                                 <li className={CLASS_NAMES.featureOffered}>
@@ -172,11 +168,11 @@ const Support: FunctionComponent = () => (
                                     </a>
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
-                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.emailSupport}
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
-                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.workingHoursSupport}
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
@@ -184,17 +180,17 @@ const Support: FunctionComponent = () => (
                                     {SUPPORT_FEATURES.responseTime24}
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
-                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.uptime}
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
-                                    <CheckIcon className={CLASS_NAMES.featureChecked} /> 
+                                    <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.implementationSupport}
                                 </li>
                                 <li className={CLASS_NAMES.featureOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureChecked} />
                                     {SUPPORT_FEATURES.sharedSlackChannelContact}{' '}
-                                    <Link href="./contact/request-info/?form_submission_source=support-enterprise">
+                                    <Link href="/contact/request-info/?form_submission_source=support-enterprise">
                                         contact us
                                     </Link>
                                     )
@@ -202,7 +198,7 @@ const Support: FunctionComponent = () => (
                                 <li className={CLASS_NAMES.featureOffered}>
                                     <CheckIcon className={CLASS_NAMES.featureChecked} /> 
                                     Dedicated customer engineer assigned to you (available,{' '}
-                                    <Link href="./contact/request-info/?form_submission_source=support-enterprise">
+                                    <Link href="/contact/request-info/?form_submission_source=support-enterprise">
                                         contact us
                                     </Link>
                                     )
@@ -210,7 +206,6 @@ const Support: FunctionComponent = () => (
                             </ol>
                         </div>
                     </div>
-                    
                 </div>
                 <p className="mx-4">
                         * We will use commercially reasonable efforts to adhere to the SLAs and uptime defined
