@@ -8,27 +8,27 @@ import Link from 'next/link'
 
 interface TextLink {
     text: string
-    href: string
+    href?: string
 }
 
 interface Props {
-    useCases: string[] | TextLink[]
-    challenges: string[] | TextLink[]
-    solutions: string[] | TextLink[]
-    results: string[] | TextLink[]
+    useCases: TextLink[]
+    challenges: TextLink[]
+    solutions: TextLink[]
+    results: TextLink[]
 }
 
 interface ListItemProps {
-    item: string | TextLink
+    item: TextLink
 }
 
 const isString = (value: string | TextLink): boolean => typeof value === 'string'
 
 const ListItemType: FunctionComponent<ListItemProps> = ({ item }) => (
     <li>
-        {isString(item) ?
-            <span>{item}</span> :
-            <Link href={(item as TextLink).href}>{(item as TextLink).text}</Link>
+        {item?.href ?
+            <Link href={item.href}>{item.text}</Link> :
+            <span>{item.text}</span>
         }
     </li>
 )
@@ -45,7 +45,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Use case</h5>
                         <ul className="pl-4">
                             {useCases.map(useCase => (
-                                <ListItemType key={isString(useCase) ? useCase as string : (useCase as TextLink).text} item={useCase} />
+                                <ListItemType key={useCase.text} item={useCase} />
                             ))}
                         </ul>
                     </div>
@@ -58,7 +58,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Challenge</h5>
                         <ul className="pl-4">
                             {challenges.map(challenge => (
-                                <ListItemType key={isString(challenge) ? (challenge as string) : (challenge as TextLink).text} item={challenge} />
+                                <ListItemType key={challenge.text} item={challenge} />
                             ))}
                         </ul>
                     </div>
@@ -71,7 +71,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Solution</h5>
                         <ul className="pl-4">
                             {solutions.map(solution => (
-                                <ListItemType key={isString(solution) ? (solution as string) : (solution as TextLink).text} item={solution} />
+                                <ListItemType key={solution.text} item={solution} />
                             ))}
                         </ul>
                     </div>
@@ -88,7 +88,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Results</h5>
                         <ul className="pl-4">
                             {results.map(result => (
-                                <ListItemType key={isString(result) ? (result as string) : (result as TextLink).text} item={result} />
+                                <ListItemType key={result.text} item={result} />
                             ))}
                         </ul>
                     </div>
