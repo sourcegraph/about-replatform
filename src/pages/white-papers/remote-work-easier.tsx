@@ -3,14 +3,7 @@ import { FunctionComponent } from 'react'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import Link from 'next/link'
 
-import {
-    Layout,
-    ContentSection,
-    BlockquoteWithBorder,
-    InContentImage,
-    WhitePaperPage,
-    WhitePaperRequestDemoForm,
-} from '@components'
+import { Layout, WhitePaperPage, ContentSection, BlockquoteWithBorder, InContentImage } from '@components'
 
 export const RemoteWorkEasier: FunctionComponent = () => (
     <Layout
@@ -23,12 +16,8 @@ export const RemoteWorkEasier: FunctionComponent = () => (
     >
         <WhitePaperPage
             title="Remote software development made easier"
-            quote={{
-                quote: 'Any tool that empowers you to find the answer to your own question is good for remote work, and Sourcegraph is such a tool.',
-                author: 'Nick Snyder, VP Engineering at Sourcegraph',
-            }}
             pdf="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-remote-software-development-made-easier.pdf"
-            bgImage="/white-papers/remote-easier-bg_1680x300.png"
+            heroBackgroundImage="/white-papers/remote-easier-bg_1680x300.png"
         >
             <ContentSection color="white" className="col-md-6 pt-5">
                 <div className="container">
@@ -273,7 +262,6 @@ export const RemoteWorkEasier: FunctionComponent = () => (
                 </div>
             </ContentSection>
         </WhitePaperPage>
-        <WhitePaperRequestDemoForm />
     </Layout>
 )
 

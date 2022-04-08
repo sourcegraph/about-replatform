@@ -1,6 +1,4 @@
 // Common
-export { Layout } from './Layout'
-export { ContentPage } from './ContentPage'
 export { ContentSection } from './ContentSection'
 export { Jumbotron } from './Jumbotron'
 export { RequestDemoForm } from './RequestDemoForm'
@@ -57,5 +55,7 @@ export {
     BLOG_TYPE_TO_INFO,
 } from './Blog'
 
-// White Papers
-export { WhitePaperPage, WhitePaperRequestDemoForm } from './WhitePapers'
+// Layouts
+export { Layout } from './Layout'
+export { WhitePaperPage } from './WhitePaperPage'
+export { ContentPage } from './ContentPage'
