@@ -160,5 +160,3 @@ Observability REDUCES THE BATTLES WE FIGHT, allowing us to skip the entire CGI b
 
 
 
-<!-- Note on images
-  Images (e.g. my_image.jpg) should be put in the `website/static/blog/strange-loop-2019` directory, with the path to the image in your post being `/blog/strange-loop-2019/my_image.jpg`. If you'd rather host the images somewhere else for ease of use, that's fine too.

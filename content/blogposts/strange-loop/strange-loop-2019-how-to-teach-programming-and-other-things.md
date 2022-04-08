@@ -32,18 +32,6 @@ Everyone should learn programming, right? Yes! But how... Should we allow childr
 
 ---
 
-<!-- Note on images
-  Images (e.g. my_image.jpg) should be put in the `website/static/blog/strange-loop-2019` directory, with the path to the image in your post being `/blog/strange-loop-2019/my_image.jpg`. If you'd rather host the images somewhere else for ease of use, that's fine too.
-
-  Please also try to keep your images to a reasonable size by:
-    - Using JPEG compression, unless image is mostly solid color 
-    - JPEG compression set between 60%-80%
-    - Resizing the image to be no wider then 750px
-    - If PNG, use a tool like ImageOptim (https://imageoptim.com/mac) to optimize the file size
-
-  I suggest re-sizing and compressing all the images in one batch as a last step.
--->  
-
 ### A bit about our speaker - Felienne Hermans
 
 Felienne Hermans is an associate professor at the [Leiden Institute of Advanced Computer Science](http://liacs.leidenuniv.nl/) at Leiden University where she is the head of the PERL group that researches programming education.

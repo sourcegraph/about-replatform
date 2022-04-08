@@ -16,13 +16,6 @@ Liveblogger: [Geoffrey Gilmore](https://github.com/ggilmore)
 
 Learning algorithms can be overwhelming and demoralizing, but it doesn't have to be. In this talk, Kaylyn explains binary search tree algorithms in a simple and straightforward manner with code examples in Go.
 
-<!--
-## Summary
-
-Kaylyn’s talk dives into binary tree algorithms to demystify them and show how surprisingly fun they can be to work within Go. If you are new to Go, you will be comforted to learn that you can quickly follow along and read some of the code in these algorithms. If you are new to algorithms, you will be reassured to learn that you often do not need to spend much time debating what data structures to use for your code. In many cases, there is only one option in Go, which allows you to spend more time on the algorithmic concepts, and less time fighting your code.
--->
-
-
 
 ---
 

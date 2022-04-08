@@ -46,7 +46,7 @@ Sourcegraph couldn't be what it is without the community
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/385925610?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/385925610?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/385925610" target="_blank">View on Vimeo</a></p>
 </div>
@@ -57,7 +57,7 @@ Quickly toggle between case sensitive and case insensitive queries using the `Aa
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/386036051?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/386036051?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/386036051" target="_blank">View on Vimeo</a></p>
 </div>
@@ -74,7 +74,7 @@ You can now exclude archived repositories from Bitbucket Server using the `archi
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/385925514?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/385925514?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/385925514" target="_blank">View on Vimeo</a></p>
 </div>
@@ -85,7 +85,7 @@ Quickly download files from Sourcegraph using the new download icon in the file 
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/385925276?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/385925276?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/385925276" target="_blank">View on Vimeo</a></p>
 </div>
@@ -106,7 +106,7 @@ This release contains many exciting new improvements to the Sourcegraph UI, conf
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/386108600?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/386108600?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/386108600" target="_blank">View on Vimeo</a></p>
 </div>

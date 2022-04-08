@@ -20,7 +20,7 @@ In addition to configuring the Sourcegraph-GitLab connection, the screencast dis
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/397320487?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/397320487?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://www.youtube.com/watch?v=r8kvCUeeMKQ" target="_blank">View on YouTube</a></p>
 </p>

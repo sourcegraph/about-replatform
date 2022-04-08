@@ -58,7 +58,7 @@ Watch the recording of the 3.14 release livestream with Product Manager Christin
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/2tBUzBbiZJ4" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/2tBUzBbiZJ4" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
 </div>
 
@@ -72,7 +72,7 @@ Enable this feature by adding `"permissions.backgroundSync": {"enabled": true}` 
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/398759697?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/398759697?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/398759697" target="_blank">View on Vimeo</a></p>
 </div>
@@ -93,7 +93,7 @@ Sourcegraph 3.14 introduces a new [docker-compose deployment model](https://docs
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/398878670?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/398878670?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/398878670" target="_blank">View on Vimeo</a></p>
 </div>
@@ -168,7 +168,7 @@ Sourcegraph collects a small amount of high-level and aggregate data from each i
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392761379?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392761379?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392761379" target="_blank">View on Vimeo</a></p>
 </div>

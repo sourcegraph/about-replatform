@@ -53,7 +53,7 @@ Go in-depth with the 3.15 release by watching the recorded livestream with Produ
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/EJ221hdssDw" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/EJ221hdssDw" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
 </div>
 
@@ -66,7 +66,7 @@ Go in-depth with the 3.15 release by watching the recorded livestream with Produ
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/ju0XEFU31W0" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/ju0XEFU31W0" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://youtu.be/ju0XEFU31W0" target="_blank">View on YouTube</a></p>
 </div>
@@ -87,7 +87,7 @@ Enable this feature by adding `"permissions.backgroundSync": {"enabled": true}` 
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/PAsZP6wv3Gg" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/PAsZP6wv3Gg" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://youtu.be/PAsZP6wv3Gg" target="_blank">View on YouTube</a></p>
 </div>
@@ -138,7 +138,7 @@ Additionally, it is now possible to log all search and GraphQL requests slower t
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/Q2ZWPwMmbOI" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/Q2ZWPwMmbOI" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://youtu.be/Q2ZWPwMmbOI" target="_blank">View on YouTube</a></p>
 </div>

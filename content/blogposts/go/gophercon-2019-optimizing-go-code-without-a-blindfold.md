@@ -97,8 +97,6 @@ As you can see above, our new code ran, on average, in `13.4ms` vs. `13.5ms`. ..
 
 Now for a surprise -- that was actually two runs of the same code with no changes! A p-value of `0.247` is actually quite bad, and in general you'll want a p-value of `<= 0.05` for an improvement to be statistically significant.
 
-<!-- Keep in mind that statistically, if you run your code enough times, you'll eventually get a good p-value, even with no changes to the underlying code. This is referred to as the `Multiple Testing Problem` (enter, [obligatory XKCD](https://xkcd.com/882/)). -->
-
 ## Benchmarking Recap
 
 With that, you can now write benchmark tests and use `benchstat` to understand the performance of your code, then use `pprof` to identify potential changes, and test them in a reliable environment with `perflock` + `benchstat`!

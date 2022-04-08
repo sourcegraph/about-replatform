@@ -53,7 +53,7 @@ Sourcegraph couldn't be what it is without the community
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392614914?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392614914?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392614914" target="_blank">View on Vimeo</a></p>
 </div>
@@ -66,7 +66,7 @@ The option to use interactive search mode can be disabled by adding `{ "experime
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392724955?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392724955?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392724955" target="_blank">View on Vimeo</a></p>
 </div>
@@ -77,7 +77,7 @@ Sourcegraph 3.13 adds a UI toggle <svg className="mdi-icon " style={{border:'1px
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/390882141?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/390882141?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/390882141" target="_blank">View on Vimeo</a></p>
 </div>
@@ -114,7 +114,7 @@ With the addition of GraphQL, Groovy, Objective-C, Pascal, Protobufs, Verilog, a
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392760161?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392760161?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392760161" target="_blank">View on Vimeo</a></p>
 </div>
@@ -125,7 +125,7 @@ The [Dart LSIF indexer](https://github.com/sourcegraph/lsif-dart) makes precise 
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392639232?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392639232?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392639232" target="_blank">View on Vimeo</a></p>
 </div>
@@ -162,7 +162,7 @@ This release contains several new experimental features. We look forward to hear
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/392761379?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/392761379?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/392761379" target="_blank">View on Vimeo</a></p>
 </div>
@@ -177,7 +177,7 @@ A new experimenal field `experimentalFeatures.customGitFetch` allows defining cu
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://player.vimeo.com/video/368923038?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://player.vimeo.com/video/368923038?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://vimeo.com/368923038" target="_blank">View on Vimeo</a></p>
 </div>

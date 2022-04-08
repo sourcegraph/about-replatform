@@ -18,7 +18,7 @@ We've improved in-product documentation to clarify how Sourcegraph fetches data 
 
 <div className="container">
   <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
-    <iframe src="https://www.youtube-nocookie.com/embed/KatiVJ4D3H4" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}frameBorder="0" webkitallowfullscreen="" mozallowfullscreen=""allowFullScreen=""></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/KatiVJ4D3H4" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
 </div>
 
