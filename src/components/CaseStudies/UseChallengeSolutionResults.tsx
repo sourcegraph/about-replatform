@@ -18,6 +18,21 @@ interface Props {
     results: string[] | TextLink[]
 }
 
+interface ListItemProps {
+    item: string | TextLink
+}
+
+const isString = (value: string | TextLink): boolean => typeof value === 'string'
+
+const ListItemType: FunctionComponent<ListItemProps> = ({ item }) => (
+    <li>
+        {isString(item) ?
+            <span>{item}</span> :
+            <Link href={(item as TextLink).href}>{(item as TextLink).text}</Link>
+        }
+    </li>
+)
+
 export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases, challenges, solutions, results }) => (
     <section className="d-flex flex-column flex-md-row">
         <div className="bg-light-gray-2 p-lg-6 p-md-5 px-1 py-5 col-sm-12 col-md-6">
@@ -30,13 +45,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Use case</h5>
                         <ul className="pl-4">
                             {useCases.map(useCase => (
-                                <li key={typeof useCase === 'string' ? useCase : useCase.text}>
-                                    {typeof useCase === 'string' ? (
-                                        <span>{useCase}</span>
-                                    ) : (
-                                        <Link href={useCase.href}>{useCase.text}</Link>
-                                    )}
-                                </li>
+                                <ListItemType key={isString(useCase) ? useCase as string : (useCase as TextLink).text} item={useCase} />
                             ))}
                         </ul>
                     </div>
@@ -49,13 +58,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Challenge</h5>
                         <ul className="pl-4">
                             {challenges.map(challenge => (
-                                <li key={typeof challenge === 'string' ? challenge : challenge.text}>
-                                    {typeof challenge === 'string' ? (
-                                        <span>{challenge}</span>
-                                    ) : (
-                                        <Link href={challenge.href}>{challenge.text}</Link>
-                                    )}
-                                </li>
+                                <ListItemType key={isString(challenge) ? (challenge as string) : (challenge as TextLink).text} item={challenge} />
                             ))}
                         </ul>
                     </div>
@@ -68,13 +71,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Solution</h5>
                         <ul className="pl-4">
                             {solutions.map(solution => (
-                                <li key={typeof solution === 'string' ? solution : solution.text}>
-                                    {typeof solution === 'string' ? (
-                                        <span>{solution}</span>
-                                    ) : (
-                                        <Link href={solution.href}>{solution.text}</Link>
-                                    )}
-                                </li>
+                                <ListItemType key={isString(solution) ? (solution as string) : (solution as TextLink).text} item={solution} />
                             ))}
                         </ul>
                     </div>
@@ -91,13 +88,7 @@ export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases
                         <h5 className="font-weight-bold">Results</h5>
                         <ul className="pl-4">
                             {results.map(result => (
-                                <li key={typeof result === 'string' ? result : result.text}>
-                                    {typeof result === 'string' ? (
-                                        <span>{result}</span>
-                                    ) : (
-                                        <Link href={result.href}>{result.text}</Link>
-                                    )}
-                                </li>
+                                <ListItemType key={isString(result) ? (result as string) : (result as TextLink).text} item={result} />
                             ))}
                         </ul>
                     </div>
