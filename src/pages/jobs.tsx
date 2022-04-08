@@ -249,15 +249,6 @@ const CareersPage:FunctionComponent = () => {
                     </Carousel.Item>
                 </Carousel>
     
-                <div>
-                    <img src="/careers/Culture_8.png" className="culture-section mx-auto" alt="Zoom video chat tiles" />
-                    <div className="culture-section-mobile mx-auto">
-                        {new Array(8).fill(null).map((item, index) => (
-                            <img key={Math.random()} src={`/careers/${index + 1}-Zoom.png`} alt={`Zoom participant ${index}`} />
-                        ))}
-                    </div>
-                </div>
-    
                 <Carousel
                     className="values-carousel"
                     prevIcon={<ArrowLeftIcon color="#808080" />}
