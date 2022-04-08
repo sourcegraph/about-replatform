@@ -160,31 +160,6 @@
         }
     }
 
-    .culture-section {
-        /* Temp fix: to hide zoom section */
-        display: none;
-        width: 100%;
-        max-width: 1500px;
-
-        @media only screen and (max-width: 768px) {
-            padding: 100px 0;
-            margin-bottom: 70px;
-            display: none;
-        }
-    }
-
-    .culture-section-mobile {
-        display: none;
-
-        @media only screen and (max-width: 768px) {
-            /* Temp fix: to hide zoom section: display: block;*/
-
-            img {
-                width: 45%;
-            }
-        }
-    }
-
     .values-carousel {
         padding: 170px 0;
 
