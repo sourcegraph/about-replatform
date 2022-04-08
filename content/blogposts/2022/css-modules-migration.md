@@ -71,7 +71,7 @@ We knew we could search the codebase manually for relevant files and make conclu
 Code Insights entered Beta in August 2021, and we happily started using it to track the migration progress. As of today, [Code Insights is now Generally Available](/blog/announcing-code-insights/).
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-to-css-modules-insight.png" alt="Count of CSS files that are global vs module files." className="css-modules-insight">
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-to-css-modules-insight.png" alt="Count of CSS files that are global vs module files." className="css-modules-insight"/>
   <figcaption>Count of CSS files that are global vs module files.</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ A codemod is an automated change to source code, which helps platform teams exec
 4. Regenerate the source file based on the new AST.
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/abstract-syntax-tree.svg" alt="High-level visual representation of the codemod." className="no-shadow" style={{marginTop: 0}}>
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/abstract-syntax-tree.svg" alt="High-level visual representation of the codemod." className="no-shadow" style={{marginTop: 0}}/>
   <figcaption>High-level visual representation of the codemod.</figcaption>
 </figure>
 
@@ -162,7 +162,7 @@ To manipulate Typescript AST, we used [ts-morph](https://github.com/dsherret/ts-
 Here’s the AST generated for our small example. Explore it yourself using [AST Explorer](https://astexplorer.net/#/gist/eca630c9f5464e6b027ec13aac91711a/4295e325b8cdad474f9d4f559248f534e709356e).
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/insights-dashboard-ast.png" alt="Insights dashboard AST"
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/insights-dashboard-ast.png" alt="Insights dashboard AST"/>
 </figure>
 
 Codemod replaces every string literal match with reference to the corresponding CSS Module class.
@@ -190,7 +190,7 @@ $ yarn transform --transform ./globalCssToCssModule.ts ./sourcegraph/**/*.tsx
 We developed [the proof of concept codemod](https://github.com/sourcegraph/codemod/tree/92d5088106a81247a997c52577b0cb5749fc1082/src/transforms/globalCssToCssModule) for the migration in a separate repo at the end of September 2021 and spent a couple of days applying it to the codebase. The code insights created to track the migration readily showed a spike in the migration progress that we happily shared with other teams in Slack:
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-progress.svg" alt="Intermediate migration progress"
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-progress.svg" alt="Intermediate migration progress"/>
 </figure>
 
 ## Collaboration with contractors
@@ -206,7 +206,7 @@ To keep executing the migration behind the scenes, we started working with contr
 We successfully migrated to CSS Modules behind the scenes, delivering on the “frictionless developer experience” goal set for our team:
 
 <figure>
-  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-completion.svg" alt="Completed migration"
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migration-completion.svg" alt="Completed migration"/>
 </figure>
 
 We're relying on the same combination of Code Insights and codemods in our subsequent significant migration from global Bootstrap classes to our new Wildcard design system. We find this approach is more than just automating some simple tasks and speeding up the development work, as it helps keep engineers happy by reducing manual labor when upgrading their projects' dependencies, refactoring legacy patterns, or fixing bugs if the next version of a public API has breaking changes. As a next step, we plan to make codemods useful for engineers outside of the Frontend Platform team by developing [a higher-level toolkit for creating codemods](https://github.com/sourcegraph/codemod) that will eventually make it as simple as writing a regex find-and-replace.
@@ -214,6 +214,7 @@ We're relying on the same combination of Code Insights and codemods in our subse
 We hope you found this account of our migration useful and will consider trying codemods and [Code Insights](/blog/announcing-code-insights/) in your work.
 
 <style>
+{`
   figure .no-shadow {
      box-shadow: none;
   }
@@ -251,5 +252,5 @@ We hope you found this account of our migration useful and will consider trying 
       width: 100%;
     }
   }
-
+`}
 </style>

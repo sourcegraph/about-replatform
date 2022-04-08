@@ -11,9 +11,11 @@ published: true
 ---
 
 <style>
+{`
   p {
     overflow:scroll
   }
+`}
 </style>
 
 # Install Sourcegraph to get great code search on AWS CodeCommit

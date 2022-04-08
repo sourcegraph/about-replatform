@@ -78,7 +78,7 @@ We don’t use a web framework because we found we didn't need one in Go. Go’s
 
 **Handler functions:** We define our handlers with an error return value, and we use a simple wrapper function to make them implement [http.Handler](https://sourcegraph.com/github.com/golang/go/-/def/GoPackage/net/http/-/Handler). This means we can centralize error handling instead of having to format error messages and pass them to the [http.Error](https://sourcegraph.com/github.com/golang/go/-/def/GoPackage/net/http/-/Error) func for each possible error. Our handler functions look like:
 
-<pre name="9f8a" id="9f8a" className="graf graf--pre graf-after--p">func serveXYZ(w http.ResponseWriter, r *http.Request) error { ... }</pre>
+<pre name="9f8a" id="9f8a" className="graf graf--pre graf-after--p">`func serveXYZ(w http.ResponseWriter, r *http.Request) error { ... }`</pre>
 
 **Global variables:** For virtually all request “context”, such as DB connections, config, etc., we use global variables. We chose this simple solution instead of relying on a framework to inject context for the request.
 
@@ -86,21 +86,28 @@ We don’t use a web framework because we found we didn't need one in Go. Go’s
 
 **Rendering HTML:** We use html/template and a simpler helper function to render the template:
 
-<pre name="def3" id="def3" className="graf graf--pre graf-after--p">func executeTemplate(req *http.Request, resp http.ResponseWriter, tmplName string, status int, header http.Header, tmplData interface{}) error { ... }</pre>
+<pre name="def3" id="def3" className="graf graf--pre graf-after--p">`func executeTemplate(req *http.Request, resp http.ResponseWriter, tmplName string, status int, header http.Header, tmplData interface{}) error { ... }`</pre>
 
 **Returning JSON:** We just use a simpler helper function:
 
-<pre name="1a0b" id="1a0b" className="graf graf--pre graf-after--p">// writeJSON writes a JSON Content-Type header and a JSON-encoded object to the
+<pre name="1a0b" id="1a0b" className="graf graf--pre graf-after--p">
+```
+// writeJSON writes a JSON Content-Type header and a JSON-encoded object to the
 // http.ResponseWriter.
 func writeJSON(w http.ResponseWriter, v interface{}) error {
 	data, err := json.MarshalIndent(v, "", "  ")
 	if err != nil {
 		return &httpError{http.StatusInternalServerError, err}
-	}</pre>
+	}
+```
+</pre>
 
-<pre name="606d" id="606d" className="graf graf--pre graf-after--pre">	w.Header().Set("content-type", "application/json; charset=utf-8")
+<pre name="606d" id="606d" className="graf graf--pre graf-after--pre">
+```
+w.Header().Set("content-type", "application/json; charset=utf-8")
 	_, err = w.Write(data)
 	return err
+```
 }</pre>
 
 ### Unified API client and data store interfaces
@@ -112,12 +119,16 @@ We have one “service” interface for each noun in our system: repositories, u
 
 Here’s a simplified version of our repositories interface.
 
-<pre name="3900" id="3900" className="graf graf--pre graf-after--p">type RepositoriesService interface {
+<pre name="3900" id="3900" className="graf graf--pre graf-after--p">
+```
+type RepositoriesService interface {
     Get(name string) (*Repo, error)
     List() ([]*Repo, error)
     Search(opt *SearchOptions) ([]*Repo, error)
     // ...
-}</pre>
+}
+```
+</pre>
 
 When we began, the client and data store implementations were a bit different, but they basically accomplished the same thing. They accepted different (but similar) parameters and returned different types that represented the same nouns. These differences were initially motivated by the need for greater performance (in the data store) and user-friendliness (in the API client). For example, the API client methods returned structs with some additional fields populated (which required a few additional queries), for greater convenience.
 

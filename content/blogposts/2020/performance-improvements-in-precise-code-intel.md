@@ -335,28 +335,30 @@ This yielded a performance boost that became more significant the larger the cod
 The following chart shows the decrease in query latency while running our [integration test suite](https://github.com/sourcegraph/sourcegraph/tree/5f51043ad2130a1acdcfca8b969f907cd03a220d/internal/cmd/precise-code-intel-test) compared to the previous two Sourcegraph releases. The test suite is querying cross-repo definitions and references over three commits from [etcd-io/etcd](https://github.com/etcd-io/etcd), [pingcap/tidb](https://github.com/pingcap/tidb), and [distributedio/titan](https://github.com/distributedio/titan), and two commits from [uber-go/zap](https://github.com/uber-go/zap).
 
 <div className="text-center benchmark-results">
-  <img src="https://sourcegraphstatic.com/lsif-query-latency-317.png" width="70%" alt="Precise code intel query latency chart">
+  <img src="https://sourcegraphstatic.com/lsif-query-latency-317.png" width="70%" alt="Precise code intel query latency chart"/>
 </div>
 
 This next chart shows the time required to upload and process the indexes.
 
 <div className="text-center benchmark-results">
-  <img src="https://sourcegraphstatic.com/lsif-processing-latency-317.png" width="50%" alt="Precise code intel index processing latency chart">
+  <img src="https://sourcegraphstatic.com/lsif-processing-latency-317.png" width="50%" alt="Precise code intel index processing latency chart"/>
 </div>
 
 These last charts show the size of the converted bundle on disk after conversion.
 
 <div className="text-center benchmark-results">
-  <img src="https://sourcegraphstatic.com/tidb-bundle-size.png" width="48%" alt="tidb bundle process code intel bundle (processed index) size on disk chart">
-  <img src="https://sourcegraphstatic.com/etcd-bundle-size.png" width="48%" alt="etcd bundle process code intel bundle (processed index) size on disk chart">
+  <img src="https://sourcegraphstatic.com/tidb-bundle-size.png" width="48%" alt="tidb bundle process code intel bundle (processed index) size on disk chart"/>
+  <img src="https://sourcegraphstatic.com/etcd-bundle-size.png" width="48%" alt="etcd bundle process code intel bundle (processed index) size on disk chart"/>
   <br />
-  <img src="https://sourcegraphstatic.com/titan-bundle-size.png" width="48%" alt="titan bundle process code intel bundle (processed index) size on disk chart">
-  <img src="https://sourcegraphstatic.com/zap-bundle-size.png" width="48%" alt="zap bundle process code intel bundle (processed index) size on disk chart">
+  <img src="https://sourcegraphstatic.com/titan-bundle-size.png" width="48%" alt="titan bundle process code intel bundle (processed index) size on disk chart"/>
+  <img src="https://sourcegraphstatic.com/zap-bundle-size.png" width="48%" alt="zap bundle process code intel bundle (processed index) size on disk chart"/>
 </div>
 
 <style>
+{`
   .blog-post__html img { box-shadow: none; display: inline; margin: 10px auto; }
   .blog-post__html .alert pre { display: inline; }
+`}
 </style>
 
 With all the changes discussed in this post combined, the latency for queries and upload processing has been cut by a factor of two, as has the size of bundles on disk, compared to Sourcegraph 3.15.
@@ -364,6 +366,7 @@ With all the changes discussed in this post combined, the latency for queries an
 Finally, here are the before and after profiles of CPU, memory allocations, and heap of the LSIF processing system. Note that most of the original red spots have been eliminated. New ones have naturally emerged, but overall the system is much faster:
 
 <table>
+<tbody>
 <tr>
     <th></th>
     <th>CPU</th>
@@ -410,6 +413,7 @@ Finally, here are the before and after profiles of CPU, memory allocations, and 
         </a>
     </td>
 </tr>
+</tbody>
 </table>
 
 We plan to continue on this path of performance improvements, and the next release will focus specifically on processing multiple bundles in parallel in order to multiply the benefit of these recent performance gains. This is just the latest chapter in our continuing effort to bring fast, precise code navigation to every language, every codebase, and every programmer. If you thought this post was interesting or valuable, we'd appreciate it if you'd share it with others!

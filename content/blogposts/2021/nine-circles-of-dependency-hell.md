@@ -143,6 +143,7 @@ _Matt was previously a software engineer at Google working on Kubernetes. Curren
 - [A 5x reduction in RAM usage with Zoekt memory optimizations](https://about.sourcegraph.com/blog/zoekt-memory-optimizations-for-sourcegraph-cloud/)
 
 <style>
+{`
   figure .no-shadow { box-shadow: none; }
   .workingtable-highlight td { color: #ffffff; background-color: #005cb9; }
 
@@ -151,4 +152,5 @@ _Matt was previously a software engineer at Google working on Kubernetes. Curren
     margin-top: -2rem;
     font-style: italic;
   }
+`}
 </style>

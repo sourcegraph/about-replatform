@@ -67,7 +67,7 @@ While a +/-3% difference may not seem like it's worth losing sleep over, package
 
 For that, we're going to need some statistics.
 
-## Benchmarks <3 Statistics
+## Benchmarks / Statistics
 
 To understand the true performance characteristics of a package, we'll want to look at multiple executions of our benchmarks, so we can compute the mean and variance. For that, we can use the [`benchstat`](https://godoc.org/golang.org/x/perf/cmd/benchstat) command:
 

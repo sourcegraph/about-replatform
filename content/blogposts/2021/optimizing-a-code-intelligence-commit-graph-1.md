@@ -117,7 +117,7 @@ This query maintains a worklist (the query-local `lineage` table) seeded by the 
 The values of the tables above represent the following hypothetical commit graph, where `a36064` is the head of the `main` branch, `6106fc` is the head of the feature branch `feat/x`, and the commits with uploads (`f4fb06` and `d67b8d`) are drawn in blue.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph1.png" alt="Sample commit graph" className="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph1.png" alt="Sample commit graph" className="no-shadow"/>
   <figcaption>A Git commit graph with mainline branch <code>main</code> and a feature branch <code>x</code>.</figcaption>
 </figure>
 
@@ -171,7 +171,7 @@ A row is a duplicate of another row (from PostgreSQL's point of view) if they bo
 The following hypothetical commit graph contains a number of feature branches that are eventually merged back into mainline, unlike our previous example where all commits had at most one parent.
 
 <figure>
-  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph2.png" alt="Sample commit graph" className="no-shadow">
+  <img src="https://sourcegraphstatic.com/blog/commit-graph-optimizations/graph2.png" alt="Sample commit graph" className="no-shadow"/>
   <figcaption>A Git commit graph with feature branches <code>x</code> and <code>y</code> merged into <code>main</code>.</figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ Our [first attempt to optimize this query](https://github.com/sourcegraph/source
 [Additional efforts to optimize this query](https://github.com/sourcegraph/sourcegraph/pull/5984) were highly successful. The following chart compares the query latency of the original query (_quadratic_, blue) and the optimized query (_fast linear_, green), and we've _very clearly_ removed the term that was creating the quadratic behavior.
 
 <figure>
-  <img src="https://user-images.githubusercontent.com/1387653/66709486-a9813900-ed22-11e9-9519-d9a9c098b37d.png" alt="Query latency comparison" className="no-shadow">
+  <img src="https://user-images.githubusercontent.com/1387653/66709486-a9813900-ed22-11e9-9519-d9a9c098b37d.png" alt="Query latency comparison" className="no-shadow"/>
   <figcaption>Comparison of latencies between different Git commit graph traversal queries in PostgreSQL.</figcaption>
 </figure>
 
@@ -261,6 +261,7 @@ Check out [Part 2](/blog/optimizing-a-code-intel-commit-graph-part-2/), in which
 - [Avoiding the pitfalls of iteration-based development, explained in 5 pull requests](/blog/avoiding-the-pitfalls-of-iteration-based-development/)
 
 <style>
+{`
   figure .no-shadow { box-shadow: none; }
   .workingtable-highlight td { color: #ffffff; background-color: #005cb9; }
 
@@ -269,4 +270,5 @@ Check out [Part 2](/blog/optimizing-a-code-intel-commit-graph-part-2/), in which
     margin-top: -2rem;
     font-style: italic;
   }
+`}
 </style>

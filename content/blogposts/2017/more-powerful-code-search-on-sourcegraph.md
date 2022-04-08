@@ -28,7 +28,7 @@ As you continue using it, you can express your query more quickly by using the o
 
 * Search non-vendored files for “open file”: [**repogroup:sample -file:vendor/ -file:node_modules/ open file**](https://sourcegraph.com/search?q=open+file&sq=repogroup:sample+-file:vendor/+-file:node_modules/)
 * Search repositories named “mux” in test files for “new route”: [**repogroup:sample file:(test|spec) repo:mux new route**](https://sourcegraph.com/search?q=repo:mux+new+route&sq=repogroup:sample+file:%28test%7Cspec%29)
-* Search for occurrences of “partial<” in TypeScript files: [**repogroup:sample file:\.ts$ partial<**](https://sourcegraph.com/search?q=file:%5C.ts+partial%3C&sq=repogroup:sample)
+* Search for occurrences of `partial<` in TypeScript files: [**`repogroup:sample file:\.ts$ partial<`**](https://sourcegraph.com/search?q=file:%5C.ts+partial%3C&sq=repogroup:sample)
 
 Let us know what you think on Twitter ([@sourcegraph](https://twitter.com/sourcegraph)). To get advanced code search for your company’s code, [install Sourcegraph](https://docs.sourcegraph.com).
 
