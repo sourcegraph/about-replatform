@@ -23,7 +23,7 @@ In addition to configuring the Sourcegraph-GitLab connection, the screencast dis
     <iframe src="https://player.vimeo.com/video/397320487?color=0CB6F4&amp;title=0&amp;byline=" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
   </div>
   <p style={{textAlign: 'center'}}><a href="https://www.youtube.com/watch?v=r8kvCUeeMKQ" target="_blank">View on YouTube</a></p>
-</p>
+</div>
 
 See the [Sourcegraph GitLab documentation](https://docs.sourcegraph.com/admin/external_service/gitlab) for full configuration options, including [enabling repository permissions](https://docs.sourcegraph.com/admin/external_service/gitlab#repository-permissions).
 

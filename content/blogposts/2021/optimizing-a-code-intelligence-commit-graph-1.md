@@ -178,6 +178,7 @@ The following hypothetical commit graph contains a number of feature branches th
 Running the query above from the commit `703e33` produces the following CTE results over the first 4 iterations.
 
 <table>
+<tbody>
 <tr><th>iteration</th><th>commit</th><th>parent_commit</th><th>distance</th><th>direction</th></tr>
 <tr><td>1</td><td><code>703e33</code></td><td><code>6307e6</code></td><td>0</td><td>A</td></tr>
 <tr><td>1</td><td><code>703e33</code></td><td><code>6307e6</code></td><td>0</td><td>D</td></tr>
@@ -192,6 +193,7 @@ Running the query above from the commit `703e33` produces the following CTE resu
 <tr><td>4</td><td><code>2190d3</code></td><td><code>1f64f9</code></td><td>3</td><td>A</td></tr>
 <tr className="workingtable-highlight"><td>4</td><td><code>3d2f27</code></td><td><code>09210f</code></td><td>3</td><td>A</td></tr>
 <tr className="workingtable-highlight"><td>4</td><td><code>3d2f27</code></td><td><code>2190d3</code></td><td>3</td><td>A</td></tr>
+</tbody>
 </table>
 
 Notice that there are 2 ways to get from commit `7033ee` to commit `3d2f27`, therefore the entries for `3d2f27` are duplicated in the CTE results (and therefore the working table). Also notice that the number of _new_ rows per iteration is growing as the iteration count rises in such graphs. **For some configuration of input, this query is [quadratic](https://accidentallyquadratic.tumblr.com/) instead of linear.**

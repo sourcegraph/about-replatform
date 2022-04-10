@@ -13,8 +13,8 @@ heroImage: https://about.sourcegraph.com/blog/strange-loop-thumbnail-square-v2.j
 published: true
 ---
 
-<div className="container p-0 liveblog-presenters">
-  <div className="row m-0">
+<div className="container p-0 liveblog-presenters d-flex w-100 text-center">
+  <div className="row m-0 w-100">
       <p className=" mr-6 m-0">
         <span className="liveblog-presenters__name">Christine Stavridis</span>
         <a href="https://github.com/promptandpleasant" target="_blank" title="GitHub"><i className="fa fa-github pr-2"></i></a>

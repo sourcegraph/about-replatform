@@ -13,9 +13,9 @@ heroImage: /blog/strange-loop-thumbnail-square-v2.jpg
 published: true
 ---
 
-<div className="container p-0 liveblog-presenters">
-  <div className="row m-0">
-      <p className=" mr-12 m-0">
+<div className="container p-0 liveblog-presenters d-flex w-100 text-center">
+  <div className="row m-0 w-100">
+      <p className=" mr-12 m-0 w-100">
         <span className="liveblog-presenters__name">Africa Perianez</span>
         <a href="https://twitter.com/aperianez" target="_blank" title="Twitter"><i className="fa fa-twitter pr-2"></i></a>
       </p>

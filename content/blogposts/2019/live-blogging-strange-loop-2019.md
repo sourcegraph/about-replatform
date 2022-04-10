@@ -25,7 +25,7 @@ published: true
 
 ---
 
-<div className="alert alert-info text-center">
+<div className="alert alert-info text-center mx-auto" style={{width:'40rem'}}>
   Want to sign up to liveblog at Strange Loop?
   <a href="https://forms.gle/egsGKSrapRJkhiWw6" className="btn btn-primary ml-3" rel="nofollow" target="_blank"><i className="fa fa-file-pdf pr-2"></i>Sign up here</a>
 </div>
@@ -65,8 +65,7 @@ Once live, your post will be promoted on the [Strange Loop](https://twitter.com/
 For any questions, reach out to me (Ryan) via [Twitter DM](https://twitter.com/ryan_blunden) or [via email](mailto:ryan@sourcegraph.com).
 
 <p className="text-center">
-    <a href="https://forms.gle/egsGKSrapRJkhiWw6" className="btn btn-primary ml-3" rel="nofollow" target="_blank">
-    <i className="fa fa-file-pdf pr-2"></i>Sign up to be a liveblogger</a>
+    <a href="https://forms.gle/egsGKSrapRJkhiWw6" className="btn btn-primary ml-3" rel="nofollow" target="_blank">Sign up to be a liveblogger</a>
 </p>
 
 ## Hangout with us at Strange Loop 2019!

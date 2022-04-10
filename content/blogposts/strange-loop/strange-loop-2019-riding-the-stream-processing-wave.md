@@ -14,9 +14,9 @@ published: true
 
 ---
 
-<div className="container p-0 liveblog-presenters">
-  <div className="row m-0">
-      <p className=" mr-12 m-0">
+<div className="container p-0 liveblog-presenters d-flex w-100 text-center">
+  <div className="row m-0 w-100">
+      <p className=" mr-12 m-0 w-100">
         <span className="liveblog-presenters__name">Samarth Shetty</span>
       </p>
   </div>
