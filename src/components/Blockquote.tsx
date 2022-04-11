@@ -144,7 +144,7 @@ export const Blockquote: FunctionComponent<{
                     </a>
                 ) : (
                     <img src={logoImage} width="110px" alt={logoAlt} />
-                    )}
+                )}
             </div>
         )}
         {linkText && link && link.includes('http') && (

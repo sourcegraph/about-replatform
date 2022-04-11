@@ -1,4 +1,4 @@
-import { FunctionComponent} from 'react'
+import { FunctionComponent } from 'react'
 
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
@@ -6,7 +6,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 import { Layout, ContentSection, QuoteCarousel } from '@components'
 
-const CareersPage:FunctionComponent = () => {
+const CareersPage: FunctionComponent = () => {
     const glassdoorReviewItems = [
         {
             header: 'Just interviewed and accepted role / position',
@@ -45,7 +45,7 @@ const CareersPage:FunctionComponent = () => {
         },
         {
             header: 'Sourcegraph is my dream company',
-            quote: 'Sourcegraph will make huge impact on the software industry. By improving the productivity of developers, Sourcegraph advances the rate of technological progress enabling us to bring the future sooner. As a software developer, I can\'t think of a better way to make a positive impact on the world.',
+            quote: "Sourcegraph will make huge impact on the software industry. By improving the productivity of developers, Sourcegraph advances the rate of technological progress enabling us to bring the future sooner. As a software developer, I can't think of a better way to make a positive impact on the world.",
             by: 'Current Employee, Sep 15, 2016 - ',
             linkText: 'Read full review',
             link: 'https://www.glassdoor.com/Reviews/Employee-Review-Sourcegraph-RVW11950185.htm',
@@ -76,12 +76,20 @@ const CareersPage:FunctionComponent = () => {
                         <ArrowRightIcon className="ml-3" />
                     </a>
                 </ContentSection>
-    
+
                 <div className="text-center">
-                    <img src="../careers/careers_hero_img.jpg" alt="Sourcegraph team members jumping" className="hero-image" />
-                    <img src="../careers/careers_hero_img_mobile.jpg" alt="Sourcegraph team members jumping" className="hero-image-mobile" />
+                    <img
+                        src="../careers/careers_hero_img.jpg"
+                        alt="Sourcegraph team members jumping"
+                        className="hero-image"
+                    />
+                    <img
+                        src="../careers/careers_hero_img_mobile.jpg"
+                        alt="Sourcegraph team members jumping"
+                        className="hero-image-mobile"
+                    />
                 </div>
-    
+
                 <div className="benefits">
                     <div className="d-flex flex-wrap">
                         <div className="m-auto">
@@ -133,7 +141,11 @@ const CareersPage:FunctionComponent = () => {
                             <p>Got you covered 100% (US only)</p>
                         </div>
                         <div className="benefit col-lg-3 col-md-5 my-3 text-center">
-                            <img className="icon my-2 mx-auto" src="/careers/ProfessionalDevelopment.svg" alt="Graduation cap icon" />
+                            <img
+                                className="icon my-2 mx-auto"
+                                src="/careers/ProfessionalDevelopment.svg"
+                                alt="Graduation cap icon"
+                            />
                             <h3 className="my-2">Professional development</h3>
                             <p>Find your thing and we pay for it</p>
                         </div>
@@ -154,7 +166,7 @@ const CareersPage:FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-    
+
                 <Carousel className="culture-carousel">
                     <Carousel.Item className="bg-gradient-blue-purple">
                         <div className="row">
@@ -203,7 +215,10 @@ const CareersPage:FunctionComponent = () => {
                                 </p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img src="/careers/culture4.png" alt="Black and white cat next to it's doppleganger cat Sourcegraph sticker" />
+                                <img
+                                    src="/careers/culture4.png"
+                                    alt="Black and white cat next to it's doppleganger cat Sourcegraph sticker"
+                                />
                             </div>
                         </div>
                     </Carousel.Item>
@@ -218,7 +233,7 @@ const CareersPage:FunctionComponent = () => {
                         </div>
                     </Carousel.Item>
                 </Carousel>
-    
+
                 <Carousel
                     className="values-carousel"
                     prevIcon={<ArrowLeftIcon color="#808080" />}
@@ -312,13 +327,13 @@ const CareersPage:FunctionComponent = () => {
                         </div>
                     </Carousel.Item>
                 </Carousel>
-    
+
                 <div className="bg-gradient-onahau-fog py-8">
                     <ContentSection>
                         <QuoteCarousel items={glassdoorReviewItems} autoAdvance={true} />
                     </ContentSection>
                 </div>
-    
+
                 <div className="bg-white py-8">
                     <ContentSection>
                         <div className="row">
