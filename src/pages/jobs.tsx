@@ -156,21 +156,6 @@ const CareersPage:FunctionComponent = () => {
                 </div>
     
                 <Carousel className="culture-carousel">
-                    {/*
-                    <Carousel.Item className="bg-gradient-blue2-blue">
-                        <div className="row">
-                            <h1 className="col-lg-6 my-auto">
-                                <p>
-                                    Whether you're early in your career or have written a few books on coding, we have a
-                                    spot for you
-                                </p>
-                            </h1>
-                            <div className="col-lg-6 img-container">
-                                <img src="/careers/culture1.png" />
-                            </div>
-                        </div>
-                    </Carousel.Item>
-                */}
                     <Carousel.Item className="bg-gradient-blue-purple">
                         <div className="row">
                             <h1 className="col-lg-6 my-auto">
@@ -180,7 +165,7 @@ const CareersPage:FunctionComponent = () => {
                                 </p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img src="/careers/culture2.png" alt="Photograph strip of Sourcegraph team members" />
+                                <img src="/careers/culture1.png" alt="Photograph strip of Sourcegraph team members" />
                             </div>
                         </div>
                     </Carousel.Item>
@@ -192,7 +177,7 @@ const CareersPage:FunctionComponent = () => {
                                 </p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img src="/careers/culture3.png" alt="Group riding go karts" />
+                                <img src="/careers/culture2.png" alt="Group riding go karts" />
                             </div>
                         </div>
                     </Carousel.Item>
@@ -205,7 +190,7 @@ const CareersPage:FunctionComponent = () => {
                                 </p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img className="landscape" src="/careers/culture4.png" alt="Sourcegrapher on a beach" />
+                                <img className="landscape" src="/careers/culture3.png" alt="Sourcegrapher on a beach" />
                             </div>
                         </div>
                     </Carousel.Item>
@@ -218,32 +203,17 @@ const CareersPage:FunctionComponent = () => {
                                 </p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img src="/careers/culture5.png" alt="Black and white cat next to it's doppleganger cat Sourcegraph sticker" />
+                                <img src="/careers/culture4.png" alt="Black and white cat next to it's doppleganger cat Sourcegraph sticker" />
                             </div>
                         </div>
                     </Carousel.Item>
-                    {/*
-                    <Carousel.Item className="bg-gradient-red-blue2">
-                        <div className="row">
-                            <h1 className="col-lg-6 my-auto">
-                                <p>
-                                    We have fun inside and outside of work <br />
-                                    This pic was taken at a team meetup in Berlin
-                                </p>
-                            </h1>
-                            <div className="col-lg-6 img-container">
-                                <img src="/careers/culture6.jpg" className="landscape" />
-                            </div>
-                        </div>
-                    </Carousel.Item>
-                */}
                     <Carousel.Item className="bg-gradient-red-blue2">
                         <div className="row">
                             <h1 className="col-lg-6 my-auto">
                                 <p>Creating the next generation of Sourcegraph coders, one baby at a time</p>
                             </h1>
                             <div className="col-lg-6 img-container">
-                                <img src="/careers/culture7.png" alt="Baby holding a coding babybook" />
+                                <img src="/careers/culture5.png" alt="Baby holding a coding babybook" />
                             </div>
                         </div>
                     </Carousel.Item>
