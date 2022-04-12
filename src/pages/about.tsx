@@ -2,7 +2,10 @@ import { FunctionComponent } from 'react'
 
 import { BoardSection, ContentSection, Layout, LeadershipSection } from '@components'
 
-const INVESTORS = [
+const INVESTORS: {
+    name: string
+    image: string
+}[] = [
     {
         name: 'Andreessen Horowitz',
         image: '/about/sg-andreessen-horowitz.png',
@@ -24,7 +27,7 @@ const INVESTORS = [
         image: '/about/sg-craftventures.png',
     },
     {
-        name: 'Goldcrest',
+        name: 'Goldcrest Capital',
         image: '/about/sg-goldcrest.png',
     }
 ]
@@ -84,10 +87,7 @@ const About: FunctionComponent = () => (
                     </a>
                     .
                 </p>
-                <a 
-                    className="btn btn-primary mt-3" 
-                    href="https://boards.greenhouse.io/sourcegraph91"
-                >
+                <a className="btn btn-primary mt-3" href="https://boards.greenhouse.io/sourcegraph91">
                     Open roles - we're hiring!
                 </a>
             </ContentSection>
@@ -97,13 +97,13 @@ const About: FunctionComponent = () => (
             <ContentSection>
                 <BoardSection />
             </ContentSection>
-            <ContentSection className="about__investors mb-5">
-                <div className="container">
-                    <h2 className="mb-3">Investors</h2>
-                    <div className="row align-items-center mt-3">
+            <ContentSection className="px-0 py-3">
+                <div className="container mb-5">
+                    <h2>Investors</h2>
+                    <div className="row align-items-center mt-3 max-w-1000">
                         {INVESTORS.map(investor => (
-                            <div key={investor.image} className="col-md-3">
-                                <img src={investor.image} alt={investor.name} />
+                            <div key={investor.image} className="col-md-4 my-5 mx-auto">
+                                <img src={investor.image} alt={investor.name} className="w-100 py-0 px-2 my-1 mx-0" />
                             </div>
                         ))}
                     </div>
