@@ -12,10 +12,7 @@ import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles } from '@lib'
 const CONTENT_PARENT_DIRECTORY = './content/'
 
 const BlogHome: FunctionComponent<PostIndexComponentProps> = ({ posts }) => (
-    <PostsListPage
-        blogInfo={BLOG_TYPE_TO_INFO[BlogType.Blog]}
-        posts={posts}
-    >
+    <PostsListPage blogInfo={BLOG_TYPE_TO_INFO[BlogType.Blog]} posts={posts}>
         <div className="d-flex flex-column align-items-center">
             <BlogHeadLinks />
         </div>
@@ -33,13 +30,15 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
     if (!files) {
         return { notFound: true }
     }
-    const blogSlugs = sortedSlugs.slice(0,20)
-    const posts = await Promise.all(blogSlugs.map(async slug => {
-        const filePath = files.records[slug.slugPath].filePath
-        const file = await (loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
-        const content = truncate(file.content, { length: 300 })
-        return { frontmatter: file.frontmatter, excerpt: content }
-    }))
+    const blogSlugs = sortedSlugs.slice(0, 20)
+    const posts = await Promise.all(
+        blogSlugs.map(async slug => {
+            const filePath = files.records[slug.slugPath].filePath
+            const file = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
+            const content = truncate(file.content, { length: 300 })
+            return { frontmatter: file.frontmatter, excerpt: content }
+        })
+    )
 
     return {
         props: {
@@ -48,4 +47,3 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
         },
     }
 }
-

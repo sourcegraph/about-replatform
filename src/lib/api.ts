@@ -68,7 +68,7 @@ export const getSortedSlugs = async (directory: string): Promise<Slug[] | undefi
         return
     }
     const slugsByDirectory = Object.values(allSlugs.records[`${directory}`].recordSlugs)
-    return slugsByDirectory.sort((a,b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
+    return slugsByDirectory.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
 }
 
 export const getMarkdownFiles = async (): Promise<FileCacheObject | undefined> => {

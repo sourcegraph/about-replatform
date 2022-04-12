@@ -152,7 +152,10 @@ const mapSlugDataCache = async (baseDirectory: string): Promise<SlugCacheObject>
                 await Promise.all(
                     directoryFiles.map(async (file: string) => [
                         await loadSlug(path.join(directory, file)),
-                        { slugPath: await loadSlug(path.join(directory, file)), publishDate: await loadDate(path.join(directory, file))},
+                        {
+                            slugPath: await loadSlug(path.join(directory, file)),
+                            publishDate: await loadDate(path.join(directory, file)),
+                        },
                     ])
                 )
             ) as SlugRecord,

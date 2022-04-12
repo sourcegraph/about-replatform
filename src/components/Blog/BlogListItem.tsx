@@ -17,54 +17,51 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
     titleClassName = '',
     titleLinkClassName = '',
     renderTitleAsLink = false,
-}) => 
-    (
-        <div className={`blog-post ${className}`}>
-            <header className={headerClassName}>
-                <h1 className={titleClassName}>
-                    {renderTitleAsLink === true && frontmatter.slug ? (
-                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className={`d-block ${titleLinkClassName}`}>{frontmatter.title}</a>
-                        </Link>
-                    ) : (
-                        frontmatter.title
-                    )}
-                </h1>
-                {frontmatter.author && frontmatter.publishDate && (
-                    <p className="blog-post__byline mb-0">
-                        {frontmatter.author} on {formatDate(frontmatter.publishDate)}
-                    </p>
+}) => (
+    <div className={`blog-post ${className}`}>
+        <header className={headerClassName}>
+            <h1 className={titleClassName}>
+                {renderTitleAsLink === true && frontmatter.slug ? (
+                    <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a className={`d-block ${titleLinkClassName}`}>{frontmatter.title}</a>
+                    </Link>
+                ) : (
+                    frontmatter.title
                 )}
-            </header>
-            {frontmatter.slug && (
-                <div className="card-body pt-0 d-flex flex-card">
-                    <div className="flex-1">
-                        {frontmatter.description ? (
-                            <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
-                        ) : (
-                            <p className="blog-post__excerpt">{excerpt}</p>
-                        )}
-                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="blog-post__read-more">Read more</a>
-                        </Link>
-                
-                    </div>
-                    {frontmatter.heroImage && (
-                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a>
-                                <img
-                                    className="blog-post__image flex-1"
-                                    src={frontmatter.heroImage}
-                                    alt={frontmatter.title}
-                                />
-                            </a>
-                        </Link>
-                    )}
-                </div>
+            </h1>
+            {frontmatter.author && frontmatter.publishDate && (
+                <p className="blog-post__byline mb-0">
+                    {frontmatter.author} on {formatDate(frontmatter.publishDate)}
+                </p>
             )}
-        </div>
-    )
-
+        </header>
+        {frontmatter.slug && (
+            <div className="card-body pt-0 d-flex flex-card">
+                <div className="flex-1">
+                    {frontmatter.description ? (
+                        <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
+                    ) : (
+                        <p className="blog-post__excerpt">{excerpt}</p>
+                    )}
+                    <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a className="blog-post__read-more">Read more</a>
+                    </Link>
+                </div>
+                {frontmatter.heroImage && (
+                    <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a>
+                            <img
+                                className="blog-post__image flex-1"
+                                src={frontmatter.heroImage}
+                                alt={frontmatter.title}
+                            />
+                        </a>
+                    </Link>
+                )}
+            </div>
+        )}
+    </div>
+)

@@ -116,8 +116,7 @@ export const postType = (post: Post): PostType =>
         ? PostType.LinkPost
         : PostType.BlogPost
 
-export const postIndexType = (): PostIndexType =>
-    PostIndexType.BlogPostIndex
+export const postIndexType = (): PostIndexType => PostIndexType.BlogPostIndex
 
 export enum BlogType {
     GopherCon = 'go',
