@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 const BOARD: {
     name: string
@@ -50,21 +50,19 @@ const BOARD: {
     },
 ]
 
-export const BoardSection: React.FunctionComponent<{ className?: string }> = ({ className = '' }) => (
-    <div id="board" className={`leadership-section board-section`}>
+export const BoardSection: FunctionComponent<{ className?: string }> = ({ className = '' }) => (
+    <div id="board" className={`${className}`}>
         <h2>Board of Directors</h2>
-        <div className="row mt-5">
-            {BOARD.map((boardMembers, i) => (
-                <div key={i} className="col-lg-4 mb-6">
-                    <div className={`leadership-section__item ${boardMembers.name.replace(' ', '-').toLowerCase()}`}>
-                        <img
-                            className="leadership-section__item-image"
-                            src={boardMembers.image}
-                            alt={`Sourcegraph Board of Directors: ${boardMembers.name} - ${boardMembers.title}`}
-                        />
-                        <h5>{boardMembers.name}</h5>
-                        <p className="leadership-section__item-title">{boardMembers.title}</p>
-                    </div>
+        <div className="row my-5">
+            {BOARD.map(boardMembers => (
+                <div key={`${boardMembers.name.replace(' ', '-').toLowerCase()}`} className="col-lg-4 mb-6">
+                    <img
+                        className="max-w-200 rounded-circle mb-4"
+                        src={boardMembers.image}
+                        alt={`Sourcegraph Board of Directors: ${boardMembers.name} - ${boardMembers.title}`}
+                    />
+                    <h5>{boardMembers.name}</h5>
+                    <p className="mb-0">{boardMembers.title}</p>
                 </div>
             ))}
         </div>

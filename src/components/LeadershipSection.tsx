@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
@@ -87,42 +87,40 @@ const LEADERS: {
     },
 ]
 
-export const LeadershipSection: React.FunctionComponent<{ className?: string }> = ({ className = '' }) => (
+export const LeadershipSection: FunctionComponent<{ className?: string }> = ({ className = '' }) => (
     <div id="leadership" className={`leadership-section ${className}`}>
         <h2>Leadership</h2>
-        <div className="row mt-5">
-            {LEADERS.map((staff, i) => (
-                <div key={i} className="col-lg-4 mb-6">
-                    <div className={`leadership-section__item ${staff.name.replace(' ', '-').toLowerCase()}`}>
-                        <a href={staff.bio}>
-                            <img
-                                className="leadership-section__item-image"
-                                src={staff.image}
-                                alt={`Sourcegraph team: ${staff.name} - ${staff.title}`}
-                            />
-                        </a>
-                        <h5>
-                            <a href={staff.bio}>{staff.name}</a>
-                        </h5>
-                        <p className="leadership-section__item-title">{staff.title}</p>
-                        <ul className="nav leadership-section__item-social mt-1">
-                            <li className="nav-item">
-                                <a href={staff.github} target="_blank" rel="nofollow noopener noreferrer" aria-label="GitHub">
-                                    <GithubIcon />
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href={staff.twitter} target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter">
-                                    <TwitterIcon />
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href={staff.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="LinkedIn">
-                                    <LinkedinIcon />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div className="row my-5">
+            {LEADERS.map(staff => (
+                <div key={`${staff.name.replace(' ', '-').toLowerCase()}`} className="col-lg-4 my-4">
+                    <a href={staff.bio}>
+                        <img
+                            className="max-w-200 rounded-circle mb-4"
+                            src={staff.image}
+                            alt={`Sourcegraph team: ${staff.name} - ${staff.title}`}
+                        />
+                    </a>
+                    <h5>
+                        <a href={staff.bio} className="text-dark">{staff.name}</a>
+                    </h5>
+                    <p className="mb-0">{staff.title}</p>
+                    <ul className="nav mt-1">
+                        <li className="nav-item p-1">
+                            <a href={staff.github} target="_blank" rel="nofollow noopener noreferrer" aria-label="GitHub" className="text-dark">
+                                <GithubIcon />
+                            </a>
+                        </li>
+                        <li className="nav-item p-1">
+                            <a href={staff.twitter} target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter" className="text-dark">
+                                <TwitterIcon />
+                            </a>
+                        </li>
+                        <li className="nav-item p-1">
+                            <a href={staff.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="LinkedIn" className="text-dark">
+                                <LinkedinIcon />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             ))}
         </div>
