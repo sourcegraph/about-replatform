@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react'
 
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
+import { BlogListItem } from '../components/Blog/BlogListItem'
 import { BlogPost } from '../components/Blog/BlogPost'
 import { LinkPost } from '../components/Blog/LinkPost'
 import { PodcastPost } from '../components/Blog/PodcastPost'
@@ -14,6 +15,10 @@ export enum PostType {
     PressReleasePost,
     ReleasePost,
     PodcastPost,
+}
+
+export enum PostIndexType {
+    BlogPostIndex,
 }
 
 export interface Post {
@@ -73,12 +78,31 @@ export interface PostComponentProps {
     renderTitleAsLink?: boolean
 }
 
+export interface PostIndexComponentProps {
+    posts: PostIndexItem[]
+}
+
+export interface PostIndexItem {
+    frontmatter: FrontMatter
+    excerpt: MDXRemoteSerializeResult
+    className?: string
+    headerClassName?: string
+    titleClassName?: string
+    titleLinkClassName?: string
+    tag?: 'li' | 'div'
+    renderTitleAsLink?: boolean
+}
+
 export const POST_TYPE_TO_COMPONENT: Record<PostType, FunctionComponent<PostComponentProps>> = {
     [PostType.BlogPost]: BlogPost,
     [PostType.LinkPost]: LinkPost,
     [PostType.ReleasePost]: ReleasePost,
     [PostType.PressReleasePost]: PressReleasePost,
     [PostType.PodcastPost]: PodcastPost,
+}
+
+export const POST_INDEX_TYPE_TO_COMPONENT: Record<PostIndexType, FunctionComponent<PostIndexItem>> = {
+    [PostIndexType.BlogPostIndex]: BlogListItem,
 }
 
 export const postType = (post: Post): PostType =>
@@ -91,6 +115,9 @@ export const postType = (post: Post): PostType =>
         : post.frontmatter.style === 'short-inline-title'
         ? PostType.LinkPost
         : PostType.BlogPost
+
+export const postIndexType = (): PostIndexType =>
+    PostIndexType.BlogPostIndex
 
 export enum BlogType {
     GopherCon = 'go',

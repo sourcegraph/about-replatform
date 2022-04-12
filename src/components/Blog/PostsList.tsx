@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
 
-import { POST_TYPE_TO_COMPONENT, postType, PostComponentProps, urlToPost, Post } from '@interfaces/posts'
+import { POST_INDEX_TYPE_TO_COMPONENT, postIndexType, PostComponentProps, PostIndexItem } from '@interfaces/posts'
 
 interface Props {
-    posts: { node: Post }[]
+    posts: PostIndexItem[]
 }
 
 export const PostsList: FunctionComponent<Props> = ({ posts }) => {
@@ -19,12 +19,12 @@ export const PostsList: FunctionComponent<Props> = ({ posts }) => {
     return (
         <ul className="posts-list list-unstyled">
             {posts.map(post => {
-                const PostList = POST_TYPE_TO_COMPONENT[postType(post.node)]
+                const PostList = POST_INDEX_TYPE_TO_COMPONENT[postIndexType()]
                 return (
                     <PostList
-                        post={post.node}
-                        url={urlToPost(post.node)}
-                        key={post.node.frontmatter.slug}
+                        frontmatter={post.frontmatter}
+                        excerpt={post.excerpt}
+                        key={post.frontmatter.slug}
                         renderTitleAsLink={true}
                         {...postProps}
                     />

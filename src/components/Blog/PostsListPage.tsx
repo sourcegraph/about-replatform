@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react'
 
 import { Layout, BlogHeader, PostsList } from '@components'
-import { Post, BlogTypeInfo } from '@interfaces/posts'
+import { BlogTypeInfo, PostIndexItem } from '@interfaces/posts'
 
 interface Props {
     blogInfo: BlogTypeInfo
-    posts: { node: Post }[]
+    posts: PostIndexItem[]
 }
 
 export const PostsListPage: FunctionComponent<Props> = ({ blogInfo, posts, children }) => (
