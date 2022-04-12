@@ -2,7 +2,14 @@ import { FunctionComponent } from 'react'
 
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 
-import { buttonStyle, buttonLocation, ContentSection, CustomCarousel, Layout } from '@components'
+import { 
+    BlockquoteWithBorder, 
+    buttonStyle, 
+    buttonLocation, 
+    ContentSection, 
+    CustomCarousel, 
+    Layout, 
+    YouTube } from '@components'
 
 const items = [
     {
@@ -36,13 +43,11 @@ export const CloudBeta: FunctionComponent = () => (
                 'Maximize developer productivity and stay focused on the work you love doing. Sourcegraph Cloud is now available in beta for small teams.',
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
-        className="cloud-beta-page"
-        heroAndHeaderClassName="cloud-beta-page__hero-and-header"
         hero={
-            <div className="container pb-4">
+            <div className="container py-5">
                 <div className="row">
                     <div className="col-lg-9">
-                        <h1 className="font-weight-bold lh-4 display-2 mb-4">
+                        <h1 className="font-weight-bold display-2 mb-4">
                             Speed up your team's workflow with Universal Code Search.
                         </h1>
                     </div>
@@ -68,56 +73,36 @@ export const CloudBeta: FunctionComponent = () => (
             </div>
         }
     >
-        <ContentSection className="py-4 py-md-7 bg-light-gray">
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="container video-embed embed-responsive embed-responsive-16by9 border">
-                        <iframe
-                            className="embed-responsive-item"
-                            src="https://www.youtube.com/embed/0DPXTB_Gzbw"
-                            allowFullScreen={true}
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            frameBorder={0}
-                            title="How developers are using Sourcegraph"
-                        />
-                    </div>
-                </div>
-            </div>
+        <ContentSection className="py-4 py-md-7">
+            <YouTube id="0DPXTB_Gzbw" title="How developers are using Sourcegraph" />
         </ContentSection>
-
-        <ContentSection className="py-4 text-center anyscale">
-            <blockquote>
-                <p>
-                    Sourcegraph makes it so much easier to onboard to large codebases. It's an absolute game changer
-                    when it comes to navigating around an ecosystem with hundreds of repositories or even multiple
-                    organizations.
-                </p>
-                <footer className="blockquote-footer">Alex Wu, Software Engineer at Anyscale</footer>
-                <div className="my-4">
-                    <img src="/external-logos/anyscale-logo.svg" width="110px" alt="anyscale" />
-                </div>
-            </blockquote>
+        <ContentSection>
+            <BlockquoteWithBorder
+                quote="Sourcegraph makes it so much easier to onboard to large codebases. It's an absolute game changer when it comes to navigating around an ecosystem with hundreds of repositories or even multiple organizations."
+                author="Alex Wu, Software Engineer at Anyscale"
+                logoImage="/external-logos/anyscale-logo.svg"
+                logoAlt="Anyscale Logo"
+                bold={true}
+                />
         </ContentSection>
-
-        <CustomCarousel items={items} backgroundClass="bg-gradient-green-blue" />
-
-        <ContentSection className="join-the-waitlist text-center">
+        <div className="py-7">
+            <CustomCarousel items={items} backgroundClass="bg-gradient-green-blue"/>
+        </div>
+        <ContentSection className="text-center">
             <div className="row">
-                <div className="col-lg-12">
+                <div className="mb-3 col-lg-12">
                     <img src="../join-the-waitlist.svg" className="mb-5" alt="Join the waitlist for Sourcegraph!" />
-                    <h1 className="display-2 mb-0 title">Join the waitlist.</h1>
-                    <p className="mt-3 mb-lg-6">Access Sourcegraph Cloud for free during the beta</p>
-                    <p className="mt-5 font-weight-bold">We're looking for teams that:</p>
-                    <div className="mb-5">
-                        <ul>
-                            <li>Have 5 to 25 engineers</li>
-                            <li>Host their code on GitHub.com or GitLab.com</li>
-                            <li>Are eager to partner with our Product team to provide feedback</li>
-                            <li>Are ready to experience the power of code search</li>
-                        </ul>
-                    </div>
+                    <h1 className="display-2 font-weight-bold">Join the waitlist.</h1>
+                    <p className="my-3">Access Sourcegraph Cloud for free during the beta</p>
+                    <p className="mt-4 font-weight-bold">We're looking for teams that:</p>
+                    <ul className="mb-5 list-group list-group-flush max-w-500 mx-auto">
+                        <li className="list-group-item">Have 5 to 25 engineers</li>
+                        <li className="list-group-item">Host their code on GitHub.com or GitLab.com</li>
+                        <li className="list-group-item">Are eager to partner with our Product team to provide feedback</li>
+                        <li className="list-group-item">Are ready to experience the power of code search</li>
+                    </ul>
                     <a
-                        className="btn btn-primary  "
+                        className="btn btn-primary"
                         data-button-style={buttonStyle.primary}
                         data-button-location={buttonLocation.trySourcegraph}
                         href="https://share.hsforms.com/14OQ3RoPpQTOXvZlUpgx6-A1n7ku"
