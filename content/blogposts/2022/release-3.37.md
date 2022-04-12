@@ -41,7 +41,7 @@ If you’re already using Sourcegraph, upgrade to 3.37 for a limited trial of Co
     className="embed-responsive-item"
     src="https://www.youtube-nocookie.com/embed/fMCUJQHfbUA?autoplay=0&amp;cc_load_policy=0&amp;start=0&amp;end=0&amp;loop=0&amp;controls=1&amp;modestbranding=1&amp;rel=0"
    allowFullScreen="true"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allow="accelerometer; autoPlay; encrypted-media; gyroscope; picture-in-picture"
    frameBorder="0"
     title="Sourcegraph Code Insights demo"
   ></iframe>
