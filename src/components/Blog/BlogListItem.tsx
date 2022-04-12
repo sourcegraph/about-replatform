@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 
 import { truncate } from 'lodash'
-import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 
 import { PostIndexItem } from '@interfaces/posts'
@@ -24,7 +23,7 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
             <header className={headerClassName}>
                 <h1 className={titleClassName}>
                     {renderTitleAsLink === true && frontmatter.slug ? (
-                        <Link href={frontmatter.slug} passHref={true}>
+                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className={`d-block ${titleLinkClassName}`}>{frontmatter.title}</a>
                         </Link>
@@ -44,16 +43,16 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
                         {frontmatter.description ? (
                             <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
                         ) : (
-                            <p className="blog-post__excerpt"><MDXRemote {...excerpt} /></p>
+                            <p className="blog-post__excerpt">{excerpt}</p>
                         )}
-                        <Link href={frontmatter.slug} passHref={true}>
+                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="blog-post__read-more">Read more</a>
                         </Link>
                 
                     </div>
                     {frontmatter.heroImage && (
-                        <Link href={frontmatter.slug} passHref={true}>
+                        <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a>
                                 <img

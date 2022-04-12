@@ -1,2 +1,2 @@
-export { getPages, getAllSlugs, getMarkdownFiles } from './api'
+export { getPages, getAllSlugs, getMarkdownFiles, getSortedSlugs } from './api'
 export { loadMarkdownFile, serializeMdxSource } from './loadMarkdown'

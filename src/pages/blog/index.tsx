@@ -7,7 +7,7 @@ import { GetStaticProps } from 'next'
 
 import { BlogHeadLinks, PostsListPage, BLOG_TYPE_TO_INFO } from '@components'
 import { BlogType, Post, PostIndexComponentProps } from '@interfaces/posts'
-import { getAllSlugs, loadMarkdownFile, getMarkdownFiles, serializeMdxSource } from '@lib'
+import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles } from '@lib'
 
 const CONTENT_PARENT_DIRECTORY = './content/'
 
@@ -25,19 +25,19 @@ const BlogHome: FunctionComponent<PostIndexComponentProps> = ({ posts }) => (
 export default BlogHome
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-    const allSlugs = await getAllSlugs()
-    if (!allSlugs) {
+    const sortedSlugs = await getSortedSlugs('blogposts')
+    if (!sortedSlugs) {
         return { notFound: true }
     }
     const files = await getMarkdownFiles()
     if (!files) {
         return { notFound: true }
     }
-    const blogSlugs = [...Object.keys(allSlugs.records.blogposts.recordSlugs)].reverse().slice(0,20)
+    const blogSlugs = sortedSlugs.slice(0,20)
     const posts = await Promise.all(blogSlugs.map(async slug => {
-        const filePath = files.records[slug].filePath
+        const filePath = files.records[slug.slugPath].filePath
         const file = await (loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
-        const content = await serializeMdxSource(truncate(file.content, { length: 300 }))
+        const content = truncate(file.content, { length: 300 })
         return { frontmatter: file.frontmatter, excerpt: content }
     }))
 
