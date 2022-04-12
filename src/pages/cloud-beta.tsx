@@ -41,7 +41,7 @@ export const CloudBeta: FunctionComponent = () => (
             title: 'Sourcegraph | Sourcegraph Cloud (Beta)',
             description:
                 'Maximize developer productivity and stay focused on the work you love doing. Sourcegraph Cloud is now available in beta for small teams.',
-            image: 'https://about.sourcegraph.com/sourcegraph-og.png',
+            image: '/sourcegraph-og.png',
         }}
         hero={
             <div className="container py-5">
