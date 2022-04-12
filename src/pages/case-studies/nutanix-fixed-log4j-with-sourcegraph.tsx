@@ -17,7 +17,7 @@ export const CaseStudy: FunctionComponent = () => (
         meta={{
             title: 'Nutanix fixed Log4j quickly and confidently with Sourcegraph',
             description:
-                'Sourcegraph enables Nutanix to find and fix security vulnerabilities quickly across the codebase. When the Log4j vulnerability rocked the industry, Nutanix was able to confidently identify every instance of Log4j across its sprwaling codebase and deliver patches to its customers that fully remediated the vulnerability within 4 days.',
+                'Nutanix case study. Learn how Nutanix uses Sourcegraph to find and fix security vulnerabilities quickly across their code base.',
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
     >
@@ -64,7 +64,7 @@ export const CaseStudy: FunctionComponent = () => (
                     organization. “Security is something that we care about intensely here at Nutanix,” Jon said,
                     “because it’s part of our bedrock. It's why customers like us, and we have to take it seriously.”
                 </p>
-                <h2 className="mt-6 mb-4 display-3 font-weight-bold max-w-600">
+                <h2 className="mt-6 mb-4 display-4 font-weight-bold max-w-600">
                     Log4j: The vulnerability that rocked an industry
                 </h2>
                 <p>
