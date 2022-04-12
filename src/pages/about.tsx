@@ -42,15 +42,13 @@ const About: FunctionComponent = () => (
         }}
     >
         <div className="content-page bg-white text-dark">
-            <ContentSection className="hero-section py-5">
-                <div className="py-5">
-                    <h1>About Sourcegraph</h1>
-                    <p className="h4 font-weight-normal">
-                        Sourcegraph builds universal code search for every developer and company so they can
-                        innovate faster. We help developers and companies with billions of lines of code
-                        create the software you use every day.
-                    </p>
-                </div>
+            <ContentSection className="hero-section py-6">
+                <h1>About Sourcegraph</h1>
+                <p className="h4 font-weight-normal">
+                    Sourcegraph builds universal code search for every developer and company so they can
+                    innovate faster. We help developers and companies with billions of lines of code
+                    create the software you use every day.
+                </p>
             </ContentSection>
             <div className="bg-gradient-green-blue mb-5">
                 <ContentSection className="container py-6">
