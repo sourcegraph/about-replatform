@@ -30,7 +30,13 @@ export const BlockquoteWithLogoBottom: FunctionComponent<{
                 )}
             </div>
         )}
-        {linkText && link && (
+        {linkText && link && link.includes('http') && (
+            <a href={link} target="_blank" rel="nofollow noopener noreferrer">
+                {linkText}
+                <ArrowRightIcon className="icon-inline ml-1" />
+            </a>
+        )}
+        {linkText && link && !link.includes('http') && (
             <Link href={link} passHref={true}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a className="d-flex justify-content-center mt-3">
@@ -86,7 +92,7 @@ export const BlockquoteWithBorder: FunctionComponent<{
             </div>
             {author && (
                 <>
-                    <div className="text-center text-muted">&mdash; {author}</div>
+                    <figcaption className="text-center text-muted">&mdash; {author}</figcaption>
                 </>
             )}
         </blockquote>
@@ -95,7 +101,13 @@ export const BlockquoteWithBorder: FunctionComponent<{
                 <img src={logoImage} width="110px" alt={logoAlt} />
             </div>
         )}
-        {linkText && link && (
+        {linkText && link && link.includes('http') && (
+            <a href={link} target="_blank" rel="nofollow noopener noreferrer">
+                {linkText}
+                <ArrowRightIcon className="icon-inline ml-1" />
+            </a>
+        )}
+        {linkText && link && !link.includes('http') && (
             <Link href={link} passHref={true}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a className="d-flex justify-content-center mt-3">
@@ -121,8 +133,8 @@ export const Blockquote: FunctionComponent<{
     <>
         {headline && <h1 className="font-weight-bold">{headline}</h1>}
         <blockquote className="p-3 rounded rounded-lg d-flex flex-column bg-transparent">
-            <h4 className={bold ? 'font-weight-bold' : 'font-weight-bold'}>&ldquo;{quote}&rdquo;</h4>
-            {author && <div className="pt-3 text-muted text-center">&mdash; {author}</div>}
+            <h3 className={bold ? 'font-weight-bold' : 'font-weight-bold'}>&ldquo;{quote}&rdquo;</h3>
+            {author && <figcaption className="pt-3 text-muted text-center">&mdash; {author}</figcaption>}
         </blockquote>
         {logoImage && logoAlt && (
             <div className="d-flex justify-content-center">
@@ -135,7 +147,13 @@ export const Blockquote: FunctionComponent<{
                 )}
             </div>
         )}
-        {linkText && link && (
+        {linkText && link && link.includes('http') && (
+            <a href={link} target="_blank" rel="nofollow noopener noreferrer">
+                {linkText}
+                <ArrowRightIcon className="icon-inline ml-1" />
+            </a>
+        )}
+        {linkText && link && !link.includes('http') && (
             <Link href={link} passHref={true}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a className="d-flex justify-content-center mt-3">
