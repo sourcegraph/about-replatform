@@ -48,12 +48,20 @@ export const CaseStudy: FunctionComponent = () => (
                 solutions={[
                     { text: 'Able to quickly and efficiently find every instance of the Log4j vulnerability.' },
                     { text: 'Full confidence that all Log4j-vulnerable code was identified and resolved.' },
-                    { text: 'Able to quickly validate that no known vulnerabilities exist in the codebase prior to each release.' },
+                    {
+                        text: 'Able to quickly validate that no known vulnerabilities exist in the codebase prior to each release.',
+                    },
                 ]}
                 results={[
-                    { text: 'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.' },
-                    { text: 'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability in under 4 days.' },
-                    { text: 'Nutanix was able to identify every instance of Log4j across its sprawling codebase with 100% confidence.' },
+                    {
+                        text: 'Nutanix was able to see where JMSAppender existed, fix it, and send out a release in less than 5 minutes.',
+                    },
+                    {
+                        text: 'Nutanix was able to deliver patches to its customers that fully remediated the Log4j vulnerability in under 4 days.',
+                    },
+                    {
+                        text: 'Nutanix was able to identify every instance of Log4j across its sprawling codebase with 100% confidence.',
+                    },
                 ]}
             />
 

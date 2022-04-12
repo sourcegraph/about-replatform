@@ -25,12 +25,7 @@ interface ListItemProps {
 const isString = (value: string | TextLink): boolean => typeof value === 'string'
 
 const ListItemType: FunctionComponent<ListItemProps> = ({ item }) => (
-    <li>
-        {item?.href ?
-            <Link href={item.href}>{item.text}</Link> :
-            <span>{item.text}</span>
-        }
-    </li>
+    <li>{item?.href ? <Link href={item.href}>{item.text}</Link> : <span>{item.text}</span>}</li>
 )
 
 export const UseChallengeSolutionResults: FunctionComponent<Props> = ({ useCases, challenges, solutions, results }) => (
