@@ -41,9 +41,9 @@ const About: FunctionComponent = () => (
             image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
     >
-        <div className="about content-page bg-white text-dark">
+        <div className="content-page bg-white text-dark">
             <ContentSection className="hero-section py-5">
-                <div className="container py-5">
+                <div className="py-5">
                     <h1>About Sourcegraph</h1>
                     <p className="h4 font-weight-normal">
                         Sourcegraph builds universal code search for every developer and company so they can
@@ -102,7 +102,7 @@ const About: FunctionComponent = () => (
                     <h2>Investors</h2>
                     <div className="row align-items-center mt-3 max-w-1000">
                         {INVESTORS.map(investor => (
-                            <div key={investor.image} className="col-md-4 my-5 mx-auto">
+                            <div key={investor.image} className="col-md-4 my-md-5 my-6 mx-auto">
                                 <img src={investor.image} alt={investor.name} className="w-100 py-0 px-2 my-1 mx-0" />
                             </div>
                         ))}
