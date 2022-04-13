@@ -91,7 +91,7 @@ export const CloudBeta: FunctionComponent = () => (
         <ContentSection className="text-center">
             <div className="row">
                 <div className="mb-3 col-lg-12">
-                    <img src="../join-the-waitlist.svg" className="mb-5" alt="Join the waitlist for Sourcegraph!" />
+                    <img src="/join-the-waitlist.svg" className="mb-5" alt="Join the waitlist for Sourcegraph!" />
                     <h1 className="display-2 font-weight-bold">Join the waitlist.</h1>
                     <p className="my-3">Access Sourcegraph Cloud for free during the beta</p>
                     <p className="mt-4 font-weight-bold">We're looking for teams that:</p>
