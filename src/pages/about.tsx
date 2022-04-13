@@ -98,9 +98,9 @@ const About: FunctionComponent = () => (
             <ContentSection className="px-0 py-3">
                 <div className="container mb-5">
                     <h2>Investors</h2>
-                    <div className="row align-items-center mt-3 max-w-1000">
+                    <div className="row align-items-center mx-5">
                         {INVESTORS.map(investor => (
-                            <div key={investor.image} className="col-md-4 my-md-5 my-6 mx-auto">
+                            <div key={investor.image} className="col-md-4 my-5 mx-auto">
                                 <img src={investor.image} alt={investor.name} className="w-100 py-0 px-2 my-1 mx-0" />
                             </div>
                         ))}
