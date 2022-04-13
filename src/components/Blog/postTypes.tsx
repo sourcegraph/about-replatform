@@ -29,7 +29,7 @@ export const BLOG_TYPE_TO_INFO: Record<BlogType, BlogTypeInfo> = {
     },
     graphql: {
         title: 'GraphQL Summit 2017 liveblog',
-        baseUrl: '/graphql',
+        baseUrl: '/blog/graphql',
         meta: {
             title: 'GraphQL Summit 2017 liveblog',
             description: 'Check out the official GraphQL Summit 2017 Liveblog proudly hosted by Sourcegraph.',
@@ -37,7 +37,7 @@ export const BLOG_TYPE_TO_INFO: Record<BlogType, BlogTypeInfo> = {
     },
     go: {
         title: 'GopherCon and dotGo 2019 liveblogs',
-        baseUrl: '/go',
+        baseUrl: '/blog/go',
         meta: {
             title: 'GopherCon and dotGo liveblogs',
             description: 'Check out the official GopherCon 2019 Liveblog proudly hosted by Sourcegraph.',
@@ -46,7 +46,7 @@ export const BLOG_TYPE_TO_INFO: Record<BlogType, BlogTypeInfo> = {
     },
     'strange-loop': {
         title: 'Strange Loop 2019 liveblog',
-        baseUrl: '/strange-loop',
+        baseUrl: '/blog/strange-loop',
         meta: {
             title: 'Strange Loop 2019 liveblog',
             description: 'Check out the official Strange Loop 2019 Liveblog proudly hosted by Sourcegraph.',
@@ -55,7 +55,7 @@ export const BLOG_TYPE_TO_INFO: Record<BlogType, BlogTypeInfo> = {
     },
     'github-universe': {
         title: 'GitHub Universe 2016 liveblog',
-        baseUrl: '/github-universe',
+        baseUrl: '/blog/github-universe',
         meta: {
             title: 'GitHub Universe 2016 liveblog',
             description: 'We liveblogged the 2016 GitHub Universe event.',

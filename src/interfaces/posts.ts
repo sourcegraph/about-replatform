@@ -80,6 +80,7 @@ export interface PostComponentProps {
 
 export interface PostIndexComponentProps {
     posts: PostIndexItem[]
+    allPosts: PostIndexItem[]
 }
 
 export interface PostIndexItem {

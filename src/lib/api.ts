@@ -6,7 +6,7 @@ interface Record {
     filePath: string
 }
 
-interface FileCacheObject {
+export interface FileCacheObject {
     records: FileCacheRecord
 }
 
@@ -24,7 +24,7 @@ interface Record {
     filePath: string
 }
 
-interface Slug {
+export interface Slug {
     slugPath: string
     publishDate: string
 }
