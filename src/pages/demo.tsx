@@ -16,7 +16,8 @@ const Demo: FunctionComponent = () => {
         <Layout
             meta={{
                 title: 'Request a Demo | Sourcegraph',
-                description: 'From developer onboarding to incident response, see how companies of all sizes use Sourcegraph to solve the industry\'s most challenging code problems.',
+                description:
+                    "From developer onboarding to incident response, see how companies of all sizes use Sourcegraph to solve the industry's most challenging code problems.",
             }}
             heroAndHeaderClassName="bg-gradient-green-blue"
             hero={
