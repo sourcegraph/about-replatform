@@ -20,12 +20,12 @@ export const PostsListPage: FunctionComponent<Props> = ({ allPosts, blogInfo, po
                 <div className="pt-4">
                     <PostsList posts={loadMoreHook.currentRecords} />
                     <div className="d-flex justify-content-center">
-                        <button 
-                            type="button" 
-                            className="btn btn-primary my-5" 
+                        <button
+                            type="button"
+                            className="btn btn-primary my-5"
                             onClick={() => loadMoreHook.setPage(loadMoreHook.page + 1)}
                         >
-                                Load more
+                            Load more
                         </button>
                     </div>
                 </div>

@@ -11,10 +11,10 @@ interface LoadMoreHookObject {
 const CONTENT_PARENT_DIRECTORY = './content/'
 
 export const useLoadMore = (
-    initialAllRecords: PostIndexItem[], 
-    initialPage: number, 
-    initialCurrentRecords: PostIndexItem[],
-): LoadMoreHookObject  => {
+    initialAllRecords: PostIndexItem[],
+    initialPage: number,
+    initialCurrentRecords: PostIndexItem[]
+): LoadMoreHookObject => {
     const [allRecords, setAllRecords] = useState<PostIndexItem[]>(initialAllRecords)
     const [page, setPage] = useState<number>(initialPage)
     const [currentRecords, setCurrentRecords] = useState<PostIndexItem[]>(initialCurrentRecords)
@@ -28,6 +28,6 @@ export const useLoadMore = (
     return {
         currentRecords,
         page,
-        setPage
+        setPage,
     }
 }
