@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const TrySourcegraph: FunctionComponent<Props> = ({
-    demoFormURL = 'https://info.sourcegraph.com/demo-request',
+    demoFormURL = '/demo',
     className = '',
 }) => (
     <ContentSection className={className}>
