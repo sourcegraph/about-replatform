@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
 import { Layout } from '@components'
-
-import { useHubSpot } from '../hooks/hubSpot'
+import { useHubSpot } from '@hooks'
 
 const Demo: FunctionComponent = () => {
     useHubSpot({
