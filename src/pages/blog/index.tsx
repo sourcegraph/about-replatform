@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
         allSlugs.map(async slug => {
             const filePath = files.records[slug.slugPath].filePath
             const file = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
-            const content = truncate(file.content, { length: 300 })
+            const content = file.frontmatter.description ?? truncate(file.content, { length: 300 })
             return { frontmatter: file.frontmatter, excerpt: content }
         })
     )

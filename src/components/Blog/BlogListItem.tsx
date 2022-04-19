@@ -38,7 +38,7 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
         </header>
         {frontmatter.slug && (
             <div className="card-body pt-0 d-flex flex-card">
-                <div className="flex-1">
+                <div className="flex-1 w-75">
                     {frontmatter.description ? (
                         <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
                     ) : (
@@ -54,7 +54,7 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a>
                             <img
-                                className="blog-post__image flex-1"
+                                className="blog-post__image flex-1 max-w-250"
                                 src={frontmatter.heroImage}
                                 alt={frontmatter.title}
                             />
