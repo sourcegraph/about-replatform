@@ -20,8 +20,6 @@ In an inspiring and thoughtful close to Friday's opening keynote, Ashley McNamar
 
 More than just a great programmer, you may know Ashley as the artist behind your favorite Gopher drawings (some shown below) and the wildly popular [gopherize.me](https://gopherize.me/), a website where you can create a custom Gopher avatar to represent yourself.
 
-![ashley-gophers](//images.contentful.com/le3mxztn6yoo/5k1gz8R7YIceYgIWsaCGwA/f6c701dacccfc9f237cd195077d4fb0a/ashley-gophers.jpg)
-
 
 # Ashley's Path to Go (Hint: It's not done yet!)
 
@@ -33,8 +31,6 @@ In 2014, Ashley met and became quick friends with Steve Francia [@spf13](https:/
 
 
 What follows are Ashley's lessons learned and tips on how _you_ can get involved in the Go community as well.
-
-
 
 # Lessons Learned
 
@@ -175,3 +171,5 @@ Prior to joining Microsoft, Ashley worked at Pivotal as a Principal Technologist
 
 
 Ashley is a frequent tweeter ([@ashleymcnamara](https://twitter.com/ashleymcnamara)) and recently wrote a popular piece about [why she joined Microsoft](https://hackernoon.com/the-best-career-advice-ive-received-so-far-is-never-turn-down-an-interview-7586ca5b7ef8).
+
+![ashley-gophers](//images.contentful.com/le3mxztn6yoo/5k1gz8R7YIceYgIWsaCGwA/f6c701dacccfc9f237cd195077d4fb0a/ashley-gophers.jpg)

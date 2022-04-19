@@ -2,12 +2,13 @@ import path from 'path'
 
 import { FunctionComponent } from 'react'
 
+import matter from 'gray-matter'
 import { truncate } from 'lodash'
 import { GetStaticProps } from 'next'
 
 import { BlogHeadLinks, PostsListPage, BLOG_TYPE_TO_INFO } from '@components'
 import { BlogType, Post, PostIndexComponentProps } from '@interfaces/posts'
-import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles } from '@lib'
+import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles, serializeMdxSource } from '@lib'
 
 const CONTENT_PARENT_DIRECTORY = './content/'
 
@@ -34,8 +35,17 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
         allSlugs.map(async slug => {
             const filePath = files.records[slug.slugPath].filePath
             const file = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
-            const content = file.frontmatter.description ?? truncate(file.content, { length: 300 })
-            return { frontmatter: file.frontmatter, excerpt: content }
+            const truncatedContent = truncate(file.content, { length: 300 })
+            const { content } = matter(truncatedContent)
+            const serializedExcerpt = await serializeMdxSource(content)
+                .then(content => content)
+                .catch(error => console.error(error))
+            return serializedExcerpt
+                ? { frontmatter: file.frontmatter, excerpt: serializedExcerpt }
+                : {
+                      frontmatter: file.frontmatter,
+                      excerpt: await serializeMdxSource('Check out this blog post from your friends at Sourcegraph.'),
+                  }
         })
     )
 

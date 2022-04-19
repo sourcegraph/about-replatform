@@ -1,10 +1,15 @@
 import { FunctionComponent } from 'react'
 
 import { truncate } from 'lodash'
+import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 
+import { BlockquoteWithBorder } from '@components'
 import { PostIndexItem } from '@interfaces/posts'
 import { formatDate } from '@util'
+
+export type MDXComponents = import('mdx/types').MDXComponents
+const components = { BlockquoteWithBorder }
 
 /**
  * A index blog post item.
@@ -42,7 +47,9 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
                     {frontmatter.description ? (
                         <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
                     ) : (
-                        <p className="blog-post__excerpt">{excerpt}</p>
+                        <p className="blog-post__excerpt">
+                            <MDXRemote {...excerpt} components={components as MDXComponents} />
+                        </p>
                     )}
                     <Link href={`/blog/${frontmatter.slug}`} passHref={true}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
