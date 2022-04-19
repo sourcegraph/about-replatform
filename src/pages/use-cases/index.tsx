@@ -21,7 +21,7 @@ const UseCases: React.FunctionComponent = () => (
             title: 'Use Cases | Sourcegraph',
             description:
                 'See how the most productive dev teams use Sourcegraph to build software you rely on. From remediating vulnerabilities to streamlining code reuse, our customers use Sourcegraph to solve big code problems.',
-            image: 'https://about.sourcegraph.com/sourcegraph-og.png',
+            image: '/sourcegraph-og.png',
         }}
         heroAndHeaderClassName={styles.landingHeader}
         hero={
@@ -76,13 +76,12 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Alert for known vulnerabilities and risky code changes with code monitoring</li>
                         </ul>
-                        <a
-                            href="https://info.sourcegraph.com/demo-request"
-                            title="Request a demo"
-                            className="btn btn-outline-primary"
-                        >
-                            Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
-                        </a>
+                        <Link href="/demo">
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-outline-primary">
+                                Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                            </a>
+                        </Link>
                         <Link href="/use-cases/vulnerabilities" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-link font-weight-bold">Learn more</a>
@@ -156,13 +155,12 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Get answers faster with shareable links to specific code</li>
                         </ul>
-                        <a
-                            href="https://info.sourcegraph.com/demo-request"
-                            title="Request a demo"
-                            className="btn btn-outline-primary"
-                        >
-                            Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
-                        </a>
+                        <Link href="/demo" passHref={true}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-outline-primary">
+                                Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                            </a>
+                        </Link>
                         <Link href="/use-cases/onboarding" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-link font-weight-bold">Learn more</a>
@@ -198,13 +196,12 @@ const UseCases: React.FunctionComponent = () => (
                                 search notebook
                             </li>
                         </ul>
-                        <a
-                            href="https://info.sourcegraph.com/demo-request"
-                            title="Request a demo"
-                            className="btn btn-outline-primary"
-                        >
-                            Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
-                        </a>
+                        <Link href="/demo">
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-outline-primary">
+                                Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                            </a>
+                        </Link>
                     </div>
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote case-studies__quote case-studies__quote--in-content mt-7">
@@ -269,13 +266,12 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Add a code monitor to alert you of commits using an out-of-date library</li>
                         </ul>
-                        <a
-                            href="https://info.sourcegraph.com/demo-request"
-                            title="Request a demo"
-                            className="btn btn-outline-primary"
-                        >
-                            Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
-                        </a>
+                        <Link href="/demo">
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-outline-primary">
+                                Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </ContentSection>
@@ -306,13 +302,12 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Efficiently tackle tech debt from legacy systems and acquisitions</li>
                         </ul>
-                        <a
-                            href="https://info.sourcegraph.com/demo-request"
-                            title="Request a demo"
-                            className="btn btn-outline-primary"
-                        >
-                            Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
-                        </a>
+                        <Link href="/demo">
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-outline-primary">
+                                Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
+                            </a>
+                        </Link>
                     </div>
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote case-studies__quote case-studies__quote--in-content mt-6">
