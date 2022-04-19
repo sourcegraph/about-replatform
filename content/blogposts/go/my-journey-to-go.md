@@ -13,8 +13,6 @@ published: true
 
 Liveblog by Kristie Howard ([@kristiehow](https://twitter.com/kristiehow))
 
-![ashley-speaker](//images.contentful.com/le3mxztn6yoo/1E8Fg3njm4Q2cA6yMaaKwM/a0dd3088c8c921cb27cb33867b809d34/ashley-speaker.jpg)
-
 In an inspiring and thoughtful close to Friday's opening keynote, Ashley McNamara explained her journey to Go - and what you can do to get involved in the Golang community. A self-proclaimed "accidental gopher", Ashley detailed her path to becoming a Principal Developer Advocate and prescribed concrete steps that developers at any level can take to jumpstart their own contributions.
 
 
@@ -173,3 +171,5 @@ Prior to joining Microsoft, Ashley worked at Pivotal as a Principal Technologist
 Ashley is a frequent tweeter ([@ashleymcnamara](https://twitter.com/ashleymcnamara)) and recently wrote a popular piece about [why she joined Microsoft](https://hackernoon.com/the-best-career-advice-ive-received-so-far-is-never-turn-down-an-interview-7586ca5b7ef8).
 
 ![ashley-gophers](//images.contentful.com/le3mxztn6yoo/5k1gz8R7YIceYgIWsaCGwA/f6c701dacccfc9f237cd195077d4fb0a/ashley-gophers.jpg)
+
+![ashley-speaker](//images.contentful.com/le3mxztn6yoo/1E8Fg3njm4Q2cA6yMaaKwM/a0dd3088c8c921cb27cb33867b809d34/ashley-speaker.jpg)
