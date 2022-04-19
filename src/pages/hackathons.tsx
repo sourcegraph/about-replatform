@@ -15,8 +15,7 @@ export const Pricing: FunctionComponent = () => {
         <Layout
             meta={{
                 title: 'Sourcegraph | Set up Sourcegraph at a Hackathon',
-                description:
-                    'Set up Sourcegraph at a Hackathon',
+                description: 'Set up Sourcegraph at a Hackathon',
             }}
         >
             <div className="jumbotron text-right">
@@ -25,8 +24,8 @@ export const Pricing: FunctionComponent = () => {
                         <div>
                             <h1 className="text-center mt-4">Set up Sourcegraph during a hackathon</h1>
                             <p className="text-center measure">
-                                We'll give you access to Sourcegraph Enterprise features so you can ship code
-                                search and intelligence to your team.
+                                We'll give you access to Sourcegraph Enterprise features so you can ship code search and
+                                intelligence to your team.
                             </p>
                         </div>
                     </div>
@@ -36,8 +35,8 @@ export const Pricing: FunctionComponent = () => {
                 <div className="panel-area mr-lg-5 mt-0 mb-2">
                     <div className="d-flex flex-column panel">
                         <p>
-                            Want to win your hackathon? Set up Sourcegraph and bring the power of code search
-                            and code intelligence to your engineering team!
+                            Want to win your hackathon? Set up Sourcegraph and bring the power of code search and code
+                            intelligence to your engineering team!
                         </p>
                         <ul>
                             <li>
@@ -52,7 +51,11 @@ export const Pricing: FunctionComponent = () => {
 
                         <p>
                             Fill out the form or tweet us{' '}
-                            <a href="https://twitter.com/sourcegraph" target="_blank" rel="nofollow noopener noreferrer">
+                            <a
+                                href="https://twitter.com/sourcegraph"
+                                target="_blank"
+                                rel="nofollow noopener noreferrer"
+                            >
                                 @sourcegraph
                             </a>
                             , and we'll get back to you ASAP on how to get started!
