@@ -39,7 +39,7 @@ export interface FrontMatter {
     canonical?: string
     publishDate?: string
     heroImage?: string
-    author?: string
+    author?: string | string[]
     authorUrl?: string
     tags?: string[]
     changelogItems?: {
