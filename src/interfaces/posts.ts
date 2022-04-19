@@ -39,7 +39,7 @@ export interface FrontMatter {
     description?: string
     /** Controls the page's `<title>` for SEO and the browser tab label. Defaults to {@link title}. */
     externalTitle?: string
-    /** Controls the page's `<meta name="description">` for SEO. Defaults to {@link description}. */
+    /** Controls the page's `<PostIndexItemmeta name="description">` for SEO. Defaults to {@link description}. */
     externalDescription?: string
     canonical?: string
     publishDate?: string
@@ -86,6 +86,7 @@ export interface PostIndexComponentProps {
 export interface PostIndexItem {
     frontmatter: FrontMatter
     excerpt: MDXRemoteSerializeResult
+    slugPath: string
     className?: string
     headerClassName?: string
     titleClassName?: string

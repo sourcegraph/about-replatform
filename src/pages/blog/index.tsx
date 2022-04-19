@@ -41,10 +41,11 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
                 .then(content => content)
                 .catch(error => console.error(error))
             return serializedExcerpt
-                ? { frontmatter: file.frontmatter, excerpt: serializedExcerpt }
+                ? { frontmatter: file.frontmatter, excerpt: serializedExcerpt, slugPath: slug.slugPath }
                 : {
                       frontmatter: file.frontmatter,
                       excerpt: await serializeMdxSource('Check out this blog post from your friends at Sourcegraph.'),
+                      slugPath: slug.slugPath,
                   }
         })
     )

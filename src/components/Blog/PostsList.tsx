@@ -24,6 +24,7 @@ export const PostsList: FunctionComponent<Props> = ({ posts }) => {
                     <PostList
                         frontmatter={post.frontmatter}
                         excerpt={post.excerpt}
+                        slugPath={post.slugPath}
                         key={post.frontmatter.title}
                         renderTitleAsLink={true}
                         {...postProps}
