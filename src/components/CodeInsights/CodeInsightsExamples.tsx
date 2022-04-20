@@ -83,7 +83,7 @@ const CodeInsightCaptureExample: React.FunctionComponent<CodeInsightCaptureExamp
                     </ParentSize>
                 </div>
 
-                <LegendBlock className={styles.legendHorizontal}>
+                <LegendBlock className={classNames(styles.legend, 'horizontal')}>
                     {data.series.map(line => (
                         <LegendItem key={line.dataKey.toString()} color={getLineStroke<LineChartSeries<string>>(line)}>
                             {line.name}

@@ -19,7 +19,7 @@
 Also see https://github.com/sourcegraph/about/blob/40fe7625efa20c29b1563ae2a320f07b5afc27dd/website/src/components/code-insights/components/line-chart/LineChartContent.module.scss#L56
 */
 
-.search-chart {
+.searchChart {
     height: 200px !important;
 }
 
@@ -31,7 +31,7 @@ Also see https://github.com/sourcegraph/about/blob/40fe7625efa20c29b1563ae2a320f
     flex-basis: 13rem;
 }
 
-.chart-content {
+.chartContent {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -39,7 +39,7 @@ Also see https://github.com/sourcegraph/about/blob/40fe7625efa20c29b1563ae2a320f
     left: 0;
 }
 
-.action-link {
+.actionLink {
     margin-top: -0.25rem;
     flex-shrink: 0;
 }
@@ -55,12 +55,12 @@ Also see https://github.com/sourcegraph/about/blob/40fe7625efa20c29b1563ae2a320f
     }
 }
 
-.legend-migration-item {
+.legendMigrationItem {
     min-width: 7.5rem;
     font-size: 12px;
 }
 
-.capture-group {
+.captureGroup {
     display: flex;
     height: 100%;
 }

@@ -18,7 +18,7 @@ import {
     REPOS_WITH_CI_SYSTEM,
 } from '@code-insights/mock-data'
 import { CodeInsightExampleType } from '@code-insights/types'
-import { 
+import {
     BlogListItem,
     ContentSection,
     CustomCarousel,
@@ -112,7 +112,7 @@ const templates = {
         },
         {
             header: 'React Class to Function Components',
-            description: 'What\'s the status of migrating to React function components from class components?',
+            description: "What's the status of migrating to React function components from class components?",
             queries: [
                 <>
                     <span className="keyword">patterntype:</span>regexp const\s\w+:\s(React\.)?FunctionComponent{' '}
@@ -169,7 +169,7 @@ const templates = {
         },
         {
             header: 'Python versions',
-            description: 'Which python versions are in use or haven\'t been updated?',
+            description: "Which python versions are in use or haven't been updated?",
             queries: [
                 <>
                     #!/usr/bin/env python([0-9]\.[0-9]+) <span className="keyword">archived:</span>no{' '}
@@ -317,19 +317,16 @@ export const CodeInsightsPage: FunctionComponent = () => (
                                 in seconds.
                             </h4>
                             <div className="d-flex flex-column pt-1">
-                                <Link
-                                    href="/contact/request-code-insights-demo"
-                                   passHref={true}
-                                >
+                                <Link href="/contact/request-code-insights-demo" passHref={true}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                     <a
-                                    className="btn btn-primary md-col-5 col-5"
-                                    title="Request a Demo of Code Insights."
-                                    data-button-style={buttonStyle.primary}
-                                    data-button-location={buttonLocation.nav}
-                                    data-button-type="cta"
+                                        className="btn btn-primary md-col-5 col-5"
+                                        title="Request a Demo of Code Insights."
+                                        data-button-style={buttonStyle.primary}
+                                        data-button-location={buttonLocation.nav}
+                                        data-button-type="cta"
                                     >
-                                    Request a demo
+                                        Request a demo
                                     </a>
                                 </Link>
                             </div>
@@ -342,11 +339,15 @@ export const CodeInsightsPage: FunctionComponent = () => (
         <ContentSection className="py-lg-8 py-7">
             <div className="row justify-content-between">
                 <div className="col-lg-7 ml-lg-6 mb-md-4 d-flex align-items-center video-container">
-                    <Video filePath='code_insights/code-insights-720' />
+                    <Video filePath="code_insights/code-insights-720" />
                 </div>
                 <div className="col-lg-4 pl-lg-0">
                     <h2 className="mb-3 font-weight-bold">
-                        Finally, useful engineering metrics <span><i>you</i></span> define.
+                        Finally, useful engineering metrics{' '}
+                        <span>
+                            <i>you</i>
+                        </span>{' '}
+                        define.
                     </h2>
                     <p>
                         Forget about inaccurate spreadsheets, manual processes, and missing historical data. You can{' '}
@@ -457,9 +458,9 @@ export const CodeInsightsPage: FunctionComponent = () => (
             <div className="row justify-content-center pt-md-4">
                 <div className="col-lg-8 container video-embed embed-responsive embed-responsive-16by9 ">
                     <YouTube
-                        className='embed-responsive-item'
-                        id='fMCUJQHfbUA'
-                        title='Sourcegraph Code Insights demo'
+                        className="embed-responsive-item"
+                        id="fMCUJQHfbUA"
+                        title="Sourcegraph Code Insights demo"
                     />
                 </div>
             </div>
@@ -576,20 +577,17 @@ export const CodeInsightsPage: FunctionComponent = () => (
                         </p>
                     </div>
                     <div className="col-lg-7 d-flex flex-column pt-1">
-                        <Link
-                            href="/contact/request-code-insights-demo"
-                           passHref={true}
-                        >
+                        <Link href="/contact/request-code-insights-demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                           <a 
-                            className="btn btn-primary col-4 mr-3"
-                            title="Request a Demo of Code Insights."
-                            data-button-style={buttonStyle.primary}
-                            data-button-location={buttonLocation.trySourcegraph}
-                            data-button-type="cta">
+                            <a
+                                className="btn btn-primary col-4 mr-3"
+                                title="Request a Demo of Code Insights."
+                                data-button-style={buttonStyle.primary}
+                                data-button-location={buttonLocation.trySourcegraph}
+                                data-button-type="cta"
+                            >
                                 Request a demo
-                           </a>
-                           
+                            </a>
                         </Link>
                     </div>
                 </div>

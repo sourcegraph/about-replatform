@@ -1,4 +1,4 @@
-.legend-list {
+.legendList {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -10,7 +10,7 @@
     line-height: 1.2;
 }
 
-.legend-item {
+.legendItem {
     display: flex;
     align-items: baseline;
     font-size: 12px;
@@ -21,7 +21,7 @@
     }
 }
 
-.legend-mark {
+.legendMark {
     align-self: baseline;
     width: 0.5rem;
     height: 0.5rem;

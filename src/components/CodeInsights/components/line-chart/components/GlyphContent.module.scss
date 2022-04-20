@@ -1,4 +1,4 @@
-.glyph-link:focus .glyph {
+.glyphLink:focus .glyph {
     stroke-width: 3;
     // Unfortunately we can't use r styling right now as it's part of SVG 2 spec
     // and for now we use js to track focus on link and change radius of line point with focus

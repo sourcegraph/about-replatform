@@ -7,14 +7,14 @@
 // We are not able to add our own classnames for grid lines elements
 // because of that we have to use nested statements below
 
-.grid-line {
+.gridLine {
     line {
         stroke: var(--border-color-2);
         stroke-width: 1;
     }
 }
 
-.axis-line {
+.axisLine {
     stroke: var(--border-color);
     stroke-width: 1;
 
@@ -28,7 +28,7 @@
 // We are not able to add our own classnames for tick line and text elements
 // because of that we have to use nested statements below
 
-.axis-tick {
+.axisTick {
     // small tick line
     line {
         stroke: var(--border-color);
