@@ -8,6 +8,7 @@ import { GetStaticProps } from 'next'
 import { BlogHeadLinks, PostsListPage, BLOG_TYPE_TO_INFO } from '@components'
 import { BlogType, Post, PostIndexComponentProps } from '@interfaces/posts'
 import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles } from '@lib'
+import { convertExcerptMarkdown } from '@util'
 
 const CONTENT_PARENT_DIRECTORY = './content/'
 
@@ -34,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
         allSlugs.map(async slug => {
             const filePath = files.records[slug.slugPath].filePath
             const file = (await loadMarkdownFile(path.resolve(CONTENT_PARENT_DIRECTORY, filePath))) as Post
-            const content = truncate(file.content, { length: 300 })
+            const content = convertExcerptMarkdown(truncate(file.content, { length: 300 }))
             return { frontmatter: file.frontmatter, excerpt: content, slugPath: slug.slugPath }
         })
     )

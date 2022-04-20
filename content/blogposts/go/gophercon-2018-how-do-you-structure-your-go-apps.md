@@ -6,6 +6,7 @@ tags: [
   "gophercon"
 ]
 slug: gophercon-2018-how-do-you-structure-your-go-apps
+description: 'How should I structure my Go code?” is probably one of the most commonly asked questions, by new and experienced programmers alike. There is almost always more than one answer and it can be tricky to decide what will work best.'
 heroImage: https://images.ctfassets.net/le3mxztn6yoo/5nOlXCLdhSk6ESWEW8iC24/01978fdff3206c78ad8bee4c0cdfee87/mechanic-tire.jpg
 published: true
 ---

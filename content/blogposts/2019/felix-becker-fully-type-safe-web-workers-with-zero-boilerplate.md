@@ -5,6 +5,7 @@ authorUrl: https://github.com/felixfbecker
 publishDate: 2019-12-18T10:00-07:00
 tags: [blog]
 slug: felix-becker-fully-type-safe-web-workers-with-zero-boilerplate
+description: 'TypeScript and ECMAScript have some of the most beautiful constructs and syntaxes to do parallel, non-blocking programming—but unfortunately, only for standard APIs like fetch in the browser or file IO in Node. When implementing anything CPU-bound in TypeScript, offloading it into a different, parallel execution context and exposing an equally type-safe and flexible API for it is non-trivial.'
 heroImage: /blog/felix-avatar.jpg
 published: true
 ---

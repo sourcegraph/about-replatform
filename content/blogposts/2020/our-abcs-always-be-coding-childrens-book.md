@@ -5,6 +5,7 @@ authorUrl: https://twitter.com/ryan_blunden
 publishDate: 2020-04-23T10:00-07:00
 tags: [blog]
 slug: our-abcs-always-be-coding-childrens-book
+description: 'We love what we’ve come up with and hope you will too—a new digital children’s book titled Our ABCs: Always Be Coding — for all children that wonder what their techie parents do all day, night, and some weekends too!'
 heroImage: https://about.sourcegraph.com/blog/our-abcs.png
 socialImage: https://about.sourcegraph.com/blog/our-abcs.png
 published: true
