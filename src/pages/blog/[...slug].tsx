@@ -35,7 +35,7 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
 
     return (
         <Layout meta={meta}>
-            <div>
+            <article>
                 <div className="container-lg">
                     <BlogHeader {...blogInfo} />
                 </div>
@@ -53,7 +53,7 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
                         />
                     </div>
                 </div>
-            </div>
+            </article>
         </Layout>
     )
 }

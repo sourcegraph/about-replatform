@@ -15,10 +15,9 @@ export const PodcastPost: React.FunctionComponent<PostComponentProps> = ({
     headerClassName = '',
     titleClassName = '',
     titleLinkClassName = '',
-    tag: Tag = 'div',
     renderTitleAsLink = false,
 }) => (
-    <Tag className={`podcast-post ${className}`}>
+    <article className={`podcast-post ${className}`}>
         <header className={`podcast-post__header ${headerClassName}`}>
             <h1 className={titleClassName}>
                 {renderTitleAsLink ? (
@@ -44,5 +43,5 @@ export const PodcastPost: React.FunctionComponent<PostComponentProps> = ({
                 <MDXRemote {...content} />
             </div>
         )}
-    </Tag>
+    </article>
 )

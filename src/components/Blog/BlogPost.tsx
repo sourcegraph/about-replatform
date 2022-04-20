@@ -23,7 +23,6 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
     headerClassName = '',
     titleClassName = '',
     titleLinkClassName = '',
-    tag: Tag = 'div',
     renderTitleAsLink = false,
 }) => {
     const body =
@@ -44,7 +43,7 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
         )
 
     return (
-        <Tag className={`blog-post ${className}`}>
+        <article className={`blog-post ${className}`}>
             <header className={headerClassName}>
                 <h1 className={titleClassName}>
                     {renderTitleAsLink === true ? (
@@ -79,6 +78,6 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
             ) : (
                 <div className="card-body">{body}</div>
             )}
-        </Tag>
+        </article>
     )
 }
