@@ -79,7 +79,7 @@ export interface PostIndexComponentProps {
 
 export interface PostIndexItem {
     frontmatter: FrontMatter
-    excerpt: MDXRemoteSerializeResult
+    excerpt: string
     slugPath: string
     className?: string
     headerClassName?: string
