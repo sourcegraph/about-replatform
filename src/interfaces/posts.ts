@@ -64,12 +64,6 @@ export interface PostComponentProps {
     /** The URL to the post. */
     url: string
 
-    /**
-     * If true, show the full post. If false, only show a summary of the post (suitable for display
-     * as an item in a list of posts).
-     */
-    full: boolean
-
     className?: string
     headerClassName?: string
     titleClassName?: string
