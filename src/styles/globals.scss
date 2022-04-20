@@ -206,7 +206,6 @@ table {
 @import 'components/blog/PodcastPost';
 @import 'components/blog/PostsList';
 @import 'components/blog/ReleasePost';
-@import 'components/content/ContentPage';
 @import 'components/content/ContentSection';
 @import 'components/pricing/index';
 @import 'components/product/CustomerLogosSection';
@@ -221,14 +220,11 @@ table {
 @import 'components/SelfHostedSection';
 @import 'components/Header';
 @import 'components/Footer';
-@import 'components/LeadershipSection';
 @import 'components/PrismTheme';
 @import 'components/TemplateCodeBlock';
 @import 'components/TestimonialCarousel';
 @import 'components/Tweets';
-@import 'pages/about';
 @import 'pages/batch-changes';
-@import 'pages/cloud-beta';
 @import 'pages/community';
 @import 'pages/_case_studies';
 @import 'pages/content';
@@ -241,7 +237,6 @@ table {
 @import 'pages/product/code-search-navigation';
 @import 'pages/product/code-change-management';
 @import 'pages/sales';
-@import 'pages/uninstall';
 @import 'pages/universal-code-search';
 @import 'templates/PostTemplate';
 @import 'pages/dev-tools-quiz';
