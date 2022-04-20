@@ -32,7 +32,7 @@ export const TabCarousel: FunctionComponent<TabCarouselProps> = ({ items, autoAd
                 {carouselItems.map(item => (
                     <div
                         key={item.header}
-                        className={item === carouselHook.carouselItems.currentItem ? 'd-block' : 'd-none'}
+                        className={item === carouselHook.carouselItems.currentItem ? 'd-block h-400' : 'd-none'}
                     >
                         <TemplateCodeBlock template={item} />
                     </div>

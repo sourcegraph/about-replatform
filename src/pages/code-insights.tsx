@@ -467,8 +467,8 @@ export const CodeInsightsPage: FunctionComponent = () => (
         </ContentSection>
 
         {/* Use Cases */}
-        <div className="bg-gradient-venus-radial py-4 tab-section">
-            <ContentSection className="py-4 py-md-7">
+        <div className="bg-gradient-venus-radial py-4 d-none d-lg-block d-md-block">
+            <ContentSection className="py-4 py-md-7 h-lg-850 h-md-850">
                 <h1 className="mb-2 text-center font-weight-bold">Popular Code Insights templates</h1>
                 <Tabs defaultActiveKey="migrations" id="use-cases" className="justify-content-center">
                     <Tab eventKey="migrations" title="Migrations" tabClassName="tab-header">
@@ -521,7 +521,7 @@ export const CodeInsightsPage: FunctionComponent = () => (
         </div>
 
         {/* Use Cases Carousel */}
-        <div className="bg-gradient-venus-radial py-4 tab-carousel-section">
+        <div className="bg-gradient-venus-radial py-4 d-block d-lg-none d-md-none">
             <ContentSection className="py-4 py-md-7">
                 <h1 className="mb-2 text-center">Popular Code Insights templates</h1>
                 <Tabs defaultActiveKey="migrations" id="use-cases" className="justify-content-center">
