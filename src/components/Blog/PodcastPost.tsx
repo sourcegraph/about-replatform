@@ -31,7 +31,9 @@ export const PodcastPost: React.FunctionComponent<PostComponentProps> = ({
                 )}
             </h1>
             {post.frontmatter.publishDate && (
-                <p className="text-muted mb-0">{formatDate(post.frontmatter.publishDate)}</p>
+                <p className="text-muted mb-0">
+                    <time dateTime={post.frontmatter.publishDate}>{formatDate(post.frontmatter.publishDate)}</time>
+                </p>
             )}
             {post.frontmatter.author && (
                 <p className="text-muted mb-0">{(post.frontmatter.author as string[]).join(', ')}</p>
