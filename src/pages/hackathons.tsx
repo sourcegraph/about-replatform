@@ -18,22 +18,16 @@ export const Pricing: FunctionComponent = () => {
                 description: 'Set up Sourcegraph at a Hackathon',
             }}
         >
-            <div className="jumbotron text-right">
-                <div className="row">
-                    <div className="sales py-0 d-flex flex-grow flex-column flex-lg-row align-items-center justify-content-around">
-                        <div>
-                            <h1 className="text-center mt-4">Set up Sourcegraph during a hackathon</h1>
-                            <p className="text-center measure">
-                                We'll give you access to Sourcegraph Enterprise features so you can ship code search and
-                                intelligence to your team.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section className="d-flex justify-content-around flex-column flex-lg-row sales bg-white text-dark">
-                <div className="panel-area mr-lg-5 mt-0 mb-2">
-                    <div className="d-flex flex-column panel">
+            <section className="text-center mb-0 px-5">
+                <h1 className="mt-4">Set up Sourcegraph during a hackathon</h1>
+                <p>
+                    We'll give you access to Sourcegraph Enterprise features so you can ship code search and
+                    intelligence to your team.
+                </p>
+            </section>
+            <section className="d-flex justify-content-around flex-column flex-lg-row bg-white max-w-1100 p-4 m-auto">
+                <div className="mr-lg-5 mt-0 mb-2">
+                    <div className="d-flex flex-column bg-light-gray-2 rounded p-5">
                         <p>
                             Want to win your hackathon? Set up Sourcegraph and bring the power of code search and code
                             intelligence to your engineering team!
@@ -60,8 +54,8 @@ export const Pricing: FunctionComponent = () => {
                             </a>
                             , and we'll get back to you ASAP on how to get started!
                         </p>
-                        <div className="panel__help">
-                            <p>
+                        <div className="border-top border-light-9">
+                            <p className="pt-4">
                                 Get started with the{' '}
                                 <a target="blank" href="https://docs.sourcegraph.com/admin/install/docker">
                                     installation docs.
