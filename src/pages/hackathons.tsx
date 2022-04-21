@@ -71,7 +71,7 @@ export const Pricing: FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="form">
+                <div>
                     <div id="trial-form" />
                 </div>
             </section>
