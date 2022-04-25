@@ -115,11 +115,6 @@ export const postType = (post: Post): PostType =>
 export const postIndexType = (): PostIndexType => PostIndexType.BlogPostIndex
 
 export enum BlogType {
-    GopherCon = 'go',
-    DotGo = 'go',
-    GraphQLSummit = 'graphql',
-    StrangeLoop = 'strange-loop',
-    GitHubUniverse = 'github-universe',
     PressRelease = 'press',
     Podcast = 'podcast',
     Blog = 'blog',

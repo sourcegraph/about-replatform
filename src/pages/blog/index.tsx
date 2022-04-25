@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react'
 import { truncate } from 'lodash'
 import { GetStaticProps } from 'next'
 
-import { BlogHeadLinks, PostsListPage, BLOG_TYPE_TO_INFO } from '@components'
+import { PostsListPage, BLOG_TYPE_TO_INFO } from '@components'
 import { BlogType, Post, PostIndexComponentProps } from '@interfaces/posts'
 import { getSortedSlugs, loadMarkdownFile, getMarkdownFiles } from '@lib'
 import { convertExcerptMarkdown } from '@util'
@@ -13,11 +13,7 @@ import { convertExcerptMarkdown } from '@util'
 const CONTENT_PARENT_DIRECTORY = './content/'
 
 const BlogHome: FunctionComponent<PostIndexComponentProps> = ({ posts, allPosts }) => (
-    <PostsListPage blogInfo={BLOG_TYPE_TO_INFO[BlogType.Blog]} posts={posts} allPosts={allPosts}>
-        <div className="d-flex flex-column align-items-center">
-            <BlogHeadLinks />
-        </div>
-    </PostsListPage>
+    <PostsListPage blogInfo={BLOG_TYPE_TO_INFO[BlogType.Blog]} posts={posts} allPosts={allPosts} />
 )
 
 export default BlogHome
