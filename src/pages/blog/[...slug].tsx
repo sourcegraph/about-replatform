@@ -35,7 +35,7 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
 
     return (
         <Layout meta={meta}>
-            <div>
+            <article>
                 <div className="container-lg">
                     <BlogHeader {...blogInfo} />
                 </div>
@@ -45,7 +45,6 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
                             post={post}
                             content={content}
                             url={urlToPost(post)}
-                            full={true}
                             className="post-template__post"
                             headerClassName="card-header bg-white border-bottom-0 text-center pt-5"
                             titleClassName=""
@@ -53,7 +52,7 @@ const BlogPage: NextPage<PageProps> = ({ post, content }) => {
                         />
                     </div>
                 </div>
-            </div>
+            </article>
         </Layout>
     )
 }
