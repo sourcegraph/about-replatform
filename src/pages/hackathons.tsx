@@ -47,11 +47,7 @@ export const Pricing: FunctionComponent = () => {
 
                         <p>
                             Fill out the form or tweet us{' '}
-                            <a
-                                href="https://twitter.com/sourcegraph"
-                                target="_blank"
-                                rel="nofollow noreferrer"
-                            >
+                            <a href="https://twitter.com/sourcegraph" target="_blank" rel="nofollow noreferrer">
                                 @sourcegraph
                             </a>
                             , and we'll get back to you ASAP on how to get started!

@@ -32,12 +32,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <Link href="/pricing">Pricing</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a
-                                        href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
-                                        target="blank"
-                                    >
-                                        Sourcegraph overview (PDF)
-                                    </a>
+                                    <Link href="/handouts/Sourcegraph-Overview.pdf">Sourcegraph overview (PDF)</Link>
                                 </li>
                             </ul>
                         </div>
@@ -159,7 +154,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://open.spotify.com/user/p3ntuomfda8r7czdbsgy36ogk?si=8095204aefc24587"
                                         target="_blank"
-                                        rel="nofollow noopene noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="Spotify"
                                     >
                                         <SpotifyIcon />
