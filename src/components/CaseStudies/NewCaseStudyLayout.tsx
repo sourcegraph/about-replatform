@@ -54,7 +54,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
                         <a
                             href={pdf}
                             className="btn btn-primary mt-3"
-                            rel="nofollow noreferrer noopener"
+                            rel="nofollow noreferrer"
                             target="_blank"
                         >
                             <i className="fa fa-file-pdf pr-2" />

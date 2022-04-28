@@ -34,8 +34,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                 <li className="nav-item">
                                     <a
                                         href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        target="blank"
                                     >
                                         Sourcegraph overview (PDF)
                                     </a>
@@ -110,7 +109,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://github.com/sourcegraph"
                                         target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="GitHub"
                                     >
                                         <GithubIcon />
@@ -120,7 +119,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://twitter.com/sourcegraph"
                                         target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="Twitter"
                                     >
                                         <TwitterIcon />
@@ -130,7 +129,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://www.linkedin.com/company/4803356/"
                                         target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="LinkedIn"
                                     >
                                         <LinkedinIcon />
@@ -140,7 +139,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://www.youtube.com/c/Sourcegraph/featured"
                                         target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="YouTube"
                                     >
                                         <YouTubeIcon />
@@ -150,7 +149,7 @@ const Footer: FunctionComponent<Props> = ({ minimal, className }) => (
                                     <a
                                         href="https://www.twitch.tv/sourcegraph"
                                         target="_blank"
-                                        rel="nofollow noopener noreferrer"
+                                        rel="nofollow noreferrer"
                                         aria-label="Twitch"
                                     >
                                         <TwitchIcon />

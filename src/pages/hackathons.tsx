@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
+import Link from 'next/link'
+
 import { Layout } from '@components'
 import { useHubSpot } from '@hooks'
 
@@ -35,9 +37,9 @@ export const Pricing: FunctionComponent = () => {
                         <ul>
                             <li>
                                 We'll give you access to all of our{' '}
-                                <a href="/pricing" target="_blank">
+                                <Link href="/pricing" passHref={true}>
                                     Enterprise features
-                                </a>
+                                </Link>
                             </li>
                             <li>We'll give you live tech support</li>
                             <li>We'll ship you a bag of stickers, shirts, socks, and other great swag!</li>
@@ -48,7 +50,7 @@ export const Pricing: FunctionComponent = () => {
                             <a
                                 href="https://twitter.com/sourcegraph"
                                 target="_blank"
-                                rel="nofollow noopener noreferrer"
+                                rel="nofollow noreferrer"
                             >
                                 @sourcegraph
                             </a>
