@@ -55,13 +55,13 @@ export const Pricing: FunctionComponent = () => {
                         <div className="border-top border-light-9">
                             <p className="pt-4">
                                 Get started with the{' '}
-                                <a target="blank" href="https://docs.sourcegraph.com/admin/install/docker">
+                                <a target="_blank" rel="noreferrer" href="https://docs.sourcegraph.com/admin/install/docker">
                                     installation docs.
                                 </a>
                             </p>
                             <p>
                                 When you're ready to present, check out the{' '}
-                                <a target="blank" href="https://docs.sourcegraph.com/getting-started/tour">
+                                <a target="_blank" rel="noreferrer" href="https://docs.sourcegraph.com/getting-started/tour">
                                     Sourcegraph tour
                                 </a>{' '}
                                 for example use-cases to show off.

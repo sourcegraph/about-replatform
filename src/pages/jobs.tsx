@@ -103,7 +103,8 @@ const CareersPage: FunctionComponent = () => {
                             <p className="text-center mt-3">
                                 Learn more in{' '}
                                 <a
-                                    target="blank"
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="handbook-benefits-link"
                                     href="https://handbook.sourcegraph.com/benefits-pay-perks/benefits-perks"
                                 >
