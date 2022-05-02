@@ -28,7 +28,8 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
             </h1>
             {frontmatter.author && frontmatter.publishDate && (
                 <p className="blog-post__byline mb-0">
-                    {frontmatter.author} on {formatDate(frontmatter.publishDate)}
+                    {frontmatter.author} on{' '}
+                    <time dateTime={frontmatter.publishDate}>{formatDate(frontmatter.publishDate)}</time>
                 </p>
             )}
         </header>
