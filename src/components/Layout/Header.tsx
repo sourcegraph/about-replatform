@@ -228,7 +228,12 @@ const Header: FunctionComponent<Props> = props => {
                                     </Link>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <a className="nav-link" href="https://docs.sourcegraph.com" target="_blank" rel="noreferrer">
+                                    <a
+                                        className="nav-link"
+                                        href="https://docs.sourcegraph.com"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         Docs
                                     </a>
                                 </li>
