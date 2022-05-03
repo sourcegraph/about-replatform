@@ -43,7 +43,7 @@ export const Layout: FunctionComponent<LayoutProps> = props => {
         description:
             props.meta?.description ||
             'Find and fix things across all of your code with Sourcegraph universal code search.',
-        image: props.meta?.image || 'https://about.sourcegraph.com/sourcegraph-social-image-share-02.png',
+        image: props.meta?.image || 'https://about.sourcegraph.com/meta/sourcegraph-social-image-share-02.png',
         icon: props.meta?.icon || 'https://about.sourcegraph.com/favicon.png',
     }
 
