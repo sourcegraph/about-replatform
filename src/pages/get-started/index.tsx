@@ -94,7 +94,7 @@ export const GetStartedPage: FunctionComponent = () => {
                                 <a
                                     href="https://sourcegraph.com/sign-in"
                                     title="Search public code with Sourcegraph Cloud"
-                                    className="text-reset text-black text-decoration-underline"
+                                    className="text-reset text-black underline"
                                 >
                                     Sign in
                                 </a>

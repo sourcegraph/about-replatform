@@ -3,7 +3,7 @@ import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 
-import { Layout, ContentSection, TrySourcegraph, CustomerLogosSectionAnimated } from '@components'
+import { Layout, ContentSection, TrySourcegraph, CustomerLogos } from '@components'
 
 import styles from './useCases.module.scss'
 
@@ -56,7 +56,11 @@ const UseCases: React.FunctionComponent = () => (
         }
     >
         <div className="use-cases-page">
-            <CustomerLogosSectionAnimated showButton={false} showSection={true} className="pt-5" />
+            <div className="pt-6">
+                <CustomerLogos />
+            </div>
+
+            <hr className="my-6" />
 
             <ContentSection id="find-and-fix-security-vulnerabilities" className="pt-8">
                 <div className="row justify-content-center">
@@ -100,11 +104,7 @@ const UseCases: React.FunctionComponent = () => (
                                     passHref={true}
                                 >
                                     <a href="#none" className="btn">
-                                        <img
-                                            src="/external-logos/cloudflare-color-logo.svg"
-                                            width="110px"
-                                            alt="Cloudflare"
-                                        />
+                                        <img src="/external-logos/cloudflare-logo.svg" width="110px" alt="Cloudflare" />
                                     </a>
                                 </Link>
                             </div>
