@@ -3,7 +3,8 @@ import React, { FunctionComponent } from 'react'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 
-import { Install, buttonStyle, buttonLocation } from '@components'
+import { Install } from '@components'
+import { buttonStyle, buttonLocation } from '@data'
 
 export const SelfHostedSection: FunctionComponent = () => (
     <div className="self-hosted-section bg-gradient-green-blue" id="self-hosted-section">

@@ -4,7 +4,7 @@ import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import Link from 'next/link'
 import { useSpring, animated } from 'react-spring'
 
-import { buttonStyle, buttonLocation } from '@components'
+import { buttonStyle, buttonLocation } from '@data'
 
 const ITEMS: {
     name: string

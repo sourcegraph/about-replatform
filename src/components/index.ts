@@ -21,9 +21,6 @@ export { YouTube } from './YouTube'
 export { TabCarousel } from './TabCarousel'
 export { TemplateCodeBlock } from './TemplateCodeBlock'
 
-// Tracking
-export { buttonStyle, buttonLocation } from './data/tracking'
-
 // Actions
 export {
     ContactPresalesSupportAction,

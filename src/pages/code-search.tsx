@@ -4,15 +4,8 @@ import ArrowRightBoxIcon from 'mdi-react/ArrowRightBoxIcon'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 
-import {
-    ContentSection,
-    BlockquoteWithBorder,
-    IntegrationsSection,
-    Layout,
-    SelfHostedSection,
-    buttonStyle,
-    buttonLocation,
-} from '@components'
+import { ContentSection, BlockquoteWithBorder, IntegrationsSection, Layout, SelfHostedSection } from '@components'
+import { buttonStyle, buttonLocation } from '@data'
 
 export const CodeSearchPage: FunctionComponent = () => (
     <Layout
