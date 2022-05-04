@@ -36,8 +36,8 @@ const items = [
                 text={
                     <p>
                         Someone else might have already solved this problem. With{' '}
-                        <Link href="/code-search">Code Search</Link>, you can find code that does what you need across all
-                        your repositories with a single search.
+                        <Link href="/code-search">Code Search</Link>, you can find code that does what you need across
+                        all your repositories with a single search.
                     </p>
                 }
             />

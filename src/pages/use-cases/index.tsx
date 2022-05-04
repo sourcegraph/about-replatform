@@ -90,8 +90,8 @@ const UseCases: React.FunctionComponent = () => (
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote mt-7 px-6">
                             <p className="border-left-red pl-3 font-weight-bold">
-                                &ldquo;[Sourcegraph] is the best way to prove we're not vulnerable to a particular CVE, if and
-                                when we get asked by an auditor.&rdquo;
+                                &ldquo;[Sourcegraph] is the best way to prove we're not vulnerable to a particular CVE,
+                                if and when we get asked by an auditor.&rdquo;
                             </p>
                             <footer className="blockquote-footer">David Haynes, Security Engineer at Cloudflare</footer>
                             <div className="d-flex justify-content-center my-4">
@@ -120,8 +120,9 @@ const UseCases: React.FunctionComponent = () => (
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote mt-8 px-6">
                             <p className="border-left-red pl-3 font-weight-bold">
-                                &ldquo;For our new developers, Sourcegraph has been invaluable to get to know the repository
-                                structure, to track down where code lives, and self-service during their investigations.&rdquo;
+                                &ldquo;For our new developers, Sourcegraph has been invaluable to get to know the
+                                repository structure, to track down where code lives, and self-service during their
+                                investigations.&rdquo;
                             </p>
                             <footer className="blockquote-footer">Owen Kim, Senior Software Engineer, Convoy</footer>
 
@@ -177,10 +178,11 @@ const UseCases: React.FunctionComponent = () => (
                         <h2 className="display-3 font-weight-bold mb-3">Resolve incidents faster</h2>
                         <h5>Identify the root cause in code and fix the issue everywhere.</h5>
                         <p>
-                            &ldquo;Every minute matters when responding to a business-critical incident. Downtime = revenue
-                            lost. Sourcegraph helps development teams identify the root cause in code, understand why
-                            the problem occurred and its potential impact on other services, fix the issue everywhere so
-                            it won't reoccur, and assure incident responders that all holes are plugged.&rdquo;
+                            &ldquo;Every minute matters when responding to a business-critical incident. Downtime =
+                            revenue lost. Sourcegraph helps development teams identify the root cause in code,
+                            understand why the problem occurred and its potential impact on other services, fix the
+                            issue everywhere so it won't reoccur, and assure incident responders that all holes are
+                            plugged.&rdquo;
                         </p>
                         <ul>
                             <li>
@@ -206,8 +208,8 @@ const UseCases: React.FunctionComponent = () => (
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote mt-7 px-6">
                             <p className="border-left-red pl-3 font-weight-bold">
-                                &ldquo;Sourcegraph's search gave us confidence because we knew we wouldn't overlook anything:
-                                Sourcegraph returns all search results, it doesn't drop or elide them.&rdquo;
+                                &ldquo;Sourcegraph's search gave us confidence because we knew we wouldn't overlook
+                                anything: Sourcegraph returns all search results, it doesn't drop or elide them.&rdquo;
                             </p>
                             <footer className="blockquote-footer">Simon Law, Staff Software Engineer, Quantcast</footer>
                             <div className="d-flex justify-content-center my-4">
@@ -229,10 +231,10 @@ const UseCases: React.FunctionComponent = () => (
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote mt-7 px-6">
                             <p className="border-left-red pl-3 font-weight-bold">
-                                &ldquo;If I'm developing code for a library that might draw charts, for example, we don't want
-                                30 different ways to draw a chart at FactSet. With Sourcegraph, I can search the code to
-                                find other chart examples, and simply copy the code. This saves us time and ensures
-                                consistency.&rdquo;
+                                &ldquo;If I'm developing code for a library that might draw charts, for example, we
+                                don't want 30 different ways to draw a chart at FactSet. With Sourcegraph, I can search
+                                the code to find other chart examples, and simply copy the code. This saves us time and
+                                ensures consistency.&rdquo;
                             </p>
                             <footer className="blockquote-footer">Joseph Majesky, Software Engineer, FactSet</footer>
                             <div className="d-flex justify-content-center my-4">
@@ -316,9 +318,9 @@ const UseCases: React.FunctionComponent = () => (
                     <div className="col-lg-6 text-center">
                         <blockquote className="blockquote mt-6 px-6">
                             <p className="border-left-red pl-3 font-weight-bold">
-                                &ldquo;With the help of Sourcegraph, we were able to quickly look at all clients of an API and
-                                remove unused attributes that lived in different repositories, ultimately simplifying
-                                our APIs and speeding up developer iteration time.&rdquo;
+                                &ldquo;With the help of Sourcegraph, we were able to quickly look at all clients of an
+                                API and remove unused attributes that lived in different repositories, ultimately
+                                simplifying our APIs and speeding up developer iteration time.&rdquo;
                             </p>
                             <footer className="blockquote-footer">Justin Phillips, Software Engineer, Lyft</footer>
                             <div className="d-flex justify-content-center my-4">

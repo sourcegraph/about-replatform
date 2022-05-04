@@ -138,14 +138,20 @@ const PricingPage: FunctionComponent = () => (
                                 <a className="pricing-page__quote-link">
                                     <blockquote className="blockquote text-dark text-center">
                                         <p className="text-left font-weight-bold border-left-red px-4">
-                                            &ldquo;Sourcegraph gives us the ability to search for and refactor references to
-                                            deprecated services, libraries, URL patterns, and more across our 2000+
-                                            repositories, and the confidence that we're not leaving anyone behind.&rdquo;
+                                            &ldquo;Sourcegraph gives us the ability to search for and refactor
+                                            references to deprecated services, libraries, URL patterns, and more across
+                                            our 2000+ repositories, and the confidence that we're not leaving anyone
+                                            behind.&rdquo;
                                         </p>
                                         <small className="text-muted">
                                             &mdash; Aneesh Agrawal, Software Engineer, Lyft
                                         </small>
-                                        <img src="/external-logos/lyft-logo.svg" className="d-block mx-auto my-4" width="87px" alt="Lyft" />
+                                        <img
+                                            src="/external-logos/lyft-logo.svg"
+                                            className="d-block mx-auto my-4"
+                                            width="87px"
+                                            alt="Lyft"
+                                        />
                                     </blockquote>
                                 </a>
                             </Link>
@@ -230,11 +236,18 @@ const PricingPage: FunctionComponent = () => (
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="pricing-page__quote-link">
                                     <blockquote className="blockquote text-dark text-center">
-                                        <p className="text-left font-weight-bold border-left-red px-4">Sourcegraph pays for itself many times over—it's a game changer.</p>
+                                        <p className="text-left font-weight-bold border-left-red px-4">
+                                            Sourcegraph pays for itself many times over—it's a game changer.
+                                        </p>
                                         <small className="text-muted">
                                             &mdash; François Jehl, Senior Engineering Manager, Criteo
                                         </small>
-                                        <img src="/external-logos/criteo-logo.svg" className="d-block mx-auto my-4" width="156px" alt="Criteo" />
+                                        <img
+                                            src="/external-logos/criteo-logo.svg"
+                                            className="d-block mx-auto my-4"
+                                            width="156px"
+                                            alt="Criteo"
+                                        />
                                     </blockquote>
                                 </a>
                             </Link>
