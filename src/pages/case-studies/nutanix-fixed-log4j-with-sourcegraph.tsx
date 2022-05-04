@@ -194,7 +194,7 @@ export const CaseStudy: FunctionComponent = () => (
 
             <ThreeUpText
                 title="Results"
-                results={[
+                items={[
                     {
                         subtitle: '< 5 min',
                         description:

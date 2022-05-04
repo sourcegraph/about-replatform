@@ -272,6 +272,10 @@ const UseCases: React.FunctionComponent = () => (
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
+                        <Link href="/use-cases/code-reuse" passHref={true}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                        </Link>
                     </div>
                 </div>
             </ContentSection>
