@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import {
     BackButtonBold,
-    BlockquoteWithLogoBottom,
+    BlockquoteWithBorder,
     BlogListItem,
     buttonStyle,
     buttonLocation,
@@ -222,7 +222,7 @@ const CodeReusePage: FunctionComponent = () => (
                         <h1 className="mb-4 font-weight-bold max-w-600">
                             Finding reliable, reusable code is tedious and inefficient
                         </h1>
-                        <p>
+                        <p className="mt-5">
                             Current tools don’t fully enable teams to innersource and use existing code to develop a
                             more secure and coherent codebase. What does that mean for you and your team?
                         </p>
@@ -238,8 +238,8 @@ const CodeReusePage: FunctionComponent = () => (
                             </li>
                         </ul>
                     </div>
-                    <div className="col-lg-5 mt-lg-6 mt-5">
-                        <BlockquoteWithLogoBottom
+                    <div className="col-lg-5 mt-lg-8 mt-5">
+                        <BlockquoteWithBorder
                             quote="If I’m developing code for a library that might draw charts, for example, we don’t want
                             30 different ways to draw a chart at FactSet. With Sourcegraph, I can search the code to
                             find other chart examples, and simply copy the code. This saves us time and ensures
@@ -247,7 +247,6 @@ const CodeReusePage: FunctionComponent = () => (
                             author="Joseph Majesky, Software Engineer at FactSet"
                             logoImage="/external-logos/factset-logo.svg"
                             logoAlt="Factset"
-                            border={true}
                             headline="FactSet ensures consistency across its entire codebase"
                             linkText="Read the case study"
                             link="/case-studies/factset-migrates-from-perforce-to-github"

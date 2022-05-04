@@ -85,19 +85,13 @@ export const BlockquoteWithBorder: FunctionComponent<{
     bold?: boolean
 }> = ({ quote, author, logoImage, headline, logoAlt, link, linkText, bold }) => (
     <>
-        <blockquote className="p-3 rounded rounded-lg text-center case-studies__quote--in-content">
-            <div className="case-studies__quote--in-content--section">
-                {headline && <h5 className="font-weight-bold mb-4">{headline}</h5>}
-                <div className={bold ? 'font-weight-bold mb-3' : 'font-weight-normal mb-3'}>&ldquo;{quote}&rdquo;</div>
-            </div>
-            {author && (
-                <>
-                    <figcaption className="text-center text-muted">&mdash; {author}</figcaption>
-                </>
-            )}
+        <blockquote className="px-3 mb-5 text-center border-left-red">
+            {headline && <h4 className="font-weight-bold mb-4">{headline}</h4>}
+            <h5 className={`font-weight-${bold ? 'bold' : 'normal'} mb-3`}>&ldquo;{quote}&rdquo;</h5>
+            {author && <figcaption className="text-center text-muted mt-5">&mdash; {author}</figcaption>}
         </blockquote>
         {logoImage && logoAlt && (
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center pt-2">
                 <img src={logoImage} width="110px" alt={logoAlt} />
             </div>
         )}
