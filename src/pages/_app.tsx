@@ -18,7 +18,11 @@ const App = ({ Component, pageProps }: AppProps): ReactNode => {
             {/* // Import all top-level scripts here: https://nextjs.org/docs/messages/no-script-in-document-page */}
 
             {/* Add Triblio "Webpage Personalization Script" for Sales/Marketing */}
-            <Script data-cfasync="false" type="text/javascript" src="https://tribl.io/h.js?orgId=Yee6bMKj7QSARqAePdE8" />
+            <Script
+                data-cfasync="false"
+                type="text/javascript"
+                src="https://tribl.io/h.js?orgId=Yee6bMKj7QSARqAePdE8"
+            />
 
             {/* Google Analytics */}
             <Script data-cookieconsent="ignore" id="track-ga">
@@ -53,7 +57,8 @@ const App = ({ Component, pageProps }: AppProps): ReactNode => {
                 src="https://consent.cookiebot.com/uc.js"
                 data-cbid="fb31dc3e-afb3-4be8-ae84-7090bba7797d"
                 data-blockingmode="auto"
-                type="text/javascript" />
+                type="text/javascript"
+            />
 
             {/* Add jQuery as a dependency for the Clearbit script - without this Clearbit doesn't work*/}
             <Script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
@@ -62,7 +67,7 @@ const App = ({ Component, pageProps }: AppProps): ReactNode => {
             <Script
                 type="text/javascript"
                 id="clearbit-hubspot"
-            // eslint-disable-next-line quotes
+                // eslint-disable-next-line quotes
             >{`!function(e){var o=document.getElementsByTagName("script")[0];if("object"==typeof e.ClearbitForHubspot)return console.log("Clearbit For HubSpot included more than once"),!1;e.ClearbitForHubspot={},e.ClearbitForHubspot.forms=[],e.ClearbitForHubspot.addForm=function(o){var t=o[0];"function"==typeof e.ClearbitForHubspot.onFormReady?e.ClearbitForHubspot.onFormReady(t):e.ClearbitForHubspot.forms.push(t)};var t=document.createElement("script");t.async=!0,t.src="https://hubspot.clearbit.com/v1/forms/pk_a66b9ed76e62c713c06aab39bfae7234/forms.js",o.parentNode.insertBefore(t,o),e.addEventListener("message",function(o){if("hsFormCallback"===o.data.type&&"onFormReady"===o.data.eventName)if(document.querySelectorAll('form[data-form-id="'+o.data.id+'"]').length>0)e.ClearbitForHubspot.addForm(document.querySelectorAll('form[data-form-id="'+o.data.id+'"]'));else if(document.querySelectorAll("iframe.hs-form-iframe").length>0){document.querySelectorAll("iframe.hs-form-iframe").forEach(function(t){t.contentWindow.document.querySelectorAll('form[data-form-id="'+o.data.id+'"]').length>0&&e.ClearbitForHubspot.addForm(t.contentWindow.document.querySelectorAll('form[data-form-id="'+o.data.id+'"]'))})}})}(window);`}</Script>
 
             <SSRProvider>
