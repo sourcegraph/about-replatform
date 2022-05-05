@@ -1,4 +1,4 @@
-import { FunctionComponent, useLayoutEffect, useRef, useState } from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 
 import { MdiReactIconComponentType } from 'mdi-react'
 import CachedIcon from 'mdi-react/CachedIcon'
@@ -84,7 +84,7 @@ const UseCases: FunctionComponent = () => {
         setBoxHeight(box.current?.clientHeight)
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setBoxHeight(box.current?.clientHeight)
 
         window.addEventListener('resize', getBoxHeight)
