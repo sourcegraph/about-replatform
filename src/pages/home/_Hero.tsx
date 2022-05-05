@@ -15,7 +15,7 @@ const Hero: FunctionComponent = () => {
     const headlines: string[] = ['Understand and search', 'Fix vulnerabilities and issues', 'Automate key workflows']
     const [headlineIndex, setHeadlineIndex] = useState(0)
     const [headline, setHeadline] = useState(headlines[0])
-    
+
     useEffect(() => {
         const cycle = setInterval(() => {
             const newIndex = headlineIndex === headlines.length - 1 ? 0 : headlineIndex + 1
@@ -32,21 +32,12 @@ const Hero: FunctionComponent = () => {
             {[meshLeft, meshRight].map((image, index) => (
                 <div
                     key={image.src}
-                    className={classNames(
-                        styles.mesh,
-                        'd-none d-lg-block position-absolute top-0',
-                        {
-                            ['left-0']: index === 0,
-                            ['right-0']: index === 1
-                        }
-                    )}
+                    className={classNames(styles.mesh, 'd-none d-lg-block position-absolute top-0', {
+                        ['left-0']: index === 0,
+                        ['right-0']: index === 1,
+                    })}
                 >
-                    <img
-                        src={image.src}
-                        alt=""
-                        draggable={false}
-                        className="w-100 h-500"
-                    />
+                    <img src={image.src} alt="" draggable={false} className="w-100 h-500" />
                     <div className={styles.bottomFade} />
                 </div>
             ))}

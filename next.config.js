@@ -20,10 +20,10 @@ const nextConfig = {
               publicPath: '/_next/static/media/',
               outputPath: `${isServer ? '../' : ''}static/media/`,
               name: '[name]-[hash].[ext]',
-            }
-          }
+            },
+          },
         ],
-      },
+      }
     )
     return config
   },
