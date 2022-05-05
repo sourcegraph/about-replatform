@@ -4,8 +4,7 @@ import classNames from 'classnames'
 
 import { buttonStyle, buttonLocation } from '@data'
 
-// TODO: Fix
-// import { ReactComponent as CopyIcon } from './copyIcon.svg'
+import { ReactComponent as CopyIcon } from './copyIcon.svg'
 
 import styles from './install.module.scss'
 
@@ -58,8 +57,7 @@ export const Install: FunctionComponent = () => {
                         className={classNames(styles.icon, 'icon-inline ml-4 align-text-top')}
                         tabIndex={0}
                     >
-                        {/* TODO: Fix */}
-                        {/* <CopyIcon /> */}
+                        <CopyIcon />
                     </span>
                 </h3>
 
