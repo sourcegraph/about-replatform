@@ -2,8 +2,7 @@ import { FunctionComponent } from 'react'
 
 import { Layout, IntegrationsSection, SelfHostedSection} from '@components'
 
-// TODO: Fix
-// import Features from './_Features'
+import Features from './_Features'
 import Hero from './_Hero'
 import UseCases from './_UseCases'
 
@@ -20,8 +19,7 @@ const Home: FunctionComponent = () => (
 
         <UseCases />
 
-        {/* TODO: Fix */}
-        {/* <Features /> */}
+        <Features />
 
         <IntegrationsSection />
 
