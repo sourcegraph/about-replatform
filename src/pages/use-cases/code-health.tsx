@@ -170,7 +170,6 @@ const UseCasePage: FunctionComponent = () => (
             title: 'Improve Code Health | Sourcegraph',
             description:
                 'Tackle refactoring efforts and tech debt from legacy systems with automated pull requests across your entire codebase to boost code health.',
-            image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
         className="use-cases-page navbar-light"
         hero={
