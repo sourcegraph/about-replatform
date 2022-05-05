@@ -9,7 +9,7 @@ import LockOutlineIcon from 'mdi-react/LockOutlineIcon'
 import Link from 'next/link'
 
 import { ContentSection } from '@components'
-import { buttonStyle, buttonLocation, breakpoints } from '@data'
+import { buttonStyle, buttonLocation } from '@data'
 import { useWindowWidth } from '@hooks'
 
 interface UseCases {
@@ -71,21 +71,21 @@ const useCases: UseCases[] = [
 ]
 
 const UseCases: FunctionComponent = () => {
-    const box = useRef(null)
+    const box = useRef<HTMLDivElement | null>(null)
     const [boxHeight, setBoxHeight] = useState<number>(0)
-
     const windowWidth = useWindowWidth()
-    const isMobile = windowWidth < breakpoints.xl
-
-    const containerPaddingBottom = 32 // 2 rem
-    const boxHalfHeight = `-${isMobile ? boxHeight / 2 + containerPaddingBottom : boxHeight / 2}px`
+    const boxHalfHeight = `-${boxHeight / 2}px`
 
     function getBoxHeight(): void {
-        setBoxHeight(box.current?.clientHeight)
+        if (box.current) {            
+            setBoxHeight(box.current.clientHeight)
+        }
     }
 
     useEffect(() => {
-        setBoxHeight(box.current?.clientHeight)
+        if (box.current) {
+            setBoxHeight(box.current?.clientHeight)
+        }
 
         window.addEventListener('resize', getBoxHeight)
 
@@ -95,7 +95,7 @@ const UseCases: FunctionComponent = () => {
     }, [])
 
     return (
-        <ContentSection className="position-relative pt-7 pb-5">
+        <ContentSection className="position-relative pt-7">
             <div className="text-center">
                 <h1 className="font-weight-bold">Move fast &mdash; even in big codebases</h1>
             </div>

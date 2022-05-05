@@ -133,8 +133,8 @@ const FeatureSection: FunctionComponent = () => {
     }, [])
 
     return (
-        <ContentSection color="white" className="py-8 mt-8 pb-7">
-            <div className="text-center mt-4 mb-7">
+        <ContentSection color="white" className="py-8 pb-7">
+            <div className="text-center mt-8 pt-4 mb-7">
                 <h1 className="font-weight-bold">How teams use Sourcegraph</h1>
                 <p className="max-w-500 mx-auto">
                     Sourcegraph's code intelligence platform is built with features that help you understand, fix, and
