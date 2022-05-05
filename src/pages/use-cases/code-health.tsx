@@ -366,7 +366,7 @@ const UseCasePage: FunctionComponent = () => (
                         <a
                             className="btn btn-primary"
                             data-button-style={buttonStyle.primary}
-                            data-button-location={buttonLocation.hero}
+                            data-button-location={buttonLocation.trySourcegraph}
                             data-button-type="cta"
                         >
                             Ready to get started?
