@@ -6,9 +6,8 @@ import Link from 'next/link'
 import { CustomerLogos } from '@components'
 import { buttonStyle, buttonLocation } from '@data'
 
-// TODO: Fix
-// import meshLeft from './assets/hero/mesh-left.png'
-// import meshRight from './assets/hero/mesh-right.png'
+import meshLeft from './assets/hero/mesh-left.png'
+import meshRight from './assets/hero/mesh-right.png'
 
 import styles from './home.module.scss'
 
@@ -16,7 +15,7 @@ const Hero: FunctionComponent = () => {
     const headlines: string[] = ['Understand and search', 'Fix vulnerabilities and issues', 'Automate key workflows']
     const [headlineIndex, setHeadlineIndex] = useState(0)
     const [headline, setHeadline] = useState(headlines[0])
-
+    
     useEffect(() => {
         const cycle = setInterval(() => {
             const newIndex = headlineIndex === headlines.length - 1 ? 0 : headlineIndex + 1
@@ -30,16 +29,27 @@ const Hero: FunctionComponent = () => {
 
     return (
         <div className="bg-white py-7 px-2 position-relative">
-            <div
-                className={classNames(styles.mesh, 'd-none d-lg-block position-absolute top-0 left-0')}
-                // TODO: Fix
-                // style={{ backgroundImage: `url(${meshLeft})` }}
-            />
-            <div
-                className={classNames(styles.mesh, 'd-none d-lg-block position-absolute top-0 right-0')}
-                // TODO: Fix
-                // style={{ backgroundImage: `url(${meshRight})` }}
-            />
+            {[meshLeft, meshRight].map((image, index) => (
+                <div
+                    key={image.src}
+                    className={classNames(
+                        styles.mesh,
+                        'd-none d-lg-block position-absolute top-0',
+                        {
+                            ['left-0']: index === 0,
+                            ['right-0']: index === 1
+                        }
+                    )}
+                >
+                    <img
+                        src={image.src}
+                        alt=""
+                        draggable={false}
+                        className="w-100 h-500"
+                    />
+                    <div className={styles.bottomFade} />
+                </div>
+            ))}
 
             <div className="text-center max-w-750 mx-auto">
                 <h1 className={classNames(styles.heading, 'font-weight-bold')}>
