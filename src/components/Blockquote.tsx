@@ -1,59 +1,7 @@
 import { FunctionComponent, ReactFragment } from 'react'
 
-import classNames from 'classnames'
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
-
-export const Blockquote: FunctionComponent<{
-    quote: string
-    author?: string | ReactFragment
-    logoImage?: string
-    logoAlt?: string
-    border?: boolean
-    headline?: string
-    link?: string
-    linkText?: string
-}> = ({ quote, author, logoImage, border, headline, logoAlt, link, linkText }) => (
-    <>
-        <blockquote
-            className={
-                border
-                    ? classNames('px-3 text-center mt-6 mb-5 border-vermillion case-studies__quote--border')
-                    : classNames('p-3 text-center bg-light')
-            }
-        >
-            {border && headline ? (
-                <div className="">
-                    <h4 className="font-weight-bold mb-4">{headline}</h4>
-                    <h5 className="font-weight-normal">&ldquo;{quote}&rdquo;</h5>
-                </div>
-            ) : (
-                <h3 className="font-weight-normal">&ldquo;{quote}&rdquo;</h3>
-            )}
-            {author && <figcaption className="text-center text-muted pt-4">&mdash; {author}</figcaption>}
-        </blockquote>
-
-        {logoImage && logoAlt && (
-            <div className="d-flex justify-content-center">
-                <img src={logoImage} width="110px" alt={logoAlt} />
-            </div>
-        )}
-        {linkText && link && link.includes('http') && (
-            <a href={link} target="_blank" rel="nofollow noopener noreferrer">
-                {linkText}
-            </a>
-        )}
-        {linkText && link && !link.includes('http') && (
-            <Link href={link} passHref={true}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="d-flex justify-content-center mt-3">
-                    <p className="font-weight-bold">{linkText}</p>
-                    <ArrowRightIcon className="icon-inline ml-1" />
-                </a>
-            </Link>
-        )}
-    </>
-)
 
 export const BlockquoteWithLogoBottom: FunctionComponent<{
     quote: string
@@ -137,19 +85,13 @@ export const BlockquoteWithBorder: FunctionComponent<{
     bold?: boolean
 }> = ({ quote, author, logoImage, headline, logoAlt, link, linkText, bold }) => (
     <>
-        <blockquote className="p-3 rounded rounded-lg text-center case-studies__quote--in-content">
-            <div className="case-studies__quote--in-content--section">
-                {headline && <h5 className="font-weight-bold mb-4">{headline}</h5>}
-                <div className={bold ? 'font-weight-bold mb-3' : 'font-weight-normal mb-3'}>&ldquo;{quote}&rdquo;</div>
-            </div>
-            {author && (
-                <>
-                    <figcaption className="text-center text-muted">&mdash; {author}</figcaption>
-                </>
-            )}
+        <blockquote className="px-3 mb-5 text-center border-left-red">
+            {headline && <h4 className="font-weight-bold mb-4">{headline}</h4>}
+            <h5 className={`font-weight-${bold ? 'bold' : 'normal'} mb-3`}>&ldquo;{quote}&rdquo;</h5>
+            {author && <figcaption className="text-center text-muted mt-5">&mdash; {author}</figcaption>}
         </blockquote>
         {logoImage && logoAlt && (
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center pt-2">
                 <img src={logoImage} width="110px" alt={logoAlt} />
             </div>
         )}

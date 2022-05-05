@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import {
     BackButtonBold,
-    Blockquote,
+    BlockquoteWithBorder,
     BlogListItem,
     buttonStyle,
     buttonLocation,
@@ -280,13 +280,12 @@ const UseCasePage: FunctionComponent = () => (
                             </li>
                         </ul>
                     </div>
-                    <div className="col-lg-5 mt-lg-6 mt-5">
-                        <Blockquote
+                    <div className="col-lg-5 mt-lg-8 mt-5">
+                        <BlockquoteWithBorder
                             quote="With the help of Sourcegraph, we were able to quickly look at all clients of an API and remove unused attributes that lived in different repositories, ultimately simplifying our APIs and speeding up developer iteration time."
                             author="Justin Phillips, Software Engineer at Lyft"
                             logoImage="/external-logos/lyft-logo.svg"
                             logoAlt="Lyft"
-                            border={true}
                             headline="Lyft boosts code health and accelerates developer velocity"
                             linkText="Read the case study"
                             link="/case-studies/lyft-monolith-to-microservices"

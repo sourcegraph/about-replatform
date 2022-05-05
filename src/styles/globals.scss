@@ -330,3 +330,9 @@ code.border {
     border: 1px solid var(--border-color);
     max-width: 100%;
 }
+
+/* ==================== Temporary ==================== */
+// TODO: On Tailwind migration, trade out this style for utility class: "border-l-3 border-red-400"
+.border-left-red {
+    border-left: 3px solid #f86012;
+}
