@@ -149,15 +149,17 @@ const quoteCarouselItems = [
         author: 'Jon Kohler, Technical Director of Solution Engineering at Nutanix',
         logoImage: '/external-logos/nutanix-logo.svg',
         logoAlt: 'Nutanix',
+        linkText: 'Read the case study',
+        link: '/case-studies/nutanix-fixed-log4j-with-sourcegraph',
     },
     {
         header: "Cloudflare proves to auditors that its code isn't vulnerable",
         quote: "[Sourcegraph] is the best way to prove we're not vulnerable to a particular CVE, if and when we get asked by an auditor.",
         author: 'David Haynes, Security Engineer at Cloudflare',
         logoImage: '/external-logos/cloudflare-color-logo.svg',
+        logoAlt: 'Cloudflare',
         linkText: 'Read the case study',
         link: '/case-studies/cloudflare-accelerates-debugging-and-improves-security',
-        logoAlt: 'Cloudflare',
     },
     {
         header: 'Indeed merges code at scale',
@@ -165,9 +167,9 @@ const quoteCarouselItems = [
         though, that if we are doing several thousand automated merges in a year, we're saving several employee's worth of time.`,
         author: 'Jared Hodge, Senior Manager, Developer Experience at Indeed',
         logoImage: '/external-logos/indeed-logo.svg',
+        logoAlt: 'Indeed',
         linkText: 'Read the case study',
         link: '/case-studies/indeed-accelerates-development-velocity',
-        logoAlt: 'Indeed',
     },
 ]
 

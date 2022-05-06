@@ -246,8 +246,10 @@ const UseCasePage: FunctionComponent = () => (
                         <BlockquoteWithBorder
                             quote="Sourcegraph makes it possible for us to enable every team to develop autonomous practices and solve cross-coding issues. This autonomy is vital to ensure developers and their teams can accomplish their day-to-day work in isolation without being blocked."
                             author="Bjørn Hal Sørensen, Web Architect at Lunar"
-                            logoImage="/external-logos/lunar.svg"
-                            logoAlt="Lunar"
+                            logo={{
+                                src: '/external-logos/lunar.svg',
+                                alt: 'Lunar'
+                            }}
                             headline="Lunar makes every developer autonomous"
                         />
                     </div>
@@ -273,10 +275,14 @@ const UseCasePage: FunctionComponent = () => (
                         quote="For our new developers, Sourcegraph has been invaluable to get to know the repository structure, to track down where code lives, and self-service during their investigations."
                         header="Convoy knows its codebase inside and out"
                         author="Owen Kim, Senior Software Engineer at Convoy"
-                        logoImage="/external-logos/convoy-logo.svg"
-                        logoAlt="Convoy"
-                        linkText="Read the case study"
-                        link="/case-studies/convoy-improved-on-boarding"
+                        logo={{
+                            src: '/external-logos/convoy-logo.svg',
+                            alt: 'Convoy',
+                        }}
+                        link={{
+                            href: '/case-studies/convoy-improved-on-boarding',
+                            text: 'Read the case study'
+                        }}
                     />
                 </div>
             </ContentSection>

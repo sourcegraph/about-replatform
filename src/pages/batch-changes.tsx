@@ -124,8 +124,10 @@ export const BatchChangesPage: FunctionComponent = () => (
                         capability for reducing the hidden burden of updates pushed across teams and enabling us to
                         increase our engineering velocity.`}
                         author="Jared Hodge, Sr. Manager Developer Experience"
-                        logoImage="/external-logos/indeed-logo.svg"
-                        logoAlt="Indeed"
+                        logo={{
+                            src: '/external-logos/indeed-logo.svg',
+                            alt: 'Indeed'
+                        }}
                         bold={true}
                     />
                 </div>
@@ -216,8 +218,10 @@ export const BatchChangesPage: FunctionComponent = () => (
                         large-scale code changes before we make them. This enables the entire team to make more
                         impactful decisions more often.`}
                         author="Trent Grover, Director of Architecture - Client Technologies, Workiva"
-                        logoImage="/external-logos/workiva-vector-logo.svg"
-                        logoAlt="Workiva"
+                        logo={{
+                            src: '/external-logos/workiva-vector-logo.svg',
+                            alt: 'Workiva'
+                        }}
                         bold={true}
                     />
                 </div>

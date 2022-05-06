@@ -167,8 +167,10 @@ export const CodeSearchPage: FunctionComponent = () => (
                         with the right tools, like Sourcegraph, we've found that increased productivity is a natural
                         byproduct.`}
                         author="Francois Jehl, Senior Engineering Manager, Criteo"
-                        logoImage="/external-logos/criteo-logo.svg"
-                        logoAlt="Criteo"
+                        logo={{
+                            src: '/external-logos/criteo-logo.svg',
+                            alt: 'Criteo'
+                        }}
                     />
                     <div className="mt-4">
                         <Link href="/case-studies/criteo-tackles-big-code" passHref={true}>

@@ -243,11 +243,15 @@ const CodeReusePage: FunctionComponent = () => (
                             find other chart examples, and simply copy the code. This saves us time and ensures
                             consistency."
                             author="Joseph Majesky, Software Engineer at FactSet"
-                            logoImage="/external-logos/factset-logo.svg"
-                            logoAlt="Factset"
                             headline="FactSet ensures consistency across its entire codebase"
-                            linkText="Read the case study"
-                            link="/case-studies/factset-migrates-from-perforce-to-github"
+                            logo={{
+                                src: '/external-logos/factset-logo.svg',
+                                alt: 'Factset'
+                            }}
+                            link={{
+                                text: 'Read the case study',
+                                href: '/case-studies/factset-migrates-from-perforce-to-github'
+                            }}
                         />
                     </div>
                 </div>
