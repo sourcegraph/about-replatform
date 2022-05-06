@@ -29,15 +29,15 @@ const CarouselItem: FunctionComponent<{ header: string; text: ReactNode }> = ({ 
 
 const items = [
     {
-        buttonLabel: 'Find reusable code',
+        buttonLabel: 'Find code to reuse',
         text: (
             <CarouselItem
-                header="Find reusable code"
+                header="Find code to reuse"
                 text={
                     <p>
-                        Someone else might have already solved this problem. With{' '}
-                        <Link href="/code-search">Code Search</Link>, you can find code that does what you need across
-                        all your repositories with a single search.
+                        Find out if a teammate has already solved your problem. With{' '}
+                        <Link href="/code-search">Code Search</Link>, you can quickly search across all your repositories
+                        to find the code you need.
                     </p>
                 }
             />
@@ -46,14 +46,13 @@ const items = [
         itemClass: 'd-block',
     },
     {
-        buttonLabel: "Evaluate the code's stability and trustworthiness",
+        buttonLabel: 'Improve code stability and trustworthiness',
         text: (
             <CarouselItem
-                header="Evaluate the code's stability & trustworthiness"
-                text={
+                header="Improve code stability and trustworthiness"                text={
                     <p>
-                        Code reuse avoids introducing avoidable bugs—a reviewed and tested piece of code that’s known to
-                        work can be easily and securely used instead.
+                        Code reuse avoids introducing preventable bugs. By using a reviewed and tested piece of code
+                        that's known to work, you can feel confident that your code is secure and stable.
                     </p>
                 }
             />
@@ -61,14 +60,13 @@ const items = [
         itemClass: 'd-none',
     },
     {
-        buttonLabel: 'Automate PRs to make code consistent and apply updates',
-        text: (
+        buttonLabel: 'Automate PRs to make code consistent',        text: (
             <CarouselItem
-                header="Automate PRs to make code consistent & apply updates"
+                header="Automate PRs to make code consistent"
                 text={
                     <p>
-                        Spend less time on manual updates. Whether you’re refactoring duplicative code or updating a
-                        shared library, implement changes seamlessly across your codebase with{' '}
+                        Spend less time on manual updates. Whether refactoring duplicate code or updating a shared
+                        library, automate changes seamlessly across your entire codebase with{' '}
                         <Link href="/batch-changes">Batch Changes</Link>.
                     </p>
                 }
@@ -84,9 +82,9 @@ const items = [
                 text={
                     <p>
                         Catch deprecated code as it’s committed with
-                        <a href="https://docs.sourcegraph.com/code_monitoring"> code monitoring</a>. It takes time for
-                        teams to adopt a culture of code reuse; in the meantime, you know where opportunities for code
-                        reuse exist.
+                        <a href="https://docs.sourcegraph.com/code_monitoring"> code monitoring</a>. Monitor and get
+                        alerts when someone uses out-of-date libraries or deprecated functions, so you know who to work
+                        with on updates and adoption.
                     </p>
                 }
             />
@@ -94,14 +92,14 @@ const items = [
         itemClass: 'd-none',
     },
     {
-        buttonLabel: 'Track code reuse adoption',
+        buttonLabel: 'Track your code reuse efforts ',
         text: (
             <CarouselItem
-                header="Track code reuse adoption"
+                header="Track your code reuse efforts "
                 text={
                     <p>
                         Get visibility into code reuse progress. Track the prevalence of shared code in your codebase
-                        over time with Code Insights.
+                        over time with <Link href="/code-insights">Code Insights</Link>..
                     </p>
                 }
             />
@@ -153,7 +151,7 @@ const resourceItems = [
             'Here’s how one engineering manager uses the Sourcegraph VS Code extension to browse millions of open source repositories, without leaving his IDE, to find reusable code and more.',
         type: 'Blog post',
         img: {
-            src: 'https://sourcegraphstatic.com/blog/nine-circles-of-dependency-hell.jpg',
+            src: 'https://sourcegraphstatic.com/blog/vs-code-extension/sourcegraph-vs-code-extension.png',
             alt: 'Ways to use Sourcegraph Extension for VSCode blog thumbnail',
         },
         href: '/blog/ways-to-use-sourcegraph-extension-for-vs-code',
