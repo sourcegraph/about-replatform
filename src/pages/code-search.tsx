@@ -35,15 +35,15 @@ export const CodeSearchPage: FunctionComponent = () => (
                             code search.
                         </p>
                         <div className="pt-1">
-                            <Link href="/get-started" passHref={true}>
+                            <Link
+                                href="/get-started"
+                                passHref={true}
+                                data-button-style={buttonStyle.primary}
+                                data-button-location={buttonLocation.hero}
+                                data-button-type="cta"
+                            >
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                <a
-                                    className="btn btn-primary mr-3"
-                                    data-button-style={buttonStyle.primary}
-                                    data-button-location={buttonLocation.hero}
-                                    data-button-type="cta"
-                                    title="Use this if you want to search your (or your company's) code, invite teammates, and try all the features."
-                                >
+                                <a className="btn btn-primary mr-3" title="Use this if you want to search your (or your company's) code, invite teammates, and try all the features.">
                                     Deploy locally <ArrowRightIcon className="ml-1" />
                                 </a>
                             </Link>

@@ -268,15 +268,14 @@ const PricingPage: FunctionComponent = () => (
                         </p>
                     </div>
                     <div className="col-md-6 pt-3 align-self-center text-center">
-                        <Link href="/get-started">
+                        <Link
+                            href="/get-started"
+                            data-button-style={buttonStyle.primary}
+                            data-button-location={buttonLocation.trySourcegraph}
+                            data-button-type="cta"
+                        >
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a
-                                className="btn btn-primary mx-2 mb-3"
-                                data-button-style={buttonStyle.primary}
-                                data-button-location={buttonLocation.trySourcegraph}
-                                data-button-type="cta"
-                                title="Try Sourcegraph now"
-                            >
+                            <a className="btn btn-primary mx-2 mb-3" title="Try Sourcegraph now">
                                 Try Sourcegraph now
                             </a>
                         </Link>
