@@ -64,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     if (!allSlugs) {
         return { paths: [{ params: { slug: ['404'] } }], fallback: false }
     }
-    const slugs = Object.keys(allSlugs.records.blogposts.recordSlugs)
+    const slugs = Object.keys(allSlugs.records['press-releases'].recordSlugs)
     const paths = slugs.map(slug => ({ params: { slug: slug.split('/') } }))
 
     return {

@@ -21,7 +21,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
     <div className={`blog-post ${className}`}>
         <header className={headerClassName}>
             <h1 className={titleClassName}>
-                <Link href={`/blog/${slugPath}`} passHref={true}>
+                <Link href={`/press-release/${slugPath}`} passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className={`d-block ${titleLinkClassName}`}>{frontmatter.title}</a>
                 </Link>

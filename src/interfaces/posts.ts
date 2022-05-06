@@ -120,11 +120,11 @@ export const postType = (post: Post): PostType =>
         : PostType.BlogPost
 
 export const postIndexType = (frontmatter: FrontMatter): PostIndexType =>
-    frontmatter.tags?.includes('podcast') 
-    ? PostIndexType.PodcastIndex 
-    : frontmatter.tags?.includes('press')
-    ? PostIndexType.PressReleaseIndex 
-    :PostIndexType.BlogPostIndex
+    frontmatter.tags?.includes('podcast')
+        ? PostIndexType.PodcastIndex
+        : frontmatter.tags?.includes('press')
+        ? PostIndexType.PressReleaseIndex
+        : PostIndexType.BlogPostIndex
 
 export enum BlogType {
     PressRelease = 'press',
