@@ -30,14 +30,14 @@ const PressReleasePage: NextPage<PageProps> = ({ post, content }) => {
         canonical,
     }
 
-    const blogInfo = BLOG_TYPE_TO_INFO[post.fields?.blogType ?? 'press']
+    const pressReleaseInfo = BLOG_TYPE_TO_INFO[post.fields?.blogType ?? 'press']
     const PostTemplate = POST_TYPE_TO_COMPONENT[postType(post)]
 
     return (
         <Layout meta={meta}>
             <article>
                 <div className="container-lg">
-                    <BlogHeader {...blogInfo} />
+                    <BlogHeader {...pressReleaseInfo} />
                 </div>
                 <div className="post-template mt-5 bg-white">
                     <div className="container-lg">

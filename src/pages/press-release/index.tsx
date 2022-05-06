@@ -15,21 +15,13 @@ const CONTENT_PARENT_DIRECTORY = './content/'
 const PressReleaseHome: FunctionComponent<PostIndexComponentProps> = ({ posts, allPosts }) => (
     <>
         <PostsListPage blogInfo={BLOG_TYPE_TO_INFO[BlogType.PressRelease]} posts={posts} allPosts={allPosts} />
-        <div className="container">
-            <div className="row justify-content-md-center">
-                <div className="col mt-5">
-                    <h3>Media contact</h3>
-                    press@sourcegraph.com
-                </div>
-            </div>
-        </div>
     </>
 )
 
 export default PressReleaseHome
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-    const allSlugs = await getSortedSlugs('press')
+    const allSlugs = await getSortedSlugs('press-releases')
     if (!allSlugs) {
         return { notFound: true }
     }
@@ -54,33 +46,3 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
         },
     }
 }
-// export const pageQuery = graphql`
-//     query PressReleasePosts {
-//         allMarkdownRemark(
-//             filter: { fields: { blogType: { eq: "press" } } }
-//             sort: { fields: [frontmatter___publishDate], order: DESC }
-//         ) {
-//             edges {
-//                 node {
-//                     frontmatter {
-//                         title
-//                         heroImage
-//                         author
-//                         tags
-//                         publishDate(formatString: "MMMM D, YYYY")
-//                         slug
-//                         description
-//                         published
-//                     }
-//                     html
-//                     excerpt(pruneLength: 300)
-//                     fields {
-//                         slug
-//                         permalink
-//                         blogType
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `
