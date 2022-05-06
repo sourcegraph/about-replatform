@@ -18,7 +18,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
     titleClassName = '',
     titleLinkClassName = '',
 }) => (
-    <div className={`blog-post ${className}`}>
+    <div className={`blog-post overflow-hidden pb-2 ${className}`}>
         <header className={headerClassName}>
             <h1 className={titleClassName}>
                 <Link href={`/press-release/${slugPath}`} passHref={true}>
@@ -27,7 +27,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
                 </Link>
             </h1>
             {frontmatter.author && frontmatter.publishDate && (
-                <p className="blog-post__byline mb-0">
+                <p className="text-align-center text-secondary mb-0">
                     <time dateTime={frontmatter.publishDate}>{formatDate(frontmatter.publishDate)}</time>
                 </p>
             )}
@@ -36,13 +36,13 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
             <div className="card-body pt-0 d-flex flex-card">
                 <div className="flex-1 w-75">
                     {frontmatter.description ? (
-                        <p className="blog-post__excerpt">{truncate(frontmatter.description, { length: 300 })}</p>
+                        <p>{truncate(frontmatter.description, { length: 300 })}</p>
                     ) : (
-                        <p className="blog-post__excerpt">{excerpt}</p>
+                        <p>{excerpt}</p>
                     )}
                     <Link href={`/press-release/${slugPath}`} passHref={true}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a className="blog-post__read-more">Read more</a>
+                        <a className="font-weight-bold">Read more</a>
                     </Link>
                 </div>
                 {frontmatter.heroImage && (
@@ -50,7 +50,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a>
                             <img
-                                className="blog-post__image flex-1 max-w-250"
+                                className="max-w-100 max-h-150 flex-1 max-w-250"
                                 src={frontmatter.heroImage}
                                 alt={frontmatter.title}
                             />

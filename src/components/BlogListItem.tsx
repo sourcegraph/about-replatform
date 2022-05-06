@@ -22,7 +22,7 @@ export const BlogListItem: FunctionComponent<Props> = ({ blog }) => (
             <p>{blog.description}</p>
         </div>
         <div className="col-lg-3">
-            {blog.image && <img className="flex-1 blog-post__image" alt={`${blog.title}`} src={blog.image} />}
+            {blog.image && <img className="flex-1 max-w-100 max-h-150" alt={`${blog.title}`} src={blog.image} />}
         </div>
     </div>
 )
