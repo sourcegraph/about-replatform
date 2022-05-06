@@ -89,7 +89,7 @@ export const BlockquoteWithBorder: FunctionComponent<{
     bold?: boolean
 }> = ({ quote, author, logo, headline, link, bold }) => (
     <>
-        <blockquote className="px-3 mb-5 text-center border-left-red">
+        <blockquote className="px-3 mb-5 text-center border-left border-3 border-vermillion">
             {headline && <h4 className="font-weight-bold mb-4">{headline}</h4>}
             <h5 className={`font-weight-${bold ? 'bold' : 'normal'} mb-3`}>&ldquo;{quote}&rdquo;</h5>
             {author && <figcaption className="text-center text-muted mt-5">&mdash; {author}</figcaption>}

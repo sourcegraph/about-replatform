@@ -137,7 +137,7 @@ const PricingPage: FunctionComponent = () => (
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="pricing-page__quote-link">
                                     <blockquote className="blockquote text-dark text-center">
-                                        <p className="text-left font-weight-bold border-left-red px-4">
+                                        <p className="text-left font-weight-bold border-left border-3 border-vermillion px-4">
                                             &ldquo;Sourcegraph gives us the ability to search for and refactor
                                             references to deprecated services, libraries, URL patterns, and more across
                                             our 2000+ repositories, and the confidence that we're not leaving anyone
@@ -236,7 +236,7 @@ const PricingPage: FunctionComponent = () => (
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="pricing-page__quote-link">
                                     <blockquote className="blockquote text-dark text-center">
-                                        <p className="text-left font-weight-bold border-left-red px-4">
+                                        <p className="text-left font-weight-bold border-left border-3 border-vermillion px-4">
                                             Sourcegraph pays for itself many times over—it's a game changer.
                                         </p>
                                         <small className="text-muted">
