@@ -101,32 +101,35 @@ const features: Features[] = [
     },
 ]
 
+interface VideoElement {
+    el: HTMLVideoElement | null
+    paused: boolean
+}
+
 const FeatureSection: FunctionComponent = () => {
     useEffect(() => {
-        const videos = features.map((vid, index) => ({
+        const videos = features.map((vid, index): VideoElement => ({
             el: document.querySelector(`.video-${index}`),
             paused: true,
         }))
 
         if (window.IntersectionObserver) {
-            for (const vid of videos) {
+            for (const vid of videos) {                
                 const observer = new IntersectionObserver(
                     entries => {
                         const currentVideo = entries[0]
 
                         if (currentVideo.intersectionRatio !== 1 && !vid.paused) {
-                            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                             vid?.el?.pause()
                             vid.paused = true
                         } else if (vid.paused) {
-                            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                             vid?.el?.play()
                             vid.paused = false
                         }
                     },
                     { threshold: 1 }
                 )
-
+                
                 observer.observe(vid?.el)
             }
         }
