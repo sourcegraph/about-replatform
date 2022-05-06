@@ -191,7 +191,10 @@ const UseCasePage: FunctionComponent = () => (
                                     data-button-type="cta"
                                 >
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100" title="Request a Demo.">
+                                    <a
+                                        className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100"
+                                        title="Request a Demo."
+                                    >
                                         Request a demo
                                     </a>
                                 </Link>
@@ -248,7 +251,7 @@ const UseCasePage: FunctionComponent = () => (
                             author="Bjørn Hal Sørensen, Web Architect at Lunar"
                             logo={{
                                 src: '/external-logos/lunar.svg',
-                                alt: 'Lunar'
+                                alt: 'Lunar',
                             }}
                             headline="Lunar makes every developer autonomous"
                         />
@@ -281,7 +284,7 @@ const UseCasePage: FunctionComponent = () => (
                         }}
                         link={{
                             href: '/case-studies/convoy-improved-on-boarding',
-                            text: 'Read the case study'
+                            text: 'Read the case study',
                         }}
                     />
                 </div>

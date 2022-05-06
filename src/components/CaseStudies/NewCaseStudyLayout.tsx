@@ -66,7 +66,7 @@ export const NewCaseStudyLayout: FunctionComponent<Props> = ({
                             logo={{
                                 src: logo?.img || '',
                                 alt: customer,
-                                href: logo?.href
+                                href: logo?.href,
                             }}
                         />
                     </ContentSection>

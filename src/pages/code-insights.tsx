@@ -334,7 +334,10 @@ export const CodeInsightsPage: FunctionComponent = () => (
                                     data-button-type="cta"
                                 >
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a className="btn btn-primary md-col-5 col-5" title="Request a Demo of Code Insights.">
+                                    <a
+                                        className="btn btn-primary md-col-5 col-5"
+                                        title="Request a Demo of Code Insights."
+                                    >
                                         Request a demo
                                     </a>
                                 </Link>

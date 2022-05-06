@@ -240,7 +240,10 @@ const UseCasePage: FunctionComponent = () => (
                                     data-button-type="cta"
                                 >
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100" title="Request a Demo.">
+                                    <a
+                                        className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100"
+                                        title="Request a Demo."
+                                    >
                                         Request a demo
                                     </a>
                                 </Link>

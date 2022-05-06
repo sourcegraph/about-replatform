@@ -36,8 +36,8 @@ const items = [
                 text={
                     <p>
                         Find out if a teammate has already solved your problem. With{' '}
-                        <Link href="/code-search">Code Search</Link>, you can quickly search across all your repositories
-                        to find the code you need.
+                        <Link href="/code-search">Code Search</Link>, you can quickly search across all your
+                        repositories to find the code you need.
                     </p>
                 }
             />
@@ -49,7 +49,8 @@ const items = [
         buttonLabel: 'Improve code stability and trustworthiness',
         text: (
             <CarouselItem
-                header="Improve code stability and trustworthiness"                text={
+                header="Improve code stability and trustworthiness"
+                text={
                     <p>
                         Code reuse avoids introducing preventable bugs. By using a reviewed and tested piece of code
                         that's known to work, you can feel confident that your code is secure and stable.
@@ -60,7 +61,8 @@ const items = [
         itemClass: 'd-none',
     },
     {
-        buttonLabel: 'Automate PRs to make code consistent',        text: (
+        buttonLabel: 'Automate PRs to make code consistent',
+        text: (
             <CarouselItem
                 header="Automate PRs to make code consistent"
                 text={
@@ -186,7 +188,10 @@ const CodeReusePage: FunctionComponent = () => (
                                     data-button-type="cta"
                                 >
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100" title="Request a Demo.">
+                                    <a
+                                        className="btn btn-primary mr-lg-3 mb-lg-0 mb-3 w-md-100"
+                                        title="Request a Demo."
+                                    >
                                         Request a demo
                                     </a>
                                 </Link>
@@ -246,11 +251,11 @@ const CodeReusePage: FunctionComponent = () => (
                             headline="FactSet ensures consistency across its entire codebase"
                             logo={{
                                 src: '/external-logos/factset-logo.svg',
-                                alt: 'Factset'
+                                alt: 'Factset',
                             }}
                             link={{
                                 text: 'Read the case study',
-                                href: '/case-studies/factset-migrates-from-perforce-to-github'
+                                href: '/case-studies/factset-migrates-from-perforce-to-github',
                             }}
                         />
                     </div>
@@ -329,9 +334,7 @@ const CodeReusePage: FunctionComponent = () => (
                     data-button-type="cta"
                 >
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a className="btn btn-primary">
-                        Ready to get started?
-                    </a>
+                    <a className="btn btn-primary">Ready to get started?</a>
                 </Link>
             </div>
         </ContentSection>

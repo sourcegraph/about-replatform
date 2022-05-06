@@ -57,7 +57,7 @@ export const QuoteCarousel: FunctionComponent<QuoteCarouselProps> = ({ items, au
                             }}
                             link={{
                                 href: item.link || '',
-                                text: item.linkText || ''
+                                text: item.linkText || '',
                             }}
                         />
                     </div>

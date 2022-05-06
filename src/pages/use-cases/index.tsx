@@ -94,7 +94,7 @@ const UseCases: React.FunctionComponent = () => (
                             logo={{
                                 src: '/external-logos/cloudflare-color-logo.svg',
                                 alt: 'Cloudflare',
-                                href: '/case-studies/cloudflare-accelerates-debugging-and-improves-security'
+                                href: '/case-studies/cloudflare-accelerates-debugging-and-improves-security',
                             }}
                         />
                     </div>
@@ -112,7 +112,7 @@ const UseCases: React.FunctionComponent = () => (
                             logo={{
                                 src: '/external-logos/convoy-logo.svg',
                                 alt: 'Convoy',
-                                href: '/case-studies/convoy-improved-on-boarding'
+                                href: '/case-studies/convoy-improved-on-boarding',
                             }}
                         />
                     </div>
@@ -193,7 +193,7 @@ const UseCases: React.FunctionComponent = () => (
                             logo={{
                                 src: '/external-logos/quantcast-logo.svg',
                                 alt: 'Quantcast',
-                                href: '/case-studies/quantcast-large-scale-refactoring'
+                                href: '/case-studies/quantcast-large-scale-refactoring',
                             }}
                         />
                     </div>
@@ -214,7 +214,7 @@ const UseCases: React.FunctionComponent = () => (
                             logo={{
                                 src: '/external-logos/factset-logo.svg',
                                 alt: 'Factset',
-                                href: '/case-studies/factset-migrates-from-perforce-to-github'
+                                href: '/case-studies/factset-migrates-from-perforce-to-github',
                             }}
                         />
                     </div>
@@ -294,7 +294,7 @@ const UseCases: React.FunctionComponent = () => (
                             logo={{
                                 src: '/external-logos/lyft-logo.svg',
                                 alt: 'Lyft',
-                                href: '/case-studies/lyft-monolith-to-microservices'
+                                href: '/case-studies/lyft-monolith-to-microservices',
                             }}
                         />
                     </div>

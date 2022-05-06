@@ -38,12 +38,13 @@ export const BlockquoteWithLogoBottom: FunctionComponent<{
                 )}
             </div>
         )}
-        {link && (
-            link.href.includes('http') ?
+        {link &&
+            (link.href.includes('http') ? (
                 <a href={link.href} target="_blank" rel="nofollow noreferrer">
                     {link.text}
                     <ArrowRightIcon className="icon-inline ml-1" />
-                </a> :
+                </a>
+            ) : (
                 <Link href={link.href} passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="d-flex justify-content-center mt-3">
@@ -51,7 +52,7 @@ export const BlockquoteWithLogoBottom: FunctionComponent<{
                         <ArrowRightIcon className="icon-inline ml-1" />
                     </a>
                 </Link>
-        )}
+            ))}
     </>
 )
 
@@ -93,23 +94,25 @@ export const BlockquoteWithBorder: FunctionComponent<{
             <h5 className={`font-weight-${bold ? 'bold' : 'normal'} mb-3`}>&ldquo;{quote}&rdquo;</h5>
             {author && <figcaption className="text-center text-muted mt-5">&mdash; {author}</figcaption>}
         </blockquote>
-        {logo && (
-            logo.href ?
+        {logo &&
+            (logo.href ? (
                 <Link href={logo.href} passHref={true}>
                     <a href="#none" className="btn">
                         <img src={logo.src} width="110px" alt={logo.alt} />
                     </a>
-                </Link> :
+                </Link>
+            ) : (
                 <div className="d-flex justify-content-center pt-2">
                     <img src={logo.src} width="110px" alt={logo.alt} />
                 </div>
-        )}
-        {link && (
-            link?.href.includes('http') ?
+            ))}
+        {link &&
+            (link?.href.includes('http') ? (
                 <a href={link.href} target="_blank" rel="nofollow noreferrer">
                     {link.text}
                     <ArrowRightIcon className="icon-inline ml-1" />
-                </a> :
+                </a>
+            ) : (
                 <Link href={link} passHref={true}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="d-flex justify-content-center mt-3">
@@ -117,6 +120,6 @@ export const BlockquoteWithBorder: FunctionComponent<{
                         <ArrowRightIcon className="icon-inline ml-1" />
                     </a>
                 </Link>
-        )}
+            ))}
     </>
 )

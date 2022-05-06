@@ -44,7 +44,9 @@ export const BatchChangesPage: FunctionComponent = () => (
                             data-button-type="cta"
                         >
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-primary" title="Request a demo">Request a demo</a>
+                            <a className="btn btn-primary" title="Request a demo">
+                                Request a demo
+                            </a>
                         </Link>
                     </div>
                 </div>
@@ -126,7 +128,7 @@ export const BatchChangesPage: FunctionComponent = () => (
                         author="Jared Hodge, Sr. Manager Developer Experience"
                         logo={{
                             src: '/external-logos/indeed-logo.svg',
-                            alt: 'Indeed'
+                            alt: 'Indeed',
                         }}
                         bold={true}
                     />
@@ -220,7 +222,7 @@ export const BatchChangesPage: FunctionComponent = () => (
                         author="Trent Grover, Director of Architecture - Client Technologies, Workiva"
                         logo={{
                             src: '/external-logos/workiva-vector-logo.svg',
-                            alt: 'Workiva'
+                            alt: 'Workiva',
                         }}
                         bold={true}
                     />

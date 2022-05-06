@@ -43,7 +43,10 @@ export const CodeSearchPage: FunctionComponent = () => (
                                 data-button-type="cta"
                             >
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                <a className="btn btn-primary mr-3" title="Use this if you want to search your (or your company's) code, invite teammates, and try all the features.">
+                                <a
+                                    className="btn btn-primary mr-3"
+                                    title="Use this if you want to search your (or your company's) code, invite teammates, and try all the features."
+                                >
                                     Deploy locally <ArrowRightIcon className="ml-1" />
                                 </a>
                             </Link>
@@ -169,7 +172,7 @@ export const CodeSearchPage: FunctionComponent = () => (
                         author="Francois Jehl, Senior Engineering Manager, Criteo"
                         logo={{
                             src: '/external-logos/criteo-logo.svg',
-                            alt: 'Criteo'
+                            alt: 'Criteo',
                         }}
                     />
                     <div className="mt-4">
