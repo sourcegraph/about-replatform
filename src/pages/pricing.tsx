@@ -150,7 +150,7 @@ const PricingPage: FunctionComponent = () => (
                                             src="/external-logos/lyft-logo.svg"
                                             className="d-block mx-auto my-4"
                                             width="87px"
-                                            alt="Lyft"
+                                            alt="Lyft logo"
                                         />
                                     </blockquote>
                                 </a>
@@ -232,7 +232,7 @@ const PricingPage: FunctionComponent = () => (
 
                     <div className="row justify-content-center pt-md-4">
                         <div className="col-lg-10">
-                            <Link href="/case-studies/criteo-tackles-big-code">
+                            <Link href="/case-studies/criteo-tackles-big-code" passHref={true}>
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="pricing-page__quote-link">
                                     <blockquote className="blockquote text-dark text-center">
@@ -246,7 +246,7 @@ const PricingPage: FunctionComponent = () => (
                                             src="/external-logos/criteo-logo.svg"
                                             className="d-block mx-auto my-4"
                                             width="156px"
-                                            alt="Criteo"
+                                            alt="Criteo logo"
                                         />
                                     </blockquote>
                                 </a>
@@ -273,6 +273,7 @@ const PricingPage: FunctionComponent = () => (
                             data-button-style={buttonStyle.primary}
                             data-button-location={buttonLocation.trySourcegraph}
                             data-button-type="cta"
+                            passHref={true}
                         >
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-primary mx-2 mb-3" title="Try Sourcegraph now">

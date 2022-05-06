@@ -179,7 +179,7 @@ const UseCases: React.FunctionComponent = () => (
                                 search notebook
                             </li>
                         </ul>
-                        <Link href="/demo">
+                        <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-outline-primary">
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
@@ -240,7 +240,7 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Add a code monitor to alert you of commits using an out-of-date library</li>
                         </ul>
-                        <Link href="/demo">
+                        <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-outline-primary">
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
@@ -280,7 +280,7 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Efficiently tackle tech debt from legacy systems and acquisitions</li>
                         </ul>
-                        <Link href="/demo">
+                        <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a className="btn btn-outline-primary">
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
