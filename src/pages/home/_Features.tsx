@@ -108,10 +108,12 @@ interface VideoElement {
 
 const FeatureSection: FunctionComponent = () => {
     useEffect(() => {
-        const videos = features.map((vid, index): VideoElement => ({
-            el: document.querySelector(`.video-${index}`),
-            paused: true,
-        }))
+        const videos = features.map(
+            (vid, index): VideoElement => ({
+                el: document.querySelector(`.video-${index}`),
+                paused: true,
+            })
+        )
 
         if (window.IntersectionObserver) {
             for (const vid of videos) {
@@ -129,7 +131,7 @@ const FeatureSection: FunctionComponent = () => {
                     },
                     { threshold: 1 }
                 )
-                
+
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 observer.observe(vid.el!)
             }

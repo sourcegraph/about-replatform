@@ -77,7 +77,7 @@ const UseCases: FunctionComponent = () => {
     const boxHalfHeight = `-${boxHeight / 2}px`
 
     function getBoxHeight(): void {
-        if (box.current) {            
+        if (box.current) {
             setBoxHeight(box.current.clientHeight)
         }
     }
