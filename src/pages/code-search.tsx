@@ -20,7 +20,6 @@ export const CodeSearchPage: FunctionComponent = () => (
             title: 'Sourcegraph | Code Search',
             description:
                 'Onboard to a new codebase, find answers faster, and identify security risks with Sourcegraph Code Search. Search across all the repositories you work with.',
-            image: '/sourcegraph-og.png',
         }}
         heroAndHeaderClassName="code-search-page__hero-and-header"
         hero={
@@ -92,6 +91,49 @@ export const CodeSearchPage: FunctionComponent = () => (
                             1-click open file in editor, custom highlighting, and information from your other favorite
                             services all in one place with
                             <a href="https://sourcegraph.com/extensions?category=All"> extensions</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ContentSection>
+
+        {/* Notebooks */}
+        <ContentSection>
+            <div className="row pt-md-6">
+                <div className="col-lg-6 order-sm-2 mt-4 mt-md-0 container video-container">
+                    <video
+                        className="w-100 h-auto shadow"
+                        autoPlay={true}
+                        muted={true}
+                        loop={true}
+                        playsInline={true}
+                        controls={false}
+                        // GCS does not set cookies, so we don't want Cookiebot to block this video based on consent
+                        data-cookieconsent="ignore"
+                    >
+                        <source
+                            src="https://storage.googleapis.com/sourcegraph-assets/notebooks/Notebooks_Capture_20s.mp4"
+                            type="video/mp4"
+                        />
+                        Creating a Notebook with Sourcegraph
+                    </video>
+                </div>
+                <div className="col-lg-6 order-sm-1">
+                    <h2 className="display-3 font-weight-bold mb-3 mt-4 mt-md-0">
+                        Document and explore code with Notebooks
+                    </h2>
+                    <ul>
+                        <li className="mb-1">
+                            Create living documentation with Markdown and live code queries to get engineers up to speed
+                            on unfamiliar code faster.
+                        </li>
+                        <li className="mb-1">
+                            Navigate through complex parts of your codebase or resolve incidents with collaborative and
+                            shareable notebooks.
+                        </li>
+                        <li className="mb-1">
+                            Embed notebooks anywhere you can embed HTML, like your own internal documentation, so you
+                            can spend less time updating stale docs.
                         </li>
                     </ul>
                 </div>

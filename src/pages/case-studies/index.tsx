@@ -10,7 +10,6 @@ const CaseStudiesHome: FunctionComponent = () => (
             meta={{
                 title: 'Sourcegraph - Case studies',
                 description: 'Learn how engineering teams use Sourcegraph Universal Code Search.',
-                image: '/sourcegraph-og.png',
             }}
         >
             <div className="mt-2">
@@ -25,12 +24,7 @@ const CaseStudiesHome: FunctionComponent = () => (
                             {CASESTUDIES.map(study => (
                                 <div className="d-flex col-lg-4 mb-6" key={study.name}>
                                     <div className="card">
-                                        <CaseStudyCard
-                                            name={study.name}
-                                            logo={study.logo}
-                                            title={study.title}
-                                            url={study.url}
-                                        />
+                                        <CaseStudyCard study={study} />
                                     </div>
                                 </div>
                             ))}
