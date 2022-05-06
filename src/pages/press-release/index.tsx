@@ -21,7 +21,7 @@ const PressReleaseHome: FunctionComponent<PostIndexComponentProps> = ({ posts, a
 export default PressReleaseHome
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-    const allSlugs = await getSortedSlugs('press-releases')
+    const allSlugs = await getSortedSlugs('press')
     if (!allSlugs) {
         return { notFound: true }
     }
