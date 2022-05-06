@@ -114,12 +114,12 @@ const FeatureSection: FunctionComponent = () => {
         }))
 
         if (window.IntersectionObserver) {
-            for (const vid of videos) {                
+            for (const vid of videos) {
                 const observer = new IntersectionObserver(
                     entries => {
                         const currentVideo = entries[0]
 
-                        if (currentVideo.intersectionRatio !== 1 && !vid.paused) {
+                        if (!currentVideo.isIntersecting && !vid.paused) {
                             vid?.el?.pause()
                             vid.paused = true
                         } else if (vid.paused) {
@@ -130,7 +130,8 @@ const FeatureSection: FunctionComponent = () => {
                     { threshold: 1 }
                 )
                 
-                observer.observe(vid?.el)
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                observer.observe(vid.el!)
             }
         }
     }, [])
