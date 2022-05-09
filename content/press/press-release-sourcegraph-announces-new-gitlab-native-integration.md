@@ -11,7 +11,7 @@ published: true
 
 **GitLab Collaboration Emphasizes Importance of Code Navigation and Intelligence in the Developer Workflow; Universal Code Search Solution Makes Elite Development Accessible for All; Company Momentum Fueled by Increasing Demand for Universal Developer Tools**
 
-<p style="text-align: center">
+<p className="text-align-center">
   <img src="https://about.sourcegraph.com/blog/gitlab-integration-banner-dark.png" alt="GitLab plus Sourcegraph logo" />
 </p>
 
