@@ -11,11 +11,12 @@ import {
     BlogListItem,
     buttonStyle,
     buttonLocation,
-    CustomCarousel,
     ContentSection,
+    CustomCarousel,
     CustomerLogosSectionAnimated,
     Layout,
     QuoteCarousel,
+    ThreeUpText,
 } from '@components'
 
 import styles from './useCases.module.scss'
@@ -109,6 +110,27 @@ const items = [
     },
 ]
 
+const threeUpTextItems = [
+    {
+        icon: <MagnifyIcon className="mb-4 text-blurple" size={40} />,
+        subtitle: <h4 className="font-weight-bold">Find unhealthy code</h4>,
+        description:
+            'Build a healthier codebase by finding references to deprecated services, libraries, URL patterns, and more across all your repositories.',
+    },
+    {
+        icon: <WrenchOutlineIcon className="mb-4 text-blurple" size={40} />,
+        subtitle: <h4 className="font-weight-bold">Remediate code health issues</h4>,
+        description:
+            'Tackle refactoring efforts and tech debt from legacy systems and acquisitions with automated pull requests across your entire codebase.',
+    },
+    {
+        icon: <ClipBoardPulseOutlineIcon className="mb-4 text-blurple" size={40} />,
+        subtitle: <h4 className="font-weight-bold">Monitor code health initiatives</h4>,
+        description:
+            'Stay on top of code health changes. Monitor and measure code health initiatives and get actionable insights into the impact of large-scale changes.',
+    },
+]
+
 const quoteCarouselItems = [
     {
         header: 'Indeed improves code health at scale',
@@ -143,7 +165,10 @@ const blogListItems = [
         description:
             "When Sourcegraph switched to a new search query parser, you'd never know anything had changed.  This is an account of the rigorous testing that happened behind the scenes to ensure a seamless transition.",
         type: 'Blog post',
-        image: 'https://storage.googleapis.com/sourcegraph-assets/blog/how-not-to-break-a-search-engine-new.png',
+        img: {
+            src: 'https://storage.googleapis.com/sourcegraph-assets/blog/how-not-to-break-a-search-engine-new.png',
+            alt: 'Unglamorous engineering blog thumbnail',
+        },
         href: '/blog/how-not-to-break-a-search-engine-unglamorous-engineering',
     },
     {
@@ -151,7 +176,10 @@ const blogListItems = [
         description:
             "Learn how Sourcegraph's Frontend Platform team overhauled our web application's design system and UI using codemods to automate a challenging global migration to CSS modules and Code Insights to track and communicate progress.",
         type: 'Blog post',
-        image: 'https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migrating-to-css-modules.png',
+        img: {
+            src: 'https://storage.googleapis.com/sourcegraph-assets/blog/code-insights-ga-blogs/migrating-to-css-modules.png',
+            alt: 'CSS modules migration blog thumbnail',
+        },
         href: '/blog/migrating-to-css-modules-with-codemods-and-code-insights',
     },
     {
@@ -159,7 +187,10 @@ const blogListItems = [
         description:
             "Here's the story and the lessons learned from our work to remove all existing backend-related end-to-end tests and reliably run their corresponding unit and integration tests as part of our CI pipeline on all branches.",
         type: 'Blog post',
-        image: 'https://storage.googleapis.com/sourcegraph-assets/blog/backend-integration-testing/backend-integration-testing.png',
+        img: {
+            src: 'https://storage.googleapis.com/sourcegraph-assets/blog/backend-integration-testing/backend-integration-testing.png',
+            alt: 'Backend integration testing blog thumbnail',
+        },
         href: '/blog/integration-testing',
     },
 ]
@@ -222,40 +253,8 @@ const UseCasePage: FunctionComponent = () => (
             </>
         }
     >
-        <ContentSection className="my-lg-5">
-            <div className="row mx-lg-0 mx-4">
-                <div className="d-flex justify-content-center w-100 mt-7 mb-lg-4 mb-0">
-                    <h1 className="text-center font-weight-bold col-lg-10 px-lg-8">
-                        Track and improve code health across your entire codebase
-                    </h1>
-                </div>
-                <div className="d-flex flex-column flex-lg-row mt-lg-4 my-6">
-                    <div className="col-lg-4 pr-lg-5 pl-lg-0 text-center mb-4">
-                        <MagnifyIcon className="mb-4 text-blurple" size={40} />
-                        <h4 className="font-weight-bold">Find unhealthy code</h4>
-                        <p>
-                            Build a healthier codebase by finding references to deprecated services, libraries, URL
-                            patterns, and more across all your repositories.
-                        </p>
-                    </div>
-                    <div className="col-lg-4 text-center mb-4">
-                        <WrenchOutlineIcon className="mb-4 text-blurple" size={40} />
-                        <h4 className="font-weight-bold">Remediate code health issues</h4>
-                        <p>
-                            Tackle refactoring efforts and tech debt from legacy systems and acquisitions with automated
-                            pull requests across your entire codebase.
-                        </p>
-                    </div>
-                    <div className="col-lg-4 pl-lg-5 pr-lg-0 text-center mb-4">
-                        <ClipBoardPulseOutlineIcon className="mb-4 text-blurple" size={40} />
-                        <h4 className="font-weight-bold">Monitor code health initiatives</h4>
-                        <p>
-                            Stay on top of code health changes. Monitor and measure code health initiatives and get
-                            actionable insights into the impact of large-scale changes.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <ContentSection className="my-7">
+            <ThreeUpText title="Track and improve code health across your entire codebase" items={threeUpTextItems} />
         </ContentSection>
 
         <div className="bg-gradient-venus-radial">
@@ -287,11 +286,15 @@ const UseCasePage: FunctionComponent = () => (
                         <BlockquoteWithBorder
                             quote="With the help of Sourcegraph, we were able to quickly look at all clients of an API and remove unused attributes that lived in different repositories, ultimately simplifying our APIs and speeding up developer iteration time."
                             author="Justin Phillips, Software Engineer at Lyft"
-                            logoImage="/external-logos/lyft-logo.svg"
-                            logoAlt="Lyft"
                             headline="Lyft boosts code health and accelerates developer velocity"
-                            linkText="Read the case study"
-                            link="/case-studies/lyft-monolith-to-microservices"
+                            logo={{
+                                src: '/external-logos/lyft-logo.svg',
+                                alt: 'Lyft logo',
+                            }}
+                            link={{
+                                text: 'Read the case study',
+                                href: '/case-studies/lyft-monolith-to-microservices',
+                            }}
                         />
                     </div>
                 </div>
