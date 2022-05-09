@@ -46,7 +46,7 @@ const useCases: UseCases[] = [
         title: 'Resolve incidents',
         description: 'Identify the root cause in code and fix the issue everywhere, faster.',
         link: {
-            href: '/use-cases#resolve-incidents-faster',
+            href: '/use-cases/incident-response',
             text: 'Learn more about incident response',
         },
     },
@@ -55,7 +55,7 @@ const useCases: UseCases[] = [
         title: 'Promote code reuse',
         description: 'Find existing code for reuse and contribute to a more coherent codebase.',
         link: {
-            href: '/use-cases#streamline-code-reuse',
+            href: '/use-cases/code-reuse',
             text: 'Learn more about code reuse',
         },
     },
@@ -64,7 +64,7 @@ const useCases: UseCases[] = [
         title: 'Boost code health',
         description: 'Improve code health with large-scale changes, and track key initiatives.',
         link: {
-            href: '/use-cases#boost-code-health',
+            href: '/use-cases/code-health',
             text: 'Learn more about code health',
         },
     },
@@ -111,7 +111,16 @@ const UseCases: FunctionComponent = () => {
                             <h4 className="font-weight-bold">{useCase.title}</h4>
                             <div className="text-lg">
                                 <p className="m-0">{useCase.description}</p>
-                                {useCase.link && <Link href={useCase.link.href}>{useCase.link.text}</Link>}
+                                {useCase.link && (
+                                    <Link
+                                        href={useCase.link.href}
+                                        data-button-style={buttonStyle.text}
+                                        data-button-location={buttonLocation.body}
+                                        data-button-type="cta"
+                                    >
+                                        {useCase.link.text}
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -136,6 +145,7 @@ const UseCases: FunctionComponent = () => {
                         data-button-style={buttonStyle.primary}
                         data-button-location={buttonLocation.bodyDemo}
                         passHref={true}
+                        data-button-type="cta"
                     >
                         <a className="btn btn-primary mt-5 d-block d-sm-inline-block" href="#none">
                             Request a demo

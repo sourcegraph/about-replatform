@@ -4,6 +4,7 @@ import ArrowRightIcon from 'mdi-react/ArrowRightIcon'
 import Link from 'next/link'
 
 import { Layout, BlockquoteWithBorder, ContentSection, TrySourcegraph, CustomerLogos } from '@components'
+import { buttonStyle, buttonLocation } from '@data'
 
 import styles from './useCases.module.scss'
 
@@ -39,14 +40,20 @@ const UseCases: React.FunctionComponent = () => (
 
                         <div className="list-group">
                             {features.map((feature: string) => (
-                                <a
+                                <Link
                                     key={feature}
                                     href={`#${kebabCase(feature)}`}
-                                    className={`${styles.listGroupItem} list-group-item list-group-item-action d-flex justify-content-between align-items-center`}
+                                    passHref={true}
+                                    data-button-style={buttonStyle.textWithArrow}
+                                    data-button-location={buttonLocation.hero}
+                                    data-button-type="cta"
                                 >
-                                    {feature}
-                                    <ArrowRightIcon className="icon-inline ml-1" />
-                                </a>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <a className="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-decoration-none">
+                                        {feature}
+                                        <ArrowRightIcon className="icon-inline ml-1" />
+                                    </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -79,15 +86,27 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>Alert for known vulnerabilities and risky code changes with code monitoring</li>
                         </ul>
-                        <Link href="/demo">
+                        <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-outline-primary">
+                            <a
+                                className="btn btn-outline-primary"
+                                data-button-style={buttonStyle.outline}
+                                data-button-location={buttonLocation.bodyDemo}
+                                data-button-type="cta"
+                            >
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
                         <Link href="/use-cases/vulnerabilities" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                            <a
+                                className="btn btn-link font-weight-bold"
+                                data-button-style={buttonStyle.text}
+                                data-button-location={buttonLocation.body}
+                                data-button-type="cta"
+                            >
+                                Learn more
+                            </a>
                         </Link>
                     </div>
                     <div className="col-lg-6 mt-8 px-6 text-center">
@@ -142,13 +161,25 @@ const UseCases: React.FunctionComponent = () => (
                         </ul>
                         <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-outline-primary">
+                            <a
+                                className="btn btn-outline-primary"
+                                data-button-style={buttonStyle.outline}
+                                data-button-location={buttonLocation.bodyDemo}
+                                data-button-type="cta"
+                            >
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
                         <Link href="/use-cases/onboarding" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                            <a
+                                className="btn btn-link font-weight-bold"
+                                data-button-style={buttonStyle.text}
+                                data-button-location={buttonLocation.body}
+                                data-button-type="cta"
+                            >
+                                Learn more
+                            </a>
                         </Link>
                     </div>
                 </div>
@@ -184,7 +215,12 @@ const UseCases: React.FunctionComponent = () => (
                         </ul>
                         <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-outline-primary">
+                            <a
+                                className="btn btn-outline-primary"
+                                data-button-style={buttonStyle.outline}
+                                data-button-location={buttonLocation.bodyDemo}
+                                data-button-type="cta"
+                            >
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
@@ -239,19 +275,41 @@ const UseCases: React.FunctionComponent = () => (
                             </li>
                             <li>
                                 Safely and efficiently maintain code that is being reused and easily make changes
-                                everywhere with <Link href="/batch-changes/">Batch Changes</Link>
+                                everywhere with{' '}
+                                <Link href="/batch-changes/" passHref={true}>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <a
+                                        data-button-style={buttonStyle.primary}
+                                        data-button-location={buttonLocation.bodyDemo}
+                                        data-button-type="cta"
+                                    >
+                                        Batch Changes
+                                    </a>
+                                </Link>
                             </li>
                             <li>Add a code monitor to alert you of commits using an out-of-date library</li>
                         </ul>
                         <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-outline-primary">
+                            <a
+                                className="btn btn-outline-primary"
+                                data-button-style={buttonStyle.outline}
+                                data-button-location={buttonLocation.bodyDemo}
+                                data-button-type="cta"
+                            >
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
                         <Link href="/use-cases/code-reuse" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-link font-weight-bold">Learn more</a>
+                            <a
+                                className="btn btn-link font-weight-bold"
+                                data-button-style={buttonStyle.text}
+                                data-button-location={buttonLocation.body}
+                                data-button-type="cta"
+                            >
+                                Learn more
+                            </a>
                         </Link>
                     </div>
                 </div>
@@ -285,7 +343,12 @@ const UseCases: React.FunctionComponent = () => (
                         </ul>
                         <Link href="/demo" passHref={true}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a className="btn btn-outline-primary">
+                            <a
+                                className="btn btn-outline-primary"
+                                data-button-style={buttonStyle.outline}
+                                data-button-location={buttonLocation.bodyDemo}
+                                data-button-type="cta"
+                            >
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>

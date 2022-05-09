@@ -98,7 +98,14 @@ const Hero: FunctionComponent = () => {
                     Over <span className="text-vivid-violet">1.2M engineers</span> use Sourcegraph to build software you
                     rely on
                 </h2>
-                <Link href="/case-studies">Learn how our customers use Sourcegraph</Link>
+                <Link
+                    href="/case-studies"
+                    data-button-style={buttonStyle.text}
+                    data-button-location={buttonLocation.hero}
+                    data-button-type="cta"
+                >
+                    Learn how our customers use Sourcegraph
+                </Link>
             </div>
         </div>
     )
