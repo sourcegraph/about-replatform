@@ -17,7 +17,6 @@ import {
 } from '@components'
 import { buttonStyle, buttonLocation } from '@data'
 
-
 import styles from './useCases.module.scss'
 
 const CarouselItem: FunctionComponent<{ header: string; text: ReactNode }> = ({ header, text }) => (
