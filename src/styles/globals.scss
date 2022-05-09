@@ -316,3 +316,9 @@ $positions: ('top', 'right', 'bottom', 'left');
         }
     }
 }
+
+/* ==================== Temporary ==================== */
+// TODO: On Tailwind migration, trade out this style for utility class: "border-3"
+.border-3 {
+    border-width: 3px !important;
+}
