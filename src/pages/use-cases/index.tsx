@@ -352,6 +352,10 @@ const UseCases: React.FunctionComponent = () => (
                                 Request a demo <ArrowRightBoxIcon className="icon-inline ml-1" />
                             </a>
                         </Link>
+                        <Link href="/use-cases/code-health" passHref={true}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a className="btn btn-link">Learn more</a>
+                        </Link>
                     </div>
                     <div className="col-lg-6 mt-6 px-6 text-center">
                         <BlockquoteWithBorder
