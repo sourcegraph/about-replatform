@@ -18,6 +18,7 @@ export { BoardSection } from './BoardSection'
 export { LeadershipSection } from './LeadershipSection'
 export { SelfHostedSection } from './SelfHostedSection'
 export { YouTube } from './YouTube'
+export { ThreeUpText } from './ThreeUpText'
 export { TabCarousel } from './TabCarousel'
 export { TemplateCodeBlock } from './TemplateCodeBlock'
 
