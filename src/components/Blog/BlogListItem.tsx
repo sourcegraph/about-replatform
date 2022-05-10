@@ -35,29 +35,35 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
         </header>
         {slugPath && (
             <div className="card-body pt-0 d-flex flex-card">
-                <div className="flex-1 w-75">
-                    {frontmatter.description ? (
-                        <p>{truncate(frontmatter.description, { length: 300 })}</p>
-                    ) : (
-                        <p>{excerpt}</p>
+                <div className="row">
+                    <div className="col-md-9 pb-3 pb-md-0">
+                        {frontmatter.description ? (
+                            <p>{truncate(frontmatter.description, { length: 300 })}</p>
+                        ) : (
+                            <p>{excerpt}</p>
+                        )}
+                        <div className="text-center text-sm-left">
+                            <Link href={`/blog/${slugPath}`} passHref={true}>
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                <a className="font-weight-bold">Read more</a>
+                            </Link>
+                        </div>
+                    </div>
+                    {frontmatter.heroImage && (
+                        <div className="col-md-3 d-flex justify-content-center">
+                            <Link href={`/blog/${slugPath}`} passHref={true}>
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                <a>
+                                    <img
+                                        className="w-100"
+                                        src={frontmatter.heroImage}
+                                        alt={frontmatter.title}
+                                    />
+                                </a>
+                            </Link>
+                        </div>
                     )}
-                    <Link href={`/blog/${slugPath}`} passHref={true}>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a className="font-weight-bold">Read more</a>
-                    </Link>
                 </div>
-                {frontmatter.heroImage && (
-                    <Link href={`/blog/${slugPath}`} passHref={true}>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a>
-                            <img
-                                className="max-w-100 max-h-150 flex-1 max-w-250"
-                                src={frontmatter.heroImage}
-                                alt={frontmatter.title}
-                            />
-                        </a>
-                    </Link>
-                )}
             </div>
         )}
     </div>
