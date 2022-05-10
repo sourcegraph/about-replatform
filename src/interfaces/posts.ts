@@ -3,13 +3,13 @@ import { FunctionComponent } from 'react'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import {
-   BlogListItem,
-   BlogPost,
-   LinkPost,
-   PodcastListItem,
-   PodcastPost,
-   PressReleasePost,
-   ReleasePost
+    BlogListItem,
+    BlogPost,
+    LinkPost,
+    PodcastListItem,
+    PodcastPost,
+    PressReleasePost,
+    ReleasePost,
 } from '../components/Blog'
 import { PressReleaseListItem } from '../components/Blog/PressReleaseListItem'
 
