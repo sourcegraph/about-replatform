@@ -41,7 +41,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
                         ) : (
                             <p>{excerpt}</p>
                         )}
-                        <div className="text-center text-sm-left">    
+                        <div className="text-center text-sm-left">
                             <Link href={`/press-release/${slugPath}`} passHref={true}>
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="font-weight-bold">Read more</a>
@@ -53,11 +53,7 @@ export const PressReleaseListItem: FunctionComponent<PostIndexItem> = ({
                             <Link href={`/press-release/${slugPath}`} passHref={true}>
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a>
-                                    <img
-                                        className="max-h-150"
-                                        src={frontmatter.heroImage}
-                                        alt={frontmatter.title}
-                                    />
+                                    <img className="max-h-150" src={frontmatter.heroImage} alt={frontmatter.title} />
                                 </a>
                             </Link>
                         </div>

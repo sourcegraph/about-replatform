@@ -54,11 +54,7 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
                             <Link href={`/blog/${slugPath}`} passHref={true}>
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a>
-                                    <img
-                                        className="w-100"
-                                        src={frontmatter.heroImage}
-                                        alt={frontmatter.title}
-                                    />
+                                    <img className="w-100" src={frontmatter.heroImage} alt={frontmatter.title} />
                                 </a>
                             </Link>
                         </div>

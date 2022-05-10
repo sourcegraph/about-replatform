@@ -8,7 +8,7 @@ import Link from 'next/link'
 import {
     Layout,
     BackButtonBold,
-    BlogListItem,
+    BlogResourceItem,
     buttonStyle,
     buttonLocation,
     ContentSection,
@@ -173,7 +173,7 @@ const quoteCarouselItems = [
     },
 ]
 
-const blogListItems = [
+const blogResourceItems = [
     {
         title: 'Log4j Log4Shell 0-day: find, fix, and track affected code',
         description:
@@ -366,8 +366,8 @@ const UseCasePage: FunctionComponent = () => (
                 <div className="col-lg-6">
                     <h1 className="mb-5 font-weight-bold">Related resources</h1>
                 </div>
-                {blogListItems.map(item => (
-                    <BlogListItem key={item.title} blog={item} />
+                {blogResourceItems.map(item => (
+                    <BlogResourceItem key={item.title} blog={item} />
                 ))}
             </div>
         </ContentSection>

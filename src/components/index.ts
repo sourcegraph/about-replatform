@@ -8,7 +8,7 @@ export { Install } from './Install'
 export { EmbeddedHubSpot } from './HubSpot'
 export { BackButton, BackButtonBold, BackButtonLight } from './BackButton'
 export { FormLegal } from './FormLegal'
-export { BlogListItem } from './BlogListItem'
+export { BlogResourceItem } from './BlogResourceItem'
 export { BlockquoteWithBorder, BlockquoteWithLogoTop, BlockquoteWithLogoBottom } from './Blockquote'
 export { Video } from './Video'
 export { CustomerLogosSectionAnimated } from './CustomerLogosSectionAnimated'
@@ -52,13 +52,13 @@ export {
     InContentImage,
     MediaQuote,
     NewCaseStudyLayout,
-    ThreeUpText,
     UseChallengeSolutionResults,
 } from './CaseStudies'
 
 // Blog
 export {
     BlogHeader,
+    BlogListItem,
     BlogPost,
     LinkPost,
     PodcastPost,

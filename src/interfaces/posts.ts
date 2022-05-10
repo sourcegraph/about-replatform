@@ -8,10 +8,10 @@ import {
     LinkPost,
     PodcastListItem,
     PodcastPost,
-    PressReleaseListItem,
     PressReleasePost,
     ReleasePost,
-} from '@components'
+} from '../components/Blog'
+import { PressReleaseListItem } from '../components/Blog/PressReleaseListItem'
 
 export enum PostType {
     BlogPost,
