@@ -18,7 +18,7 @@ export const BlogListItem: FunctionComponent<PostIndexItem> = ({
     titleClassName = '',
     titleLinkClassName = '',
 }) => (
-    <div className={`blog-post overflow-hidden pb-2 ${className}`}>
+    <div className={`blog-post ${className}`}>
         <header className={headerClassName}>
             <h1 className={titleClassName}>
                 <Link href={`/blog/${slugPath}`} passHref={true}>

@@ -23,7 +23,7 @@ export const BlogPost: FunctionComponent<PostComponentProps> = ({
     titleLinkClassName = '',
     renderTitleAsLink = false,
 }) => (
-    <article className={`blog-post overflow-hidden pb-2 ${className}`}>
+    <article className={`blog-post ${className}`}>
         <header className={headerClassName}>
             <h1 className={titleClassName}>
                 {renderTitleAsLink === true ? (
