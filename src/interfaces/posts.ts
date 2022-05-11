@@ -2,16 +2,14 @@ import { FunctionComponent } from 'react'
 
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-import {
-    BlogListItem,
-    BlogPost,
-    LinkPost,
-    PodcastListItem,
-    PodcastPost,
-    PressReleasePost,
-    ReleasePost,
-} from '../components/Blog'
+import { BlogListItem } from '../components/Blog/BlogListItem'
+import { BlogPost } from '../components/Blog/BlogPost'
+import { LinkPost } from '../components/Blog/LinkPost'
+import { PodcastListItem } from '../components/Blog/PodcastListItem'
+import { PodcastPost } from '../components/Blog/PodcastPost'
 import { PressReleaseListItem } from '../components/Blog/PressReleaseListItem'
+import { PressReleasePost } from '../components/Blog/PressReleasePost'
+import { ReleasePost } from '../components/Blog/ReleasePost'
 
 export enum PostType {
     BlogPost,
