@@ -10,6 +10,7 @@ Don't forget to:
 -->
 
 ### Changelog
+
 <!--
 Add a bulleted list of your changes in more detail including which issues this PR closes.
 Examples:
@@ -19,12 +20,14 @@ Examples:
 -->
 
 ### Test
+
 1. Ensure linting passes.
 2. Ensure prettier has standardized the proposed changes.
 3. Ensure dev and production builds work.
 <!--
 Please list any other relevant steps that your reviewer should do to test this PR.
 Examples:
+
 - Visit /my/cool/page and ensure it matches the Figma
 - Ensure MyCoolButton works
--->
+  -->
