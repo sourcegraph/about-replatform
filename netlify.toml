@@ -1,6 +1,6 @@
 [build]
   publish = "out"
-  command = "yarn build"
+  command = "yarn ci && yarn build"
 
 [build.environment]
   YARN_VERSION = "1.22.17"
@@ -17,64 +17,91 @@
   from = "/company/*"
   to = "https://handbook.sourcegraph.com/#stq=company"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/retrospectives/*"
   to = "https://handbook.sourcegraph.com/company-info-and-process/communication/retrospectives/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/workflow/*"
   to = "https://handbook.sourcegraph.com/#stq=workflow"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/search"
   to = "https://handbook.sourcegraph.com/#stq=:q"
   query = {q = ":q"}
   status = 301
-  force = true
 
 [[redirects]]
   from = "/handbook/*"
   to = "https://handbook.sourcegraph.com/:splat"
   status = 301
-  force = true
 # ========== END HANDBOOK REDIRECTS ==========
 
-# ========== INDIVIDUAL REDIRECTS ==========
+# ========== TERMS REDIRECTS ==========
+[[redirects]]
+  from = "/terms-cloud"
+  to = "/terms/cloud"
+  status = 301
+
+[[redirects]]
+  from = "/terms-gov"
+  to = "/terms/gov"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/terms/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/privacy/cookie-policy"
+  to = "/terms/cookie-policy"
+  status = 301
+
+[[redirects]]
+  from = "/security"
+  to = "/terms/security"
+  status = 301
+
 [[redirects]]
   from = "/terms-private"
-  to = "/terms-self-hosted"
+  to = "/terms/self-hosted"
   status = 301
-  force = true
 
+[[redirects]]
+  from = "/terms-self-hosted"
+  to = "/terms/self-hosted"
+  status = 301
+
+[[redirects]]
+  from = "/subprocessors"
+  to = "/terms/subprocessors"
+  status = 301
+# ========== END TERMS REDIRECTS ==========
+
+# ========== INDIVIDUAL REDIRECTS ==========
 [[redirects]]
   from = "/contact/sales"
   to = "/contact/product-specialist"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/blog/better-onboarding-advice-from-engineering-leaders/"
   to = "/blog/better-onboarding-how-to-prevent-codebase-overwhelm/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/customers"
   to = "/use-cases"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/dpa"
   to = "/dpa.pdf"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/cloud-beta"
