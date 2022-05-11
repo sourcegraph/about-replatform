@@ -80,5 +80,4 @@
   from = "/cloud-beta"
   to = "/"
   status = 301
-  force = true
 # ========== END INDIVIDUAL REDIRECTS ==========
