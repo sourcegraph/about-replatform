@@ -52,6 +52,11 @@
   status = 301
 
 [[redirects]]
+  from = "/terms-dotcom"
+  to = "/terms/cloud"
+  status = 301
+
+[[redirects]]
   from = "/terms-gov"
   to = "/terms/gov"
   status = 301
