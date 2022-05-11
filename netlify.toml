@@ -14,8 +14,13 @@
 
 # ========== HANDBOOK REDIRECTS ==========
 [[redirects]]
-  from = "/company/*"
+  from = "/company"
   to = "https://handbook.sourcegraph.com/#stq=company"
+  status = 301
+
+[[redirects]]
+  from = "/company/*"
+  to = "https://handbook.sourcegraph.com/:splat"
   status = 301
 
 [[redirects]]
