@@ -19,7 +19,7 @@ declare global {
     }
 }
 
-export interface HubSpotProps {
+interface HubSpotProps {
     region?: string
     portalId: string
     formId: string
@@ -30,7 +30,7 @@ export interface HubSpotProps {
     onFormSubmitted?: () => void
 }
 
-interface HubSpotForm {
+export interface HubSpotForm {
     region?: string
     [index: number]: HTMLFormElement
     portalId: string

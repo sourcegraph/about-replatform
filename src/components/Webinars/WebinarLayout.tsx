@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { ContentSection } from '@components'
 import { breakpoints } from '@data'
-import { useWindowWidth, useHubSpot } from '@hooks'
+import { useWindowWidth, useHubSpot, HubSpotForm } from '@hooks'
 
 import styles from './WebinarLayout.module.scss'
 
