@@ -21,13 +21,13 @@ Are you interested in terms for...
 
 - **Sourcegraph Cloud**: You're in the right place! Read on.
 
-- **[A self-hosted Sourcegraph instance](https://about.sourcegraph.com/terms-self-hosted)**: If you’d like to use a self-hosted Sourcegraph instance (e.g. one deployed via the `docker run` command in our [Quickstart](https://docs.sourcegraph.com)) to search, navigate, and analyze your code, rather than the Sourcegraph Cloud instance, or if you’d like to use any products (e.g. browser or editor extensions) developed and distributed by us for use with your self-hosted instance, please see our terms and conditions at https://about.sourcegraph.com/terms-self-hosted.
+- **[A self-hosted Sourcegraph instance](/terms/self-hosted)**: If you’d like to use a self-hosted Sourcegraph instance (e.g. one deployed via the `docker run` command in our [Quickstart](https://docs.sourcegraph.com)) to search, navigate, and analyze your code, rather than the Sourcegraph Cloud instance, or if you’d like to use any products (e.g. browser or editor extensions) developed and distributed by us for use with your self-hosted instance, please see our terms and conditions at https://about.sourcegraph.com/terms-self-hosted.
 
 - **[Sourcegraph OSS](https://github.com/sourcegraph/sourcegraph/blob/master/LICENSE.apache)**: It is possible to run a version of Sourcegraph without some Enterprise features from our open source code available at https://github.com/sourcegraph/sourcegraph. If you want to follow the instructions there to build and run Sourcegraph OSS from source, please see the open source license (Apache 2.0) at https://github.com/sourcegraph/sourcegraph/blob/master/LICENSE.apache.
 
 - **Sourcegraph extensions**: If you’d like to use any extensions made available via our [Extension Registry](https://sourcegraph.com/extensions), please understand that extensions made available by third-parties are not provided by us and are generally governed by separate terms and conditions. Extensions that are developed and distributed by us are governed by these terms and conditions.
 
-- **[Government](https://about.sourcegraph.com/terms-gov)**: Certain features of our software may have their own terms and conditions that you must agree to when you sign up for that particular feature. As an example, if you’re using our software as an employee or contractor of the U.S. Government, our Supplemental Terms for U.S. Government Users at https://about.sourcegraph.com/terms-gov apply. Those terms and conditions supplement these terms and conditions.
+- **[Government](/terms/gov)**: Certain features of our software may have their own terms and conditions that you must agree to when you sign up for that particular feature. As an example, if you’re using our software as an employee or contractor of the U.S. Government, our Supplemental Terms for U.S. Government Users at https://about.sourcegraph.com/terms-gov apply. Those terms and conditions supplement these terms and conditions.
 </div>
 
 PLEASE READ THESE TERMS CAREFULLY TO ENSURE YOUR UNDERSTANDING OF EACH PROVISION. THE AGREEMENT CONTAINS A MANDATORY INDIVIDUAL ARBITRATION AND CLASS ACTION/JURY TRIAL WAIVER PROVISION THAT REQUIRES THE USE OF ARBITRATION ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES, RATHER THAN JURY TRIALS OR CLASS ACTIONS.
@@ -68,7 +68,7 @@ As used on this page, the following terms have the following specific meanings:
 
 1.1 **“Account”** means the account you've created via the Site in order to use the Services.
 
-1.2 **“Agreement”** means, collectively, the terms and conditions laid out on this page (these “Terms”), along with any order for Services (**“Order Form”**) and all other applicable rules, policies, and procedures that we may publish from time to time on the Site, including but not limited to our [Privacy Policy](/privacy).
+1.2 **“Agreement”** means, collectively, the terms and conditions laid out on this page (these “Terms”), along with any order for Services (**“Order Form”**) and all other applicable rules, policies, and procedures that we may publish from time to time on the Site, including but not limited to our [Privacy Policy](/terms/privacy).
 
 1.3 **“Content”** means any content displayed on the Site or made available through the Services, including but not limited to text (including Documentation), data (including Code Data), articles, images, photographs, videos, applications, software (including source code), and other materials, as well as the Services themselves (with respect to us).
 
@@ -108,7 +108,7 @@ As used on this page, the following terms have the following specific meanings:
 
    (iii) you must notify us immediately on becoming aware of any unauthorized use of or access to the Services through your Account.
 
-2.2 **Required Information**. In order to register for an Account, you must provide all of the information we request during the onboarding process. We may use that information in accordance with our [Privacy Policy](/privacy).
+2.2 **Required Information**. In order to register for an Account, you must provide all of the information we request during the onboarding process. We may use that information in accordance with our [Privacy Policy](/terms/privacy).
 
 <span style={{color: '#b200f8'}}>
 
@@ -157,7 +157,7 @@ As used on this page, the following terms have the following specific meanings:
 
 </span>
 
-<span style={{color: '#777777'}}><i>**Short version**: We have the right to collect usage data from Sourcegraph, as described in our [Privacy Policy](/privacy).</i></span>
+<span style={{color: '#777777'}}><i>**Short version**: We have the right to collect usage data from Sourcegraph, as described in our [Privacy Policy](/terms/privacy).</i></span>
 
 In the course of your use of the Services, we may collect certain information about your use, including aggregated data derived from you and other users’ access and use of the Services (**“Usage Data”**). You acknowledge and agree that Usage Data is owned solely and exclusively by us, and that we may use it for any legal purpose, including for purposes of operating, analyzing, improving, or marketing our products and services.
 
@@ -171,7 +171,7 @@ If we share or publicly disclose any information constituting or derived from Us
 
 <span style={{color: '#777777'}}><i>**Short version**: Our privacy policy tells you what you need to know about how we use any personal information you provide to us. The internet is a dangerous place and, while we’ve instituted safeguards to protect your information, you understand that data breaches happen and we can’t guarantee perfect security.</i></span>
 
-User privacy is important to us. Please read our [Privacy Policy](/privacy) carefully for details relating to how we collect, use, and disclose personal information you provide to us.
+User privacy is important to us. Please read our [Privacy Policy](/terms/privacy) carefully for details relating to how we collect, use, and disclose personal information you provide to us.
 
 We have implemented commercially reasonable technical and organizational measures designed to secure information you provide us from accidental loss and from unauthorized access, use, alteration or disclosure. However, we cannot guarantee that unauthorized third parties will never be able to defeat those measures or use your information for improper purposes. You understand that internet technologies have the inherent potential for disclosure. You acknowledge that you provide any sensitive information to us at your own risk.
 

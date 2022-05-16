@@ -21,13 +21,13 @@ Are you interested in terms for...
 
 - **A self-hosted Sourcegraph instance**: You're in the right place! Read on.
 
-- **[Sourcegraph Cloud](https://about.sourcegraph.com/terms-dotcom)**: If you’d like to use Sourcegraph Cloud (the public Sourcegraph instance that can be used to search, navigate, and analyze public code) rather than a self-hosted instance, or if you’d like to use any products (e.g. browser or editor extensions) developed and distributed by us for use with Sourcegraph Cloud, please see our Sourcegraph Cloud terms and conditions at https://about.sourcegraph.com/terms-cloud.
+- **[Sourcegraph Cloud](/terms/cloud)**: If you’d like to use Sourcegraph Cloud (the public Sourcegraph instance that can be used to search, navigate, and analyze public code) rather than a self-hosted instance, or if you’d like to use any products (e.g. browser or editor extensions) developed and distributed by us for use with Sourcegraph Cloud, please see our Sourcegraph Cloud terms and conditions at https://about.sourcegraph.com/terms-cloud.
 
 - **[Sourcegraph OSS](https://github.com/sourcegraph/sourcegraph/blob/master/LICENSE.apache)**: It is possible to run a version of Sourcegraph without some Enterprise features from our open source code available at https://github.com/sourcegraph/sourcegraph. If you want to follow the instructions there to build and run Sourcegraph OSS from source, please see the open source license (Apache 2.0) at https://github.com/sourcegraph/sourcegraph/blob/master/LICENSE.apache.
 
 - **Sourcegraph extensions**: If you’d like to use any extensions made available via our [Extension Registry](https://sourcegraph.com/extensions), please understand that extensions made available by third-parties are not provided by us and are generally governed by separate terms and conditions. Extensions that are developed and distributed by us are governed by these terms and conditions.
 
-- **[Government](https://about.sourcegraph.com/terms-gov)**: Certain features of our software may have their own terms and conditions that you must agree to when you sign up for that particular feature. As an example, if you’re using our software as an employee or contractor of the U.S. Government, our Supplemental Terms for U.S. Government Users at https://about.sourcegraph.com/terms-gov apply. Those terms and conditions supplement these terms and conditions.
+- **[Government](/terms/gov)**: Certain features of our software may have their own terms and conditions that you must agree to when you sign up for that particular feature. As an example, if you’re using our software as an employee or contractor of the U.S. Government, our Supplemental Terms for U.S. Government Users at https://about.sourcegraph.com/terms-gov apply. Those terms and conditions supplement these terms and conditions.
 </div>
 
 PLEASE READ THESE TERMS CAREFULLY TO ENSURE YOUR UNDERSTANDING OF EACH PROVISION. THE AGREEMENT CONTAINS A MANDATORY INDIVIDUAL ARBITRATION AND CLASS ACTION/JURY TRIAL WAIVER PROVISION THAT REQUIRES THE USE OF ARBITRATION ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES, RATHER THAN JURY TRIALS OR CLASS ACTIONS.
@@ -65,7 +65,7 @@ PLEASE READ THESE TERMS CAREFULLY TO ENSURE YOUR UNDERSTANDING OF EACH PROVISION
 
 As used on this page, the following terms have the following specific meanings:
 
-1.1 **“Agreement”** means, collectively, the terms and conditions laid out on this page (these **“Terms”**), along with any order for Software (**“Order Form”**) and all other applicable rules, policies, and procedures that we may publish from time to time on the Site, including but not limited to our [Privacy Policy](/privacy).
+1.1 **“Agreement”** means, collectively, the terms and conditions laid out on this page (these **“Terms”**), along with any order for Software (**“Order Form”**) and all other applicable rules, policies, and procedures that we may publish from time to time on the Site, including but not limited to our [Privacy Policy](/terms/privacy).
 
 1.2 **“Content”** means any content made available through the Software, including but not limited to text (including Documentation), data, articles, images, photographs, videos, applications, software (including source code), and other materials, as well as the Software itself (with respect to us).
 
@@ -135,7 +135,7 @@ As used on this page, the following terms have the following specific meanings:
 
 </span>
 
-<span style={{color: '#777777'}}><i>**Short version**: We have the right to collect aggregate and high-level data from self-hosted Sourcegraph instances, as described in our [Privacy Policy](/privacy) and specifically listed in our [product documentation](https://docs.sourcegraph.com/admin/pings).</i></span>
+<span style={{color: '#777777'}}><i>**Short version**: We have the right to collect aggregate and high-level data from self-hosted Sourcegraph instances, as described in our [Privacy Policy](/terms/privacy) and specifically listed in our [product documentation](https://docs.sourcegraph.com/admin/pings).</i></span>
 
 We may collect data derived from your use of the Software (**“Usage Data”**). A specific list of Usage Data that we receive from self-hosted instances is always available in our [Documentation](https://docs.sourcegraph.com/admin/pings) and in the site-admin area on your Instance. You acknowledge and agree that Usage Data is owned solely and exclusively by us, and that we may use it for any legal purpose, including for purposes of operating, analyzing, improving, or marketing our products.
 
@@ -149,7 +149,7 @@ If we share or publicly disclose any information constituting or derived from Us
 
 <span style={{color: '#777777'}}><i>**Short version**: Our privacy policy tells you what you need to know about how we use any personal information you provide to us. The internet is a dangerous place and, while we’ve instituted safeguards to protect your information, you understand that data breaches happen and we can’t guarantee perfect security.</i></span>
 
-Data security and user privacy are very, VERY important to us. Please read our [Privacy Policy](/privacy) carefully for details relating to how we collect, use, and disclose personal information you provide to us in connection with your use of the Software.
+Data security and user privacy are very, VERY important to us. Please read our [Privacy Policy](/terms/privacy) carefully for details relating to how we collect, use, and disclose personal information you provide to us in connection with your use of the Software.
 
 As the Software is provided in the form of a self-hosted Instance, Sourcegraph will not have access to any of Your Code unless you include Your Code via email or other support channels to Sourcegraph. We have implemented, and the Software contains, commercially reasonable technical and organizational measures designed to secure Your Code and any other information you provide that is stored on your Instance (which we do not have access to), and any information that we do have access to (such as support emails you send to us, Usage Data, etc.), from accidental loss and from unauthorized access, use, alteration or disclosure. However, we cannot guarantee that unauthorized third parties will never be able to defeat those measures or use your information for improper purposes. You understand that internet technologies have the inherent potential for disclosure. You acknowledge that you store sensitive information on your Instance, or provide any sensitive information to us at your own risk.
 
