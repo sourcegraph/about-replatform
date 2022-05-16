@@ -17,10 +17,10 @@ Capitalized terms that are not defined in this Privacy Policy have the meaning g
 
 </span>
 
-- We do not sell your information. We don’t help companies advertise their products to you. ([read more](#What-is-Sourcegraphs-business-model))
-- We use a number of trusted third parties to help provide our products. ([read more](#Does-Sourcegraph-share-my-information))
-- We use cookies to provide, protect, and promote our own products. ([read more](#Cookies))
-- You can exercise your rights under privacy laws. ([read more](#Global-privacy-practices))
+- We do not sell your information. We don’t help companies advertise their products to you. ([read more](#what-is-sourcegraphs-business-model))
+- We use a number of trusted third parties to help provide our products. ([read more](#does-sourcegraph-share-my-information))
+- We use cookies to provide, protect, and promote our own products. ([read more](#cookies))
+- You can exercise your rights under privacy laws. ([read more](#global-privacy-practices))
 
 <span style={{color: '#b200f8'}}>
 
@@ -68,7 +68,7 @@ When you visit or use our Website, including when you access the Sourcegraph Clo
 
 #### Cookies
 
-When you visit or use our Website, we may send one or more cookies — a small text file containing a string of alphanumeric characters — to your computer that uniquely identifies your browser and lets us help you log in faster and enhance your navigation through the Website. A cookie may also convey information to us about how you use the Website(e.g., the pages you view, the links you click, how frequently you access the Website, and other actions you take on the Website), and allow us to track your usage of the Website over time. For more information, see “Third-party tracking and online advertising” below and our [Cookie Policy](https://about.sourcegraph.com/privacy/cookie-policy/).
+When you visit or use our Website, we may send one or more cookies — a small text file containing a string of alphanumeric characters — to your computer that uniquely identifies your browser and lets us help you log in faster and enhance your navigation through the Website. A cookie may also convey information to us about how you use the Website(e.g., the pages you view, the links you click, how frequently you access the Website, and other actions you take on the Website), and allow us to track your usage of the Website over time. For more information, see “Third-party tracking and online advertising” below and our [Cookie Policy](/terms/cookie-policy/).
 
 #### Log data
 
@@ -163,7 +163,7 @@ We may share your personal information with third parties in the instances descr
 
 #### Service providers
 
-Our service providers process your Personal Information as needed to provide our Services to you, including hosting and customer support ticketing. They may only process your Personal Information pursuant to our instructions and to perform their duties to us. See our [Subprocessors](https://about.sourcegraph.com/subprocessors/) page for a list of our service providers.
+Our service providers process your Personal Information as needed to provide our Services to you, including hosting and customer support ticketing. They may only process your Personal Information pursuant to our instructions and to perform their duties to us. See our [Subprocessors](/terms/subprocessors) page for a list of our service providers.
 
 #### Security purposes
 
@@ -255,7 +255,7 @@ When we transfer the personal data of EEA, Swiss, and UK residents outside of th
 
 ### How secure is my information?
 
-We secure your information by implementing technical and organizational security controls that you can read about in [Security is core to everything we do](https://about.sourcegraph.com/security/).
+We secure your information by implementing technical and organizational security controls that you can read about in [Security is core to everything we do](/terms/security).
 
 When we receive your information, we protect it on our servers using technical, physical, and logical security safeguards. For information stored in any Software installed in your computing system, you are responsible for its security by making use of the security features of your device. We recommend that you take the appropriate steps to secure all computing devices that you use in connection with our Services.
 
