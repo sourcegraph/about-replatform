@@ -316,7 +316,6 @@ const CodeInsightsPage: FunctionComponent = () => {
                 title: 'Sourcegraph | Code Insights',
                 description:
                     'Draw insights from your codebase about how different initiatives are tracking over time. Code Insights is now generally available for teams of all sizes.',
-                image: 'https://about.sourcegraph.com/sourcegraph-og.png',
             }}
             className="code-insights-page"
             heroAndHeaderClassName="code-insights-page__hero-and-header navbar-light"
