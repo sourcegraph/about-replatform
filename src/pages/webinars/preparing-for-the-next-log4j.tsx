@@ -23,7 +23,6 @@ export const Webinar: FunctionComponent = () => (
             title: '[On-Demand Webinar] Learn how Nutanix remediated Log4j in 4 days',
             description:
                 'On-Demand Webinar. Learn how Nutanix uses Sourcegraph to find and fix security vulnerabilities quickly across their code base.',
-            image: 'https://about.sourcegraph.com/sourcegraph-og.png',
         }}
         className="navbar-white"
     >
@@ -31,14 +30,17 @@ export const Webinar: FunctionComponent = () => (
             title="Preparing for the Next Log4j"
             subtitle="How Nutanix Remediated the Vulnerability in 4 Days"
             speakers={speakers}
-            formId="abb86998-1a6a-4cfd-9888-ffba09c850c9"
             customer={{
                 name: 'Nutanix',
                 logo: '/external-logos/nutanix-logo.svg',
                 href: 'https://nutanix.com',
             }}
+            form={{
+                formId: 'abb86998-1a6a-4cfd-9888-ffba09c850c9',
+                onFormSubmitted: () => window.open('https://my.demio.com/recording/ANM9Sjbx'),
+            }}
             description={
-                <section className="col-md-6 col-12">
+                <section className="col-md-6 col-12 pr-lg-6">
                     <p>
                         For Nutanix, when 20,000+ of the world's most advanced data centers rely on your company's
                         software, any security vulnerability is a concern. But when the Log4j vulnerability hit, rated

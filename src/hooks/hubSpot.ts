@@ -19,7 +19,7 @@ declare global {
     }
 }
 
-interface HubSpotProps {
+export interface HubSpotProps {
     region?: string
     portalId: string
     formId: string

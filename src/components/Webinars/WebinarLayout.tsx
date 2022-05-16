@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 import classNames from 'classnames'
 
@@ -7,16 +7,6 @@ import { breakpoints } from '@data'
 import { useWindowWidth, useHubSpot } from '@hooks'
 
 import styles from './WebinarLayout.module.scss'
-
-interface Props {
-    customer?: Customer
-    title: string
-    subtitle: string
-    description: React.ReactNode
-    formId: string
-    speakers: Speaker[]
-    children?: React.ReactNode
-}
 
 interface Customer {
     name: string
@@ -31,25 +21,43 @@ interface Speaker {
     bio: string
 }
 
+interface Form {
+    formId: string
+    onFormSubmitted?: () => void
+}
+
+interface Props {
+    customer?: Customer
+    title: string
+    subtitle: string
+    description: ReactNode
+    form: Form
+    speakers: Speaker[]
+    children?: ReactNode
+}
+
 export const WebinarLayout: FunctionComponent<Props> = ({
     title,
     subtitle,
     customer,
     description,
-    formId,
+    form,
     speakers,
     children,
 }) => {
-    useHubSpot({
-        portalId: '2762526',
-        formId,
-        targetId: 'form',
-        chiliPiper: false
-    })
-
     const windowWidth = useWindowWidth()
-    const isMdScreen = windowWidth < breakpoints.lg && windowWidth > breakpoints.sm
-    const isMobile = windowWidth < breakpoints.md
+    const isMdOrDown = windowWidth < breakpoints.lg
+
+    const hubSpotConfig: HubSpotForm = {
+        portalId: '2762526',
+        formId: form.formId,
+        targetId: 'form',
+        formInstanceId: form.formId,
+    }
+    if (form.onFormSubmitted) {
+        hubSpotConfig.onFormSubmitted = form.onFormSubmitted
+    }
+    useHubSpot(hubSpotConfig)
 
     return (
         <>
@@ -60,14 +68,14 @@ export const WebinarLayout: FunctionComponent<Props> = ({
                         <div className="col-lg-6 col-12 text-lg-center pb-5 pb-lg-0">
                             <img
                                 className={`border-right border-black ${
-                                    isMobile || isMdScreen ? 'border-2 mr-3 pr-3' : 'border-3 mr-4 pr-4'
+                                    isMdOrDown ? 'border-2 mr-3 pr-3' : 'border-3 mr-4 pr-4'
                                 }`}
-                                width={isMobile ? '65' : isMdScreen ? '80' : '110'}
+                                width={isMdOrDown ? '65' : '110'}
                                 src="/sourcegraph/sourcegraph-mark.svg"
                                 alt="Sourcegraph mark"
                             />
                             <img
-                                height={isMobile ? '15' : isMdScreen ? '20' : '25'}
+                                height={isMdOrDown ? '15' : '25'}
                                 src={customer.logo}
                                 alt={`${customer.name} logo`}
                             />
@@ -75,8 +83,8 @@ export const WebinarLayout: FunctionComponent<Props> = ({
                     )}
 
                     <div className={classNames('col-12', customer && 'col-lg-6')}>
-                        <h2 className="display-3 font-weight-bold mb-4">{title}</h2>
-                        <h3 className={classNames('font-weight-light', { 'max-w-400': customer })}>{subtitle}</h3>
+                        <h1 className="display-3 font-weight-bold mb-4">{title}</h1>
+                        <h4 className={classNames('font-weight-light', { 'max-w-400': customer })}>{subtitle}</h4>
                     </div>
                 </div>
             </section>
@@ -86,8 +94,8 @@ export const WebinarLayout: FunctionComponent<Props> = ({
                     {description}
 
                     <div className="col-md-6 col-12 pb-md-0 pb-6">
-                        <h3 className="font-weight-bold">Watch the on-demand webinar</h3>
-                        <div className="border border-3 border-plum-mist pt-4 px-4 pb-2 mx-1 mt-3">
+                        <h2 className="font-weight-bold">Watch the on-demand webinar</h2>
+                        <div className={`${styles.saturnBorder} border border-3 shadow-sm py-4 px-4 mt-3`}>
                             <div id="form" />
                         </div>
                     </div>
@@ -96,7 +104,7 @@ export const WebinarLayout: FunctionComponent<Props> = ({
                 {children}
             </section>
 
-            <section className="bg-white py-6">
+            <section className="bg-white pb-6">
                 <ContentSection>
                     <h2 className="font-weight-bold">Speakers</h2>
 
@@ -117,3 +125,5 @@ export const WebinarLayout: FunctionComponent<Props> = ({
         </>
     )
 }
+
+export default WebinarLayout
