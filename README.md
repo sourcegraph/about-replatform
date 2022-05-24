@@ -1,8 +1,22 @@
-# Sourcegraph's Marketing Site
+# "About" Replatform Initiative
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+⚠️
+
+### This repo is no longer maintained and was used as an interim repo to replatform our marketing site onto Next.js. The repo now continues to live on at [github.com/sourcegraph/about](https://github.com/sourcegraph/about)
+
+⚠️
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+---
 
 This is Sourcegraph's Marketing Site which is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-Build Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/87b826cb-588e-49b1-829f-be5a1975c71c/deploy-status)](https://app.netlify.com/sites/about-replatform/deploys)
 
 ---
 
